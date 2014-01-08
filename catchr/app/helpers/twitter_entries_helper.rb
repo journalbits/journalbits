@@ -1,0 +1,2 @@
+module TwitterEntriesHelper
+end
