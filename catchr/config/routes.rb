@@ -1,7 +1,10 @@
 Catchr::Application.routes.draw do
-  resources :twitter_entries
-
-  resources :journal_entries
+  
+  resources :users do
+    resources :journal_entries do
+      resources :twitter_entries
+    end
+  end
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   
