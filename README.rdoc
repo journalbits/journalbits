@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version 2.0.0
+Database: Postgres
 
-Things you may want to cover:
+**Configuration:
 
-* Ruby version
+* You need to setup your own Twitter Application on the Twitter Dev portal and save its key and secret in environment variables.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Currently that is all the setup required other than running rake db:create and then rake db:migrate.
