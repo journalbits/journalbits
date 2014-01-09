@@ -1,14 +1,15 @@
 Catchr::Application.routes.draw do
-  
-  namespace :users do
-    resources :journal_entries do
-      resources :twitter_entries
-    end
-  end
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-  root :to => "home#index"
+  resources :users do
+    resources :days do
+      resources :twitter_entries
+    end
+  end
+  
+
+  root :to => "days#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
