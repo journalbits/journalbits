@@ -1,13 +1,12 @@
 Catchr::Application.routes.draw do
   
-  resources :users do
+  namespace :users do
     resources :journal_entries do
       resources :twitter_entries
     end
   end
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  
 
   root :to => "home#index"
 
