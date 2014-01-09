@@ -5,7 +5,7 @@ class DaysController < ApplicationController
   end
 
   def show
-
+    @day = Day.find(params[:id])
   end
 
 end
