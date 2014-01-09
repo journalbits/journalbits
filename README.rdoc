@@ -8,3 +8,21 @@ Database: Postgres
 * You need to setup your own Twitter Application on the Twitter Dev portal and save its key and secret in environment variables.
 
 * Currently that is all the setup required other than running rake db:create and then rake db:migrate.
+
+
+This is a work in progress. I am working towards implementing a digital journal type application that collets all of your data each day from the following services, using their APIs:
+
+   * GitHub
+   * Twitter
+   * Facebook
+   * Wunderlist
+   * Pocket 
+   * Fitbit 
+   * WhatPulse
+   * RescueTime
+   * Evernote 
+   * Instapaper
+   * Instagram
+   * Last.fm 
+
+Potentially others will be added but those are the inital services I'm aiming for.
