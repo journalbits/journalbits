@@ -3,7 +3,7 @@ require 'rufus/scheduler'
 
 # include SchedulerHelper
 
-scheduler = Rufus::Scheduler.start_new
+scheduler = Rufus::Scheduler.new
 
 # scheduler.cron("0 0 * * *") do
    
