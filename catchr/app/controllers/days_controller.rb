@@ -8,7 +8,9 @@ class DaysController < ApplicationController
 
   def show
     entries = get_all_entries_for_day(params[:id])
-    raise entries.inspect
+    @tweets = entries['tweets']
+    @favourites = entries['favourites']
+    @mentions = entries['mentions']
     @day = Day.find(params[:id])
   end
 

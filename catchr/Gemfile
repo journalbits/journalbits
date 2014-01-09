@@ -38,6 +38,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'oauth2'
+gem 'rufus-scheduler'
 
 
 group :doc do
