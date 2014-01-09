@@ -3,7 +3,7 @@
 Ruby version 2.0.0
 Database: Postgres
 
-**Configuration:
+**Configuration:**
 
 * You need to setup your own Twitter Application on the Twitter Dev portal and save its key and secret in environment variables.
 
