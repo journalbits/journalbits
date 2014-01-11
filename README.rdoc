@@ -27,3 +27,5 @@ This is a work in progress. I am working towards implementing a digital journal 
    * Last.fm 
 
 Potentially others will be added but those are the inital services I'm aiming for.
+
+Currently the data model I have in mind is that a User has many "days", and a day has many "$service$_entries". Each of the entires for each service will contain data from the relevant API, for example a username, date and text for a tweet from Twitter's API.
