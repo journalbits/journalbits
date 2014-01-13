@@ -1,6 +1,7 @@
 module TwitterEntriesHelper
 
-  def get_all_twitter_entries_for_day(day_id)
+  def get_all_twitter_entries_for_day(date = Time.now)
+    created_at_date = date.to_s[0..9]
     entries = {}
     tweets = TwitterEntry.where(type: "tweet")
     favourites = TwitterEntry.where(type: "favourite")
