@@ -175,10 +175,6 @@ GEM
       json (~> 1.8)
       memoizable (~> 0.4.0)
       simple_oauth (~> 0.2.0)
-    twitter_oauth (0.4.94)
-      json (>= 1.8.0)
-      mime-types (>= 1.16)
-      oauth (>= 0.4.7)
     tzinfo (0.3.38)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
@@ -207,7 +203,7 @@ DEPENDENCIES
   rufus-scheduler
   sass-rails (~> 4.0.0)
   sdoc
+  simple_oauth
   turbolinks
   twitter
-  twitter_oauth
   uglifier (>= 1.3.0)

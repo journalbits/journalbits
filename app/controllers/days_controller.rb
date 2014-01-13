@@ -3,7 +3,7 @@ class DaysController < ApplicationController
   include DaysHelper
 
   def index
-    @days = Day.where(user_id: current_user.id)
+    # @days = Day.where(user_id: current_user.id)
   end
 
   def show

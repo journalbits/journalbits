@@ -31,7 +31,6 @@ gem 'devise'
 gem 'fitgem'
 gem 'ruby-wunderlist'
 gem 'twitter'
-gem 'twitter_oauth'
 gem "octokit", "~> 2.0"
 gem "koala", "~> 1.8.0rc1"
 gem 'omniauth'
@@ -39,6 +38,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'oauth2'
 gem 'rufus-scheduler'
+gem 'simple_oauth'
 
 
 group :doc do

@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rufus/scheduler'
 
-# include SchedulerHelper
+include SchedulerHelper
 
 scheduler = Rufus::Scheduler.new
 
@@ -10,5 +10,5 @@ scheduler = Rufus::Scheduler.new
 # end 
 
 scheduler.every("1m") do
-  
+  # scheduler_test
 end 
