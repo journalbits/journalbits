@@ -1,28 +1,31 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version 2.0.0
 
-Things you may want to cover:
+Database: Postgres
 
-* Ruby version
+*Configuration:*
 
-* System dependencies
+* You need to setup your own Twitter Application on the Twitter Dev portal and save its key and secret in environment variables.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Currently that is all the setup required other than running rake db:create and then rake db:migrate.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This is a work in progress. I am working towards implementing a digital journal type application that collets all of your data each day from the following services, using their APIs:
+
+   * GitHub
+   * Twitter
+   * Facebook
+   * Wunderlist
+   * Pocket 
+   * Fitbit 
+   * WhatPulse
+   * RescueTime
+   * Evernote 
+   * Instapaper
+   * Instagram
+   * Last.fm 
+
+Potentially others will be added but those are the inital services I'm aiming for.
+
+Currently the data model I have in mind is that a User has many "days", and a day has many "$service$_entries". Each of the entires for each service will contain data from the relevant API, for example a username, date and text for a tweet from Twitter's API.
