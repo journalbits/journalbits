@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111160657) do
+ActiveRecord::Schema.define(version: 20140113130358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "days", force: true do |t|
-    t.date     "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
 
   create_table "twitter_entries", force: true do |t|
     t.date     "date"
@@ -33,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140111160657) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "tweet_id"
-    t.integer  "day_id"
   end
 
   create_table "users", force: true do |t|
@@ -50,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140111160657) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
-    t.string   "uid"
+    t.string   "twitter_uid"
     t.string   "twitter_username"
     t.string   "twitter_oauth_token"
     t.string   "twitter_oauth_secret"

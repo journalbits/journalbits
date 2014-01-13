@@ -11,4 +11,5 @@ scheduler = Rufus::Scheduler.new
 
 scheduler.every("1m") do
   # scheduler_test
+  twitter_favorites
 end 

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  has_many :days
+  has_many :twitter_entries
 
 
   # Include default devise modules. Others available are:
@@ -25,14 +25,15 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    user = where(auth.slice(:provider, :uid)).first || check_for_non_twitter_login(auth)
+    user = where(twitter_uid: auth.uid).first || check_for_non_twitter_login(auth)
     user.twitter_oauth_token = auth.credentials.token
     user.twitter_oauth_secret = auth.credentials.secret
-    user.save!
+    user.save! if user.email != ""
     user
   end
 
   def self.check_for_non_twitter_login(auth)
+    puts "I reached the BIT I WANTED IT TO HIT"
     if current_user != nil && current_user.provider != "twitter"
       save_twitter_data_for_current_user(auth)
     else
@@ -44,12 +45,14 @@ class User < ActiveRecord::Base
     current_user.twitter_oauth_token = auth.credentials.token
     current_user.twitter_oauth_secret = auth.credentials.secret
     current_user.twitter_username = auth.info.nickname
+    current_user.twitter_uid = auth.uid
+    # current_user.provider = twitter
     current_user.save!
     current_user
   end
 
   def self.create_from_omniauth(auth)
-    create! do |user|
+    create do |user|
       user.provider = auth.provider
       user.twitter_uid = auth.uid
       user.twitter_username = auth.info.nickname
