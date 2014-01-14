@@ -1,17 +1,10 @@
 class User < ActiveRecord::Base
   has_many :twitter_entries
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # def twitter
-  #   if provider == "twitter"
-  #     @twitter ||= Twitter::Client.new(oauth_token: twitter_oauth_token, oauth_token_secret: twitter_oauth_secret)
-  #   end
-  # end
-
+  # Dirty methods that allow me to use current_user in a model
   class << self
     def current_user=(user)
       Thread.current[:current_user] = user
@@ -31,7 +24,6 @@ class User < ActiveRecord::Base
   end
 
   def self.check_for_non_twitter_login(auth)
-    puts "I reached the BIT I WANTED IT TO HIT"
     if current_user != nil && current_user.provider != "twitter"
       save_twitter_data_for_current_user(auth)
     else

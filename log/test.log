@@ -466,3 +466,229 @@ Migrating to ChangeTypeOfTweetIdFromIntegerToBigint (20140114131635)
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mTwitterEntry Load (0.7ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTwitterEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423072158093701120 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Tue, 14 Jan 2014 14:42:43 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 14:42:43 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423061229075443712 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Tue, 14 Jan 2014 14:42:43 UTC +00:00], ["kind", "tweet"], ["text", "Using VCR in combination with Webmock for testing API calls is actively enjoyable. Who’d have thought that testing could be fun"], ["time_created", 2014-01-14 11:57:11 +0000], ["tweet_id", 423061229075443712], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 14:42:43 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Load (0.7ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mTwitterEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423072158093701120 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Tue, 14 Jan 2014 14:43:19 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 14:43:19 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423061229075443712 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Tue, 14 Jan 2014 14:43:19 UTC +00:00], ["kind", "tweet"], ["text", "Using VCR in combination with Webmock for testing API calls is actively enjoyable. Who’d have thought that testing could be fun"], ["time_created", 2014-01-14 11:57:11 +0000], ["tweet_id", 423061229075443712], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 14:43:19 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Load (0.8ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mTwitterEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423072158093701120 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Tue, 14 Jan 2014 14:44:15 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 14:44:15 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423061229075443712 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Tue, 14 Jan 2014 14:44:15 UTC +00:00], ["kind", "tweet"], ["text", "Using VCR in combination with Webmock for testing API calls is actively enjoyable. Who’d have thought that testing could be fun"], ["time_created", 2014-01-14 11:57:11 +0000], ["tweet_id", 423061229075443712], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 14:44:15 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Load (0.7ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:44:31 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1128ms (Views: 1105.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:45:22 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 110ms (Views: 86.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:45:43 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 86ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:52:26 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 105ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:53:35 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 108ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 14:53:36 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 14:53:36 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:53:58 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 85ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 14:53:58 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 14:53:58 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:58:07 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 105ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 14:58:07 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 14:58:07 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:58:28 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 109ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 14:58:28 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 14:58:28 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 14:59:02 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 106ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 14:59:02 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 14:59:02 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:00:07 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 87ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:00:07 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:00:07 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 18ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:00:24 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 114ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:00:25 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:00:25 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:00:45 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 87ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:00:45 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:00:45 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  [1m[35mUser Load (19.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" IS NULL ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 33ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:04:48 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 110ms (Views: 86.4ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:04:48 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:04:48 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:06:00 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 103ms (Views: 77.2ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:06:00 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:06:00 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" IS NULL ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 12ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:06:54 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 100ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:06:55 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:06:55 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" IS NULL ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 27ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-01-14 15:07:32 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 100ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-14 15:07:32 +0000
+Started GET "/users/auth/twitter/callback" for 127.0.0.1 at 2014-01-14 15:07:32 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" IS NULL ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 24ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
