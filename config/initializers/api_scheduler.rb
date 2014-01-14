@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rufus/scheduler'
 
-include SchedulerHelper
+include TwitterApiHelper
 
 scheduler = Rufus::Scheduler.new
 
