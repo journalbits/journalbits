@@ -41,7 +41,7 @@ gem 'rufus-scheduler'
 gem 'simple_oauth'
 
 
-group :development, :test do
+group :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
