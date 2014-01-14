@@ -22081,3 +22081,33 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-14 00:05:48
   [1m[36mUser Load (4.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameTypeColumnInTwitterEntriesToKind (20140114131304)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (28.1ms)[0m  [1mALTER TABLE "twitter_entries" RENAME COLUMN "type" TO "kind"[0m
+  [1m[35mSQL (30.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140114131304"]]
+  [1m[36m (7.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (30.6ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Tue, 14 Jan 2014 13:15:14 UTC +00:00], ["kind", "favorite"], ["text", "You’ll excuse me if I say this is my favorite GIF ever! “@josefkenny: @johnroderick @Neumos https://t.co/g2KmYVoeNt"], ["time_created", 2014-01-14 11:11:00 +0000], ["tweet_id", 423049606482509824], ["tweeter", "johnroderick"], ["updated_at", Tue, 14 Jan 2014 13:15:14 UTC +00:00], ["user_id", 17431654]]
+PG::NumericValueOutOfRange: ERROR:  value "423049606482509824" is out of range for type integer
+: INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeTypeOfTweetIdFromIntegerToBigint (20140114131635)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (77.4ms)[0m  [1mALTER TABLE "twitter_entries" ALTER COLUMN "tweet_id" TYPE bigint[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140114131635"]]
+  [1m[36m (14.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (33.8ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Tue, 14 Jan 2014 13:18:27 UTC +00:00], ["kind", "favorite"], ["text", "You’ll excuse me if I say this is my favorite GIF ever! “@josefkenny: @johnroderick @Neumos https://t.co/g2KmYVoeNt"], ["time_created", 2014-01-14 11:11:00 +0000], ["tweet_id", 423049606482509824], ["tweeter", "johnroderick"], ["updated_at", Tue, 14 Jan 2014 13:18:27 UTC +00:00], ["user_id", 17431654]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mTwitterEntry Load (0.7ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Tue, 14 Jan 2014 13:34:16 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweeter", "hamchapman"], ["updated_at", Tue, 14 Jan 2014 13:34:16 UTC +00:00], ["user_id", 83189257]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mTwitterEntry Load (0.4ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries"
+  [1m[36mTwitterEntry Load (0.4ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries"[0m
