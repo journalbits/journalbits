@@ -10,5 +10,13 @@ describe "RescueTimeAPIHelper" do
         Software Development",2]]
     expect(productivity_score(top_five)).to eq 11
   end
+
+  it "returns the top 5 activities (calculated by time) for the day", :vcr, record: :once do
+    create(:user)
+    user = User.where(email: "hamchapman@gmail.com").take
+    top_five = user_data_top_five(user.rescue_time_key)
+    expect(top_five.count).to eq 5
+    expect(top_five).to eq [[1, 3810, 1, "sublime text", "Editing & IDEs", 2], [2, 2165, 1, "iTerm", "Systems Operations", 2], [3, 1014, 1, "mplayerx", "Video", -2], [4, 484, 1, "github.com", "General Software Development", 2], [5, 428, 1, "tweetbot", "General Social Networking", -2]]
+  end
   
 end

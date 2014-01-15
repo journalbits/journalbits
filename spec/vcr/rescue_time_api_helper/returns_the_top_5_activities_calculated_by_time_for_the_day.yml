@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.rescuetime.com/anapi/data?format=json&key=B63EMB8ooHFTiaqAOMRwE402lyzpfFGrYOuIfiue
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Host:
+      - www.rescuetime.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 15 Jan 2014 12:15:49 GMT
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - request_method=GET; path=/
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - f5cd9d76-4168-4b6a-aed3-c1ca487bd8ee
+      X-Runtime:
+      - '0.086743'
+      X-Ua-Compatible:
+      - chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '888'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"notes":"data is an array of arrays (rows), column names for rows
+        in row_headers","row_headers":["Rank","Time Spent (seconds)","Number of People","Activity","Category","Productivity"],"rows":[[1,3810,1,"sublime
+        text","Editing \u0026 IDEs",2],[2,2165,1,"iTerm","Systems Operations",2],[3,1014,1,"mplayerx","Video",-2],[4,484,1,"github.com","General
+        Software Development",2],[5,428,1,"tweetbot","General Social Networking",-2],[6,365,1,"stackoverflow.com","General
+        Software Development",2],[7,281,1,"vimeo.com","General Entertainment",-2],[8,220,1,"pgadmin3","General
+        Software Development",2],[9,195,1,"siliconhillsnews.com","Uncategorized",0],[10,141,1,"hypercritical.co","Uncategorized",0],[11,125,1,"Safari","Browsers",0],[12,124,1,"google.co.uk","Search",0],[13,121,1,"rdio","Music",-2],[14,86,1,"whatpulse","Intelligence",2],[15,84,1,"ruby-doc.org","Engineering
+        \u0026 Technology",1],[16,84,1,"guides.rubyonrails.org","Engineering \u0026
+        Technology",1],[17,82,1,"Finder","General Utilities",1],[18,68,1,"rescuetime.com","Intelligence",2],[19,61,1,"iwantmyname.com","General
+        Business",2],[20,52,1,"dev.twitter.com","General News \u0026 Opinion",-2],[21,47,1,"airmail","Email",0],[22,29,1,"hover.com","Email",0],[23,27,1,"executeios.com","Uncategorized",0],[24,26,1,"macstories.net","Science
+        \u0026 Technology",-1],[25,17,1,"alfred 2","General Utilities",1],[26,17,1,"news.ycombinator.com","General
+        News \u0026 Opinion",-2],[27,13,1,"applications","General Business",2],[28,12,1,"amazon.co.uk","General
+        Shopping",-2],[29,11,1,"evernote","Intelligence",2],[30,11,1,"tito.io","Uncategorized",0],[31,2,1,"muzzy","Uncategorized",0],[32,2,1,"railscasts.com","Engineering
+        \u0026 Technology",1],[33,2,1,"t.co","General Social Networking",-2],[34,2,1,"bzbmenu","Uncategorized",0],[35,2,1,"json.parser.online.fr","General
+        Software Development",2],[36,1,1,"wunderlist","Project Management",2],[37,1,1,"the
+        unarchiver","General Utilities",1],[38,1,1,"gchq-careers.co.uk","Uncategorized",0],[39,1,1,"hyperdock","Uncategorized",0]]}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2014 12:15:53 GMT
+recorded_with: VCR 2.8.0

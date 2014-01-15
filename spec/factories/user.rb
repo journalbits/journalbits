@@ -15,6 +15,7 @@ FactoryGirl.define do
     twitter_username "hamchapman" 
     twitter_oauth_token "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb" 
     twitter_oauth_secret "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"
+    rescue_time_key "B63EMB8ooHFTiaqAOMRwE402lyzpfFGrYOuIfiue"
   end
 
 end
