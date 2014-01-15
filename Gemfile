@@ -47,6 +47,7 @@ group :test do
   gem 'database_cleaner'
   gem 'webmock'
   gem 'vcr'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :doc do

@@ -992,3 +992,246 @@ Migrating to AddCreatedAtToRescueTimeEntries (20140115012516)
   [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115012516"]]
   [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToRescueTimeEntries (20140115110713)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "user_id" integer[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115110713"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTwitterEntry Load (1.0ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTwitterEntry Load (0.9ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000'[0m
+  [1m[35mTwitterEntry Load (0.8ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTwitterEntry Load (1.3ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
+  [1m[35mTwitterEntry Load (0.3ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTwitterEntry Load (0.5ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries"[0m
+  [1m[35mTwitterEntry Load (0.7ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTwitterEntry Load (0.6ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries"[0m
+  [1m[35mTwitterEntry Load (1.4ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (20.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (29.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:34:11 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:34:11 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:34:34 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:34:34 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:35:00 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:35:00 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.9ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:36:29 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:36:29 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:37:24 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:37:24 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 AND "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:47:20 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:47:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:48:14 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:48:14 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:48:28 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:48:28 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:48:45 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:48:45 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:48:55 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:48:55 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 10 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:50:40 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:50:40 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:51:16 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:51:16 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (5.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:51:53 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:51:53 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423072158093701120 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:51:54 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweeter", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:51:54 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423061229075443712 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:51:54 UTC +00:00], ["kind", "tweet"], ["text", "Using VCR in combination with Webmock for testing API calls is actively enjoyable. Who’d have thought that testing could be fun"], ["time_created", 2014-01-14 11:57:11 +0000], ["tweet_id", 423061229075443712], ["tweeter", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:51:54 UTC +00:00], ["user_id", 83189257]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTwitterEntry Load (0.2ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries"[0m
+  [1m[35mTwitterEntry Load (0.3ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Wed, 15 Jan 2014 11:53:12 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:53:12 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423072158093701120 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 15 Jan 2014 11:53:12 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweeter", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:53:12 UTC +00:00], ["user_id", 83189257]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTwitterEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423061229075443712 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Wed, 15 Jan 2014 11:53:12 UTC +00:00], ["kind", "tweet"], ["text", "Using VCR in combination with Webmock for testing API calls is actively enjoyable. Who’d have thought that testing could be fun"], ["time_created", 2014-01-14 11:57:11 +0000], ["tweet_id", 423061229075443712], ["tweeter", "hamchapman"], ["updated_at", Wed, 15 Jan 2014 11:53:12 UTC +00:00], ["user_id", 83189257]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTwitterEntry Load (0.5ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

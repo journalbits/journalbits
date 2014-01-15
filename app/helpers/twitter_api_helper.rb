@@ -62,4 +62,19 @@ module TwitterApiHelper
     end
   end
 
+  def tweets_for_user_on_day(max_id, date, user)
+    TwitterClient.oauth_token=(user.twitter_oauth_token)
+    TwitterClient.oauth_token_secret=(user.twitter_oauth_secret)
+    tweets = TwitterClient.user_timeline(max_id: max_id)
+    if tweets != nil
+      tweeted_on_date = tweets.select { |tweet| tweet.created_at.to_s[0..9] == date.to_s[0..9] }
+      tweeted_on_date.each do |tweet| 
+        unless TwitterEntry.exists?(:tweet_id => tweet.id)
+          TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: tweet.user.id, tweet_id: tweet.id, time_created: tweet.created_at)
+          # puts tweet.text 
+        end
+      end
+    end
+  end
+
 end
