@@ -3,6 +3,7 @@ require 'rufus/scheduler'
 
 include TwitterApiHelper
 include RescueTimeApiHelper
+# include GithubApiHelper
 
 scheduler = Rufus::Scheduler.new
 
@@ -13,4 +14,5 @@ scheduler = Rufus::Scheduler.new
 scheduler.every("1m") do
   # twitter_data
   # rescue_time_data
+  # commits_on_user_repos_today
 end 
