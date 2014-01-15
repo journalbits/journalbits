@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114131635) do
+ActiveRecord::Schema.define(version: 20140115012516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rescue_time_entries", force: true do |t|
+    t.string   "activity_1"
+    t.integer  "time_spent_1"
+    t.string   "activity_2"
+    t.integer  "time_spent_2"
+    t.string   "activity_3"
+    t.integer  "time_spent_3"
+    t.string   "activity_4"
+    t.integer  "time_spent_4"
+    t.string   "activity_5"
+    t.integer  "time_spent_5"
+    t.string   "date"
+    t.integer  "productivity"
+    t.datetime "created_at"
+  end
 
   create_table "twitter_entries", force: true do |t|
     t.text     "text"
@@ -46,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140114131635) do
     t.string   "twitter_username"
     t.string   "twitter_oauth_token"
     t.string   "twitter_oauth_secret"
+    t.string   "rescue_time_key"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

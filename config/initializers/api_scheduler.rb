@@ -2,6 +2,7 @@ require 'rubygems'
 require 'rufus/scheduler'
 
 include TwitterApiHelper
+include RescueTimeApiHelper
 
 scheduler = Rufus::Scheduler.new
 
@@ -11,4 +12,5 @@ scheduler = Rufus::Scheduler.new
 
 scheduler.every("1m") do
   # twitter_data
+  rescue_time_data
 end 

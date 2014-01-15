@@ -937,3 +937,58 @@ Completed 500 Internal Server Error in 24ms
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mTwitterEntry Load (0.7ms)[0m  [1mSELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115004328)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115004556)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.3ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)[0m
+PG::UndefinedTable: ERROR:  relation "rescue_time_entries" does not exist
+: ALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRescueTimeEntriesTable (20140115005017)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (74.0ms)[0m  [1mCREATE TABLE "rescue_time_entries" ("id" serial primary key) [0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115005017"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115005047)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_1" integer
+  [1m[36m (7.7ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_2" character varying(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_2" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_3" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_3" integer
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_4" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_4" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_5" character varying(255)[0m
+  [1m[35m (6.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_5" integer
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "date" time[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "productivity" integer
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115005047"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRescueTimeKeyToUsers (20140115005413)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "rescue_time_key" character varying(255)[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115005413"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeDateColumnTypeInRescueTimeEntriesToString (20140115012408)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (24.0ms)[0m  [1mALTER TABLE "rescue_time_entries" ALTER COLUMN "date" TYPE character varying(255)[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115012408"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddCreatedAtToRescueTimeEntries (20140115012516)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "created_at" timestamp[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115012516"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

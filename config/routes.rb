@@ -1,5 +1,7 @@
 Catchr::Application.routes.draw do
 
+  resources :rescue_time_entries
+
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :users do  

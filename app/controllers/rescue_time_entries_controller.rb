@@ -1,0 +1,2 @@
+class RescueTimeEntriesController < ApplicationController
+end

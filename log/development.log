@@ -25014,3 +25014,95 @@ Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-14 17:1
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-14 17:15:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (28.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115004328)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115004556)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.5ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)[0m
+PG::UndefinedTable: ERROR:  relation "rescue_time_entries" does not exist
+: ALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRescueTimeEntriesTable (20140115005017)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (45.2ms)[0m  [1mCREATE TABLE "rescue_time_entries" ("id" serial primary key) [0m
+  [1m[35mSQL (13.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115005017"]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115005047)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (6.2ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_1" integer
+  [1m[36m (7.0ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_2" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_2" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_3" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_3" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_4" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_4" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_5" character varying(255)[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_5" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "date" time[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "productivity" integer
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115005047"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRescueTimeKeyToUsers (20140115005413)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD COLUMN "rescue_time_key" character varying(255)[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115005413"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (27.5ms)[0m  [1mINSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "date", "productivity", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["activity_1", "sublime text"], ["activity_2", "iTerm"], ["activity_3", "tweetbot"], ["activity_4", "vimeo.com"], ["activity_5", "siliconhillsnews.com"], ["date", 2014-01-15 01:13:12 +0000], ["productivity", 3], ["time_spent_1", 1419], ["time_spent_2", 1141], ["time_spent_3", 393], ["time_spent_4", 281], ["time_spent_5", 195]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mRescueTimeEntry Load (0.5ms)[0m  [1mSELECT "rescue_time_entries".* FROM "rescue_time_entries"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "date", "productivity", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["activity_1", "sublime text"], ["activity_2", "iTerm"], ["activity_3", "tweetbot"], ["activity_4", "vimeo.com"], ["activity_5", "siliconhillsnews.com"], ["date", 2014-01-15 01:14:12 +0000], ["productivity", 3], ["time_spent_1", 1419], ["time_spent_2", 1141], ["time_spent_3", 393], ["time_spent_4", 281], ["time_spent_5", 195]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mRescueTimeEntry Load (0.5ms)[0m  SELECT "rescue_time_entries".* FROM "rescue_time_entries"
+  [1m[36mUser Load (41.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (40.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-15 01:18:41.249021' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "date", "productivity", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["activity_1", "sublime text"], ["activity_2", "iTerm"], ["activity_3", "tweetbot"], ["activity_4", "vimeo.com"], ["activity_5", "siliconhillsnews.com"], ["date", 2014-01-15 01:18:41 +0000], ["productivity", 4], ["time_spent_1", 1607], ["time_spent_2", 1266], ["time_spent_3", 395], ["time_spent_4", 281], ["time_spent_5", 195]]
+  [1m[36m (12.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeDateColumnTypeInRescueTimeEntriesToString (20140115012408)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (27.0ms)[0m  [1mALTER TABLE "rescue_time_entries" ALTER COLUMN "date" TYPE character varying(255)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115012408"]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddCreatedAtToRescueTimeEntries (20140115012516)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "created_at" timestamp[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115012516"]]
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (39.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (22.8ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-15' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (17.6ms)[0m  INSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "created_at", "date", "productivity", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["activity_1", "sublime text"], ["activity_2", "iTerm"], ["activity_3", "tweetbot"], ["activity_4", "vimeo.com"], ["activity_5", "siliconhillsnews.com"], ["created_at", Wed, 15 Jan 2014 01:28:03 UTC +00:00], ["date", "2014-01-15"], ["productivity", 5], ["time_spent_1", 1888], ["time_spent_2", 1385], ["time_spent_3", 423], ["time_spent_4", 281], ["time_spent_5", 195]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-15' LIMIT 1[0m
