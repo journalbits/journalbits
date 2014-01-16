@@ -28994,3 +28994,510 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 21:01:35
   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1[0m
   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1[0m
   [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddGithubAccessTokenToUsers (20140115133622)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (8.1ms)[0m  [1mALTER TABLE "users" ADD COLUMN "github_access_token" character varying(255)[0m
+PG::DuplicateColumn: ERROR:  column "github_access_token" of relation "users" already exists
+: ALTER TABLE "users" ADD COLUMN "github_access_token" character varying(255)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (12.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20140107191825)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (24.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (6.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140107191825"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Migrating to AddOmniauthToUsers (20140108135711)
+  [1m[35m (11.0ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140108135711"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Migrating to AddUsernameToUser (20140108141326)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "username" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140108141326"]]
+  [1m[35m (11.2ms)[0m  COMMIT
+Migrating to CreateTwitterEntries (20140108201418)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.4ms)[0m  CREATE TABLE "twitter_entries" ("id" serial primary key, "date" date, "text" character varying(255), "media" character varying(255), "type" character varying(255), "tweeter" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140108201418"]]
+  [1m[35m (11.2ms)[0m  COMMIT
+Migrating to AddTwitterOauthToUsers (20140108203606)
+  [1m[36m (5.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "twitter_oauth_token" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "twitter_oauth_secret" character varying(255)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140108203606"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeTwitterEntryTextTypeToText (20140108204334)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "twitter_entries" ALTER COLUMN "text" TYPE text[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140108204334"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserIdToTwitterEntry (20140109102335)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "user_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140109102335"]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddTweetIdToTwitterEntry (20140109102547)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "tweet_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140109102547"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeUsernameColumnNameToTwitterUsername (20140111160657)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "username" TO "twitter_username"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140111160657"]]
+  [1m[36m (11.5ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeColumnNameOfUidToTwitterUid (20140113130358)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "uid" TO "twitter_uid"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140113130358"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveDateFromTwitterEntries (20140113203805)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "twitter_entries" DROP "date"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140113203805"]]
+  [1m[36m (11.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddTimeCreatedToTwitterEntries (20140113204116)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "time_created" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140113204116"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+Migrating to RenameTypeColumnInTwitterEntriesToKind (20140114131304)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "twitter_entries" RENAME COLUMN "type" TO "kind"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140114131304"]]
+  [1m[36m (11.5ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeTypeOfTweetIdFromIntegerToBigint (20140114131635)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (14.8ms)[0m  [1mALTER TABLE "twitter_entries" ALTER COLUMN "tweet_id" TYPE bigint[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140114131635"]]
+  [1m[36m (12.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRescueTimeEntriesTable (20140115005017)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "rescue_time_entries" ("id" serial primary key) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115005017"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115005047)
+  [1m[35m (11.5ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_1" integer
+  [1m[36m (7.1ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_2" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_2" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_3" character varying(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_3" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_4" character varying(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_4" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_5" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_5" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "date" time[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "productivity" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115005047"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddRescueTimeKeyToUsers (20140115005413)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "rescue_time_key" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115005413"]]
+  [1m[35m (11.7ms)[0m  COMMIT
+Migrating to ChangeDateColumnTypeInRescueTimeEntriesToString (20140115012408)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.7ms)[0m  ALTER TABLE "rescue_time_entries" ALTER COLUMN "date" TYPE character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115012408"]]
+  [1m[35m (11.3ms)[0m  COMMIT
+Migrating to AddCreatedAtToRescueTimeEntries (20140115012516)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "created_at" timestamp
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115012516"]]
+  [1m[35m (5.6ms)[0m  COMMIT
+Migrating to AddUserIdToRescueTimeEntries (20140115110713)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "user_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115110713"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Migrating to AddGithubAccessTokenToUsers (20140115133622)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "github_access_token" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115133622"]]
+  [1m[35m (10.9ms)[0m  COMMIT
+Migrating to CreateGithubEntries (20140116144318)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.1ms)[0m  CREATE TABLE "github_entries" ("id" serial primary key, "user_id" integer, "sha" character varying(255), "time_created" character varying(255), "commit_message" character varying(255), "committer" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140116144318"]]
+  [1m[35m (11.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (23.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 418ms (Views: 363.8ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:37 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:38 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:38 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:38 +0000
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-16 14:57:38 +0000
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-16 14:57:39 +0000
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=iSCzwXPMGyWmRX6Grpo3Y0sXcXh0h7S1LzQ4KkjkyY&oauth_verifier=C8r3JHSs3Gs3TKnmiB2d8FQHvT6vf1t0SkcUMc82UE" for 127.0.0.1 at 2014-01-16 14:57:42 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"iSCzwXPMGyWmRX6Grpo3Y0sXcXh0h7S1LzQ4KkjkyY", "oauth_verifier"=>"C8r3JHSs3Gs3TKnmiB2d8FQHvT6vf1t0SkcUMc82UE"}
+  [1m[36mUser Load (17.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://0.0.0.0:3000/users/sign_up
+Completed 302 Found in 124ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:44 +0000
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-16 14:57:49 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZZIn64bBqQ17yyy93pceqkw73q7ZREFJdrheJa0bznM=", "user"=>{"email"=>"hamchapman@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (28.0ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 16 Jan 2014 14:57:49 UTC +00:00], ["email", "hamchapman@gmail.com"], ["provider", "twitter"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Thu, 16 Jan 2014 14:57:49 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 1  [["last_sign_in_at", Thu, 16 Jan 2014 14:57:49 UTC +00:00], ["current_sign_in_at", Thu, 16 Jan 2014 14:57:49 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Thu, 16 Jan 2014 14:57:49 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 59ms (ActiveRecord: 30.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 14:57:49 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:49 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:50 +0000
+
+
+Started GET "/auth/github?code=2500191d62279b5a89ac&state=bubble" for 127.0.0.1 at 2014-01-16 14:57:52 +0000
+Processing by AuthorizationController#github as HTML
+  Parameters: {"code"=>"2500191d62279b5a89ac", "state"=>"bubble"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "github_access_token" = $1, "updated_at" = $2 WHERE "users"."id" = 1  [["github_access_token", "418c91672f74323129338e7bf3a3e41e97cecdf4"], ["updated_at", Thu, 16 Jan 2014 14:57:53 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1013ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:53 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 14:57:57 +0000
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 15:09:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 209ms (Views: 126.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:09:36 +0000
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (7.3ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '4e5d955161b1c283c6d1663ff41eddb919b26911' LIMIT 1
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '4e5d955161b1c283c6d1663ff41eddb919b26911' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (14.0ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Octokit method now working"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 16 Jan 2014 15:12:50 UTC +00:00], ["sha", "4e5d955161b1c283c6d1663ff41eddb919b26911"], ["time_created", "2014-01-16 15:12:29 +0000"], ["updated_at", Thu, 16 Jan 2014 15:12:50 UTC +00:00], ["user_id", 1]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0a1342be403b16075ec2fc2a64f0ffacaa6dd124' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Octokit commits_on method not working so implement new version to get commits for a user on a given day"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 16 Jan 2014 15:12:50 UTC +00:00], ["sha", "0a1342be403b16075ec2fc2a64f0ffacaa6dd124"], ["time_created", "2014-01-16 15:12:29 +0000"], ["updated_at", Thu, 16 Jan 2014 15:12:50 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[36mGithubEntry Load (1.6ms)[0m  [1mSELECT "github_entries".* FROM "github_entries"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"

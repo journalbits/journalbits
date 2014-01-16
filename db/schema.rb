@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115205034) do
+ActiveRecord::Schema.define(version: 20140116144318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "github_entries", force: true do |t|
+    t.integer  "user_id"
+    t.string   "sha"
+    t.string   "time_created"
+    t.string   "commit_message"
+    t.string   "committer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rescue_time_entries", force: true do |t|
     t.string   "activity_1"

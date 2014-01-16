@@ -3,50 +3,29 @@ require "net/https"
 module GithubApiHelper
 
   def commits_on_user_repos_today
-    client = Octokit::Client.new :access_token => User.where(email: "hamchapman@gmail.com").take.github_access_token
-    date = Time.now.to_s[0..9]
-    commits = []
-    client.repositories.each do |repo| 
-      commits_on_repo = client.commits_on(repo.full_name.to_s, date)
-      if !commits_on_repo.empty?
-        puts "hello"
-        commits_on_repo.each { |commit| commits << commit }
+    User.all.each do |user|
+      if user.github_access_token != nil
+        client = Octokit::Client.new :access_token => user.github_access_token
+        full_date = Time.now.to_s
+        date = full_date[0..9]
+        commits = []
+        client.repositories.each do |repo| 
+          commits_on_repo = client.commits_on(repo.full_name.to_s, date)
+          if !commits_on_repo.empty?
+            commits_on_repo.each { |commit| commits << commit }
+          end
+        end
+        save_commits_to_database(commits, full_date, user)
       end
     end
-    puts commits[0].commit.message
   end
 
-  # def get_json(uri)
-  #   response = HTTParty.get(uri, headers: { "User-Agent" => "hamchapman" })
-  #   JSON.parse(response.body)
-  # end
-
-  # def all_commits
-  #   access_token = User.where(email: "hamchapman@gmail.com").take.github_access_token    
-
-  #   start_date = (Time.now - 86400).to_s[0..9] + "T00:00:00"
-  #   end_date = Time.now.to_s[0..9] + "T00:00:00"
-    
-  #   puts start_date
-  #   puts end_date
-  #   user = "hamchapman"
-  #   repos_uri = "https://api.github.com/users/#{user}/repos?access_token=#{access_token}"
-  #   repos = get_json(repos_uri)
-  #   puts repos.inspect
-
-  #   if !repos.is_a?(Array)
-  #     "Sorry, that user doesn't exist. Please try again"
-  #   else
-  #     commits = []
-  #     repos.each do |repo| 
-  #       repo_commits_url = repo['commits_url'].to_s[0..-7]
-  #       time_restricted_commits_url = repo_commits_url + "?since=" + start_date + "&until=" + end_date + "&access_token=#{access_token}"
-  #       puts time_restricted_commits_url
-  #       commits_for_repo = get_json(time_restricted_commits_url)
-  #       commits_for_repo.each { |commit| commits << commit }
-  #     end
-  #   end
-  #   puts commits.inspect
-  # end
+  def save_commits_to_database(commits, date, user)
+    commits.each do |commit|
+      unless GithubEntry.exists?(:sha => commit.sha)
+        GithubEntry.create(sha: commit.sha, user_id: user.id, time_created: date, commit_message: commit.commit.message, committer: commit.commit.committer.name)
+      end
+    end
+  end
 
 end

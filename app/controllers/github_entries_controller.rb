@@ -1,0 +1,2 @@
+class GithubEntriesController < ApplicationController
+end

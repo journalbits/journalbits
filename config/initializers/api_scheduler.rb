@@ -15,5 +15,4 @@ scheduler.every("1m") do
   # twitter_data
   # rescue_time_data
   commits_on_user_repos_today
-  # all_commits
 end 
