@@ -31,8 +31,7 @@ gem 'devise'
 gem 'fitgem'
 gem 'ruby-wunderlist'
 gem 'twitter'
-# gem "octokit", "~> 2.0"
-gem "octokit", :git => 'git://github.com/hamchapman/octokit.rb.git'
+gem "octokit", "~> 2.0"
 gem "koala", "~> 1.8.0rc1"
 gem 'omniauth'
 gem 'omniauth-facebook'
