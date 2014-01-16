@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116144318) do
+ActiveRecord::Schema.define(version: 20140116224658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140116144318) do
     t.string   "committer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "commit_url"
   end
 
   create_table "rescue_time_entries", force: true do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140116144318) do
     t.integer  "user_id"
     t.integer  "tweet_id",     limit: 8
     t.string   "time_created"
+    t.string   "tweet_url"
   end
 
   create_table "users", force: true do |t|

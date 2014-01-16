@@ -11,7 +11,7 @@ module GithubApiHelper
   def save_commits_to_database(commits, date, user)
     commits.each do |commit|
       unless GithubEntry.exists?(:sha => commit.sha)
-        GithubEntry.create(sha: commit.sha, user_id: user.id, time_created: date, commit_message: commit.commit.message, committer: commit.commit.committer.name)
+        GithubEntry.create(sha: commit.sha, user_id: user.id, time_created: date, commit_message: commit.commit.message, committer: commit.commit.committer.name, commit_url: commit.commit.url)
       end
     end
   end

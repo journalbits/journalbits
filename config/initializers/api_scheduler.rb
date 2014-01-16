@@ -14,5 +14,5 @@ scheduler = Rufus::Scheduler.new
 scheduler.every("1m") do
   # twitter_data
   # rescue_time_data
-  commits_on_user_repos_today
+  # commits_on_user_repos_today
 end 
