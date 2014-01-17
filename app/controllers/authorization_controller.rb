@@ -25,7 +25,7 @@ class AuthorizationController < ApplicationController
   end
 
   def rescue_time
-
+    
   end
 
 end
