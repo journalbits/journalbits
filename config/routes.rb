@@ -14,7 +14,8 @@ Catchr::Application.routes.draw do
   root :to => "home#index"
 
   get 'auth/github' => 'authorization#github'
-
+  get 'connections' => 'authorization#index'
+  get 'auth/rescue_time' => 'authorization#rescue_time'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

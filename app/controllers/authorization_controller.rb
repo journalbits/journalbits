@@ -17,7 +17,15 @@ class AuthorizationController < ApplicationController
     access_token = res.body.split("&")[0].split("=")[1]
     user = User.where(id: current_user.id).take
     user.update_attributes(github_access_token: access_token)
-    redirect_to "/"
+    redirect_to "/connections"
+  end
+
+  def index
+
+  end
+
+  def rescue_time
+
   end
 
 end

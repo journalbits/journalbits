@@ -12,10 +12,7 @@
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
   <li>
-    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-  </li>
-  <li>
-    <%= link_to "Authorize GitHub", "https://github.com/login/oauth/authorize?client_id=ff7013fc7d06261543d7&scope=repo&state=bubble" %>
+    <%= link_to "Connections", "/connections" %>
   </li>
 <% else %>
   <li>
