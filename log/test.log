@@ -2048,3 +2048,59 @@ Migrating to AddTweetUrlToTwitterEntry (20140116224658)
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.7ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (65.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (34.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "github_access_token", "provider", "rescue_time_key", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["email", "hamchapman@gmail.com"], ["github_access_token", "418c91672f74323129338e7bf3a3e41e97cecdf4"], ["provider", "twitter"], ["rescue_time_key", "B63EMB8ooHFTiaqAOMRwE402lyzpfFGrYOuIfiue"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (12.6ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423072158093701120 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweet_url", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["kind", "tweet"], ["text", "If you’re an @Rdio user then check out Trnsmit for importing iTunes playlists http://t.co/JUBuxFq2gN"], ["time_created", 2014-01-14 12:40:37 +0000], ["tweet_id", 423072158093701120], ["tweet_url", "https://twitter.com/hamchapman/status/423072158093701120"], ["tweeter", "hamchapman"], ["updated_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["user_id", 25]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTwitterEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 423061229075443712 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweet_url", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["kind", "tweet"], ["text", "Using VCR in combination with Webmock for testing API calls is actively enjoyable. Who’d have thought that testing could be fun"], ["time_created", 2014-01-14 11:57:11 +0000], ["tweet_id", 423061229075443712], ["tweet_url", "https://twitter.com/hamchapman/status/423061229075443712"], ["tweeter", "hamchapman"], ["updated_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["user_id", 25]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTwitterEntry Load (0.9ms)[0m  SELECT "twitter_entries".* FROM "twitter_entries" WHERE "twitter_entries"."time_created" = '2014-01-14 12:40:37.000000' ORDER BY "twitter_entries"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "github_access_token", "provider", "rescue_time_key", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["email", "hamchapman@gmail.com"], ["github_access_token", "418c91672f74323129338e7bf3a3e41e97cecdf4"], ["provider", "twitter"], ["rescue_time_key", "B63EMB8ooHFTiaqAOMRwE402lyzpfFGrYOuIfiue"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (4.2ms)[0m  INSERT INTO "users" ("created_at", "email", "github_access_token", "provider", "rescue_time_key", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00], ["email", "hamchapman@gmail.com"], ["github_access_token", "418c91672f74323129338e7bf3a3e41e97cecdf4"], ["provider", "twitter"], ["rescue_time_key", "B63EMB8ooHFTiaqAOMRwE402lyzpfFGrYOuIfiue"], ["twitter_oauth_secret", "zeAJFnd7fZ4IOZjB0AopBABFCycfhuGHnImvcuT4eUCCD"], ["twitter_oauth_token", "83189257-XRSAxVQEbrjRBoyEZnHo5QVMA1EfVSRYuSwqva6pb"], ["twitter_uid", "83189257"], ["twitter_username", "hamchapman"], ["updated_at", Sun, 19 Jan 2014 23:02:46 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1
+  [1m[36mGithubEntry Exists (12.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '69338e7c60ae60d02d216c5daea8e11e6c872bef' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["commit_message", "Refactored Github API helper methods and started writing tests for it"], ["committer", "Hamilton Chapman"], ["created_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["sha", "69338e7c60ae60d02d216c5daea8e11e6c872bef"], ["time_created", "2014-01-16 00:00:00 +0000"], ["updated_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["user_id", 27]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e13126c934280b23d3fb9ba37af131d056e63fea' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["commit_message", "Github commits now saving to the database in the Github Entry model"], ["committer", "Hamilton Chapman"], ["created_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["sha", "e13126c934280b23d3fb9ba37af131d056e63fea"], ["time_created", "2014-01-16 00:00:00 +0000"], ["updated_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["user_id", 27]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '4e5d955161b1c283c6d1663ff41eddb919b26911' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["commit_message", "Octokit method now working"], ["committer", "Hamilton Chapman"], ["created_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["sha", "4e5d955161b1c283c6d1663ff41eddb919b26911"], ["time_created", "2014-01-16 00:00:00 +0000"], ["updated_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["user_id", 27]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0a1342be403b16075ec2fc2a64f0ffacaa6dd124' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["commit_message", "Octokit commits_on method not working so implement new version to get commits for a user on a given day"], ["committer", "Hamilton Chapman"], ["created_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["sha", "0a1342be403b16075ec2fc2a64f0ffacaa6dd124"], ["time_created", "2014-01-16 00:00:00 +0000"], ["updated_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["user_id", 27]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '904ec1033a9cdafa3b0819918b6d8863e98343ab' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["commit_message", "Updated README"], ["committer", "Hamilton Chapman"], ["created_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["sha", "904ec1033a9cdafa3b0819918b6d8863e98343ab"], ["time_created", "2014-01-16 00:00:00 +0000"], ["updated_at", Sun, 19 Jan 2014 23:02:47 UTC +00:00], ["user_id", 27]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT "github_entries"."sha", "github_entries"."time_created", "github_entries"."commit_message" FROM "github_entries" WHERE "github_entries"."time_created" = '2014-01-16 00:00:00 +0000' AND "github_entries"."user_id" = 27[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK

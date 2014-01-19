@@ -1,21 +1,20 @@
 Catchr::Application.routes.draw do
 
-  resources :github_entries
-
-  resources :rescue_time_entries
-
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :users do  
     resources :twitter_entries
+    resources :rescue_time_entries
+    resources :github_entries
   end
   
-
   root :to => "home#index"
 
   get 'auth/github' => 'authorization#github'
   get 'connections' => 'authorization#index'
   get 'auth/rescue_time' => 'authorization#rescue_time'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
