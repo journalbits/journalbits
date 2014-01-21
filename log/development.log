@@ -31567,3 +31567,154 @@ Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-17 01:09:22 +0000
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-17 01:09:22 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 11:14:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 151ms (Views: 124.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-21 11:14:10 +0000
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-21 11:14:14 +0000
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-21 11:14:15 +0000
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=X6VaTATq2eTntQkApewlBTQWIvSbwFx9oBTItdThQ&oauth_verifier=MQdFbTWq3z4qqs3qkeQhGABwBE1g6YbfSeYJLybg" for 127.0.0.1 at 2014-01-21 11:14:20 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"X6VaTATq2eTntQkApewlBTQWIvSbwFx9oBTItdThQ", "oauth_verifier"=>"MQdFbTWq3z4qqs3qkeQhGABwBE1g6YbfSeYJLybg"}
+  [1m[35mUser Load (5.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (32.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = 1  [["last_sign_in_at", Fri, 17 Jan 2014 01:06:24 UTC +00:00], ["current_sign_in_at", Tue, 21 Jan 2014 11:14:22 UTC +00:00], ["sign_in_count", 3], ["updated_at", Tue, 21 Jan 2014 11:14:22 UTC +00:00]]
+  [1m[36m (162.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 311ms (ActiveRecord: 204.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 11:14:22 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-01-21 11:14:25 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KE4RmWj6pfglDPTR1dPUy00L/CdsDgrTY2WiTkVJVp4="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 11:14:25 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-21 11:15:24 +0000
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-21 11:15:25 +0000
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=36aIOLpne50ic5kzqsPfYYQj6OJxApgdixmMQfkVoow&oauth_verifier=2qS4dDpuV7nleIPUb5vR0ubqpN5Gzsnnu4pUei4bYQ" for 127.0.0.1 at 2014-01-21 11:15:27 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"36aIOLpne50ic5kzqsPfYYQj6OJxApgdixmMQfkVoow", "oauth_verifier"=>"2qS4dDpuV7nleIPUb5vR0ubqpN5Gzsnnu4pUei4bYQ"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '630120731' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Redirected to http://0.0.0.0:3000/users/sign_up
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-01-21 11:15:28 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 63ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-21 11:15:43 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"24CrRsdJ4lH7vQS3IlS839cwJcSXM3MNuwzgo4LT/fE=", "user"=>{"email"=>"h@milt.on"}, "commit"=>"Sign up"}
+  [1m[36mUser Exists (6.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'h@milt.on' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'h@milt.on' LIMIT 1[0m
+  [1m[35mSQL (14.6ms)[0m  INSERT INTO "users" ("created_at", "email", "provider", "twitter_oauth_secret", "twitter_oauth_token", "twitter_uid", "twitter_username", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Tue, 21 Jan 2014 11:15:43 UTC +00:00], ["email", "h@milt.on"], ["provider", "twitter"], ["twitter_oauth_secret", "htg7WWBL4uGqQWZBHkUM71XLQlv7Y0xLNqv5SerjpKXzN"], ["twitter_oauth_token", "630120731-rl3VfEIXHpuUb1kLUpO2tQ3oZq2hDkRcSSDDaL9x"], ["twitter_uid", "630120731"], ["twitter_username", "Technillogical"], ["updated_at", Tue, 21 Jan 2014 11:15:43 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 2[0m  [["last_sign_in_at", Tue, 21 Jan 2014 11:15:43 UTC +00:00], ["current_sign_in_at", Tue, 21 Jan 2014 11:15:43 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Tue, 21 Jan 2014 11:15:43 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 49ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-21 11:15:43 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.4ms)
