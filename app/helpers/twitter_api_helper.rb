@@ -9,10 +9,6 @@ module TwitterApiHelper
     config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
   end 
 
-  def scheduler_test
-    # puts "hello"
-  end
-
   def twitter_data
     User.all.each do |user|
       TwitterClient.oauth_token=(user.twitter_oauth_token)
