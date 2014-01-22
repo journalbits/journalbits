@@ -19,13 +19,13 @@ module RescueTimeApiHelper
     end
   end
 
-  def user_data_top_five(key)
+  def user_data_top_five key
     uri = URI("https://www.rescuetime.com/anapi/data?key=#{key}&format=json")
     response = Net::HTTP.get(uri)
     top_five = JSON.parse(response)['rows'][0..4]
   end
 
-  def top_five_hash_for_db(top_five_for_day)
+  def top_five_hash_for_db top_five_for_day
     data_to_save = {}
     top_five_for_day.each do |item|
       data_to_save["activity_#{item[0]}"] = item[3]
@@ -34,7 +34,7 @@ module RescueTimeApiHelper
     data_to_save
   end
 
-  def productivity_score(top_five_for_day)
+  def productivity_score top_five_for_day
     total = 0
     top_five_for_day.each do |item|
       total += item[1]*item[5]

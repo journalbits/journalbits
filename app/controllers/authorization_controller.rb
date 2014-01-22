@@ -2,6 +2,10 @@ require 'net/http'
 
 class AuthorizationController < ApplicationController
 
+  def index
+    
+  end
+
   def github
     client_id = ENV['GITHUB_CLIENT_ID']
     client_secret = ENV['GITHUB_CLIENT_SECRET']
@@ -11,17 +15,13 @@ class AuthorizationController < ApplicationController
     res = Net::HTTP.start(uri.host, uri.port,
       :use_ssl => uri.scheme == 'https') do |http|
       request = Net::HTTP::Post.new uri
-
+      
       response = http.request request
     end
     access_token = res.body.split("&")[0].split("=")[1]
     user = User.where(id: current_user.id).take
     user.update_attributes(github_access_token: access_token)
     redirect_to "/connections"
-  end
-
-  def index
-
   end
 
   def rescue_time

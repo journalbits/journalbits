@@ -8,7 +8,7 @@ module GithubApiHelper
     end
   end
 
-  def save_commits_to_database(commits, date, user)
+  def save_commits_to_database commits, date, user
     commits.each do |commit|
       unless GithubEntry.exists?(:sha => commit.sha)
         GithubEntry.create(sha: commit.sha, user_id: user.id, time_created: date, commit_message: commit.commit.message, committer: commit.commit.committer.name, commit_url: commit.commit.url)
@@ -16,7 +16,7 @@ module GithubApiHelper
     end
   end
 
-  def user_commits_on_day(user, date)
+  def user_commits_on_day user, date
     client = Octokit::Client.new :access_token => ENV['GITHUB_ACCESS_TOKEN']
     if user.github_access_token != nil
       client.access_token= user.github_access_token
