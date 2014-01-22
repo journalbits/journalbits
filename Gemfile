@@ -35,6 +35,7 @@ gem "koala", "~> 1.8.0rc1"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-fitbit'
 gem 'oauth2'
 gem 'rufus-scheduler'
 gem 'simple_oauth'

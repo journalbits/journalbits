@@ -131,6 +131,9 @@ GEM
       rack
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-fitbit (1.0.2)
+      multi_xml
+      omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -257,6 +260,7 @@ DEPENDENCIES
   octokit (~> 2.0)
   omniauth
   omniauth-facebook
+  omniauth-fitbit
   omniauth-twitter
   pg
   rails (= 4.0.0)

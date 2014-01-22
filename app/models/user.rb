@@ -17,9 +17,15 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     user = where(twitter_uid: auth.uid).first || check_for_non_twitter_login(auth)
-    user.twitter_oauth_token = auth.credentials.token
-    user.twitter_oauth_secret = auth.credentials.secret
-    user.save! if user.email != ""
+    if auth.provider == "twitter"
+      user.twitter_oauth_token = auth.credentials.token
+      user.twitter_oauth_secret = auth.credentials.secret
+      user.save! if user.email != ""
+    elsif auth.provider == "fitbit"
+      user.fitbit_oauth_token = auth.credentials.token
+      user.fitbit_oauth_secret = auth.credentials.secret
+      user.save! if user.email != ""
+    end
     user
   end
 
