@@ -10,11 +10,11 @@ module WunderlistApiHelper
         lists = user_lists user.wunderlist_token
         all_tasks = tasks_created_today + tasks_completed_today
         all_tasks.each do |task|
-          unless WunderlistEntry.exists?(task_id: task.id)
+          unless WunderlistEntry.exists?(task_id: task['id'])
             if task['completed_at']
-              WunderlistEntry.create(completed_at: task['completed_at'], time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task.id)
+              WunderlistEntry.create(completed_at: task['completed_at'], time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task['id'])
             else
-              WunderlistEntry.create(time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task.id)
+              WunderlistEntry.create(time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task['id'])
             end
           end
         end
