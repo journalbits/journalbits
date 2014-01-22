@@ -12,7 +12,7 @@ module RescueTimeApiHelper
         data_to_save["date"] = Time.now.to_s[0..9]
         data_to_save["created_at"] = Time.now
         data_to_save["user_id"] = user.id
-        unless RescueTimeEntry.exists?(date: Time.now.to_s[0..9])
+        unless RescueTimeEntry.exists?(date: Time.now.to_s[0..9], user_id: user.id)
           RescueTimeEntry.create(data_to_save)
         end
       end

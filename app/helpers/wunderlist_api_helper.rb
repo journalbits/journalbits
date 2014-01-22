@@ -8,15 +8,16 @@ module WunderlistApiHelper
         tasks_completed_today = user_tasks_completed Time.now, user.wunderlist_token
         tasks_created_today = user_tasks_created Time.now, user.wunderlist_token
         lists = user_lists user.wunderlist_token
-        tasks_created_today.each { |task| puts task }
-        tasks_completed_today.each { |task| puts task }
-        puts lists.inspect
-        # data_to_save["date"] = Time.now.to_s[0..9]
-        # data_to_save["created_at"] = Time.now
-        # data_to_save["user_id"] = user.id
-        # unless RescueTimeEntry.exists?(date: Time.now.to_s[0..9])
-        #   RescueTimeEntry.create(data_to_save)
-        # end
+        all_tasks = tasks_created_today + tasks_completed_today
+        all_tasks.each do |task|
+          unless WunderlistEntry.exists?(task_id: task.id)
+            if task['completed_at']
+              WunderlistEntry.create(completed_at: task['completed_at'], time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task.id)
+            else
+              WunderlistEntry.create(time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task.id)
+            end
+          end
+        end
       end
     end
   end
