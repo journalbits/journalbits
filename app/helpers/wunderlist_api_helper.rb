@@ -7,9 +7,10 @@ module WunderlistApiHelper
       if user.wunderlist_token
         tasks_completed_today = user_tasks_completed Time.now, user.wunderlist_token
         tasks_created_today = user_tasks_created Time.now, user.wunderlist_token
-
+        lists = user_lists user.wunderlist_token
         tasks_created_today.each { |task| puts task }
         tasks_completed_today.each { |task| puts task }
+        puts lists.inspect
         # data_to_save["date"] = Time.now.to_s[0..9]
         # data_to_save["created_at"] = Time.now
         # data_to_save["user_id"] = user.id
@@ -21,35 +22,24 @@ module WunderlistApiHelper
   end
 
   def user_lists token
-    uri = URI("https://api.wunderlist.com/me/lists")
-    req = Net::HTTP::Get.new uri
-    req.add_field "Authorization", "Bearer #{token}"
-    response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http| 
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      http.ssl_version = :SSLv3
-      http.request(req) 
-    end
-    lists_array = JSON.parse(response.body)
+    lists_array = api_request token, "lists"
     lists = {}
     lists_array.each { |list| lists["#{list['id']}"] = list['title'] }
     lists
   end
 
   def user_tasks_created date, token
-    uri = URI("https://api.wunderlist.com/me/tasks")
-    req = Net::HTTP::Get.new uri
-    req.add_field "Authorization", "Bearer #{token}"
-    response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http| 
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      http.ssl_version = :SSLv3
-      http.request(req) 
-    end
-    tasks = JSON.parse(response.body)
+    tasks = api_request token, "tasks"
     tasks.select { |task| task['created_at'][0..9] == date.to_s[0..9] }
   end
 
   def user_tasks_completed date, token
-    uri = URI("https://api.wunderlist.com/me/tasks")
+    tasks = api_request token, "tasks"
+    tasks.select { |task| task['completed_at'] && task['completed_at'][0..9] == date.to_s[0..9] }
+  end
+
+  def api_request token, type
+    uri = URI("https://api.wunderlist.com/me/#{type}")
     req = Net::HTTP::Get.new uri
     req.add_field "Authorization", "Bearer #{token}"
     response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http| 
@@ -57,8 +47,6 @@ module WunderlistApiHelper
       http.ssl_version = :SSLv3
       http.request(req) 
     end
-    tasks = JSON.parse(response.body)
-    tasks.select { |task| task['completed_at'] && task['completed_at'][0..9] == date.to_s[0..9] }
+    JSON.parse(response.body)
   end
-
 end
