@@ -29,7 +29,10 @@ module WunderlistApiHelper
       http.ssl_version = :SSLv3
       http.request(req) 
     end
-    lists = JSON.parse(response.body)
+    lists_array = JSON.parse(response.body)
+    lists = {}
+    lists_array.each { |list| lists["#{list['id']}"] = list['title'] }
+    lists
   end
 
   def user_tasks_created date, token

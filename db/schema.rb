@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121143911) do
+ActiveRecord::Schema.define(version: 20140122145851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,5 +82,16 @@ ActiveRecord::Schema.define(version: 20140121143911) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "wunderlist_entries", force: true do |t|
+    t.string   "completed_at"
+    t.string   "time_created"
+    t.string   "title"
+    t.string   "list"
+    t.integer  "user_id"
+    t.string   "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

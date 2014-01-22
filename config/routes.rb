@@ -1,5 +1,7 @@
 Catchr::Application.routes.draw do
 
+  resources :wunderlist_entries
+
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :users do  

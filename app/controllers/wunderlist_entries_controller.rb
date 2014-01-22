@@ -1,0 +1,2 @@
+class WunderlistEntriesController < ApplicationController
+end
