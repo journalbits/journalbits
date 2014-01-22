@@ -12,9 +12,16 @@ class UsersController < ApplicationController
     wunderlist_email = params['wunderlist_email']
     wunderlist_password = params['wunderlist_password']
     
-    uri = URI('https://api.wunderlist.com/login')
     payload = { email: "#{wunderlist_email}", password: "#{wunderlist_password}" }.to_json
+    response = wunderlist_login payload
 
+    wunderlist_token = JSON.parse(response.body)['token']
+    User.where(id: current_user.id).take.update_attributes(wunderlist_token: wunderlist_token)
+    redirect_to "/connections"
+  end
+
+  def wunderlist_login payload
+    uri = URI('https://api.wunderlist.com/login')
     req = Net::HTTP::Post.new uri
     req.body = payload
     req.add_field "Content-Type", "application/json"
@@ -24,10 +31,6 @@ class UsersController < ApplicationController
       http.ssl_version = :SSLv3
       http.request(req) 
     end
-
-    wunderlist_token = JSON.parse(response.body)['token']
-    User.where(id: current_user.id).take.update_attributes(wunderlist_token: wunderlist_token)
-    redirect_to "/connections"
   end
 
 end

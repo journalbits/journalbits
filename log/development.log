@@ -36842,3 +36842,150 @@ Processing by AuthorizationController#index as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
   Rendered authorization/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-22 12:51:36 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 50ms (Views: 6.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:37 +0000
+
+
+Started GET "/auth/wunderlist" for 127.0.0.1 at 2014-01-22 12:51:44 +0000
+Processing by AuthorizationController#wunderlist as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/wunderlist.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 104ms (Views: 54.3ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/auth/wunderlist" for 127.0.0.1 at 2014-01-22 12:51:53 +0000
+Processing by UsersController#wunderlist_update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msAfLvtVg/s1EBuGCsPIrPgS49Rea3ejvnielALWLvY=", "wunderlist_email"=>"hamchapman@gmail.com", "wunderlist_password"=>"[FILTERED]", "commit"=>"Connect"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "wunderlist_token" = $1, "updated_at" = $2 WHERE "users"."id" = 1[0m  [["wunderlist_token", "1c11bb5a1d59464caed085b6e31c03178bb52f5129f2fbcd96e62e0e19e18f80"], ["updated_at", Wed, 22 Jan 2014 12:51:53 UTC +00:00]]
+  [1m[35m (1.7ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/connections
+Completed 302 Found in 398ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-22 12:51:53 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-22 12:51:54 +0000
