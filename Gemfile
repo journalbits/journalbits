@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 gem 'fitgem'
-gem 'ruby-wunderlist'
 gem 'twitter'
 gem "octokit", "~> 2.0"
 gem "koala", "~> 1.8.0rc1"
@@ -57,7 +56,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'

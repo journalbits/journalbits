@@ -13,6 +13,9 @@ Catchr::Application.routes.draw do
   get 'auth/github' => 'authorization#github'
   get 'connections' => 'authorization#index'
   get 'auth/rescue_time' => 'authorization#rescue_time'
+  get 'auth/wunderlist' => 'authorization#wunderlist'
+  patch 'auth/wunderlist' => 'users#wunderlist_update'
+  patch 'auth/rescue_time' => 'users#rescue_time_update'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

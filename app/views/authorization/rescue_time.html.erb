@@ -1,4 +1,4 @@
-<%= form_for current_user do |f| %>
+<%= form_for current_user, url: "/auth/rescue_time" do |f| %>
   <%= f.label "Rescue Time API Key" %>
   <%= f.text_field :rescue_time_key %><br>
   <%= f.submit "Connect" %>

@@ -28,4 +28,8 @@ class AuthorizationController < ApplicationController
     
   end
 
+  def wunderlist
+
+  end
+
 end
