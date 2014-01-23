@@ -18,5 +18,5 @@ scheduler.every("30s") do
   # rescue_time_data
   # commits_on_user_repos_today
   # wunderlist_data
-  # fitbit_data
+  fitbit_data
 end 

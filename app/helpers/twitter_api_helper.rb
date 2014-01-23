@@ -26,7 +26,6 @@ module TwitterApiHelper
       favorited_today.each do |fav| 
         unless TwitterEntry.exists?(:tweet_id => fav.id)
           TwitterEntry.create(text: fav.text, kind: "favorite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, time_created: fav.created_at, tweet_url: tweet.url.to_s)
-          # puts fav.text 
         end
       end
     end
@@ -39,7 +38,6 @@ module TwitterApiHelper
       tweeted_today.each do |tweet| 
         unless TwitterEntry.exists?(:tweet_id => tweet.id)
           TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, time_created: tweet.created_at, tweet_url: tweet.url.to_s)
-          # puts tweet.text 
         end
       end
     end
@@ -52,7 +50,6 @@ module TwitterApiHelper
       mentioned_today.each do |mention| 
         unless TwitterEntry.exists?(:tweet_id => mention.id)
           TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, time_created: mention.created_at, tweet_url: tweet.url.to_s)
-          # puts mention.text 
         end
       end
     end
@@ -67,7 +64,6 @@ module TwitterApiHelper
       tweeted_on_date.each do |tweet| 
         unless TwitterEntry.exists?(:tweet_id => tweet.id)
           TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, time_created: tweet.created_at, tweet_url: tweet.url.to_s)
-          # puts tweet.text 
         end
       end
     end
