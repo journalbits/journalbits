@@ -37877,3 +37877,735 @@ Migrating to CreateFitbitWeightEntries (20140123160322)
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (2.9ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:30:16 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:30:16 UTC +00:00]]
   [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com'[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:36:43.387416' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:36:43 UTC +00:00], ["date", 2014-01-22 17:36:43 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:36:43 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:36:44.041384' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:36:44 UTC +00:00], ["date", 2014-01-22 17:36:44 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:36:44 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:36:44.504061' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:36:44 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:36:44 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-23 17:38:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 550ms (Views: 431.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:39 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-23 17:38:43 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/fitbit" for 127.0.0.1 at 2014-01-23 17:38:45 +0000
+
+
+Started GET "/users/auth/fitbit" for 127.0.0.1 at 2014-01-23 17:38:47 +0000
+
+
+Started GET "/users/auth/fitbit/callback?oauth_token=b07df993007f9d113716bd6db6d47501&oauth_verifier=e76raeoebpimj6f14hcd90pb6s" for 127.0.0.1 at 2014-01-23 17:38:50 +0000
+Processing by OmniauthCallbacksController#fitbit as HTML
+  Parameters: {"oauth_token"=>"b07df993007f9d113716bd6db6d47501", "oauth_verifier"=>"e76raeoebpimj6f14hcd90pb6s"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:51 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-23 17:38:54 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-23 17:38:54 +0000
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-01-23 17:38:55 +0000
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=B2tOKCOslYBOjMLpH2E7BVG5a3gdN1jEpL5ycR8ng&oauth_verifier=PoJ1HwJPRJLiil5wFc4TZ1ji6jeQGor0uT51BY0Yx4" for 127.0.0.1 at 2014-01-23 17:38:58 +0000
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"B2tOKCOslYBOjMLpH2E7BVG5a3gdN1jEpL5ycR8ng", "oauth_verifier"=>"PoJ1HwJPRJLiil5wFc4TZ1ji6jeQGor0uT51BY0Yx4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."twitter_uid" = '83189257' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:38:59 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:00 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:00 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:00 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:00 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:00 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-23 17:39:01 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:39:06.438266' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:39:06 UTC +00:00], ["date", 2014-01-22 17:39:06 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:39:06 UTC +00:00], ["user_id", 1]]
+  [1m[36m (112.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/auth/github?code=de4007ff83123b58412e&state=bubble" for 127.0.0.1 at 2014-01-23 17:39:07 +0000
+Processing by AuthorizationController#github as HTML
+  Parameters: {"code"=>"de4007ff83123b58412e", "state"=>"bubble"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:39:08.087596' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:39:08 UTC +00:00], ["date", 2014-01-22 17:39:08 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:39:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:39:08.564736' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:39:08 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:39:08 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/connections
+Completed 302 Found in 1480ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-23 17:39:08 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-23 17:39:09 +0000
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:39:36.601794' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:39:36 UTC +00:00], ["date", 2014-01-22 17:39:36 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:39:36 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:39:37.144695' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:39:37 UTC +00:00], ["date", 2014-01-22 17:39:37 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:39:37 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:39:37.604780' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:39:37 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:39:37 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:40:07.065811' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:40:07 UTC +00:00], ["date", 2014-01-22 17:40:07 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:40:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:40:07.597745' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:40:07 UTC +00:00], ["date", 2014-01-22 17:40:07 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:40:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:40:08.048998' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:40:08 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:40:08 UTC +00:00]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:40:38.794171' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:40:38 UTC +00:00], ["date", 2014-01-22 17:40:38 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:40:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:40:39.781795' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:40:39 UTC +00:00], ["date", 2014-01-22 17:40:39 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:40:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:40:40.627401' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:40:40 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:40:40 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:41:11.133819' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:41:11 UTC +00:00], ["date", 2014-01-22 17:41:11 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:41:11 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:41:11.760480' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:41:11 UTC +00:00], ["date", 2014-01-22 17:41:11 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:41:11 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:41:12.238162' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:41:12 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:41:12 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:41:36.967171' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:41:36 UTC +00:00], ["date", 2014-01-22 17:41:36 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:41:36 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:41:37.497308' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:41:37 UTC +00:00], ["date", 2014-01-22 17:41:37 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:41:37 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:41:37.950030' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:41:37 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:41:37 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:42:07.078386' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:42:07 UTC +00:00], ["date", 2014-01-22 17:42:07 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:42:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:42:07.664963' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:42:07 UTC +00:00], ["date", 2014-01-22 17:42:07 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:42:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:42:08.115685' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:42:08 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:42:08 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:42:37.766801' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:42:37 UTC +00:00], ["date", 2014-01-22 17:42:37 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:42:37 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:42:38.348151' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:42:38 UTC +00:00], ["date", 2014-01-22 17:42:38 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:42:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:42:38.834673' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:42:38 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:42:38 UTC +00:00]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:43:08.585498' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:43:08 UTC +00:00], ["date", 2014-01-22 17:43:08 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:43:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.3ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:43:09.671534' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:43:09 UTC +00:00], ["date", 2014-01-22 17:43:09 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:43:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:43:10.135719' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:43:10 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:43:10 UTC +00:00]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:43:39.981753' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:43:39 UTC +00:00], ["date", 2014-01-22 17:43:39 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:43:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:43:40.646544' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:43:40 UTC +00:00], ["date", 2014-01-22 17:43:40 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:43:40 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:43:41.275326' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:43:41 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:43:41 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:44:07.838790' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:44:07 UTC +00:00], ["date", 2014-01-22 17:44:07 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:44:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:44:09.406077' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:44:09 UTC +00:00], ["date", 2014-01-22 17:44:09 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:44:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:44:10.193042' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:44:10 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:44:10 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:44:37.617531' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:44:37 UTC +00:00], ["date", 2014-01-22 17:44:37 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:44:37 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:44:38.173198' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:44:38 UTC +00:00], ["date", 2014-01-22 17:44:38 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:44:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:44:38.594228' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:44:38 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:44:38 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:45:07.651875' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:45:07 UTC +00:00], ["date", 2014-01-22 17:45:07 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:45:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:45:08.186419' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:45:08 UTC +00:00], ["date", 2014-01-22 17:45:08 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:45:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:45:08.629085' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:45:08 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:45:08 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:45:37.781469' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:45:37 UTC +00:00], ["date", 2014-01-22 17:45:37 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:45:37 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:45:38.313920' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:45:38 UTC +00:00], ["date", 2014-01-22 17:45:38 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:45:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:45:38.783032' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:45:38 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:45:38 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:46:07.880246' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:46:07 UTC +00:00], ["date", 2014-01-22 17:46:07 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:46:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:46:08.978438' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:46:08 UTC +00:00], ["date", 2014-01-22 17:46:08 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:46:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:46:09.707587' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:46:09 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:46:09 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:46:37.988464' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:46:37 UTC +00:00], ["date", 2014-01-22 17:46:37 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:46:37 UTC +00:00], ["user_id", 1]]
+  [1m[36m (113.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:46:38.636578' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:46:38 UTC +00:00], ["date", 2014-01-22 17:46:38 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:46:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:46:39.114174' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:46:39 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:46:39 UTC +00:00]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:47:08.039130' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:47:08 UTC +00:00], ["date", 2014-01-22 17:47:08 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:47:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:47:08.608729' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:47:08 UTC +00:00], ["date", 2014-01-22 17:47:08 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:47:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:47:09.065329' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:47:09 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:47:09 UTC +00:00]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:47:38.109831' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:47:38 UTC +00:00], ["date", 2014-01-22 17:47:38 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:47:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:47:38.657106' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:47:38 UTC +00:00], ["date", 2014-01-22 17:47:38 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:47:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:47:39.114230' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:47:39 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:47:39 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:48:08.267066' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:48:08 UTC +00:00], ["date", 2014-01-22 17:48:08 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:48:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.4ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:48:08.849642' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:48:08 UTC +00:00], ["date", 2014-01-22 17:48:08 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:48:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:48:09.311733' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:48:09 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:48:09 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:48:38.324977' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:48:38 UTC +00:00], ["date", 2014-01-22 17:48:38 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:48:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:48:38.866176' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:48:38 UTC +00:00], ["date", 2014-01-22 17:48:38 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:48:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:48:39.360485' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:48:39 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:48:39 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:49:08.670904' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:49:08 UTC +00:00], ["date", 2014-01-22 17:49:08 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:49:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.4ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:49:09.249903' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:49:09 UTC +00:00], ["date", 2014-01-22 17:49:09 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:49:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:49:10.618675' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:49:10 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:49:10 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:49:38.561683' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:49:38 UTC +00:00], ["date", 2014-01-22 17:49:38 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:49:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:49:39.224307' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:49:39 UTC +00:00], ["date", 2014-01-22 17:49:39 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:49:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:49:39.721291' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:49:39 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:49:39 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:50:08.694301' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:50:08 UTC +00:00], ["date", 2014-01-22 17:50:08 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:50:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:50:09.259616' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:50:09 UTC +00:00], ["date", 2014-01-22 17:50:09 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:50:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:50:09.738840' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:50:09 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:50:09 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:50:38.875884' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:50:38 UTC +00:00], ["date", 2014-01-22 17:50:38 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:50:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:50:39.430896' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:50:39 UTC +00:00], ["date", 2014-01-22 17:50:39 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:50:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:50:39.935187' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:50:39 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:50:39 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:51:09.028688' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:51:09 UTC +00:00], ["date", 2014-01-22 17:51:09 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:51:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:51:09.573445' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:51:09 UTC +00:00], ["date", 2014-01-22 17:51:09 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:51:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:51:10.032789' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:51:10 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:51:10 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:51:38.963321' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:51:38 UTC +00:00], ["date", 2014-01-22 17:51:38 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:51:38 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:51:40.002047' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:51:40 UTC +00:00], ["date", 2014-01-22 17:51:40 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:51:40 UTC +00:00], ["user_id", 1]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.8ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:51:40.448209' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:51:40 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:51:40 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:52:09.072159' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:52:09 UTC +00:00], ["date", 2014-01-22 17:52:09 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:52:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:52:09.596029' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:52:09 UTC +00:00], ["date", 2014-01-22 17:52:09 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:52:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:52:10.047893' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:52:10 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:52:10 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:52:39.264115' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:52:39 UTC +00:00], ["date", 2014-01-22 17:52:39 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:52:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:52:39.786917' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:52:39 UTC +00:00], ["date", 2014-01-22 17:52:39 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:52:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:52:40.259716' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:52:40 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:52:40 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:53:09.941905' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:53:09 UTC +00:00], ["date", 2014-01-22 17:53:09 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:53:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:53:10.487914' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:53:10 UTC +00:00], ["date", 2014-01-22 17:53:10 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:53:10 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:53:11.016111' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:53:11 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:53:11 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:53:39.382871' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:53:39 UTC +00:00], ["date", 2014-01-22 17:53:39 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:53:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:53:43.838754' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:53:43 UTC +00:00], ["date", 2014-01-22 17:53:43 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:53:43 UTC +00:00], ["user_id", 1]]
+  [1m[36m (106.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:53:44.397274' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:53:44 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:53:44 UTC +00:00]]
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitSleepEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:54:10.698162' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:54:10 UTC +00:00], ["date", 2014-01-22 17:54:10 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:54:10 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitActivityEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:54:11.249916' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:54:11 UTC +00:00], ["date", 2014-01-22 17:54:11 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:54:11 UTC +00:00], ["user_id", 1]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mFitbitWeightEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:54:11.734462' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Thu, 23 Jan 2014 17:54:11 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:54:11 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-22 17:54:39.655027' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_sleep_entries" ("created_at", "date", "efficiency", "minutes_asleep", "minutes_awake", "minutes_to_fall_asleep", "start_time", "times_awake", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:54:39 UTC +00:00], ["date", 2014-01-22 17:54:39 +0000], ["efficiency", 90], ["minutes_asleep", 510], ["minutes_awake", 54], ["minutes_to_fall_asleep", 7], ["start_time", "2014-01-22T00:41:00.000"], ["times_awake", 21], ["updated_at", Thu, 23 Jan 2014 17:54:39 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitActivityEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-22 17:54:40.202089' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2304], ["created_at", Thu, 23 Jan 2014 17:54:40 UTC +00:00], ["date", 2014-01-22 17:54:40 +0000], ["distance", 1.57], ["steps", 3275], ["updated_at", Thu, 23 Jan 2014 17:54:40 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-22 17:54:40.652705' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", Thu, 23 Jan 2014 17:54:40 UTC +00:00], ["updated_at", Thu, 23 Jan 2014 17:54:40 UTC +00:00]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m

@@ -12,6 +12,14 @@ module FitbitApiHelper
     end
   end
 
+  def weight_test 
+    user = User.where(email: "hamchapman@gmail.com").first
+    client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'], consumer_secret: ENV['FITBIT_CONSUMER_SECRET'], oauth_token: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", oauth_secret: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } )
+    client.reconnect("#{user.fitbit_oauth_token}", "#{user.fitbit_oauth_secret}")
+    weight = user_weight_on "yesterday", client
+    puts weight[:weight]
+  end
+
   def save_entries_to_database date, client, user
     save_sleep_entries date, client, user
     save_activity_entries date, client, user
@@ -45,12 +53,13 @@ module FitbitApiHelper
   def save_activity_entries date, client, user
     activity_data = user_activity_on date, client
     unless FitbitActivityEntry.exists?(date: (Time.now - 1.day), user_id: user.id)
-      FitbitActivityEntry.create(calories: activity_data[:calories], distance: activity_data[:distance], steps: activity_data[:steps], active_minutes: activity_data[:active_minutes])
+      FitbitActivityEntry.create(calories: activity_data[:calories], distance: activity_data[:distance], steps: activity_data[:steps], active_minutes: activity_data[:active_minutes], date: (Time.now - 1.day), user_id: user.id)
     end
   end
 
   def save_weight_entries date, client, user
     weight_data = user_weight_on date, client
+    # if weight_data[:weight] 
     unless FitbitWeightEntry.exists?(date: (Time.now - 1.day), user_id: user.id)
       FitbitWeightEntry.create(weight: weight_data[:weight], weight_unit: weight_data[:weight_unit])
     end
