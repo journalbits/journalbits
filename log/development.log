@@ -37701,3 +37701,135 @@ Migrating to CreateFitbitSleepEntries (20140123154024)
   [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123154024"]]
   [1m[36m (112.8ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-23 15:45:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (7.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 511ms (Views: 397.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-23 15:45:14 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-23 15:45:16 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/fitbit" for 127.0.0.1 at 2014-01-23 15:45:23 +0000
+
+
+Started GET "/users/auth/fitbit" for 127.0.0.1 at 2014-01-23 15:45:24 +0000
+
+
+Started GET "/users/auth/fitbit/callback?oauth_token=75c638a54fe765167c6bde3d6e8bb843&oauth_verifier=qg5lfj7fug9sqgqibuedka645e" for 127.0.0.1 at 2014-01-23 15:45:27 +0000
+Processing by OmniauthCallbacksController#fitbit as HTML
+  Parameters: {"oauth_token"=>"75c638a54fe765167c6bde3d6e8bb843", "oauth_verifier"=>"qg5lfj7fug9sqgqibuedka645e"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-23 15:45:29 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 48ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-23 15:45:39 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 1.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFitbitActivityEntries (20140123155517)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "fitbit_activity_entries" ("id" serial primary key, "user_id" integer, "date" character varying(255), "calories" integer, "distance" float, "steps" integer, "active_minutes" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123155517"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

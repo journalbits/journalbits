@@ -1,5 +1,7 @@
 Catchr::Application.routes.draw do
 
+  resources :fitbit_activity_entries
+
   resources :fitbit_sleep_entries
 
   resources :wunderlist_entries

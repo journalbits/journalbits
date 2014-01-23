@@ -1,0 +1,2 @@
+class FitbitActivityEntriesController < ApplicationController
+end
