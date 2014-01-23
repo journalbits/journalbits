@@ -5,6 +5,7 @@ include TwitterApiHelper
 include RescueTimeApiHelper
 include GithubApiHelper
 include WunderlistApiHelper
+include FitbitApiHelper
 
 scheduler = Rufus::Scheduler.new
 
@@ -12,9 +13,10 @@ scheduler = Rufus::Scheduler.new
 
 # end 
 
-scheduler.every("1m") do
+scheduler.every("30s") do
   # twitter_data
   # rescue_time_data
   # commits_on_user_repos_today
   # wunderlist_data
+  fitbit_data
 end 
