@@ -1,5 +1,7 @@
 Catchr::Application.routes.draw do
 
+  resources :fitbit_weight_entries
+
   resources :fitbit_activity_entries
 
   resources :fitbit_sleep_entries
