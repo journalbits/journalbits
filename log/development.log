@@ -37693,3 +37693,11 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:09:24
   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFitbitSleepEntries (20140123154024)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (33.7ms)[0m  [1mCREATE TABLE "fitbit_sleep_entries" ("id" serial primary key, "minutes_asleep" integer, "minutes_awake" integer, "minutes_to_fall_asleep" integer, "efficiency" integer, "times_awake" integer, "start_time" character varying(255), "user_id" integer, "date" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123154024"]]
+  [1m[36m (112.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

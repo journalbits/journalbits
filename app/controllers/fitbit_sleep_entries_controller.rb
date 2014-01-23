@@ -1,0 +1,2 @@
+class FitbitSleepEntriesController < ApplicationController
+end

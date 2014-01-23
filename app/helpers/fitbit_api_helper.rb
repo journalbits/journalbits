@@ -3,13 +3,12 @@ require "net/https"
 module FitbitApiHelper
 
   def fitbit_data
-    client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'], consumer_secret: ENV['FITBIT_CONSUMER_SECRET'], oauth_token: "afe0877ee562867851776fe25f9150c9", oauth_secret: "a7ed49ea8d33eb4a59533fafe9b76ae5" } )
+    client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'], consumer_secret: ENV['FITBIT_CONSUMER_SECRET'], oauth_token: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", oauth_secret: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } )
     User.all.each do |user|
       if user.fitbit_oauth_token
         client.reconnect("#{user.fitbit_oauth_token}", "#{user.fitbit_oauth_secret}")
+        
         puts user_sleep_on "yesterday", client
-        puts user_weight_on "yesterday", client
-        puts user_activity_on "yesterday", client
       end
     end
   end

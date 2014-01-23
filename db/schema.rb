@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122160218) do
+ActiveRecord::Schema.define(version: 20140123154024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fitbit_sleep_entries", force: true do |t|
+    t.integer  "minutes_asleep"
+    t.integer  "minutes_awake"
+    t.integer  "minutes_to_fall_asleep"
+    t.integer  "efficiency"
+    t.integer  "times_awake"
+    t.string   "start_time"
+    t.integer  "user_id"
+    t.string   "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "github_entries", force: true do |t|
     t.integer  "user_id"
