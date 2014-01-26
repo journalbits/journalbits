@@ -39464,3 +39464,10 @@ RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=fals
   Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
   Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
   Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPocketOmniauthInfoToUser (20140126145620)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (6.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "pocket_oauth_token" character varying(255)[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140126145620"]]
+  [1m[36m (100.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

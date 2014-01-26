@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123160322) do
+ActiveRecord::Schema.define(version: 20140126145620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 20140123160322) do
     t.string   "wunderlist_token"
     t.string   "fitbit_oauth_token"
     t.string   "fitbit_oauth_secret"
+    t.string   "pocket_oauth_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
