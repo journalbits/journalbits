@@ -1,19 +1,15 @@
 JournalBits::Application.routes.draw do
 
-  resources :fitbit_weight_entries
-
-  resources :fitbit_activity_entries
-
-  resources :fitbit_sleep_entries
-
-  resources :wunderlist_entries
-
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :users do  
     resources :twitter_entries
     resources :rescue_time_entries
     resources :github_entries
+    resources :fitbit_weight_entries
+    resources :fitbit_activity_entries
+    resources :fitbit_sleep_entries
+    resources :wunderlist_entries
   end
   
   root :to => "home#index"

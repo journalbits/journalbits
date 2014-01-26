@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
       user.fitbit_oauth_token = auth.credentials.token
       user.fitbit_oauth_secret = auth.credentials.secret
       user.save! if user.email != ""
+    elsif auth.provider == "pocket"
+      user = current_user
+      
     end
     user
   end
