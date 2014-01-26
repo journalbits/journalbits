@@ -28,7 +28,8 @@ class User < ActiveRecord::Base
       user.save! if user.email != ""
     elsif auth.provider == "pocket"
       user = current_user
-      
+      user.pocket_oauth_token = auth.credentials.token
+      user.save! if user.email != ""
     end
     user
   end
