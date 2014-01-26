@@ -1,4 +1,4 @@
-Catchr::Application.routes.draw do
+JournalBits::Application.routes.draw do
 
   resources :fitbit_weight_entries
 

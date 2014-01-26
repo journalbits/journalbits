@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Catchr::Application.config.secret_key_base = '126921f06c7eb791ef440bf03c6930b35cd890c66a0c70a07a046faa90b8166f273347191ca602d3553e1e8115fb726cd48abd4e797e59f1593560c1497629f7'
+JournalBits::Application.config.secret_key_base = '126921f06c7eb791ef440bf03c6930b35cd890c66a0c70a07a046faa90b8166f273347191ca602d3553e1e8115fb726cd48abd4e797e59f1593560c1497629f7'

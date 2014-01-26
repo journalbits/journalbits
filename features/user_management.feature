@@ -1,5 +1,5 @@
 Feature: User management
-  In order to view catchr data
+  In order to view Journal Bits data
   As a person who loves myself
   I want to be able to manage my account
 
