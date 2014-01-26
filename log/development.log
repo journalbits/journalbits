@@ -39711,3 +39711,442 @@ Migrating to CreatePocketEntries (20140126220843)
   [1m[35mPocketEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 531256042 LIMIT 1
   [1m[36mPocketEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 530394564 LIMIT 1[0m
   [1m[35mPocketEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 531014043 LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:47:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 582ms (Views: 479.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:47:44 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 22:47:45 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 22:47:48 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/rdio" for 127.0.0.1 at 2014-01-26 22:47:49 +0000
+
+
+Started GET "/users/auth/rdio" for 127.0.0.1 at 2014-01-26 22:47:50 +0000
+
+
+Started GET "/users/auth/rdio/callback?oauth_verifier=9156&oauth_token=e2pskh5d37pqnt7fpgx5t4xx" for 127.0.0.1 at 2014-01-26 22:47:57 +0000
+
+AbstractController::ActionNotFound (The action 'rdio' could not be found for OmniauthCallbacksController):
+  actionpack (4.0.0) lib/abstract_controller/base.rb:131:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:401:in `call_app!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:363:in `callback_phase'
+  omniauth-oauth (1.0.1) lib/omniauth/strategies/oauth.rb:58:in `callback_phase'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:226:in `callback_call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:182:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__4244788866089438165__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 141ms (Views: 8.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:18 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 22:48:19 +0000
+
+
+Started GET "/users/auth/rdio" for 127.0.0.1 at 2014-01-26 22:48:20 +0000
+
+
+Started GET "/users/auth/rdio" for 127.0.0.1 at 2014-01-26 22:48:21 +0000
+
+
+Started GET "/users/auth/rdio/callback?oauth_verifier=8482&oauth_token=v3vyyw2qupefrg25ab32qayz" for 127.0.0.1 at 2014-01-26 22:48:26 +0000
+Processing by OmniauthCallbacksController#rdio as HTML
+  Parameters: {"oauth_verifier"=>"8482", "oauth_token"=>"v3vyyw2qupefrg25ab32qayz"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 5ms
+
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash secret="7CuQ2vybVvMP" token="2ck7qzp7y54nm4h5a6gpnbuhaj5hp4e3gudeegkdf8ydkbnv5j9g9x387s8fdsjf"> extra=#<OmniAuth::AuthHash access_token=#<OAuth::AccessToken:0x007f9596a49e70 @token="2ck7qzp7y54nm4h5a6gpnbuhaj5hp4e3gudeegkdf8ydkbnv5j9g9x387s8fdsjf", @secret="7CuQ2vybVvMP", @consumer=#<OAuth::Consumer:0x007f9591a4f528 @key="m8adm5qpun43qsnvuv7jpqww", @secret="aD9CvhDY8Q", @options={:signature_method=>"HMAC-SHA1", :request_token_path=>"/oauth/request_token", :authorize_path=>"/oauth/authorize", :access_token_path=>"/oauth/access_token", :proxy=>nil, :scheme=>:header, :http_method=>:post, :oauth_version=>"1.0", :site=>"http://api.rdio.com", :authorize_url=>"https://www.rdio.com/oauth/authorize"}, @http=#<Net::HTTP api.rdio.com:80 open=false>, @http_method=:post, @uri=#<URI::HTTP:0x007f9596a496f0 URL:http://api.rdio.com>>, @params={:oauth_token=>"2ck7qzp7y54nm4h5a6gpnbuhaj5hp4e3gudeegkdf8ydkbnv5j9g9x387s8fdsjf", "oauth_token"=>"2ck7qzp7y54nm4h5a6gpnbuhaj5hp4e3gudeegkdf8ydkbnv5j9g9x387s8fdsjf", :oauth_token_secret=>"7CuQ2vybVvMP", "oauth_token_secret"=>"7CuQ2vybVvMP"}, @response=#<Net::HTTPOK 200 OK readbody=true>> raw_info=#<OmniAuth::AuthHash albumCount=2871 artistCount=1042 baseIcon="user/no-user-image-square.jpg" collectionKey="c5165612" collectionUrl="/people/hamchapman/collection/" displayName="Hamilton Chapman" firstName="Hamilton" followersUrl="/people/hamchapman/people/followers/" followingUrl="/people/hamchapman/people/following/" gender="m" heavyRotationKey="e5165612" icon="http://rdio-d.cdn3.rdio.com/user/no-user-image-square.jpg" icon250="http://rdio-d.cdn3.rdio.com/user/no-user-image-square.jpg" icon500="http://rdio-d.cdn3.rdio.com/user/no-user-image-square.jpg" isProtected=nil isSubscriber=true isTrial=false isUnlimited=true key="s5165612" lastName="Chapman" libraryVersion=598 networkHeavyRotationKey="h5165612" playlistsUrl="/people/hamchapman/playlists/" trackCount=18465 type="s" url="/people/hamchapman/" username="hamchapman">> info=#<OmniAuth::AuthHash::InfoHash first_name="Hamilton" image="http://rdio-d.cdn3.rdio.com/user/no-user-image-square.jpg" last_name="Chapman" name="Hamilton Chapman" nickname="hamchapman" urls=#<OmniAuth::AuthHash Collection="http://www.rdio.com/people/hamchapman/collection/" Followers="http://www.rdio.com/people/hamchapman/people/followers/" Following="http://www.rdio.com/people/hamchapman/people/following/" Playlists="http://www.rdio.com/people/hamchapman/playlists/" User="http://www.rdio.com/people/hamchapman/">> provider="rdio" uid="s5165612">):
+  app/models/user.rb:35:in `from_omniauth'
+  app/controllers/omniauth_callbacks_controller.rb:4:in `all'
+
+
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/users/auth/rdio/callback?oauth_verifier=8482&oauth_token=v3vyyw2qupefrg25ab32qayz" for 127.0.0.1 at 2014-01-26 22:49:15 +0000
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"oauth_verifier"=>"8482", "oauth_token"=>"v3vyyw2qupefrg25ab32qayz"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://0.0.0.0:3000/users/sign_in
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:17 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 22:49:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRdioOauthInfoToUser (20140126225022)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "rdio_oauth_token" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "rdio_oauth_secret" character varying(255)
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140126225022"]]
+  [1m[35m (108.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

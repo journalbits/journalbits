@@ -30,6 +30,12 @@ class User < ActiveRecord::Base
       user = current_user
       user.pocket_oauth_token = auth.credentials.token
       user.save! if user.email != ""
+    elsif auth.provider == "rdio"
+      user = current_user
+      raise auth.inspect
+      # user.rdio_oauth_token = auth.credentials.token
+      # user.rdio_oauth_secret = auth.credentials.secret
+      # user.save! if user.email != ""
     end
     user
   end
