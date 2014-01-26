@@ -143,6 +143,8 @@ GEM
     omniauth-pocket (0.1.0)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
+    omniauth-rdio (0.1.0)
+      omniauth-oauth (~> 1.0)
     omniauth-twitter (1.0.1)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
@@ -265,6 +267,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-fitbit
   omniauth-pocket
+  omniauth-rdio
   omniauth-twitter
   pg
   rails (= 4.0.0)

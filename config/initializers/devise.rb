@@ -232,6 +232,7 @@ Devise.setup do |config|
   config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
   config.omniauth :fitbit, ENV["FITBIT_CONSUMER_KEY"], ENV["FITBIT_CONSUMER_SECRET"]
   config.omniauth :pocket, ENV["POCKET_CONSUMER_KEY"]
+  config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
   
 
 
