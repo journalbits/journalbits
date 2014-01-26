@@ -39678,3 +39678,36 @@ Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 1
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 15:00:00 +0000
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePocketEntries (20140126220843)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (45.0ms)[0m  [1mCREATE TABLE "pocket_entries" ("id" serial primary key, "user_id" integer, "date" character varying(255), "url" character varying(255), "title" character varying(255), "item_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140126220843"]]
+  [1m[36m (115.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mPocketEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 531256042 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.4ms)[0m  INSERT INTO "pocket_entries" ("created_at", "date", "item_id", "title", "updated_at", "url", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Sun, 26 Jan 2014 22:26:56 UTC +00:00], ["date", 1390608000], ["item_id", 531256042], ["title", "Making GIFs From Video Files With Python"], ["updated_at", Sun, 26 Jan 2014 22:26:56 UTC +00:00], ["url", "http://zulko.github.io/blog/2014/01/23/making-animated-gifs-from-video-files-with-python/#"], ["user_id", 1]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mPocketEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 530394564 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pocket_entries" ("created_at", "date", "item_id", "title", "updated_at", "url", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Sun, 26 Jan 2014 22:26:56 UTC +00:00], ["date", 1390608000], ["item_id", 530394564], ["title", "Netflix Is Going to Rule TV After All"], ["updated_at", Sun, 26 Jan 2014 22:26:56 UTC +00:00], ["url", "http://www.wired.com/business/2014/01/turns-netflix-going-rule-tv"], ["user_id", 1]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mPocketEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 531014043 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pocket_entries" ("created_at", "date", "item_id", "title", "updated_at", "url", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Sun, 26 Jan 2014 22:26:56 UTC +00:00], ["date", 1390608000], ["item_id", 531014043], ["title", "Study: Believing You’ve Slept Well, Even if You Haven’t, Improves Performance"], ["updated_at", Sun, 26 Jan 2014 22:26:56 UTC +00:00], ["url", "http://www.theatlantic.com/health/archive/2014/01/study-believing-you-ve-slept-well-even-if-you-haven-t-improves-performance/283305/"], ["user_id", 1]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mPocketEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 531256042 LIMIT 1
+  [1m[36mPocketEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 530394564 LIMIT 1[0m
+  [1m[35mPocketEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "pocket_entries" WHERE "pocket_entries"."item_id" = 531014043 LIMIT 1
