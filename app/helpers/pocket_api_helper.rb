@@ -23,4 +23,13 @@ module PocketApiHelper
     JSON.parse(response.body)['list']
   end
 
+  def save_links date, user
+    links = user_added_links_on date, user
+    links.each do |link|
+      unless PocketEntry.exists?(item_id: link[1]['item_id'])
+        PocketEntry.create(date: Date.yesterday.to_time.to_i, user_id: user.id, item_id: link[1]['item_id'], title: link[1]['resolved_title'], url: link[1]['given_url'] )
+      end
+    end
+  end
+
 end
