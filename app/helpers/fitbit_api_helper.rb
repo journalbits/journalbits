@@ -7,7 +7,7 @@ module FitbitApiHelper
     User.all.each do |user|
       if user.fitbit_oauth_token
         client.reconnect("#{user.fitbit_oauth_token}", "#{user.fitbit_oauth_secret}")
-        save_entries_to_database "yesterday", client, user
+        save_entries_to_database (Time.now - 1.day), client, user
       end
     end
   end
@@ -16,7 +16,7 @@ module FitbitApiHelper
     user = User.where(email: "hamchapman@gmail.com").first
     client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'], consumer_secret: ENV['FITBIT_CONSUMER_SECRET'], oauth_token: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", oauth_secret: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } )
     client.reconnect("#{user.fitbit_oauth_token}", "#{user.fitbit_oauth_secret}")
-    weight = user_weight_on "yesterday", client
+    weight = user_weight_on (Time.now - 1.day), client
     puts weight[:weight]
   end
 
@@ -45,28 +45,25 @@ module FitbitApiHelper
 
   def save_sleep_entries date, client, user
     sleep_data = user_sleep_on date, client
-    unless FitbitSleepEntry.exists?(date: (Time.now - 1.day), user_id: user.id)
-      FitbitSleepEntry.create(minutes_asleep: sleep_data[:minutes_asleep], minutes_awake: sleep_data[:minutes_awake], minutes_to_fall_asleep: sleep_data[:minutes_to_fall_asleep], efficiency: sleep_data[:efficiency], times_awake: sleep_data[:times_awake], start_time: sleep_data[:sleep_start_time], date: (Time.now - 1.day), user_id: user.id)
+    unless FitbitSleepEntry.exists?(date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
+      FitbitSleepEntry.create(minutes_asleep: sleep_data[:minutes_asleep], minutes_awake: sleep_data[:minutes_awake], minutes_to_fall_asleep: sleep_data[:minutes_to_fall_asleep], efficiency: sleep_data[:efficiency], times_awake: sleep_data[:times_awake], start_time: sleep_data[:sleep_start_time], date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
     end
   end
 
   def save_activity_entries date, client, user
     activity_data = user_activity_on date, client
-    unless FitbitActivityEntry.exists?(date: (Time.now - 1.day), user_id: user.id)
-      FitbitActivityEntry.create(calories: activity_data[:calories], distance: activity_data[:distance], steps: activity_data[:steps], active_minutes: activity_data[:active_minutes], date: (Time.now - 1.day), user_id: user.id)
+    unless FitbitActivityEntry.exists?(date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
+      FitbitActivityEntry.create(calories: activity_data[:calories], distance: activity_data[:distance], steps: activity_data[:steps], active_minutes: activity_data[:active_minutes], date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
     end
   end
 
   def save_weight_entries date, client, user
     weight_data = user_weight_on date, client
-    # if weight_data[:weight] 
-    unless FitbitWeightEntry.exists?(date: (Time.now - 1.day), user_id: user.id)
-      FitbitWeightEntry.create(weight: weight_data[:weight], weight_unit: weight_data[:weight_unit])
+    unless FitbitWeightEntry.exists?(date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
+      FitbitWeightEntry.create(weight: weight_data[:weight], weight_unit: weight_data[:weight_unit], date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
     end
   end
 
 end
 
 # 0.071429 * lbs = stone
-
-
