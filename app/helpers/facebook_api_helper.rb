@@ -11,6 +11,15 @@ module FacebookApiHelper
     end
   end
 
+  def save_photos date, client, user
+    photos = user_photos_on date, client, user
+    photos.each do |photo|
+      unless FacebookPhotoEntry.exists?(user_id: user.id, photo_id: photo['id'])
+        FacebookPhotoEntry.create(user_id: user.id, time_created: date, photo_id: photo['id'], source_url: photo['source'], link_url: photo['link'], medium_url: photo['images'][photo['images'].count / 2])
+      end
+    end
+  end
+
   def user_photos_on date, client, user
     photos = client.get_connections("me", "photos")
     photos.select { |photo| photo['created_time'][0..9] == date.to_s[0..9] }
@@ -21,13 +30,6 @@ module FacebookApiHelper
   #   photos_on_date = photos.select { |photo| photo['created_time'][0..9] == date.to_s[0..9] }
   # end
 
-  def save_photos date, client, user
-    photos = user_photos_on date, client, user
-    photos.each do |photo|
-      unless FacebookPhotoEntry.exists?(photo_id: photo['id'])
-        FacebookPhotoEntry.create()
-      end
-    end
-  end
+  
 
 end
