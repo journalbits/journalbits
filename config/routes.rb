@@ -1,5 +1,7 @@
 JournalBits::Application.routes.draw do
 
+  resources :facebook_photo_entries
+
   resources :pocket_entries
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
