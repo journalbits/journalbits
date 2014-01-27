@@ -14,8 +14,8 @@ module FacebookApiHelper
   def save_photos_on date, client, user
     photos = user_photos_on date, client, user
     photos.each do |photo|
-      unless FacebookPhotoEntry.exists?(user_id: user.id, photo_id: photo['id'])
-        FacebookPhotoEntry.create(user_id: user.id, time_created: date.to_s, photo_id: photo['id'], source_url: photo['source'], link_url: photo['link'], medium_url: photo['images'][photo['images'].count / 2]['source'])
+      unless FacebookPhotoEntry.exists?(user_id: user.id, photo_id: photo['id'].to_s)
+        FacebookPhotoEntry.create(user_id: user.id, time_created: date.to_s, photo_id: photo['id'].to_s, source_url: photo['source'], link_url: photo['link'], medium_url: photo['images'][photo['images'].count / 2]['source'])
       end
     end
   end
