@@ -1,0 +1,71 @@
+============================= PHOTOS ==================================
+
+
+
+
+
+{"id"=>"10153231358565527", 
+"from"=>{"name"=>"Simon Dorber", "id"=>"682095526"}, 
+"picture"=>"https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-prn2/t1/1239508_10153231358565527_1262120023_s.jpg", 
+"source"=>"https://scontent-b.xx.fbcdn.net/hphotos-prn2/t1/s720x720/1239508_10153231358565527_1262120023_n.jpg", "height"=>540, "width"=>720, 
+
+"images"=>[{"height"=>720, "width"=>960, "source"=>"https://scontent-b.xx.fbcdn.net/hphotos-prn2/t1/1239508_10153231358565527_1262120023_n.jpg"}, {"height"=>540, "width"=>720, "source"=>"https://scontent-b.xx.fbcdn.net/hphotos-prn2/t1/q72/s720x720/1239508_10153231358565527_1262120023_n.jpg"}, {"height"=>450, "width"=>600, "source"=>"https://scontent-b.xx.fbcdn.net/hphotos-prn2/t1/s600x600/1239508_10153231358565527_1262120023_n.jpg"}, {"height"=>360, "width"=>480, "source"=>"https://scontent-b.xx.fbcdn.net/hphotos-prn2/t1/q71/s480x480/1239508_10153231358565527_1262120023_n.jpg"}, {"height"=>240, "width"=>320, "source"=>"https://scontent-b.xx.fbcdn.net/hphotos-prn2/t1/q74/s320x320/1239508_10153231358565527_1262120023_n.jpg"}, {"height"=>135, "width"=>180, "source"=>"https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-prn2/t1/1239508_10153231358565527_1262120023_a.jpg"}, {"height"=>97, "width"=>130, "source"=>"https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-prn2/t1/1239508_10153231358565527_1262120023_s.jpg"}, {"height"=>97, "width"=>130, "source"=>"https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-prn2/t1/s75x225/1239508_10153231358565527_1262120023_s.jpg"}], "link"=>"https://www.facebook.com/photo.php?fbid=10153231358565527&set=p.10153231358565527&type=1", "icon"=>"https://fbstatic-a.akamaihd.net/rsrc.php/v2/yz/r/StEh3RhPvjk.gif", 
+
+"created_time"=>"2013-09-12T15:38:08+0000", 
+
+"updated_time"=>"2013-09-12T15:43:06+0000", "tags"=>{"data"=>[{"id"=>"1618500013", "name"=>"Charlotte Pfister", "created_time"=>"2013-09-12T15:42:54+0000", "x"=>44.137931034483, "y"=>31.651376146789}, {"id"=>"1056183713", "name"=>"Catriona Town", "created_time"=>"2013-09-12T15:42:54+0000", "x"=>53.965517241379, "y"=>44.266055045872}
+
+
+
+
+
+
+============================= VIDEOS ==================================
+
+
+
+{"id"=>"1867882462650", 
+"from"=>{"name"=>"Farrah Kelly", "id"=>"1408712970"}, 
+"tags"=>{"data"=>[{"id"=>"765881317", "name"=>"Lauren Tabbron", 
+"created_time"=>"2011-03-05T16:40:24+0000"}, 
+
+{"id"=>"673569463", "name"=>"Adam Barke", "created_time"=>"2011-03-05T16:40:24+0000"}, {"id"=>"513380153", "name"=>"Hamilton Chapman", "created_time"=>"2011-03-05T16:40:24+0000"}]}, "name"=>"A-dawg v. Freezer.", "picture"=>"https://fbcdn-vthumb-a.akamaihd.net/hvthumb-ak-ash3/t15/51384_1867884302696_1867882462650_3874_1389_t.jpg", "embed_html"=>"<iframe src=\"https://www.facebook.com/video/embed?video_id=1867882462650\" width=\"320\" height=\"240\" frameborder=\"0\"></iframe>", "icon"=>"https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/DggDhA4z4tO.gif", 
+
+"source"=>"https://scontent.xx.fbcdn.net/hvideo-prn2/v/t42/1256003_10201701856614035_25362_n.mp4?oh=3ae8f749bab4f535ed68874749a7ca86&oe=52E86C12", "created_time"=>"2011-03-05T16:39:44+0000", "updated_time"=>"2011-03-05T16:39:44+0000", 
+
+"format"=>[{"embed_html"=>"<iframe src=\"https://www.facebook.com/video/embed?video_id=1867882462650\" width=\"130\" height=\"98\" frameborder=\"0\"></iframe>", "width"=>130, "height"=>98, "filter"=>"130x130", "picture"=>"https://fbcdn-vthumb-a.akamaihd.net/hvthumb-ak-ash3/t15/s130x130/51384_1867884302696_1867882462650_3874_1389_t.jpg"}, {"embed_html"=>"<iframe src=\"https://www.facebook.com/video/embed?video_id=1867882462650\" width=\"320\" height=\"240\" frameborder=\"0\"></iframe>", "width"=>320, "height"=>240, "filter"=>"native", "picture"=>"https://fbcdn-vthumb-a.akamaihd.net/hvthumb-ak-ash3/t15/51384_1867884302696_1867882462650_3874_1389_b.jpg"}], "comments"=>{"data"=>[{"id"=>"1867882462650_1417786", "from"=>{"name"=>"Farrah Kelly", "id"=>"1408712970"}, "message"=>"love it.", "can_remove"=>false, "created_time"=>"2011-03-05T16:41:28+0000", "like_count"=>0, "user_likes"=>false}, {"id"=>"1867882462650_1418202", "from"=>{"name"=>"Chloe Grey", "id"=>"901145789"}, "message"=>"Did he ever open it? :) x", "can_remove"=>false, "created_time"=>"2011-03-05T17:45:06+0000", "like_count"=>0, "user_likes"=>false}
+
+
+
+
+
+============================= STATUSES ==================================
+
+
+
+{"id"=>"10152473761640154", 
+
+"from"=>{"name"=>"Hamilton Chapman", "id"=>"513380153"}, 
+
+"message"=>"i like to try and put as much snow up my bum as possible", 
+
+"updated_time"=>"2013-01-26T16:57:02+0000", "comments"=>{"data"=>[{"id"=>"10152473761640154_38911099", 
+
+"from"=>{"name"=>"Radosław Kalisz", "id"=>"100001125605551"}, "message"=>"Do it like a boss.", "can_remove"=>true, 
+
+"created_time"=>"2013-01-26T18:23:47+0000", "like_count"=>0, "user_likes"=>false}], "paging"=>{"cursors"=>{"after"=>"MQ==", "before"=>"MQ=="}}}}
+
+
+
+
+
+============================= CHECKINS ==================================
+
+
+
+
+{"id"=>"2891453924288", "from"=>{"name"=>"Myles Alexander Swindlehurst", "id"=>"1198458222"}, 
+
+"message"=>"Having a banterous Christmas Meal.", "place"=>{"id"=>"139375056107037", "name"=>"Wetherspoons", "location"=>{"street"=>"90 Piccadilly ", "city"=>"York", "state"=>"", "country"=>"United Kingdom", "zip"=>"YO1 9NX", "latitude"=>53.954643350504, "longitude"=>-1.0772837865139}}, "application"=>{"name"=>"BlackBerry Smartphones App", "id"=>"2254487659"}, 
+
+"created_time"=>"2011-12-11T18:59:21+0000", "likes"=>{"data"=>[{"id"=>"765881317", "name"=>"Lauren Tabbron"}], "paging"=>{"cursors"=>{"after"=>"NzY1ODgxMzE3", "before"=>"NzY1ODgxMzE3"}}}, "tags"=>{"data"=>[{"id"=>"1618500013", "name"=>"Charlotte Pfister"}, {"id"=>"1408712970", "name"=>"Farrah Kelly"}, {"id"=>"1221230013", "name"=>"Joanne Rebecca"}, {"id"=>"1078159709", "name"=>"Phil Scott"}, {"id"=>"765881317", "name"=>"Lauren Tabbron"}, {"id"=>"673569463", "name"=>"Adam Barke"}, {"id"=>"604066915", "name"=>"Lily Stoker"}, {"id"=>"513380153", "name"=>"Hamilton Chapman"}], "paging"=>{"next"=>"https://graph.facebook.com/2891453924288/tags?access_token=CAAK94bOoMBQBAChZC12WW7Ni3oHcu5xUZAj3agBVy8TdlHPYcwlZCEqQR6vzpHnNB0c1WLgn0pBoKjyVzSMMJmF189Cdo7yZCZACIZBwYjGSGrBtT43w6Pi0WRuAK53A6FwowqxRvsZBrSEvWGkfQbI6xW6ZB9r9r2wHK1aeR7SZA3LvPo3J0Toz6&limit=25&offset=25&__after_id=513380153"}}}
