@@ -42098,3 +42098,4 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users"[0m

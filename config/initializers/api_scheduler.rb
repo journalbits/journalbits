@@ -22,5 +22,5 @@ scheduler.every("10s") do
   # wunderlist_data
   # fitbit_data
   # pocket_data
-  facebook_test
+  facebook_data
 end
