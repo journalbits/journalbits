@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127190854) do
+ActiveRecord::Schema.define(version: 20140127235344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(version: 20140127190854) do
     t.string   "rdio_oauth_secret"
     t.string   "facebook_oauth_token"
     t.string   "facebook_token_expires_at"
+    t.string   "whatpulse_username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -42213,3 +42213,11 @@ Migrating to ChangeDataTypeForFacebookPhotoIdFromIntegerToString (20140127190854
   [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127190854"]]
   [1m[36m (15.3ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (11.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddWhatpulseUsernameToUser (20140127235344)
+  [1m[35m (6.4ms)[0m  BEGIN
+  [1m[36m (20.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "whatpulse_username" character varying(255)[0m
+  [1m[35mSQL (30.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127235344"]]
+  [1m[36m (16.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
