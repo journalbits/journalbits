@@ -233,7 +233,8 @@ Devise.setup do |config|
   config.omniauth :fitbit, ENV["FITBIT_CONSUMER_KEY"], ENV["FITBIT_CONSUMER_SECRET"]
   config.omniauth :pocket, ENV["POCKET_CONSUMER_KEY"]
   config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
-  
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :scope => 'user_photos,user_status,user_videos,user_events,user_checkins,read_stream'
+
 
 
   # ==> Warden configuration

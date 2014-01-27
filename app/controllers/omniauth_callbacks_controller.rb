@@ -15,4 +15,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :fitbit, :all
   alias_method :pocket, :all
   alias_method :rdio, :all
+  alias_method :facebook, :all
 end

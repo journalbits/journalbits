@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
       user.rdio_oauth_token = auth.credentials.token
       user.rdio_oauth_secret = auth.credentials.secret
       user.save! if user.email != ""
+    elsif auth.provider == "facebook"
+      user = current_user
+      user.facebook_oauth_token = auth.credentials.token
+      user.facebook_token_expires_at = auth.credentials.expires_at
+      user.save! if user.email != ""
     end
     user
   end

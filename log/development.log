@@ -40150,3 +40150,1951 @@ Migrating to AddRdioOauthInfoToUser (20140126225022)
   [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140126225022"]]
   [1m[35m (108.3ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 230ms (Views: 119.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:44 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 22:52:46 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/rdio" for 127.0.0.1 at 2014-01-26 22:52:47 +0000
+
+
+Started GET "/users/auth/rdio" for 127.0.0.1 at 2014-01-26 22:52:47 +0000
+
+
+Started GET "/users/auth/rdio/callback?oauth_verifier=5600&oauth_token=nrqwrmwm92fuxkbe495fqkxb" for 127.0.0.1 at 2014-01-26 22:52:53 +0000
+Processing by OmniauthCallbacksController#rdio as HTML
+  Parameters: {"oauth_verifier"=>"5600", "oauth_token"=>"nrqwrmwm92fuxkbe495fqkxb"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  UPDATE "users" SET "rdio_oauth_token" = $1, "rdio_oauth_secret" = $2, "updated_at" = $3 WHERE "users"."id" = 1  [["rdio_oauth_token", "k4afxwjystaatwth8fnt46kanrx5n34nsjuc7xqyvrdt7aejtkendzwbgck95ynb"], ["rdio_oauth_secret", "R59GrEuswDzQ"], ["updated_at", Sun, 26 Jan 2014 22:52:55 UTC +00:00]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 25ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 22:52:55 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 23:33:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 225ms (Views: 115.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:33:17 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:33:18 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:33:19 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:33:19 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:34:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 237ms (Views: 117.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:45 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:34:46 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:34:47 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:34:47 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:35:09 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:37:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 228ms (Views: 117.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:37:23 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:37:24 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:37:26 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:37:28 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:37:28 +0000
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:39:03 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:39:04 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:39:08 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:08 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:08 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:39:08 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:11 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:12 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:39:20 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:39:20 +0000
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:39:25 +0000
+
+
+Started GET "/connections/" for 127.0.0.1 at 2014-01-26 23:40:19 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:22 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:40:23 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:40:23 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQD6hLNfJI-DeUU8xR8ADaA8ADAvhDVZht4Ec_0Mgy5BRtzojT81FAzcU2wN0Sw_0yt1HO-PakKu8ShZCEhK29flHSDaBlbej-6aFNE60hlo7RixTWQrPMKNVGusHjAdqoBO8aWrH8UNwboV188aKS376Ta2sI-dg6zo9wxkhj7I7L4ujEhzCE7O5ZAIegOfPHPIJsNs8-M808WBg59JKQzd99E-S6lCZwN_y-CkBfO4gNH_G8OzDMk-RYxm-pbblvqy0ibEqIgw6q1ijCGPgVTlwqfOh-8c-9ViOBos731czr7WY9yqNLRwweDPYVLIcxs&state=f0b9e33bf6c1e384a5f9657ab3b3228637e62577c10f03aa" for 127.0.0.1 at 2014-01-26 23:40:30 +0000
+
+AbstractController::ActionNotFound (The action 'facebook' could not be found for OmniauthCallbacksController):
+  actionpack (4.0.0) lib/abstract_controller/base.rb:131:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/mapper.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:401:in `call_app!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:363:in `callback_phase'
+  omniauth-oauth2 (1.1.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+  omniauth-facebook (1.6.0) lib/omniauth/strategies/facebook.rb:71:in `callback_phase'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:226:in `callback_call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:182:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2736078095399853439__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 64ms (Views: 8.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:47 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:48 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:49 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:49 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 23:40:49 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:40:54 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-26 23:40:54 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQATDYnVIfeUVFxtYNdqeUaIkYCO-BK2rk4uCM6dCh0sUz6DPLfhftZCJbme9HbH5lXFBECMv33tmNbSyEM9REalIhGE7fx7YdFQ5W9KrMXPd_Q3Kq92_QjNhTeKsmAfM-nFL5Ez0-NoHeeyG7zp7VDU9M0fqd1liddOKrZ2VajYhw1YaZrIN0ZC7dAafg4TXSBG3s4-VW9vR52LOd2ANoT52cCSItsvDr9yQlN0VdWMrghD6YVhp3g8_VORZR-GLszkQliwpnEZVuADJwQDktSbpfuGLLyjIWT4Hj3F0h521mOkPceFyT0q40z0AHZPESk&state=fdf47595657e7ecbbf408641895a9f9778deb47e5f20301f" for 127.0.0.1 at 2014-01-26 23:40:54 +0000
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQATDYnVIfeUVFxtYNdqeUaIkYCO-BK2rk4uCM6dCh0sUz6DPLfhftZCJbme9HbH5lXFBECMv33tmNbSyEM9REalIhGE7fx7YdFQ5W9KrMXPd_Q3Kq92_QjNhTeKsmAfM-nFL5Ez0-NoHeeyG7zp7VDU9M0fqd1liddOKrZ2VajYhw1YaZrIN0ZC7dAafg4TXSBG3s4-VW9vR52LOd2ANoT52cCSItsvDr9yQlN0VdWMrghD6YVhp3g8_VORZR-GLszkQliwpnEZVuADJwQDktSbpfuGLLyjIWT4Hj3F0h521mOkPceFyT0q40z0AHZPESk", "state"=>"fdf47595657e7ecbbf408641895a9f9778deb47e5f20301f"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 4ms
+
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1395963630 token="CAAK94bOoMBQBAM9wVa650Xf1ZAFKWYn7EWL7T9OveOovqXb8NRqrYsQad8HHOuIGu6dBCa2ZA7f8qtwaZCvNALbHujRrr3ZCRVpZAydtoSNJpUGPBrdHzBgIVyLGgxGRJ2mVsio0RMsjNdhniWfdgZBuqCmR65ocNyQCl7HyJQZBQzqbrp20ekO"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash education=[#<OmniAuth::AuthHash school=#<OmniAuth::AuthHash id="107946682572705" name="RGS Guildford"> type="High School" year=#<OmniAuth::AuthHash id="142963519060927" name="2010">>, #<OmniAuth::AuthHash concentration=[#<OmniAuth::AuthHash id="106002822773499" name="Maths">] school=#<OmniAuth::AuthHash id="112735778738269" name="University of York"> type="College">] email="hamchapman@gmail.com" first_name="Hamilton" gender="male" hometown=#<OmniAuth::AuthHash id="108339199186201" name="Guildford"> id="513380153" last_name="Chapman" link="https://www.facebook.com/hamiltonchapman" locale="en_GB" name="Hamilton Chapman" quotes="Richard: All you wrote was \"Muslim men have beards\"?" timezone=0 updated_time="2013-10-12T10:18:49+0000" username="hamiltonchapman" verified=true>> info=#<OmniAuth::AuthHash::InfoHash email="hamchapman@gmail.com" first_name="Hamilton" image="http://graph.facebook.com/513380153/picture" last_name="Chapman" name="Hamilton Chapman" nickname="hamiltonchapman" urls=#<OmniAuth::AuthHash Facebook="https://www.facebook.com/hamiltonchapman"> verified=true> provider="facebook" uid="513380153">):
+  app/models/user.rb:40:in `from_omniauth'
+  app/controllers/omniauth_callbacks_controller.rb:4:in `all'
+
+
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (55.8ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (77.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 308ms (Views: 178.7ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:27:06 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:27:07 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-27 14:27:08 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:27:09 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:27:09 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQC3XF0HIXtJ1NTqoxOTZ9FpFw2of8OJp2-KddKrgnMNOPKivNNJz8CxoQReGMH-DlgWY3YgoTPieb7uhCocdj36m5Iwgs-_gkJi9WA9DeJq2UXyT4q9rez4N-uiOWJHntQHZJmWh564URAKAzIut8hwn3g2_s-XuAdZW0zTsSJbKfCP3Az9ShTxKrV3BcdQF51lJrH6tHABc0FtCDPwGDw5bes4KkW3vlCo9MszwZT6_OPixvIFuv-Elw4Py5xvawxBzXMHMtRSlIboEVjhjnj13iOUXXDsTYOlvny8yNfhcNhm4cHdaQpNy27e892kLns&state=edefaca0c45d570e38062c514f72cde9f5e966d396c9b862" for 127.0.0.1 at 2014-01-27 14:27:09 +0000
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC3XF0HIXtJ1NTqoxOTZ9FpFw2of8OJp2-KddKrgnMNOPKivNNJz8CxoQReGMH-DlgWY3YgoTPieb7uhCocdj36m5Iwgs-_gkJi9WA9DeJq2UXyT4q9rez4N-uiOWJHntQHZJmWh564URAKAzIut8hwn3g2_s-XuAdZW0zTsSJbKfCP3Az9ShTxKrV3BcdQF51lJrH6tHABc0FtCDPwGDw5bes4KkW3vlCo9MszwZT6_OPixvIFuv-Elw4Py5xvawxBzXMHMtRSlIboEVjhjnj13iOUXXDsTYOlvny8yNfhcNhm4cHdaQpNy27e892kLns", "state"=>"edefaca0c45d570e38062c514f72cde9f5e966d396c9b862"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `facebook_oauth_token=' for #<User:0x007ff81ba981f0>):
+  app/models/user.rb:40:in `from_omniauth'
+  app/controllers/omniauth_callbacks_controller.rb:4:in `all'
+
+
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFacebookOauthInfoToUser (20140127142741)
+  [1m[35m (2.0ms)[0m  BEGIN
+  [1m[36m (5.6ms)[0m  [1mALTER TABLE "users" ADD COLUMN "facebook_oauth_token" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "facebook_oauth_secret" character varying(255)
+  [1m[36mSQL (11.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140127142741"]]
+  [1m[35m (115.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 253ms (Views: 129.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:34 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-27 14:28:36 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:28:37 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:28:37 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCQ4vQI22_JErEjApz6jT5wH1RtFFQx6oDy-azHenKfaCnJZ_-tgBr569mCxOlYCM6O3gLsxZE6YRxKeJ4zVowrQt8aZLyxZVK2KPVDuqF8nPL90xXLzzbWEkprLN5Hxqmjafb_qZxF-n_px9rjjkoaAsR7sFBnX4nX2BsYxg9XlLknsK8GZO6iVApr2tlsSFKk2wZdDLGnp2Th0hYeaEdcY_8zoE3VN030mp6Xbes6jDiQmIZUS_p7H5d3Zv0Umk_EnzIxfj80J7spVGwO7-jIPH7R8Kyq5kiq03kMerJp-mP77WjrSkrcC3H00be5ioI&state=743e3ca8233b3b3aff6df9dd378736c6d2a69f10784216be" for 127.0.0.1 at 2014-01-27 14:28:37 +0000
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCQ4vQI22_JErEjApz6jT5wH1RtFFQx6oDy-azHenKfaCnJZ_-tgBr569mCxOlYCM6O3gLsxZE6YRxKeJ4zVowrQt8aZLyxZVK2KPVDuqF8nPL90xXLzzbWEkprLN5Hxqmjafb_qZxF-n_px9rjjkoaAsR7sFBnX4nX2BsYxg9XlLknsK8GZO6iVApr2tlsSFKk2wZdDLGnp2Th0hYeaEdcY_8zoE3VN030mp6Xbes6jDiQmIZUS_p7H5d3Zv0Umk_EnzIxfj80J7spVGwO7-jIPH7R8Kyq5kiq03kMerJp-mP77WjrSkrcC3H00be5ioI", "state"=>"743e3ca8233b3b3aff6df9dd378736c6d2a69f10784216be"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (7.5ms)[0m  [1mUPDATE "users" SET "facebook_oauth_token" = $1, "updated_at" = $2 WHERE "users"."id" = 1[0m  [["facebook_oauth_token", "CAAK94bOoMBQBAKFUfC6dYnofYxgTFgBNCfkL9MhLmLMo31MkhJ60CJqeW5fCDTWGvPjOttdjydIFJDYY5NOxk67JGAsAl3qjblmUWHCZBRBjr0tlm2G26oJyFI7FKZA7Q7cbtA3dOKzNZAlOCvar8yQ4wsZAJNZAMGJCYMNyLeG6FREwVtLMC"], ["updated_at", Mon, 27 Jan 2014 14:28:38 UTC +00:00]]
+  [1m[35m (6.5ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 24ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:28:38 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 71ms (Views: 10.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:37 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-27 14:29:38 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered authorization/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:29:39 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:29:39 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQCpxkN0KtSP38bt36dRHc77sywSE7FYw15EpGiJJuZUcWO4iOYrK_uH4AwWPM991ord7GtCQqmM2TabdJpJmcASny_W3xg4tLHkcjVXayyfjRij8V9ItZ0kd8HvydMAxpoDFSygywvpTLBcP9TBzdugJFsD6XpNrrH5c5JQ61_BlZqrARTJ8LB3vutI17wIzFjwSp7MTQq_TyjjwFzCOczvKV4YjONLAVfNFMlaaCFhU-2XHwmhfp1CLJdkT2hpU4dp-28PIUQfbmS699EQXBgh8DJKBJVMC4pBEH2DBidIKZ9PehTfpMZ7weNMeeK0wic&state=c3e3021a6793a0695600ef210b170fe2f24514704faec93f" for 127.0.0.1 at 2014-01-27 14:29:40 +0000
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCpxkN0KtSP38bt36dRHc77sywSE7FYw15EpGiJJuZUcWO4iOYrK_uH4AwWPM991ord7GtCQqmM2TabdJpJmcASny_W3xg4tLHkcjVXayyfjRij8V9ItZ0kd8HvydMAxpoDFSygywvpTLBcP9TBzdugJFsD6XpNrrH5c5JQ61_BlZqrARTJ8LB3vutI17wIzFjwSp7MTQq_TyjjwFzCOczvKV4YjONLAVfNFMlaaCFhU-2XHwmhfp1CLJdkT2hpU4dp-28PIUQfbmS699EQXBgh8DJKBJVMC4pBEH2DBidIKZ9PehTfpMZ7weNMeeK0wic", "state"=>"c3e3021a6793a0695600ef210b170fe2f24514704faec93f"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 4ms
+
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1395963630 token="CAAK94bOoMBQBAEMgN5QyDljInZCb8uVCGZAV1G9EtpGbJnERGpZB1u3BnCIDqM2TiDYftkTBUAGy1czYvdWIbzMZBA9wsYsGpUQumihO9WZCTJlLIcfTy8QgjMJFewntoJly73ftdlwIsQckOa1v8Q6xGUoWja7xpnWfApUZAsTCEboZBW3tWVr"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash education=[#<OmniAuth::AuthHash school=#<OmniAuth::AuthHash id="107946682572705" name="RGS Guildford"> type="High School" year=#<OmniAuth::AuthHash id="142963519060927" name="2010">>, #<OmniAuth::AuthHash concentration=[#<OmniAuth::AuthHash id="106002822773499" name="Maths">] school=#<OmniAuth::AuthHash id="112735778738269" name="University of York"> type="College">] email="hamchapman@gmail.com" first_name="Hamilton" gender="male" hometown=#<OmniAuth::AuthHash id="108339199186201" name="Guildford"> id="513380153" last_name="Chapman" link="https://www.facebook.com/hamiltonchapman" locale="en_GB" name="Hamilton Chapman" quotes="Richard: All you wrote was \"Muslim men have beards\"?" timezone=0 updated_time="2013-10-12T10:18:49+0000" username="hamiltonchapman" verified=true>> info=#<OmniAuth::AuthHash::InfoHash email="hamchapman@gmail.com" first_name="Hamilton" image="http://graph.facebook.com/513380153/picture" last_name="Chapman" name="Hamilton Chapman" nickname="hamiltonchapman" urls=#<OmniAuth::AuthHash Facebook="https://www.facebook.com/hamiltonchapman"> verified=true> provider="facebook" uid="513380153">):
+  app/models/user.rb:40:in `from_omniauth'
+  app/controllers/omniauth_callbacks_controller.rb:4:in `all'
+
+
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeFacebookOauthSecretColumnToTokenExpiresAtForUser (20140127143636)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.4ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "facebook_oauth_secret" TO "facebook_token_expires_at"[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127143636"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 233ms (Views: 117.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/journal_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/github_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/rescue_time_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/twitter_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:40 +0000
+
+
+Started GET "/connections" for 127.0.0.1 at 2014-01-27 14:40:42 +0000
+Processing by AuthorizationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered authorization/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:40:42 +0000
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-01-27 14:40:42 +0000
+
+
+Started GET "/users/auth/facebook/callback?code=AQDi8ziNtimX2mVBTSdn2EomwRBKDZNg00bOEuvBlarO5w7Pn7yvF0cDFuYsLsU0U8-0O8GGUKnFNwCRp2E0WdYHAK_jV-Imh264KEfIEeFEnc3L-M81EauOIKEqRC9sjGaNhQ68CPUgfTwAUE4v-quNZyVUM9kT3608_t9_D96AVlvnfyrIDIfKdjOsXLMkQw5VOBMOvLBZ6B2Yw4YSLQ5ApInbavdx3luypYALvRlCS5dcGA4eXsix2rMKeTHK2lxb6aCrSVqn4h0c88y8mR9JjufJ85mYZGEXSQB9oBL_M1qqhDvY2fgJGx8ORXfgOjs&state=5f630e22f7d8e412cc5d3025626afeeccdc0a7ce97dfda81" for 127.0.0.1 at 2014-01-27 14:40:50 +0000
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDi8ziNtimX2mVBTSdn2EomwRBKDZNg00bOEuvBlarO5w7Pn7yvF0cDFuYsLsU0U8-0O8GGUKnFNwCRp2E0WdYHAK_jV-Imh264KEfIEeFEnc3L-M81EauOIKEqRC9sjGaNhQ68CPUgfTwAUE4v-quNZyVUM9kT3608_t9_D96AVlvnfyrIDIfKdjOsXLMkQw5VOBMOvLBZ6B2Yw4YSLQ5ApInbavdx3luypYALvRlCS5dcGA4eXsix2rMKeTHK2lxb6aCrSVqn4h0c88y8mR9JjufJ85mYZGEXSQB9oBL_M1qqhDvY2fgJGx8ORXfgOjs", "state"=>"5f630e22f7d8e412cc5d3025626afeeccdc0a7ce97dfda81"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (4.0ms)[0m  [1mUPDATE "users" SET "facebook_oauth_token" = $1, "facebook_token_expires_at" = $2, "updated_at" = $3 WHERE "users"."id" = 1[0m  [["facebook_oauth_token", "CAAK94bOoMBQBAChZC12WW7Ni3oHcu5xUZAj3agBVy8TdlHPYcwlZCEqQR6vzpHnNB0c1WLgn0pBoKjyVzSMMJmF189Cdo7yZCZACIZBwYjGSGrBtT43w6Pi0WRuAK53A6FwowqxRvsZBrSEvWGkfQbI6xW6ZB9r9r2wHK1aeR7SZA3LvPo3J0Toz6"], ["facebook_token_expires_at", 1395963630], ["updated_at", Mon, 27 Jan 2014 14:40:52 UTC +00:00]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 14ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/pocket_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/wunderlist_entries.css?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 14:40:52 +0000
+  [1m[36mUser Load (3.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com'[0m
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com'[0m
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
