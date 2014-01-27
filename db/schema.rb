@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127143636) do
+ActiveRecord::Schema.define(version: 20140127180903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "facebook_photo_entries", force: true do |t|
+    t.integer  "user_id"
+    t.string   "time_created"
+    t.float    "photo_id"
+    t.string   "source_url"
+    t.string   "medium_url"
+    t.string   "link_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "fitbit_activity_entries", force: true do |t|
     t.integer  "user_id"
