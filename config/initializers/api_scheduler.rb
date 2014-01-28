@@ -24,5 +24,5 @@ scheduler.every("10s") do
   # fitbit_data
   # pocket_data
   # facebook_data
-  user_data_on (Time.now - 1.day), User.where(email: "hamchapman@gmail.com").first
+  whatpulse_data
 end

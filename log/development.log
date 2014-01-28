@@ -42770,3 +42770,16 @@ Migrating to CreateWhatpulseEntries (20140128005103)
   [1m[35mSQL (6.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140128005103"]]
   [1m[36m (170.4ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWhatpulseEntry Exists (1.0ms)[0m  SELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119395772' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.3ms)[0m  INSERT INTO "whatpulse_entries" ("clicks", "created_at", "download_mb", "keys", "pulse_id", "time_created", "updated_at", "upload_mb", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["clicks", "1,782"], ["created_at", Tue, 28 Jan 2014 01:00:19 UTC +00:00], ["download_mb", 1250], ["keys", "10,000"], ["pulse_id", "Pulse-119395772"], ["time_created", "2014-01-27 01:00:18 +0000"], ["updated_at", Tue, 28 Jan 2014 01:00:19 UTC +00:00], ["upload_mb", 46], ["user_id", 1]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mWhatpulseEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119350447' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "whatpulse_entries" ("clicks", "created_at", "download_mb", "keys", "pulse_id", "time_created", "updated_at", "upload_mb", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["clicks", "1,910"], ["created_at", Tue, 28 Jan 2014 01:00:19 UTC +00:00], ["download_mb", 956], ["keys", "10,000"], ["pulse_id", "Pulse-119350447"], ["time_created", "2014-01-27 01:00:18 +0000"], ["updated_at", Tue, 28 Jan 2014 01:00:19 UTC +00:00], ["upload_mb", 40], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWhatpulseEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119395772' LIMIT 1[0m
+  [1m[35mWhatpulseEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119350447' LIMIT 1
