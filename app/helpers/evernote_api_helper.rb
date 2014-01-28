@@ -12,12 +12,12 @@ module EvernoteApiHelper
 
   def user_notes_created_on date, client
     notes = client.note_store.findNotes(Evernote::EDAM::NoteStore::NoteFilter.new, 0, 100).notes
-    notes.select { |note| Time.at(note.created.to_s[0..-4].to_i) == date.to_s[0..9] }
+    notes.select { |note| Time.at(note.created.to_s[0..-4].to_i).to_s[0..9] == date.to_s[0..9] }
   end
 
   def user_notes_updated_on date, client
     notes = client.note_store.findNotes(Evernote::EDAM::NoteStore::NoteFilter.new, 0, 100).notes
-    notes.select { |note| Time.at(note.updated.to_s[0..-4].to_i) == date.to_s[0..9] }
+    notes.select { |note| Time.at(note.updated.to_s[0..-4].to_i).to_s[0..9] == date.to_s[0..9] }
   end
 
   def create_user_client user

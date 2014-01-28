@@ -43495,3 +43495,23 @@ Migrating to CreateEvernoteEntries (20140128164519)
   [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
   [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mEvernoteEntry Exists (8.2ms)[0m  SELECT 1 AS one FROM "evernote_entries" WHERE "evernote_entries"."note_id" = '8df33b36-36a4-4d90-83f7-4d892f65d628' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (13.9ms)[0m  INSERT INTO "evernote_entries" ("created_at", "kind", "note_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Tue, 28 Jan 2014 16:54:10 UTC +00:00], ["kind", "created"], ["note_id", "8df33b36-36a4-4d90-83f7-4d892f65d628"], ["time_created", "2014-01-28 16:54:05 +0000"], ["title", "Getting Started"], ["updated_at", Tue, 28 Jan 2014 16:54:10 UTC +00:00], ["user_id", 1]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mEvernoteEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "evernote_entries" WHERE "evernote_entries"."note_id" = 'b3cdd0cd-d6cb-4256-b3ab-8d3d0c60d8aa' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "evernote_entries" ("created_at", "kind", "note_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Tue, 28 Jan 2014 16:54:10 UTC +00:00], ["kind", "created"], ["note_id", "b3cdd0cd-d6cb-4256-b3ab-8d3d0c60d8aa"], ["time_created", "2014-01-28 16:54:05 +0000"], ["title", "Testing this goddam sandbox"], ["updated_at", Tue, 28 Jan 2014 16:54:10 UTC +00:00], ["user_id", 1]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mEvernoteEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "evernote_entries" WHERE "evernote_entries"."note_id" = '5f343bfc-00d0-430e-8f93-b229ee96f233' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "evernote_entries" ("created_at", "kind", "note_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Tue, 28 Jan 2014 16:54:10 UTC +00:00], ["kind", "created"], ["note_id", "5f343bfc-00d0-430e-8f93-b229ee96f233"], ["time_created", "2014-01-28 16:54:05 +0000"], ["title", "One more for good measure"], ["updated_at", Tue, 28 Jan 2014 16:54:10 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mEvernoteEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "evernote_entries" WHERE "evernote_entries"."note_id" = '8df33b36-36a4-4d90-83f7-4d892f65d628' LIMIT 1[0m
+  [1m[35mEvernoteEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "evernote_entries" WHERE "evernote_entries"."note_id" = 'b3cdd0cd-d6cb-4256-b3ab-8d3d0c60d8aa' LIMIT 1
+  [1m[36mEvernoteEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "evernote_entries" WHERE "evernote_entries"."note_id" = '5f343bfc-00d0-430e-8f93-b229ee96f233' LIMIT 1[0m
