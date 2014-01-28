@@ -42757,3 +42757,9 @@ Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-27 23:59:29 +0000
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-27 23:59:29 +0000
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' ORDER BY "users"."id" ASC LIMIT 1[0m
