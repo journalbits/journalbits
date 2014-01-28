@@ -5,7 +5,7 @@ module EvernoteApiHelper
   def evernote_data
     User.all.each do |user|
       if user.evernote_oauth_token
-        save_notes_on (Time.now), user
+        save_notes_on (Time.now - 1.day), user
       end
     end
   end

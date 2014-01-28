@@ -27,12 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'devise'
-gem 'fitgem'
-gem 'twitter'
-gem "octokit", "~> 2.0"
-gem "koala", "~> 1.8.0rc1"
-gem 'evernote_oauth'
+# For authentication
+gem 'oauth2'
+gem 'simple_oauth'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -40,9 +37,21 @@ gem 'omniauth-fitbit'
 gem 'omniauth-pocket'
 gem 'omniauth-rdio'
 gem 'omniauth-evernote'
-gem 'oauth2'
+
+# For API integration
+gem 'fitgem'
+gem 'twitter'
+gem "octokit", "~> 2.0"
+gem "koala", "~> 1.8.0rc1"
+gem 'evernote_oauth'
+
+# For user profiles
+gem 'devise'
+
+# For background tasks
 gem 'rufus-scheduler'
-gem 'simple_oauth'
+
+# For HTTP requests
 gem 'httparty'
 
 

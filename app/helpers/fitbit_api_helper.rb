@@ -12,13 +12,14 @@ module FitbitApiHelper
     end
   end
 
-  def weight_test 
-    user = User.where(email: "hamchapman@gmail.com").first
-    client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'], consumer_secret: ENV['FITBIT_CONSUMER_SECRET'], oauth_token: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", oauth_secret: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } )
-    client.reconnect("#{user.fitbit_oauth_token}", "#{user.fitbit_oauth_secret}")
-    weight = user_weight_on (Time.now - 1.day), client
-    puts weight[:weight]
-  end
+  # def weight_test 
+  #   user = User.where(email: "hamchapman@gmail.com").first
+  #   client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'], consumer_secret: ENV['FITBIT_CONSUMER_SECRET'], oauth_token: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", oauth_secret: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } )
+  #   client.reconnect("#{user.fitbit_oauth_token}", "#{user.fitbit_oauth_secret}")
+  #   weight = user_weight_on (Time.now - 1.day), client
+  #   puts weight[:weight]
+  # end
+  # 0.071429 * lbs = stone
 
   def save_entries_to_database date, client, user
     save_sleep_entries date, client, user
@@ -65,5 +66,3 @@ module FitbitApiHelper
   end
 
 end
-
-# 0.071429 * lbs = stone
