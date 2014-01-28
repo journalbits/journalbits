@@ -42,9 +42,8 @@ class User < ActiveRecord::Base
       user.save! if user.email != ""
     elsif auth.provider == "evernote"
       user = current_user
-      raise auth.inspect
       user.evernote_oauth_token = auth.credentials.token
-      user.evernote_token_expires_at = auth.credentials.expires_at
+      user.evernote_token_expires_at = Time.now + 1.year
       user.save! if user.email != ""
     end
     user
