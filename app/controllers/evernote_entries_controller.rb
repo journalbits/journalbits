@@ -1,0 +1,2 @@
+class EvernoteEntriesController < ApplicationController
+end

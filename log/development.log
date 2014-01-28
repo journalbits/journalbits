@@ -43482,3 +43482,6 @@ Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-28 1
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 11:38:48 +0000
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m

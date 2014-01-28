@@ -1,0 +1,2 @@
+module EvernoteEntriesHelper
+end
