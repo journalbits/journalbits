@@ -33,5 +33,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def whatpulse_update
+    whatpulse_username = params['user']['whatpulse_username']
+    User.where(id: current_user.id).take.update_attributes(whatpulse_username: whatpulse_username)
+    redirect_to "/connections"
+  end
+
 end
 

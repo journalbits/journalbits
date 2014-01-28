@@ -32,4 +32,8 @@ class AuthorizationController < ApplicationController
 
   end
 
+  def whatpulse
+
+  end
+
 end
