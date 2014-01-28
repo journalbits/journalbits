@@ -44697,3 +44697,10 @@ RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=fals
   Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
   Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
   Rendered /Users/Hami/.rvm/rubies/ruby-2.0.0-p247-docs/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddInstagramOauthInfoToUser (20140128182220)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "instagram_oauth_token" character varying(255)[0m
+  [1m[35mSQL (6.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140128182220"]]
+  [1m[36m (194.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
