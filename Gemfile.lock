@@ -69,6 +69,9 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     evernote-thrift (1.25.1)
+    evernote_oauth (0.2.2)
+      evernote-thrift
+      oauth (>= 0.4.1)
     execjs (2.0.2)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
@@ -255,11 +258,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby (~> 3.1.2)
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
   devise
+  evernote_oauth
   factory_girl_rails (~> 4.0)
   fitgem
   httparty

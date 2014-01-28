@@ -32,6 +32,7 @@ gem 'fitgem'
 gem 'twitter'
 gem "octokit", "~> 2.0"
 gem "koala", "~> 1.8.0rc1"
+gem 'evernote_oauth'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -60,7 +61,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+# gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
