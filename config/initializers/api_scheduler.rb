@@ -9,6 +9,7 @@ include FitbitApiHelper
 include PocketApiHelper
 include FacebookApiHelper
 include WhatpulseApiHelper
+include EvernoteApiHelper
 
 scheduler = Rufus::Scheduler.new
 
@@ -25,4 +26,5 @@ scheduler.every("10s") do
   # pocket_data
   # facebook_data
   # whatpulse_data
+  evernote_data
 end

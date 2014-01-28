@@ -5,7 +5,7 @@ module EvernoteApiHelper
   def evernote_data
     User.all.each do |user|
       if user.evernote_oauth_token
-        save_notes_on (Time.now - 1.day), user
+        save_notes_on (Time.now), user
       end
     end
   end
@@ -28,8 +28,8 @@ module EvernoteApiHelper
 
   def save_notes_on date, user
     client = create_user_client user
-    updated_notes = user_notes_updated_on date, client, user
-    created_notes = user_notes_created_on date, client, user
+    updated_notes = user_notes_updated_on date, client
+    created_notes = user_notes_created_on date, client
     updated_notes = updated_notes - created_notes 
     save_notes_created_on date, user, created_notes
     save_notes_updated_on date, user, updated_notes
@@ -38,7 +38,7 @@ module EvernoteApiHelper
   def save_notes_created_on date, user, notes    
     notes.each do |note|
       unless EvernoteEntry.exists?(note_id: note.guid)
-        EvernoteEntry.create(user_id: user.id, time_created: date.to_s, note_id: note.guid, kind: "created", title: note.title, )
+        EvernoteEntry.create(user_id: user.id, time_created: date.to_s, note_id: note.guid, kind: "created", title: note.title)
       end
     end
   end
