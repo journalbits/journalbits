@@ -68,6 +68,7 @@ GEM
     diff-lcs (1.2.5)
     equalizer (0.0.9)
     erubis (2.7.0)
+    evernote-thrift (1.25.1)
     execjs (2.0.2)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
@@ -129,6 +130,10 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
+    omniauth-evernote (1.2.0)
+      evernote-thrift
+      multi_json (~> 1.0)
+      omniauth-oauth (~> 1.0)
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-fitbit (1.0.2)
@@ -264,6 +269,7 @@ DEPENDENCIES
   oauth2
   octokit (~> 2.0)
   omniauth
+  omniauth-evernote
   omniauth-facebook
   omniauth-fitbit
   omniauth-pocket

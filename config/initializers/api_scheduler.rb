@@ -24,5 +24,5 @@ scheduler.every("10s") do
   # fitbit_data
   # pocket_data
   # facebook_data
-  whatpulse_data
+  # whatpulse_data
 end

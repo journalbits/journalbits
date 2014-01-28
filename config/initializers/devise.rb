@@ -234,7 +234,7 @@ Devise.setup do |config|
   config.omniauth :pocket, ENV["POCKET_CONSUMER_KEY"]
   config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :scope => 'user_photos,user_status,user_videos,user_events,user_checkins,read_stream'
-
+  config.omniauth :evernote, ENV['EVERNOTE_CONSUMER_KEY'], ENV['EVERNOTE_CONSUMER_SECRET'], :client_options => { :site => 'https://sandbox.evernote.com' }
 
 
   # ==> Warden configuration
