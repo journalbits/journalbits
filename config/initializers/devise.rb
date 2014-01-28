@@ -235,7 +235,8 @@ Devise.setup do |config|
   config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :scope => 'user_photos,user_status,user_videos,user_events,user_checkins,read_stream'
   config.omniauth :evernote, ENV['EVERNOTE_CONSUMER_KEY'], ENV['EVERNOTE_CONSUMER_SECRET'], :client_options => { :site => 'https://sandbox.evernote.com' }
-
+  config.omniauth :instapaper, ENV['INSTAPAPER_CONSUMER_KEY'], ENV['INSTAPAPER_CONSUMER_SECRET']
+  config.omniauth :instagram, ENV['INSTAGRAM_ID'], ENV['INSTAGRAM_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

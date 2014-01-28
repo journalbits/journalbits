@@ -45,6 +45,11 @@ class User < ActiveRecord::Base
       user.evernote_oauth_token = auth.credentials.token
       user.evernote_token_expires_at = Time.now + 1.year
       user.save! if user.email != ""
+    elsif auth.provider == "instagram"
+      user = current_user
+      user.instagram_oauth_token = auth.credentials.token
+      # user.instagram_uid = auth.uid
+      user.save! if user.email != ""
     end
     user
   end

@@ -37,6 +37,8 @@ gem 'omniauth-fitbit'
 gem 'omniauth-pocket'
 gem 'omniauth-rdio'
 gem 'omniauth-evernote'
+gem 'omniauth-instapaper'
+gem 'omniauth-instagram'
 
 # For API integration
 gem 'fitgem'
@@ -44,6 +46,7 @@ gem 'twitter'
 gem "octokit", "~> 2.0"
 gem "koala", "~> 1.8.0rc1"
 gem 'evernote_oauth'
+gem 'instapaper'
 
 # For user profiles
 gem 'devise'
