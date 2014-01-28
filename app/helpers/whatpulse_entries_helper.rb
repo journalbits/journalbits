@@ -1,0 +1,2 @@
+module WhatpulseEntriesHelper
+end

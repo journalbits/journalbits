@@ -1,0 +1,2 @@
+class WhatpulseEntriesController < ApplicationController
+end
