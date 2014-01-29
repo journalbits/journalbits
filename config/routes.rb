@@ -1,5 +1,7 @@
 JournalBits::Application.routes.draw do
 
+  resources :instagram_entries
+
   resources :evernote_entries
 
   resources :whatpulse_entries

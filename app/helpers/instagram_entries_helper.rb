@@ -1,0 +1,2 @@
+module InstagramEntriesHelper
+end
