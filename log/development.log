@@ -48824,3 +48824,20 @@ Migrating to CreateInstapaperEntries (20140129170047)
   [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140129170047"]]
   [1m[36m (69.6ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mInstapaperEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451266835' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "instapaper_entries" ("bookmark_id", "created_at", "time_created", "title", "updated_at", "url", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["bookmark_id", "451266835"], ["created_at", Wed, 29 Jan 2014 17:03:17 UTC +00:00], ["time_created", "2014-01-29 17:03:15 +0000"], ["title", "The 2 Teenagers Who Run the Wildly Popular Twitter Feed @HistoryInPics"], ["updated_at", Wed, 29 Jan 2014 17:03:17 UTC +00:00], ["url", "http://www.theatlantic.com/technology/archive/2014/01/the-2-teenagers-who-run-the-wildly-popular-twitter-feed-historyinpics/283291/"], ["user_id", 1]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mInstapaperEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451068399' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "instapaper_entries" ("bookmark_id", "created_at", "time_created", "title", "updated_at", "url", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["bookmark_id", "451068399"], ["created_at", Wed, 29 Jan 2014 17:03:17 UTC +00:00], ["time_created", "2014-01-29 17:03:15 +0000"], ["title", "5 Mistakes Programmers Make when Starting in Machine Learning | Machine Learning Mastery"], ["updated_at", Wed, 29 Jan 2014 17:03:17 UTC +00:00], ["url", "http://machinelearningmastery.com/mistakes-programmers-make-when-starting-in-machine-learning/"], ["user_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mInstapaperEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451266835' LIMIT 1
+  [1m[36mInstapaperEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451068399' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mInstapaperEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451266835' LIMIT 1[0m
+  [1m[35mInstapaperEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451068399' LIMIT 1

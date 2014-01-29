@@ -7,8 +7,7 @@ module InstapaperApiHelper
     User.all.each do |user|
       if user.instapaper_oauth_token
         personalise_client user
-        user_bookmarks_on Time.now
-        # save_links_created_on (Time.now - 1.day), user
+        save_bookmarks_created_on (Time.now - 1.day), user
       end
     end
   end
