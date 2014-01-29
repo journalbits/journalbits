@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129155622) do
+ActiveRecord::Schema.define(version: 20140129170047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 20140129155622) do
     t.string   "standard_url"
     t.string   "caption"
     t.string   "link_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instapaper_entries", force: true do |t|
+    t.integer  "user_id"
+    t.string   "time_created"
+    t.string   "bookmark_id"
+    t.string   "url"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

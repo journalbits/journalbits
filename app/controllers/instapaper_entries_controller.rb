@@ -1,0 +1,2 @@
+class InstapaperEntriesController < ApplicationController
+end
