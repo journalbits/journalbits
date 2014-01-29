@@ -45550,3 +45550,20 @@ Migrating to CreateInstagramEntries (20140129132028)
   [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140129132028"]]
   [1m[36m (97.9ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mInstagramEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "instagram_entries" WHERE "instagram_entries"."link_url" = 'http://instagram.com/p/juoky_o3Ip/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.1ms)[0m  INSERT INTO "instagram_entries" ("caption", "created_at", "kind", "standard_url", "thumbnail_url", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["caption", "Damn that's a fine API"], ["created_at", Wed, 29 Jan 2014 13:25:10 UTC +00:00], ["kind", "image"], ["standard_url", "http://distilleryimage6.s3.amazonaws.com/374928b8886811e3b74912d60ed3d90a_8.jpg"], ["thumbnail_url", "http://distilleryimage6.s3.amazonaws.com/374928b8886811e3b74912d60ed3d90a_5.jpg"], ["time_created", "2014-01-28 13:25:09 +0000"], ["updated_at", Wed, 29 Jan 2014 13:25:10 UTC +00:00], ["user_id", 1]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mInstagramEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "instagram_entries" WHERE "instagram_entries"."link_url" = 'http://instagram.com/p/juoky_o3Ip/' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "instagram_entries" ("caption", "created_at", "kind", "standard_url", "thumbnail_url", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["caption", "Damn that's a fine API"], ["created_at", Wed, 29 Jan 2014 13:25:20 UTC +00:00], ["kind", "image"], ["standard_url", "http://distilleryimage6.s3.amazonaws.com/374928b8886811e3b74912d60ed3d90a_8.jpg"], ["thumbnail_url", "http://distilleryimage6.s3.amazonaws.com/374928b8886811e3b74912d60ed3d90a_5.jpg"], ["time_created", "2014-01-28 13:25:19 +0000"], ["updated_at", Wed, 29 Jan 2014 13:25:20 UTC +00:00], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mInstagramEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "instagram_entries" WHERE "instagram_entries"."link_url" = 'http://instagram.com/p/juoky_o3Ip/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "instagram_entries" ("caption", "created_at", "kind", "link_url", "standard_url", "thumbnail_url", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["caption", "Damn that's a fine API"], ["created_at", Wed, 29 Jan 2014 13:26:52 UTC +00:00], ["kind", "image"], ["link_url", "http://instagram.com/p/juoky_o3Ip/"], ["standard_url", "http://distilleryimage6.s3.amazonaws.com/374928b8886811e3b74912d60ed3d90a_8.jpg"], ["thumbnail_url", "http://distilleryimage6.s3.amazonaws.com/374928b8886811e3b74912d60ed3d90a_5.jpg"], ["time_created", "2014-01-28 13:26:51 +0000"], ["updated_at", Wed, 29 Jan 2014 13:26:52 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mInstagramEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "instagram_entries" WHERE "instagram_entries"."link_url" = 'http://instagram.com/p/juoky_o3Ip/' LIMIT 1[0m
