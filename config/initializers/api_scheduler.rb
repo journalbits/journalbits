@@ -12,6 +12,7 @@ include WhatpulseApiHelper
 include EvernoteApiHelper
 include InstapaperApiHelper
 include InstagramApiHelper
+include LastfmApiHelper
 
 scheduler = Rufus::Scheduler.new
 
@@ -30,5 +31,6 @@ scheduler.every("10s") do
   # whatpulse_data
   # evernote_data
   # instagram_data
-  instapaper_data
+  # instapaper_data
+  lastfm_data
 end

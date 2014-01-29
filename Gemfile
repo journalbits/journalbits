@@ -39,6 +39,7 @@ gem 'omniauth-rdio'
 gem 'omniauth-evernote'
 gem 'omniauth-instapaper'
 gem 'omniauth-instagram'
+gem 'omniauth-lastfm'
 
 # For API integration
 gem 'fitgem'

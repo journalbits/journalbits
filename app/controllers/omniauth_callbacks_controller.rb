@@ -1,6 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   def all
+    puts "*&*&*&*&*&*&*&*&*(!@^$(*^!@(&£^!@*&$^!&*@$^&*!@$^&@!$^*(!@$(*!@&$(*!@&$(*!@&$*(&!@$(*$(*$@*(^$!@(*!@$(*^!@(*$!(@*$^(*!$@^!@$(*!@$(*^!$@(*$!@(*$!@(*^$@!(*^$(@*!^!@($*"
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted?
       # flash.notice = "Signed in!"
@@ -19,4 +20,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :evernote, :all
   alias_method :instapaper, :all
   alias_method :instagram, :all
+  alias_method :lastfm, :all
 end

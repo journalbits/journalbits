@@ -55,6 +55,10 @@ class User < ActiveRecord::Base
       user.instapaper_oauth_token = auth.credentials.token
       user.instapaper_oauth_secret = auth.credentials.secret
       user.save! if user.email != ""
+    elsif auth.provider == "lastfm"
+      user = current_user
+      user.lastfm_username = auth.credentials.name
+      user.save! if user.email != ""
     end
     user
   end
@@ -72,7 +76,6 @@ class User < ActiveRecord::Base
     current_user.twitter_oauth_secret = auth.credentials.secret
     current_user.twitter_username = auth.info.nickname
     current_user.twitter_uid = auth.uid
-    # current_user.provider = twitter
     current_user.save!
     current_user
   end
@@ -111,9 +114,3 @@ class User < ActiveRecord::Base
   end
 
 end
-
-
-# puts auth.inspect
-# puts "********************************"
-# puts "hit the from from_omniauth"
-
