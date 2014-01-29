@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     elsif auth.provider == "instagram"
       user = current_user
       user.instagram_oauth_token = auth.credentials.token
-      # user.instagram_uid = auth.uid
+      user.instagram_uid = auth.uid
       user.save! if user.email != ""
     end
     user
