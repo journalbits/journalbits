@@ -1,40 +1,44 @@
 require "net/https"
-require "rss"
 
 module InstapaperApiHelper
 
-  Instapaper.configure do |config|
-    config.consumer_key = ENV['INSTAPAPER_CONSUMER_KEY']
-    config.consumer_secret = ENV['INSTAPAPER_CONSUMER_SECRET']
-    config.oauth_token = "DEFAULT"
-    config.oauth_token_secret = "DEFAULT"
-  end
-
   def instapaper_data
+    setup_client
     User.all.each do |user|
       if user.instapaper_oauth_token
-        puts "yes"
+        personalise_client user
+        user_bookmarks_on Time.now
+        # save_links_created_on (Time.now - 1.day), user
       end
     end
   end
 
-  def save_notes_created_on date, user, notes    
-    links.each do |link|
-      unless InstapaperEntry.exists?()
-        InstapaperEntry.create(user_id: user.id, time_created: date.to_s)
+  def setup_client
+    Instapaper.configure do |config|
+      config.consumer_key = ENV['INSTAPAPER_CONSUMER_KEY']
+      config.consumer_secret = ENV['INSTAPAPER_CONSUMER_SECRET']
+      config.oauth_token = "DEFAULT"
+      config.oauth_token_secret = "DEFAULT"
+    end
+  end
+
+  def personalise_client user
+    Instapaper.oauth_token= user.instapaper_oauth_token
+    Instapaper.oauth_token_secret= user.instapaper_oauth_secret
+  end
+
+  def save_bookmarks_created_on date, user
+    bookmarks = user_bookmarks_on date
+    bookmarks.each do |bookmark|
+      unless InstapaperEntry.exists?(bookmark_id: bookmark.bookmark_id.to_s)
+        InstapaperEntry.create(user_id: user.id, time_created: date.to_s, bookmark_id: bookmark.bookmark_id.to_s, title: bookmark.title, url: bookmark.url)
       end
     end
-  end
+  end 
 
-  def instapaper_test
-    rss = RSS::Parser.parse("https://www.instapaper.com/rss/1891509/99mGb31NXT1yupLy4s9EENbIfzI", false)
-    rss.items.each do |item|
-      puts item.inspect
-    end
-  end
-
-  def insta_test
-
+  def user_bookmarks_on date
+    bookmarks = Instapaper.bookmarks
+    bookmarks.select { |bookmark| Time.at(bookmark.time).to_s[0..9] == date.to_s[0..9] }
   end
 
 end
