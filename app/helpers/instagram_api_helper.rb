@@ -26,8 +26,8 @@ module InstagramApiHelper
   def save_media_on date, user
     media = user_media_on date, user
     media.each do |item|
-      unless InstagramEntry.exists?()
-        InstagramEntry.create(user_id: user.id, time_created: date.to_s)
+      unless InstagramEntry.exists?(link_url: item['link'])
+        InstagramEntry.create(user_id: user.id, time_created: date.to_s, kind: item['type'], thumbnail_url: item['images']['thumbnail']['url'], standard_url: item['images']['standard_resolution']['url'], caption: item['caption']['text'] )
       end
     end
   end
