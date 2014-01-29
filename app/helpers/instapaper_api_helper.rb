@@ -3,10 +3,17 @@ require "rss"
 
 module InstapaperApiHelper
 
+  Instapaper.configure do |config|
+    config.consumer_key = ENV['INSTAPAPER_CONSUMER_KEY']
+    config.consumer_secret = ENV['INSTAPAPER_CONSUMER_SECRET']
+    config.oauth_token = "DEFAULT"
+    config.oauth_token_secret = "DEFAULT"
+  end
+
   def instapaper_data
     User.all.each do |user|
       if user.instapaper_oauth_token
-        
+        puts "yes"
       end
     end
   end

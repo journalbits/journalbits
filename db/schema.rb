@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129132028) do
+ActiveRecord::Schema.define(version: 20140129155622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,8 @@ ActiveRecord::Schema.define(version: 20140129132028) do
     t.string   "evernote_token_expires_at"
     t.string   "instagram_oauth_token"
     t.string   "instagram_uid"
+    t.string   "instapaper_oauth_token"
+    t.string   "instapaper_oauth_secret"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

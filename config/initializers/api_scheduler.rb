@@ -29,6 +29,6 @@ scheduler.every("10s") do
   # facebook_data
   # whatpulse_data
   # evernote_data
-  # instapaper_test
-  instagram_data
+  # instagram_data
+  # insta_test
 end

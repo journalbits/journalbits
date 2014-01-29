@@ -50,6 +50,11 @@ class User < ActiveRecord::Base
       user.instagram_oauth_token = auth.credentials.token
       user.instagram_uid = auth.uid
       user.save! if user.email != ""
+    elsif auth.provider == "instapaper"
+      user = current_user
+      user.instapaper_oauth_token = auth.credentials.token
+      user.instapaper_oauth_secret = auth.credentials.secret
+      user.save! if user.email != ""
     end
     user
   end
@@ -106,3 +111,9 @@ class User < ActiveRecord::Base
   end
 
 end
+
+
+# puts auth.inspect
+# puts "********************************"
+# puts "hit the from from_omniauth"
+
