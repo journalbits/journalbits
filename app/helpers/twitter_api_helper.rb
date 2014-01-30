@@ -2,71 +2,77 @@ require "net/https"
 
 module TwitterApiHelper
 
-  TwitterClient = Twitter::REST::Client.new do |config|
-    config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
-    config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
-    config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
-    config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
-  end 
-
   def twitter_data
+    setup_client
     User.all.each do |user|
-      TwitterClient.oauth_token=(user.twitter_oauth_token)
-      TwitterClient.oauth_token_secret=(user.twitter_oauth_secret)
-      favorited(user)
-      tweeted(user)
-      mentioned(user)
-    end
-  end
-
-  def favorited(user)
-    favorites = TwitterClient.favorites
-    if favorites != nil
-      favorited_today = favorites.select { |fav| fav.created_at.to_s[0..9] == Time.now.to_s[0..9] }
-      favorited_today.each do |fav| 
-        unless TwitterEntry.exists?(:tweet_id => fav.id)
-          TwitterEntry.create(text: fav.text, kind: "favorite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, time_created: fav.created_at, tweet_url: tweet.url.to_s)
-        end
+      if user.twitter_oauth_token
+        client = personalise_client_for user
+        save_entries_to_database (Time.now - 1.day), client, user
       end
     end
   end
 
-  def tweeted(user)
-    tweets = TwitterClient.user_timeline
-    if tweets != nil
-      tweeted_today = tweets.select { |tweet| tweet.created_at.to_s[0..9] == Time.now.to_s[0..9] }
-      tweeted_today.each do |tweet| 
-        unless TwitterEntry.exists?(:tweet_id => tweet.id)
-          TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, time_created: tweet.created_at, tweet_url: tweet.url.to_s)
-        end
-      end
-    end
+  def save_entries_to_database date, client, user
+    save_tweets_to_databse date, client, user
+    save_favorites_to_databse date, client, user
+    save_mentions_to_databse date, client, user
   end
 
-  def mentioned(user)
+  def user_tweets_on date, client
+    tweets = client.user_timeline
+    tweets.select { |tweet| tweet.created_at.to_s[0..9] == date.to_s[0..9] } if tweets != nil
+  end
+
+  def user_favorites_on date, client
+    favorites = client.favorites
+    favorites.select { |fav| fav.created_at.to_s[0..9] == date.to_s[0..9] } if favorites != nil
+  end
+
+  def user_mentions_on date, client
     mentions = TwitterClient.mentions
-    if mentions != nil
-      mentioned_today = mentions.select { |mention| mention.created_at.to_s[0..9] == Time.now.to_s[0..9] }
-      mentioned_today.each do |mention| 
-        unless TwitterEntry.exists?(:tweet_id => mention.id)
-          TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, time_created: mention.created_at, tweet_url: tweet.url.to_s)
-        end
+    mentions.select { |mention| mention.created_at.to_s[0..9] == date.to_s[0..9] } if mentions != nil
+  end
+
+  def save_tweets_to_databse date, client, user
+    tweets = user_tweets_on date, client
+    tweets.each do |tweet| 
+      unless TwitterEntry.exists?(:tweet_id => tweet.id)
+        TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, time_created: tweet.created_at, tweet_url: tweet.url.to_s)
       end
     end
   end
 
-  def tweets_for_user_on_day(max_id, date, user)
+  def save_favorites_to_databse date, client, user
+    favorites = user_favorites_on date, client
+    favorites.each do |fav| 
+      unless TwitterEntry.exists?(:tweet_id => fav.id)
+        TwitterEntry.create(text: fav.text, kind: "favorite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, time_created: fav.created_at, tweet_url: tweet.url.to_s)
+      end
+    end
+  end
+
+  def save_mentions_to_databse date, client, user
+    mentions = user_mentions_on date, client
+    mentions.each do |mention| 
+      unless TwitterEntry.exists?(:tweet_id => mention.id)
+        TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, time_created: mention.created_at, tweet_url: tweet.url.to_s)
+      end
+    end
+  end
+
+  def setup_client
+    TwitterClient = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
+      config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
+    end 
+  end
+
+  def personalise_client_for user
     TwitterClient.oauth_token=(user.twitter_oauth_token)
     TwitterClient.oauth_token_secret=(user.twitter_oauth_secret)
-    tweets = TwitterClient.user_timeline(max_id: max_id)
-    if tweets != nil
-      tweeted_on_date = tweets.select { |tweet| tweet.created_at.to_s[0..9] == date.to_s[0..9] }
-      tweeted_on_date.each do |tweet| 
-        unless TwitterEntry.exists?(:tweet_id => tweet.id)
-          TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, time_created: tweet.created_at, tweet_url: tweet.url.to_s)
-        end
-      end
-    end
+    TwitterClient
   end
 
 end
