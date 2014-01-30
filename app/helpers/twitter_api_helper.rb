@@ -2,17 +2,23 @@ require "net/https"
 
 module TwitterApiHelper
 
+  TwitterClient = Twitter::REST::Client.new do |config|
+    config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+    config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+    config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
+    config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
+  end 
+
   def twitter_data
-    setup_client
     User.all.each do |user|
       if user.twitter_oauth_token
         client = personalise_client_for user
-        save_entries_to_database (Time.now - 1.day), client, user
+        save_twitter_entries_to_database (Time.now - 1.day), client, user
       end
     end
   end
 
-  def save_entries_to_database date, client, user
+  def save_twitter_entries_to_database date, client, user
     save_tweets_to_databse date, client, user
     save_favorites_to_databse date, client, user
     save_mentions_to_databse date, client, user
@@ -46,7 +52,7 @@ module TwitterApiHelper
     favorites = user_favorites_on date, client
     favorites.each do |fav| 
       unless TwitterEntry.exists?(:tweet_id => fav.id)
-        TwitterEntry.create(text: fav.text, kind: "favorite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, time_created: fav.created_at, tweet_url: tweet.url.to_s)
+        TwitterEntry.create(text: fav.text, kind: "favorite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, time_created: fav.created_at, tweet_url: fav.url.to_s)
       end
     end
   end
@@ -55,18 +61,9 @@ module TwitterApiHelper
     mentions = user_mentions_on date, client
     mentions.each do |mention| 
       unless TwitterEntry.exists?(:tweet_id => mention.id)
-        TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, time_created: mention.created_at, tweet_url: tweet.url.to_s)
+        TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, time_created: mention.created_at, tweet_url: mention.url.to_s)
       end
     end
-  end
-
-  def setup_client
-    TwitterClient = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
-      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
-      config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
-      config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
-    end 
   end
 
   def personalise_client_for user

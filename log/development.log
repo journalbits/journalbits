@@ -50738,3 +50738,208 @@ Migrating to CreateLastfmEntries (20140130004452)
   [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993990' LIMIT 1[0m
   [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993986' LIMIT 1
   [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993671' LIMIT 1[0m
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (23.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.1ms)[0m  INSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweet_url", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:03:58 UTC +00:00], ["kind", "tweet"], ["text", "Taking good photos at non-ridiculous prices: http://t.co/xg3LdRDNOp \nSome really useful, simple tips"], ["time_created", 2014-01-29 11:46:53 +0000], ["tweet_id", 428494454488854528], ["tweet_url", "https://twitter.com/hamchapman/status/428494454488854528"], ["tweeter", "hamchapman"], ["updated_at", Thu, 30 Jan 2014 12:03:58 UTC +00:00], ["user_id", 1]]
+  [1m[36m (59.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "twitter_entries" ("created_at", "kind", "text", "time_created", "tweet_id", "tweet_url", "tweeter", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", Thu, 30 Jan 2014 12:05:30 UTC +00:00], ["kind", "favorite"], ["text", "Best conversation I’ve ever had on Twitter: http://t.co/nkvhTCT1Af"], ["time_created", 2014-01-29 19:22:37 +0000], ["tweet_id", 428609143935860738], ["tweet_url", "https://twitter.com/gruber/status/428609143935860738"], ["tweeter", "gruber"], ["updated_at", Thu, 30 Jan 2014 12:05:30 UTC +00:00], ["user_id", 1]]
+  [1m[35m (5.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (14.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Setup db for collecting lastfm username"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "3eec414d7ca88453ad2cc448fd230cea06bc7b33"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Fixed code to save instapaper entries to db"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "7c4d7c4709fca52ba3dfaffb5db9324536092c3d"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Added Instapaper entry table to db"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "1e99a9002d847cbbd540bbf2bfe15f044f030c55"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Setup instapaper api helper to save entries to db"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "0e6963af202c5823d844027724cc45d71a15b395"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Added code and migration for instapaper oauth setup"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "63c28830d4fbd5e434715cae02b4d7818510b5d8"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Fixed bug that was making instagram entries always save to db"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "e030a7551205bedefe126bb4d17109a59835858b"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Added code to save instagram entries to db"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "a99a334a654c181287356a6ad333e1c1fa38e5d8"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Added resources for instagram entry"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "276d7474e2b7a00613f44501d32b0a82a221bbf0"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Added code to access user's instagram media from a given day"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "5eceb728614c9e55e4b30d250a8bc3d81c200fe6"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Add Instagram uid to user model"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "3ac963cd11593ea5eff275d74995b15fb818d205"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "github_entries" ("commit_message", "committer", "created_at", "sha", "time_created", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["commit_message", "Tidied up instagram api helper code"], ["committer", "Hamilton Chapman"], ["created_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["sha", "8e8f1c9d90e5d326fd4cf24944df56cba579f747"], ["time_created", 2014-01-29 12:05:32 +0000], ["updated_at", Thu, 30 Jan 2014 12:05:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mGithubEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mGithubEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1
+  [1m[36mGithubEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1
+  [1m[36mGithubEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1
+  [1m[36mGithubEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mGithubEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (6.8ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (9.1ms)[0m  [1mINSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "created_at", "date", "productivity", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "Twitter"], ["activity_5", "tweetbot"], ["created_at", Thu, 30 Jan 2014 12:07:31 UTC +00:00], ["date", "2014-01-30"], ["productivity", -1], ["time_spent_1", 2335], ["time_spent_2", 2036], ["time_spent_3", 416], ["time_spent_4", 416], ["time_spent_5", 385], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (18.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-cK5o' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:07:48 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB-cK5o"], ["time_created", "2014-01-30T11:16:56Z"], ["title", "Setup mailers / notifications to tell users to reauthenticate services if needed"], ["updated_at", Thu, 30 Jan 2014 12:07:48 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
