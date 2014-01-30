@@ -51011,3 +51011,48 @@ Migrating to CreateLastfmEntries (20140130004452)
   [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
   [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-29' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.8ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB-B33A"], ["time_created", "2014-01-28T17:52:45Z"], ["title", "Refactor code in user.from_omniauth"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB9_QOw"], ["time_created", "2014-01-28T15:08:35Z"], ["title", "Make sure user has option for setting each service to public / private"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB9_QC4"], ["time_created", "2014-01-28T15:08:23Z"], ["title", "Make sure user has option for setting dashboard / profile to public / private"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB925TY"], ["time_created", "2014-01-28T00:52:20Z"], ["title", "Clear out cruft files for api resources"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB92o2E"], ["time_created", "2014-01-28T00:26:00Z"], ["title", "Change catchr app names to journal bits"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB92oNo"], ["time_created", "2014-01-28T00:25:05Z"], ["title", "Create logo and choose font"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB92oC8"], ["time_created", "2014-01-28T00:24:49Z"], ["title", "Create landing page for journal bits"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mWunderlistEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "list", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["list", "journal bits"], ["task_id", "ACg1AB92n4g"], ["time_created", "2014-01-28T00:24:34Z"], ["title", "Ensure that journal bits facebook app is setup properly (with images etc)"], ["updated_at", Thu, 30 Jan 2014 12:39:16 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWunderlistEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1
