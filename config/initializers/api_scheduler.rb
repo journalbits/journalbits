@@ -21,9 +21,9 @@ scheduler = Rufus::Scheduler.new
 # end 
 
 scheduler.every("10s") do
-  twitter_data
-  rescue_time_data
-  github_data
+  # twitter_data
+  # rescue_time_data
+  # github_data
   wunderlist_data
   fitbit_data
   # pocket_data

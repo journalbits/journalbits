@@ -20,9 +20,7 @@ module FitbitApiHelper
 
   def user_sleep_on date=nil, client 
     sleep_data = client.sleep_on_date(date)
-    if sleep_data != nil
-      { minutes_asleep: sleep_data['sleep'].first['minutesAsleep'], minutes_awake: sleep_data['sleep'].first['minutesAwake'], minutes_to_fall_asleep: sleep_data['sleep'].first['minutesToFallAsleep'], efficiency: sleep_data['sleep'].first['efficiency'], times_awake: sleep_data['sleep'].first['awakeningsCount'], sleep_start_time: sleep_data['sleep'].first['startTime'] }
-    end
+    { minutes_asleep: sleep_data['sleep'].first['minutesAsleep'], minutes_awake: sleep_data['sleep'].first['minutesAwake'], minutes_to_fall_asleep: sleep_data['sleep'].first['minutesToFallAsleep'], efficiency: sleep_data['sleep'].first['efficiency'], times_awake: sleep_data['sleep'].first['awakeningsCount'], sleep_start_time: sleep_data['sleep'].first['startTime'] } if !sleep_data['sleep'].empty?
   end
 
   def user_weight_on date=nil, client
@@ -37,6 +35,7 @@ module FitbitApiHelper
 
   def save_sleep_entries date, client, user
     sleep_data = user_sleep_on date, client
+    return if !sleep_data
     unless FitbitSleepEntry.exists?(date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
       FitbitSleepEntry.create(minutes_asleep: sleep_data[:minutes_asleep], minutes_awake: sleep_data[:minutes_awake], minutes_to_fall_asleep: sleep_data[:minutes_to_fall_asleep], efficiency: sleep_data[:efficiency], times_awake: sleep_data[:times_awake], start_time: sleep_data[:sleep_start_time], date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
     end
@@ -51,6 +50,7 @@ module FitbitApiHelper
 
   def save_weight_entries date, client, user
     weight_data = user_weight_on date, client
+    return if !weight_data[:weight]
     unless FitbitWeightEntry.exists?(date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
       FitbitWeightEntry.create(weight: weight_data[:weight], weight_unit: weight_data[:weight_unit], date: (Time.now - 1.day).to_s[0..9], user_id: user.id)
     end

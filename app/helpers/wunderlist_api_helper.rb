@@ -5,8 +5,8 @@ module WunderlistApiHelper
   def wunderlist_data
     User.all.each do |user|
       if user.wunderlist_token
-        tasks_completed_today = user_tasks_completed Time.now, user.wunderlist_token
-        tasks_created_today = user_tasks_created Time.now, user.wunderlist_token
+        tasks_completed_today = user_tasks_completed Time.now - 1.day, user.wunderlist_token
+        tasks_created_today = user_tasks_created Time.now - 1.day, user.wunderlist_token
         lists = user_lists user.wunderlist_token
         all_tasks = tasks_created_today + tasks_completed_today
         all_tasks.each do |task|

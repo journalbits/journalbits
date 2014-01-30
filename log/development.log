@@ -50943,3 +50943,71 @@ Migrating to CreateLastfmEntries (20140130004452)
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
   [1m[36mRescueTimeEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."date" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "wunderlist_entries" ("created_at", "task_id", "time_created", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:10:42 UTC +00:00], ["task_id", "ACg1AB-MyPQ"], ["time_created", "2014-01-29T11:46:30Z"], ["title", "Restart posting to onelastpage"], ["updated_at", Thu, 30 Jan 2014 12:10:42 UTC +00:00], ["user_id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitSleepEntry Exists (6.5ms)[0m  SELECT 1 AS one FROM "fitbit_sleep_entries" WHERE "fitbit_sleep_entries"."date" = '2014-01-29' AND "fitbit_sleep_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (6.6ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.6ms)[0m  INSERT INTO "fitbit_activity_entries" ("active_minutes", "calories", "created_at", "date", "distance", "steps", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["active_minutes", 0], ["calories", 2189], ["created_at", Thu, 30 Jan 2014 12:17:33 UTC +00:00], ["date", "2014-01-29"], ["distance", 1.13], ["steps", 2356], ["updated_at", Thu, 30 Jan 2014 12:17:33 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFitbitWeightEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-29' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "fitbit_weight_entries" ("created_at", "date", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 30 Jan 2014 12:17:33 UTC +00:00], ["date", "2014-01-29"], ["updated_at", Thu, 30 Jan 2014 12:17:33 UTC +00:00], ["user_id", 1]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWunderlistEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mFitbitWeightEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-29' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mFitbitWeightEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-29' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.9ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-MyPQ' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mFitbitWeightEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_weight_entries" WHERE "fitbit_weight_entries"."date" = '2014-01-29' AND "fitbit_weight_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
