@@ -1,0 +1,2 @@
+class LastfmEntriesController < ApplicationController
+end

@@ -1,5 +1,7 @@
 JournalBits::Application.routes.draw do
 
+  resources :lastfm_entries
+
   resources :instapaper_entries
 
   resources :instagram_entries
