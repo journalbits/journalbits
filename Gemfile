@@ -51,6 +51,7 @@ gem 'instapaper'
 
 # For user profiles
 gem 'devise'
+gem 'gravtastic'
 
 # For background tasks
 gem 'rufus-scheduler'

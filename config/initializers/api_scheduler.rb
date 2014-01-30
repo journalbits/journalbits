@@ -17,7 +17,7 @@ include LastfmApiHelper
 scheduler = Rufus::Scheduler.new
 
 # THIS ONE IS FOR 00:01 EVERY DAY
-scheduler.cron("0 1 0 1/1 * ? *") do
+scheduler.cron("1 0 * * *") do
   # twitter_data
   # github_data
   # wunderlist_data
@@ -32,7 +32,7 @@ scheduler.cron("0 1 0 1/1 * ? *") do
 end
 
 # THIS ONE IS FOR 23:55 EVERY DAY
-scheduler.cron("0 55 23 1/1 * ? *") do
+scheduler.cron("55 23 * * *") do
   # rescue_time_data
 end
 
