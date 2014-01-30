@@ -49929,3 +49929,108 @@ Migrating to AddLastfmUsernameToUser (20140129215225)
   [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140129215225"]]
   [1m[36m (107.0ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users/auth/lastfm" for 127.0.0.1 at 2014-01-29 21:53:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/users/auth/lastfm/callback?token=5ca8351145decdce01e17f9bdf2826fe" for 127.0.0.1 at 2014-01-29 21:53:58 +0000
+Processing by OmniauthCallbacksController#lastfm as HTML
+  Parameters: {"token"=>"5ca8351145decdce01e17f9bdf2826fe"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  UPDATE "users" SET "lastfm_username" = $1, "updated_at" = $2 WHERE "users"."id" = 1  [["lastfm_username", "hamchapman"], ["updated_at", Wed, 29 Jan 2014 21:53:59 UTC +00:00]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 122ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 21:53:59 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 250ms (Views: 246.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/evernote_entries.css?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/instapaper_entries.css?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/instagram_entries.css?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/evernote_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/facebook_photo_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/fitbit_activity_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/fitbit_sleep_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/fitbit_weight_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/github_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/instapaper_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/instagram_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/journal_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/rescue_time_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/pocket_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/twitter_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/whatpulse_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/wunderlist_entries.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 21:54:00 +0000
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m

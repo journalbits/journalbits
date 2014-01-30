@@ -5,30 +5,28 @@ module LastfmApiHelper
   def lastfm_data
     User.all.each do |user|
       if user.lastfm_username
-        # save_tracks_on Time.now - 1.day, user
-        get_user_tracks user
+        save_tracks_on Time.now - 1.day, user
       end
     end
   end
 
   def user_tracks_on date, user
     tracks = get_user_tracks user
-    tracks_today = tracks.select { |track| Time.at(track['created_time'].to_i).to_s[0..9] == date.to_s[0..9] }
-    puts tracks_today
+    tracks.select { |track| Time.at(track['date']['uts'].to_i).to_s[0..9] == date.to_s[0..9] }
   end
 
   def get_user_tracks user
     username = user.lastfm_username
-    uri = URI("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=#{username}&api_key=#{ENV['LASTFM_CONSUMER_KEY']}&format=json")
+    uri = URI("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=#{username}&api_key=#{ENV['LASTFM_CONSUMER_KEY']}&format=json&limit=200")
     response = Net::HTTP.get(uri)
-    puts JSON.parse(response)
+    JSON.parse(response)['recenttracks']['track']
   end
 
-  def save_media_on date, user
-    media = user_media_on date, user
-    media.each do |item|
-      unless InstagramEntry.exists?(link_url: item['link'])
-        InstagramEntry.create(user_id: user.id, time_created: date.to_s, kind: item['type'], thumbnail_url: item['images']['thumbnail']['url'], standard_url: item['images']['standard_resolution']['url'], caption: item['caption']['text'], link_url: item['link'])
+  def save_tracks_on date, user
+    tracks = user_tracks_on date, user
+    tracks.each do |track|
+      unless LastfmEntry.exists?(user_id: user.id, uts: track['date']['uts'])
+        LastfmEntry.create(user_id: user.id, time_created: date.to_s, artist: track['artist']['#text'], track: track['name'], uts: track['date']['uts'], url: track['url'])
       end
     end
   end

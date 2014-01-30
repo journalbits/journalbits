@@ -32,5 +32,5 @@ scheduler.every("10s") do
   # evernote_data
   # instagram_data
   # instapaper_data
-  lastfm_data
+  # lastfm_data
 end
