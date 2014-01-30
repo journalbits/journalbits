@@ -51071,3 +51071,8 @@ Migrating to AddTimeCreatedColumnToRescueTimeEntries (20140130133112)
   [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140130133112"]]
   [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30 14:04:37 +0000' AND "rescue_time_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "productivity", "time_created", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "github.com"], ["activity_5", "stackoverflow.com"], ["productivity", 14], ["time_created", "2014-01-30 14:04:37 +0000"], ["time_spent_1", 6418], ["time_spent_2", 2041], ["time_spent_3", 1461], ["time_spent_4", 717], ["time_spent_5", 566], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
