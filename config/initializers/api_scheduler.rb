@@ -25,7 +25,7 @@ scheduler.every("10s") do
   # rescue_time_data
   # github_data
   wunderlist_data
-  fitbit_data
+  # fitbit_data
   # pocket_data
   # facebook_data
   # whatpulse_data
