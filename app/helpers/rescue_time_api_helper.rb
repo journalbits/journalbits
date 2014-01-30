@@ -4,15 +4,18 @@ module RescueTimeApiHelper
 
   def rescue_time_data
     User.all.each do |user|
-      if user.rescue_time_key 
-        top_five_for_day = user_data_top_five(user.rescue_time_key)
-        productivity = productivity_score(top_five_for_day)
-        data_to_save = top_five_hash_for_db(top_five_for_day)
+      if user.rescue_time_key
+        top_five_for_day = user_data_top_five user.rescue_time_key 
+        productivity = productivity_score top_five_for_day
+        data_to_save = top_five_hash_for_db top_five_for_day
+        date = (Time.now - 1.day)
+        general_data = { productivity: productivity }
+        data_to_save = data_to_save.merge(general_data)
         data_to_save["productivity"] = productivity
         data_to_save["date"] = Time.now.to_s[0..9]
         data_to_save["created_at"] = Time.now
         data_to_save["user_id"] = user.id
-        unless RescueTimeEntry.exists?(date: Time.now.to_s[0..9], user_id: user.id)
+        unless RescueTimeEntry.exists?(time_created: date.to_s, user_id: user.id)
           RescueTimeEntry.create(data_to_save)
         end
       end
@@ -35,11 +38,7 @@ module RescueTimeApiHelper
   end
 
   def productivity_score top_five_for_day
-    total = 0
-    top_five_for_day.each do |item|
-      total += item[1]*item[5]
-    end
-    total / 1000
+    top_five_for_day.inject(0){|sum, item| sum + item[1]*item[5]} / 1000
   end
 
 end

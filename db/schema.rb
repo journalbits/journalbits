@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130004452) do
+ActiveRecord::Schema.define(version: 20140130133112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,20 +125,19 @@ ActiveRecord::Schema.define(version: 20140130004452) do
   end
 
   create_table "rescue_time_entries", force: true do |t|
-    t.string   "activity_1"
-    t.integer  "time_spent_1"
-    t.string   "activity_2"
-    t.integer  "time_spent_2"
-    t.string   "activity_3"
-    t.integer  "time_spent_3"
-    t.string   "activity_4"
-    t.integer  "time_spent_4"
-    t.string   "activity_5"
-    t.integer  "time_spent_5"
-    t.string   "date"
-    t.integer  "productivity"
-    t.datetime "created_at"
-    t.integer  "user_id"
+    t.string  "activity_1"
+    t.integer "time_spent_1"
+    t.string  "activity_2"
+    t.integer "time_spent_2"
+    t.string  "activity_3"
+    t.integer "time_spent_3"
+    t.string  "activity_4"
+    t.integer "time_spent_4"
+    t.string  "activity_5"
+    t.integer "time_spent_5"
+    t.integer "productivity"
+    t.integer "user_id"
+    t.string  "time_created"
   end
 
   create_table "twitter_entries", force: true do |t|

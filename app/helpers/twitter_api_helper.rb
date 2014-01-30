@@ -12,7 +12,7 @@ module TwitterApiHelper
   def twitter_data
     User.all.each do |user|
       if user.twitter_oauth_token
-        client = personalise_client_for user
+        client = personalise_twitter_client_for user
         save_twitter_entries_to_database (Time.now - 1.day), client, user
       end
     end
@@ -66,7 +66,7 @@ module TwitterApiHelper
     end
   end
 
-  def personalise_client_for user
+  def personalise_twitter_client_for user
     TwitterClient.oauth_token=(user.twitter_oauth_token)
     TwitterClient.oauth_token_secret=(user.twitter_oauth_secret)
     TwitterClient
