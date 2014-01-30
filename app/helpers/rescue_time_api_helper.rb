@@ -12,7 +12,7 @@ module RescueTimeApiHelper
 
   def rt_save_data_to_database date, key, user
     data_to_save = data_for_db date, key, user
-    unless RescueTimeEntry.exists?(time_created: date.to_s, user_id: user.id)
+    unless RescueTimeEntry.exists?(time_created: date.to_s[0..9], user_id: user.id)
       RescueTimeEntry.create(data_to_save)
     end
   end
@@ -20,7 +20,7 @@ module RescueTimeApiHelper
   def data_for_db date, key, user
     top_five_for_day = user_data_top_five key
     top_five_hash = top_five_hash top_five_for_day
-    general_data = { productivity: productivity_score(top_five_for_day), time_created: date.to_s, user_id: user.id }
+    general_data = { productivity: productivity_score(top_five_for_day), time_created: date.to_s[0..9], user_id: user.id }
     top_five_hash.merge(general_data)
   end
 

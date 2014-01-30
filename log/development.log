@@ -51076,3 +51076,1046 @@ Migrating to AddTimeCreatedColumnToRescueTimeEntries (20140130133112)
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (3.4ms)[0m  INSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "productivity", "time_created", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "github.com"], ["activity_5", "stackoverflow.com"], ["productivity", 14], ["time_created", "2014-01-30 14:04:37 +0000"], ["time_spent_1", 6418], ["time_spent_2", 2041], ["time_spent_3", 1461], ["time_spent_4", 717], ["time_spent_5", 566], ["user_id", 1]]
   [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30 14:32:14 +0000' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "productivity", "time_created", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "github.com"], ["activity_5", "tweetbot"], ["productivity", 12], ["time_created", "2014-01-30 14:32:14 +0000"], ["time_spent_1", 6672], ["time_spent_2", 2041], ["time_spent_3", 1510], ["time_spent_4", 724], ["time_spent_5", 567], ["user_id", 1]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30 14:32:44 +0000' AND "rescue_time_entries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "productivity", "time_created", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "github.com"], ["activity_5", "tweetbot"], ["productivity", 12], ["time_created", "2014-01-30 14:32:44 +0000"], ["time_spent_1", 6672], ["time_spent_2", 2041], ["time_spent_3", 1510], ["time_spent_4", 724], ["time_spent_5", 567], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mGithubEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1
+  [1m[36mGithubEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWunderlistEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30 14:33:13 +0000' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "productivity", "time_created", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "github.com"], ["activity_5", "tweetbot"], ["productivity", 12], ["time_created", "2014-01-30 14:33:13 +0000"], ["time_spent_1", 6672], ["time_spent_2", 2041], ["time_spent_3", 1510], ["time_spent_4", 724], ["time_spent_5", 567], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "rescue_time_entries" ("activity_1", "activity_2", "activity_3", "activity_4", "activity_5", "productivity", "time_created", "time_spent_1", "time_spent_2", "time_spent_3", "time_spent_4", "time_spent_5", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["activity_1", "sublime text"], ["activity_2", "mplayerx"], ["activity_3", "iTerm"], ["activity_4", "github.com"], ["activity_5", "tweetbot"], ["productivity", 12], ["time_created", "2014-01-30"], ["time_spent_1", 6719], ["time_spent_2", 2041], ["time_spent_3", 1619], ["time_spent_4", 724], ["time_spent_5", 567], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitActivityEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1[0m
+  [1m[35mTwitterEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mGithubEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWunderlistEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mFitbitActivityEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWhatpulseEntry Exists (6.9ms)[0m  SELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119712182' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "whatpulse_entries" ("clicks", "created_at", "download_mb", "keys", "pulse_id", "time_created", "updated_at", "upload_mb", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["clicks", "2,815"], ["created_at", Thu, 30 Jan 2014 14:41:55 UTC +00:00], ["download_mb", 2609], ["keys", "10,000"], ["pulse_id", "Pulse-119712182"], ["time_created", "2014-01-29 14:41:55 +0000"], ["updated_at", Thu, 30 Jan 2014 14:41:55 UTC +00:00], ["upload_mb", 72], ["user_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.8ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mInstapaperEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451266835' LIMIT 1
+  [1m[36mInstapaperEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451068399' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mRescueTimeEntry Exists (0.6ms)[0m  SELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitActivityEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWhatpulseEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119712182' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mTwitterEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428494454488854528 LIMIT 1
+  [1m[36mTwitterEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "twitter_entries" WHERE "twitter_entries"."tweet_id" = 428609143935860738 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mRescueTimeEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "rescue_time_entries" WHERE "rescue_time_entries"."time_created" = '2014-01-30' AND "rescue_time_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mInstapaperEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451266835' LIMIT 1[0m
+  [1m[35mInstapaperEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "instapaper_entries" WHERE "instapaper_entries"."bookmark_id" = '451068399' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mGithubEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3eec414d7ca88453ad2cc448fd230cea06bc7b33' LIMIT 1
+  [1m[36mGithubEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '7c4d7c4709fca52ba3dfaffb5db9324536092c3d' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '1e99a9002d847cbbd540bbf2bfe15f044f030c55' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '0e6963af202c5823d844027724cc45d71a15b395' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '63c28830d4fbd5e434715cae02b4d7818510b5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'e030a7551205bedefe126bb4d17109a59835858b' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = 'a99a334a654c181287356a6ad333e1c1fa38e5d8' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '276d7474e2b7a00613f44501d32b0a82a221bbf0' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '5eceb728614c9e55e4b30d250a8bc3d81c200fe6' LIMIT 1
+  [1m[36mGithubEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '3ac963cd11593ea5eff275d74995b15fb818d205' LIMIT 1[0m
+  [1m[35mGithubEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "github_entries" WHERE "github_entries"."sha" = '8e8f1c9d90e5d326fd4cf24944df56cba579f747' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWunderlistEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB-B33A' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QOw' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB9_QC4' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB925TY' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92o2E' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oNo' LIMIT 1[0m
+  [1m[35mWunderlistEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92oC8' LIMIT 1
+  [1m[36mWunderlistEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "wunderlist_entries" WHERE "wunderlist_entries"."task_id" = 'ACg1AB92n4g' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mFitbitActivityEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "fitbit_activity_entries" WHERE "fitbit_activity_entries"."date" = '2014-01-29' AND "fitbit_activity_entries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWhatpulseEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "whatpulse_entries" WHERE "whatpulse_entries"."user_id" = 1 AND "whatpulse_entries"."pulse_id" = 'Pulse-119712182' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mLastfmEntry Exists (0.8ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391039533' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Attack In Black"], ["created_at", Thu, 30 Jan 2014 14:47:03 UTC +00:00], ["time_created", "2014-01-29 14:47:01 +0000"], ["track", "Young Leaves"], ["updated_at", Thu, 30 Jan 2014 14:47:03 UTC +00:00], ["url", "http://www.last.fm/music/Attack+In+Black/_/Young+Leaves"], ["user_id", 1], ["uts", "1391039533"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016636' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016378' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016374' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016179' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016176' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015943' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015939' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015531' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015526' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015044' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014824' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014821' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014541' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014538' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014377' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014374' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014063' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014059' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013860' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013856' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013604' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013601' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013387' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013383' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013150' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013147' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012918' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012914' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012492' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012489' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012261' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012257' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011869' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011865' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011651' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011647' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011356' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011352' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011120' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011115' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005689' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005686' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005490' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005487' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005263' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005260' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005093' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005007' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004754' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004751' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004407' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004171' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004168' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003842' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003838' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003513' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003510' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003267' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003263' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003074' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003070' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002843' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002839' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002598' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002594' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002362' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002358' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002127' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002123' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001934' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001930' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001714' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001710' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001465' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001462' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001173' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001169' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000640' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000637' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000481' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000478' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000275' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000272' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999981' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999978' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999790' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999786' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999533' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999530' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999319' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999316' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999141' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999138' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999056' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998785' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998782' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998588' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998585' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998419' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998416' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998211' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997818' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997814' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997622' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997618' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997414' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997210' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997207' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996980' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996977' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996656' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996653' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996445' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996441' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996210' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996052' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996048' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995876' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995872' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995572' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995566' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995389' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995385' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994689' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994685' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994439' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994435' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994270' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994266' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993990' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993986' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993671' LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391039533' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016636' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016378' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016374' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016179' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016176' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015943' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015939' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015531' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015526' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015044' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014824' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014821' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014541' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014538' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014377' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014374' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014063' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014059' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013860' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013856' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013604' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013601' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013387' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013383' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013150' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013147' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012918' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012914' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012492' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012489' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012261' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012257' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011869' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011865' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011651' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011647' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011356' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011352' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011120' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011115' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005689' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005686' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005490' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005487' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005263' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005260' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005093' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005007' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004754' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004751' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004407' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004171' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004168' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003842' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003838' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003513' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003510' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003267' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003263' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003074' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003070' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (54.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002843' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002839' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002598' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002594' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002362' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002358' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002127' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002123' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001934' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001930' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001714' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001710' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001465' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001462' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001173' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001169' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000640' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000637' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000481' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000478' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000275' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000272' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999981' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999978' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999790' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999786' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999533' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999530' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999319' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999316' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999141' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999138' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999056' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998785' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998782' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998588' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998585' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998419' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998416' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998211' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997818' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997814' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997622' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997618' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997414' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997210' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997207' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996980' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996977' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996656' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996653' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996445' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996441' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996210' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996052' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996048' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995876' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995872' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995572' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995566' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995389' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995385' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994689' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994685' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994439' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994435' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994270' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994266' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993990' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993986' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993671' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391039533' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016636' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016378' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016374' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016179' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016176' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015943' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015939' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015531' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015526' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015044' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014824' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014821' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014541' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014538' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014377' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014374' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014063' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014059' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013860' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013856' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013604' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013601' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013387' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013383' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013150' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013147' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012918' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012914' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012492' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012489' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012261' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012257' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011869' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011865' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011651' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011647' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011356' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011352' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011120' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011115' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005689' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005686' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005490' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005487' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005263' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005260' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005093' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005007' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004754' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004751' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004407' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004171' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004168' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003842' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003838' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003513' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003510' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003267' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003263' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003074' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003070' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002843' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002839' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002598' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002594' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002362' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002358' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002127' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002123' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001934' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001930' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001714' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001710' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001465' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001462' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001173' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001169' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000640' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000637' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000481' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000478' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000275' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000272' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999981' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999978' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999790' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999786' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999533' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999530' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999319' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999316' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999141' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999138' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999056' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998785' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998782' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998588' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998585' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998419' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998416' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998211' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997818' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997814' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997622' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997618' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997414' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997210' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997207' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996980' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996977' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996656' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996653' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996445' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996441' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996210' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996052' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996048' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995876' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995872' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995572' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995566' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995389' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995385' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994689' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994685' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994439' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994435' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994270' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994266' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993990' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993986' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993671' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391039533' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016636' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016378' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016374' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016179' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391016176' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015943' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015939' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015531' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015526' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391015044' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014824' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014821' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014541' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014538' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014377' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014374' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014063' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391014059' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013860' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013856' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013604' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013601' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013387' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013383' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013150' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391013147' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012918' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012914' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012492' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012489' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012261' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391012257' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011869' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011865' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011651' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011647' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011356' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011352' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011120' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391011115' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005689' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005686' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005490' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005487' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005263' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005260' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005093' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391005007' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004754' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004751' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004407' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004171' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391004168' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003842' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003838' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003513' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003510' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003267' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003263' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003074' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391003070' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002843' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002839' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002598' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002594' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002362' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002358' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002127' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391002123' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001934' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001930' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001714' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001710' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001465' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001462' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001173' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391001169' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000640' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000637' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000481' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000478' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000275' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391000272' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999981' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999978' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999790' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999786' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999533' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999530' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999319' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999316' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999141' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999138' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390999056' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998785' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998782' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998588' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998585' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998419' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998416' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390998211' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997818' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997814' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997622' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997618' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997414' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997210' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390997207' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996980' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996977' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996656' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996653' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996445' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996441' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996214' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996210' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996052' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390996048' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995876' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995872' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995572' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995566' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995389' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390995385' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994689' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994685' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994439' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994435' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994270' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390994266' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993990' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993986' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1390993671' LIMIT 1[0m
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mLastfmEntry Exists (0.7ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092940' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Delphic"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Doubt"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Delphic/_/Doubt"], ["user_id", 1], ["uts", "1391092940"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092674' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Young Galaxy"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Fall for You"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Young+Galaxy/_/Fall+for+You"], ["user_id", 1], ["uts", "1391092674"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092410' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Land of Talk"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Got a Call"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Land+of+Talk/_/Got+a+Call"], ["user_id", 1], ["uts", "1391092410"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092245' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Immaculate Machine"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Nothing Ever Happens"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Immaculate+Machine/_/Nothing+Ever+Happens"], ["user_id", 1], ["uts", "1391092245"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092000' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Said The Whale"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Narrows"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Said+The+Whale/_/Narrows"], ["user_id", 1], ["uts", "1391092000"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091804' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Said The Whale"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Mother"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Said+The+Whale/_/Mother"], ["user_id", 1], ["uts", "1391091804"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091473' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Rah Rah"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Saint"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Rah+Rah/_/Saint"], ["user_id", 1], ["uts", "1391091473"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091267' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Paper Lions"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "My Friend"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Paper+Lions/_/My+Friend"], ["user_id", 1], ["uts", "1391091267"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091035' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Jason Collett"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Rave On Sad Songs"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Jason+Collett/_/Rave+On+Sad+Songs"], ["user_id", 1], ["uts", "1391091035"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090789' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Forest City Lovers"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Tell Me, Cancer"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Forest+City+Lovers/_/Tell+Me,+Cancer"], ["user_id", 1], ["uts", "1391090789"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090574' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "AttackinBlack"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Broken Things"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/+noredirect/AttackinBlack/_/Broken+Things"], ["user_id", 1], ["uts", "1391090574"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090411' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Winter Gloves"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Factories"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Winter+Gloves/_/Factories"], ["user_id", 1], ["uts", "1391090411"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391086185' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Shotgun Jimmie"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Carry On"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Shotgun+Jimmie/_/Carry+On"], ["user_id", 1], ["uts", "1391086185"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085916' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Land of Talk"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Magnetic Hill"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Land+of+Talk/_/Magnetic+Hill"], ["user_id", 1], ["uts", "1391085916"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085643' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Dan Mangan"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Road Regrets"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Dan+Mangan/_/Road+Regrets"], ["user_id", 1], ["uts", "1391085643"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085396' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Local Natives"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Heavy Feet"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Local+Natives/_/Heavy+Feet"], ["user_id", 1], ["uts", "1391085396"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085190' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "The Dudes"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Girl Police"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/The+Dudes/_/Girl+Police"], ["user_id", 1], ["uts", "1391085190"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085025' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Immaculate Machine"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Nothing Ever Happens"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Immaculate+Machine/_/Nothing+Ever+Happens"], ["user_id", 1], ["uts", "1391085025"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084782' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Ketch Harbour Wolves"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "The Good Blood"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Ketch+Harbour+Wolves/_/The+Good+Blood"], ["user_id", 1], ["uts", "1391084782"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084531' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Hannah Georgas"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Enemies"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Hannah+Georgas/_/Enemies"], ["user_id", 1], ["uts", "1391084531"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084314' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Rah Rah"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "I'm a Killer"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Rah+Rah/_/I%27m+a+Killer"], ["user_id", 1], ["uts", "1391084314"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084105' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Small Sins"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "'Til I Go Home"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Small+Sins/_/%27Til+I+Go+Home"], ["user_id", 1], ["uts", "1391084105"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083962' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Forest City Lovers"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Light You Up"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Forest+City+Lovers/_/Light+You+Up"], ["user_id", 1], ["uts", "1391083962"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083876' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Said The Whale"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "More Than This"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Said+The+Whale/_/More+Than+This"], ["user_id", 1], ["uts", "1391083876"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083627' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Matthew Barber"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Where the River Bends"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/+noredirect/Matthew+Barber/_/Where+the+River+Bends"], ["user_id", 1], ["uts", "1391083627"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083379' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Yukon Blonde"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Six Dead Tigers"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Yukon+Blonde/_/Six+Dead+Tigers"], ["user_id", 1], ["uts", "1391083379"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082948' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Plants and Animals"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Faerie Dance"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Plants+and+Animals/_/Faerie+Dance"], ["user_id", 1], ["uts", "1391082948"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082731' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Boxer the Horse"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Karen Silkwood"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Boxer+the+Horse/_/Karen+Silkwood"], ["user_id", 1], ["uts", "1391082731"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082501' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "The Acorn"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Almanac"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/The+Acorn/_/Almanac"], ["user_id", 1], ["uts", "1391082501"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082282' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Grouplove"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Tongue Tied"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Grouplove/_/Tongue+Tied"], ["user_id", 1], ["uts", "1391082282"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082051' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Shotgun Jimmie"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "King Of Kreuzberg"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Shotgun+Jimmie/_/King+Of+Kreuzberg"], ["user_id", 1], ["uts", "1391082051"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081870' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Small Sins"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Déjà Vu feat. K-OS"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Small+Sins/_/D%C3%A9j%C3%A0+Vu+feat.+K-OS"], ["user_id", 1], ["uts", "1391081870"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081644' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Said The Whale"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Willow"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Said+The+Whale/_/Willow"], ["user_id", 1], ["uts", "1391081644"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081372' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Memphis"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Apocalypse Pop Song"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Memphis/_/Apocalypse+Pop+Song"], ["user_id", 1], ["uts", "1391081372"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081216' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "The Rural Alberta Advantage"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Don't Haunt This Place"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/The+Rural+Alberta+Advantage/_/Don%27t+Haunt+This+Place"], ["user_id", 1], ["uts", "1391081216"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080921' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Elliott Brood"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Cranes"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Elliott+Brood/_/Cranes"], ["user_id", 1], ["uts", "1391080921"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080697' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "The Zolas"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "Ancient Mars"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/The+Zolas/_/Ancient+Mars"], ["user_id", 1], ["uts", "1391080697"]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mLastfmEntry Exists (0.5ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080390' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "lastfm_entries" ("artist", "created_at", "time_created", "track", "updated_at", "url", "user_id", "uts") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["artist", "Hey Rosetta!"], ["created_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["time_created", "2014-01-30 14:47:36 +0000"], ["track", "another pilot"], ["updated_at", Thu, 30 Jan 2014 14:47:38 UTC +00:00], ["url", "http://www.last.fm/music/Hey+Rosetta!/_/another+pilot"], ["user_id", 1], ["uts", "1391080390"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mLastfmEntry Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092940' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092674' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092410' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092245' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092000' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091804' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091473' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091267' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091035' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090789' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090574' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090411' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391086185' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085916' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085643' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085396' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085190' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085025' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084782' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084531' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084314' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084105' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083962' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083876' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083627' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083379' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082948' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082731' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082501' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082282' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082051' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081870' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081644' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.3ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081372' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081216' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080921' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080697' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080390' LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mLastfmEntry Exists (0.4ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092940' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092674' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092410' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092245' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391092000' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091804' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091473' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091267' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391091035' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090789' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090574' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391090411' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391086185' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085916' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085643' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085396' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085190' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391085025' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084782' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084531' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084314' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391084105' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083962' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083876' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083627' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391083379' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082948' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082731' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082501' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082282' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391082051' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081870' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081644' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081372' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391081216' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080921' LIMIT 1[0m
+  [1m[35mLastfmEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080697' LIMIT 1
+  [1m[36mLastfmEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "lastfm_entries" WHERE "lastfm_entries"."user_id" = 1 AND "lastfm_entries"."uts" = '1391080390' LIMIT 1[0m
