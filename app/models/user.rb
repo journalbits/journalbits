@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  include Gravtastic
+  gravtastic :size => 220
+
   # Dirty methods that allow me to use current_user in a model
   class << self
     def current_user= user

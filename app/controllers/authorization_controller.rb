@@ -3,7 +3,7 @@ require 'net/http'
 class AuthorizationController < ApplicationController
 
   def index
-    
+    @user = current_user
   end
 
   def github
@@ -25,15 +25,15 @@ class AuthorizationController < ApplicationController
   end
 
   def rescue_time
-    
+    @user = current_user
   end
 
   def wunderlist
-
+    @user = current_user
   end
 
   def whatpulse
-
+    @user = current_user
   end
 
 end

@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Journal Bits</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-  <li>
-    <%= link_to "Connections", "/connections" %>
-  </li>
-<% else %>
-  <li>
-    <%= link_to('Login', new_user_session_path)  %> 
-  </li>
-  <li>
-    <%= link_to('Edit registration', edit_user_registration_path) %>
-  </li>
-  <li>
-    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-  </li>
-  <li>
-    <%= link_to('Register', new_user_registration_path)  %> 
-  </li>
-<% end %>
+  
+  <head>
+    <title>Journal Bits</title>
 
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "Connections", "/connections" %>
+            </li>
+            <li>
+              <%= link_to('Edit Profile', edit_user_registration_path) %>
+            </li>
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('Login', new_user_session_path)  %>
+            </li>
+            <li>
+             <%= link_to('Register', new_user_registration_path)  %> 
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
 
-</body>
+    <section class="main_body">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </section>
+
+  </body>
+
 </html>

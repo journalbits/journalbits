@@ -49,7 +49,7 @@ gem "koala", "~> 1.8.0rc1"
 gem 'evernote_oauth'
 gem 'instapaper'
 
-# For user profiles
+# For user profiles and profile images
 gem 'devise'
 gem 'gravtastic'
 
@@ -58,6 +58,9 @@ gem 'rufus-scheduler'
 
 # For HTTP requests
 gem 'httparty'
+
+# For responsive grid
+gem 'neat'
 
 
 group :test do

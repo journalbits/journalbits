@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: font-url('Lato-Regular.eot') format('embedded-opentype'), 
+         font-url('Lato-Regular.woff') format('woff'), 
+         font-url('Lato-Regular.ttf')  format('truetype'),
+         font-url('Lato-Regular.svg') format('svg');
+}
+
+body .main_body {
+  font-family: 'Lato-Regular';
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav {
+  font-family: 'Lato-Regular';
+  background: #710300;
+ /* border-bottom: 3px solid black;*/
+  width: 100%;
+  /*margin: 20px 0;*/
+  height: 40px;
+  /*max-width: 1240px;*/
+  /*margin: 0;
+  padding: 0;*/
+  list-style: none;
+  /*font-size: 1.5em;
+  font-weight: 300;*/
+}
+
+nav ul {
+  max-width: 960px;
+  width: 70%;
+  padding:0; 
+  margin:0;
+  list-style-type: none;
+}
+
+nav ul li {
+  float: right;
+  width: 20%;
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: rgba(249, 249, 249, .9);
+  text-decoration: none;
+  transition: color .5s, background .5s, height .5s;
+}
+
+/*.nav li span {
+    display: block;
+}*/
+
+a, button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}

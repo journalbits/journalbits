@@ -1,4 +1,4 @@
-<%= form_for current_user, url: "/auth/wunderlist" do |f| %>
+<%= form_for @user, url: "/auth/wunderlist" do |f| %>
   <%= f.label "Wunderlist Email" %>
   <%= text_field_tag "wunderlist_email" %><br>
   <%= f.label "Wunderlist Password" %>
