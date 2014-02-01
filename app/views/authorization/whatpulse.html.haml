@@ -1,0 +1,5 @@
+= form_for @user, url: "/auth/whatpulse" do |f|
+  = f.label "WhatPulse Username"
+  = f.text_field :whatpulse_username
+  %br/
+  = f.submit "Connect"

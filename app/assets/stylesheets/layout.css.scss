@@ -1,3 +1,6 @@
+@import "bourbon";
+@import "neat";
+
 * {
   margin: 0;
 }
@@ -10,7 +13,54 @@
          font-url('Lato-Regular.svg') format('svg');
 }
 
+@font-face {
+  font-family: 'journalbits';
+  src:url('journalbits.eot');
+  src:url('journalbits.eot?#iefix') format('embedded-opentype'),
+    url('journalbits.woff') format('woff'),
+    url('journalbits.ttf') format('truetype'),
+    url('journalbits.svg#journalbits') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="jb-"], [class*=" jb-"] {
+  font-family: 'journalbits';
+  speak: none;
+  color: white;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.jb-twitter:before {
+  content: "\e600";
+}
+.jb-connections:before {
+  content: "\e601";
+}
+.jb-home:before {
+  content: "\e602";
+}
+.jb-options:before {
+  content: "\e603";
+}
+.jb-profile:before {
+  content: "\e604";
+}
+.jb-upgrade:before {
+  content: "\e605";
+}
+
 body .main_body {
+  @include outer-container;
   font-family: 'Lato-Regular';
   width: 100%;
   max-width: 960px;
@@ -23,7 +73,7 @@ nav {
  /* border-bottom: 3px solid black;*/
   width: 100%;
   /*margin: 20px 0;*/
-  height: 40px;
+  height: 42px;
   /*max-width: 1240px;*/
   /*margin: 0;
   padding: 0;*/
@@ -33,20 +83,24 @@ nav {
 }
 
 nav ul {
+  align: center;
   max-width: 960px;
-  width: 70%;
+  /*width: 70%;*/
   padding:0; 
   margin:0;
+  margin-left:auto;
+  margin-right:auto;
   list-style-type: none;
 }
 
 nav ul li {
-  float: right;
+  float: left;
   width: 20%;
   list-style-type: none;
 }
 
 nav ul li a {
+  @include span-columns(3);
   text-decoration: none;
   display: block;
   width: 100%;
@@ -55,10 +109,27 @@ nav ul li a {
   transition: color .5s, background .5s, height .5s;
 }
 
-/*.nav li span {
-    display: block;
+/*nav ul li span {
+  float: left;
 }*/
 
 a, button {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+@media (min-width: 50em) {
+ 
+    nav li {
+        /*float: left;*/
+        /*width: 10%;*/
+        /*text-align: center;*/
+        transition: border .5s;
+    }
+ 
+    nav a {
+        display: block;
+        width: auto;
+    }
+
 }

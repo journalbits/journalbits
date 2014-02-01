@@ -59,8 +59,12 @@ gem 'rufus-scheduler'
 # For HTTP requests
 gem 'httparty'
 
-# For responsive grid
+# For front-end
 gem 'neat'
+gem 'haml-rails'
+
+# For chaning erb to haml
+gem 'html2haml'
 
 
 group :test do

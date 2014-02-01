@@ -20,78 +20,86 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth auth
     case auth.provider
-      when "twitter" then process_for_twitter auth
-      when "fitbit" then process_for_fitbit auth
-      when "pocket" then process_for_pocket auth
-      when "rdio" then process_for_rdio auth
-      when "facebook" then process_for_facebook auth
-      when "evernote" then process_for_evernote auth
-      when "instagram" then process_for_instagram auth
-      when "instapaper" then process_for_instapaper auth
-      when "lastfm" then process_for_lastfm auth
+      when "twitter" then return process_for_twitter auth
+      when "fitbit" then return process_for_fitbit auth
+      when "pocket" then return process_for_pocket auth
+      when "rdio" then return process_for_rdio auth
+      when "facebook" then return process_for_facebook auth
+      when "evernote" then return process_for_evernote auth
+      when "instagram" then return process_for_instagram auth
+      when "instapaper" then return process_for_instapaper auth
+      when "lastfm" then return process_for_lastfm auth
     end
-    user
   end
 
-  def process_for_twitter auth
+  def self.process_for_twitter auth
     user = where(twitter_uid: auth.uid).first || check_for_non_twitter_login(auth)
     user.twitter_oauth_token = auth.credentials.token
     user.twitter_oauth_secret = auth.credentials.secret
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_fitbit auth
+  def self.process_for_fitbit auth
     user = current_user
     user.fitbit_oauth_token = auth.credentials.token
     user.fitbit_oauth_secret = auth.credentials.secret
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_pocket auth
+  def self.process_for_pocket auth
     user = current_user
     user.pocket_oauth_token = auth.credentials.token
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_rdio auth
+  def self.process_for_rdio auth
     user = current_user
     user.rdio_oauth_token = auth.credentials.token
     user.rdio_oauth_secret = auth.credentials.secret
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_facebook auth
+  def self.process_for_facebook auth
     user = current_user
     user.facebook_oauth_token = auth.credentials.token
     user.facebook_token_expires_at = auth.credentials.expires_at
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_evernote auth
+  def self.process_for_evernote auth
     user = current_user
     user.evernote_oauth_token = auth.credentials.token
     user.evernote_token_expires_at = Time.now + 1.year
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_instagram auth
+  def self.process_for_instagram auth
     user = current_user
     user.instagram_oauth_token = auth.credentials.token
     user.instagram_uid = auth.uid
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_instapaper auth
+  def self.process_for_instapaper auth
     user = current_user
     user.instapaper_oauth_token = auth.credentials.token
     user.instapaper_oauth_secret = auth.credentials.secret
     user.save! if user.email != ""
+    user
   end
 
-  def process_for_lastfm auth
+  def self.process_for_lastfm auth
     user = current_user
     user.lastfm_username = auth.credentials.name
     user.save! if user.email != ""
+    user
   end
 
   def self.check_for_non_twitter_login auth
