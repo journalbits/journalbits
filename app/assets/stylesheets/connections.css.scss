@@ -1,0 +1,17 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+section {
+  @include span-columns(8);
+  margin-left: auto;
+  margin-right: auto;
+
+  .service-connection-img {
+    @include span-columns(2 of 8);
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+  }
+}
+

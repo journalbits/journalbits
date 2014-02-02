@@ -1,4 +1,5 @@
 @import "bourbon";
+@import "grid-settings";
 @import "neat";
 
 * {
@@ -28,7 +29,7 @@
   font-family: 'journalbits';
   speak: none;
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -49,14 +50,20 @@
 .jb-home:before {
   content: "\e602";
 }
-.jb-options:before {
-  content: "\e603";
-}
 .jb-profile:before {
   content: "\e604";
 }
 .jb-upgrade:before {
   content: "\e605";
+}
+.jb-logout:before {
+  content: "\e603";
+}
+.jb-entries:before {
+  content: "\e606";
+}
+.jb-settings:before {
+  content: "\e607";
 }
 
 body .main_body {
@@ -65,6 +72,10 @@ body .main_body {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
+}
+
+body {
+  /*@include outer-container;*/
 }
 
 nav {
@@ -80,33 +91,34 @@ nav {
   list-style: none;
   /*font-size: 1.5em;
   font-weight: 300;*/
-}
 
-nav ul {
-  align: center;
-  max-width: 960px;
-  /*width: 70%;*/
-  padding:0; 
-  margin:0;
-  margin-left:auto;
-  margin-right:auto;
-  list-style-type: none;
-}
+  ul {
+    align: center;
+    max-width: 960px;
+    /*width: 70%;*/
+    padding:0; 
+    margin:0;
+    margin-left:auto;
+    margin-right:auto;
+    list-style-type: none;
 
-nav ul li {
-  float: left;
-  width: 20%;
-  list-style-type: none;
-}
+    li {
+      /*@include span-columns(2);*/
+      float: left;
+      width: 20%;
+      list-style-type: none;
+      margin-top: 5px;
 
-nav ul li a {
-  @include span-columns(3);
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  color: rgba(249, 249, 249, .9);
-  text-decoration: none;
-  transition: color .5s, background .5s, height .5s;
+      a {
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        color: rgba(249, 249, 249, .9);
+        text-decoration: none;
+        transition: color .5s, background .5s, height .5s;
+      }
+    }
+  }
 }
 
 /*nav ul li span {
@@ -114,22 +126,26 @@ nav ul li a {
 }*/
 
 a, button {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 
 @media (min-width: 50em) {
  
-    nav li {
-        /*float: left;*/
-        /*width: 10%;*/
-        /*text-align: center;*/
-        transition: border .5s;
+/*    nav li {
+      float: left;
+      width: 10%;
+      text-align: center;
+      transition: border .5s;
     }
  
     nav a {
-        display: block;
-        width: auto;
-    }
+      display: block;
+      width: auto;
+    }*/
+
+}
+
+@media (min-width: 32.5em) and (max-width: 38.688em) {
 
 }
