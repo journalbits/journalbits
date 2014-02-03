@@ -30,6 +30,7 @@ JournalBits::Application.routes.draw do
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'
 
+  # get 'auth/failure' => 'omniauth_callbacks#failure'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

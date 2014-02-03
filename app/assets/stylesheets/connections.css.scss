@@ -1,19 +1,31 @@
 @import "bourbon";
 @import "grid-settings";
-/*$visual-grid: true;*/
+// $visual-grid: true;
 @import "neat";
   
-section {
+section.connections {
   @include outer-container;
 
-  .service-connection-container {
+  h2.connections-intro {
+    font-weight: 300;
+    font-family: 'Nunito-Light';
+    margin: 1.5%;
+    text-align: center;
+    // letter-spacing: 0.2px;
+  }
+
+  div.service-connection-container {
     @include span-columns(3);
     @include omega(4n);
-    border-radius: 10px;
     text-align: center;
 
+    h3 {
+      font-family: 'Nunito-Light';
+      font-weight: 300;
+    }
+
     img {
-      @include size(175);
+      @include size(160);
       border: 4px solid #FFFFFF;
       border-radius: 10px;
       max-width: 100%;
@@ -23,7 +35,12 @@ section {
 
     img:hover {
       border: 4px solid #721A14;
-      border-radius: 10px;
+    }
+  }
+
+  div.service-connection-container:hover {
+    h3 {
+      color: #000000
     }
   }
 

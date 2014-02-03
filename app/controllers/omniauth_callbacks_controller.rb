@@ -1,15 +1,23 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   def all
-    puts "*&*&*&*&*&*&*&*&*(!@^$(*^!@(&£^!@*&$^!&*@$^&*!@$^&@!$^*(!@$(*!@&$(*!@&$(*!@&$*(&!@$(*$(*$@*(^$!@(*!@$(*^!@(*$!(@*$^(*!$@^!@$(*!@$(*^!$@(*$!@(*$!@(*^$@!(*^$(@*!^!@($*"
     user = User.from_omniauth(request.env["omniauth.auth"])
-    if user.persisted?
-      # flash.notice = "Signed in!"
-      sign_in_and_redirect user
+    if user.persisted? && request.env["omniauth.auth"].provider == "twitter"
+      # raise request.env["omniauth.auth"].inspect
+      sign_in user
+      redirect_to "/connections"
+    elsif user.persisted?
+      flash.notice = "Account authorized"
+      redirect_to "/connections"
     else
       session["devise.user_attributes"] = user.attributes
       redirect_to new_user_registration_url
     end
+  end
+
+  def failure 
+    flash.notice = "Account authorization failed"
+    redirect_to "/connections"
   end
   
   alias_method :twitter, :all

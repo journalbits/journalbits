@@ -9,18 +9,22 @@
     %header
       %nav
         %ul
-          %li
+          %li.nav-home
             %a{href: "/"}
               %span.jb-home
+              Home
           - if user_signed_in?
-            %li
+            %li.nav-connections
               %a{href: "/connections"}
                 %span.jb-connections
-            %li
+                Connections
+            %li.nav-profile
               %a{href: "/users/edit"}
                 %span.jb-profile
-            %li
+                Profile
+            %li.nav-logout
               = link_to('Logout', destroy_user_session_path, :method => :delete)
+
           - else
             %li
               = link_to('Login', new_user_session_path)
@@ -30,3 +34,6 @@
       %p.notice= notice
       %p.alert= alert
       = yield
+    
+    %footer
+      Journal Bits
