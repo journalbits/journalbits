@@ -1,42 +1,24 @@
 @import "bourbon";
 @import "grid-settings";
 /*$visual-grid: true;*/
-/*$grid-columns: 13;
-*/@import "neat";
+@import "neat";
   
 section {
   @include outer-container;
 
-  /*.service-connection-img {
-    margin: 2%;
-    padding: 0.5%;
-    @include span-columns(3);
-    @include omega(4n);
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    border: 4px solid #FFFFFF;
-  }*/
-
-  /*To get the result you want, you should create containers with the same span-columns 
-  and omega values, then inside of each have a 150x150 centered image.*/
-
   .service-connection-container {
-    /*@include span-columns(2);
-    @include shift(1);*/
     @include span-columns(3);
     @include omega(4n);
     border-radius: 10px;
     text-align: center;
-    /*margin: 2%;*/
 
     img {
-      @include size(180);
+      @include size(175);
       border: 4px solid #FFFFFF;
       border-radius: 10px;
       max-width: 100%;
-      margin: 15% 6% 15%;
-      padding: 1.5%;
+      margin: 14% 1% 2%;
+      padding: 2.5%;
     }
 
     img:hover {

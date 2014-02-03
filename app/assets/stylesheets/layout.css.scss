@@ -6,6 +6,12 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 @font-face {
     font-family: 'Lato-Regular';
     src: font-url('Lato-Regular.eot') format('embedded-opentype'), 
@@ -110,7 +116,6 @@ nav {
       margin-top: 5px;
 
       a {
-        text-decoration: none;
         display: block;
         width: 100%;
         color: rgba(249, 249, 249, .9);
