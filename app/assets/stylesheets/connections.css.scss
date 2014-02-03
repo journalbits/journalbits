@@ -2,7 +2,7 @@
 @import "grid-settings";
 // $visual-grid: true;
 @import "neat";
-  
+
 section.connections {
   @include outer-container;
 
@@ -15,8 +15,23 @@ section.connections {
   }
 
   div.service-connection-container {
-    @include span-columns(3);
-    @include omega(4n);
+    
+    @include media($desktop) {
+      @include span-columns(3);
+      @include omega(4n); 
+    }
+
+    @include media($tablet) {
+      @include span-columns(3);
+      @include omega(3n);
+    }
+
+    @include media($mobile) {
+      @include span-columns(2);
+      @include omega(2n);
+    }
+
+
     text-align: center;
 
     h3 {

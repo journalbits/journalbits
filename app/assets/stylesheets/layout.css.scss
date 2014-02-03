@@ -1,6 +1,6 @@
 @import "bourbon";
 @import "grid-settings";
-// $visual-grid: true;
+$visual-grid: true;
 @import "neat";
 
 * {
@@ -87,10 +87,6 @@ body .main_body {
   margin: 0 auto;
 }
 
-body {
-
-}
-
 p.notice {
   background: #d00319;
   color: white;
@@ -152,25 +148,4 @@ footer {
   padding-bottom: 0.7%;
   border-top: 1px solid #d0d0d0;
   font-family: 'Nunito-Light';
-}
-
-
-@media (min-width: 50em) {
- 
-/*    nav li {
-      float: left;
-      width: 10%;
-      text-align: center;
-      transition: border .5s;
-    }
- 
-    nav a {
-      display: block;
-      width: auto;
-    }*/
-
-}
-
-@media (min-width: 32.5em) and (max-width: 38.688em) {
-
 }
