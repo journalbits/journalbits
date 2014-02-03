@@ -67,10 +67,10 @@
 }
 
 body .main_body {
-  @include outer-container;
   font-family: 'Lato-Regular';
   width: 100%;
-  max-width: 960px;
+  @include outer-container;
+  /*max-width: 960px;*/
   margin: 0 auto;
 }
 

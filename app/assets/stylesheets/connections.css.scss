@@ -1,17 +1,96 @@
 @import "bourbon";
 @import "grid-settings";
-@import "neat";
-
+/*$visual-grid: true;*/
+/*$grid-columns: 13;
+*/@import "neat";
+  
 section {
-  @include span-columns(8);
-  margin-left: auto;
-  margin-right: auto;
+  @include outer-container;
 
-  .service-connection-img {
-    @include span-columns(2 of 8);
+  /*.service-connection-img {
+    margin: 2%;
+    padding: 0.5%;
+    @include span-columns(3);
+    @include omega(4n);
     width: 150px;
     height: 150px;
     border-radius: 10px;
-  }
-}
+    border: 4px solid #FFFFFF;
+  }*/
 
+  /*To get the result you want, you should create containers with the same span-columns 
+  and omega values, then inside of each have a 150x150 centered image.*/
+
+  .service-connection-container {
+    /*@include span-columns(2);
+    @include shift(1);*/
+    @include span-columns(3);
+    @include omega(4n);
+    border-radius: 10px;
+    text-align: center;
+    /*margin: 2%;*/
+
+    img {
+      @include size(180);
+      border: 4px solid #FFFFFF;
+      border-radius: 10px;
+      max-width: 100%;
+      margin: 15% 6% 15%;
+      padding: 1.5%;
+    }
+
+    img:hover {
+      border: 4px solid #721A14;
+      border-radius: 10px;
+    }
+  }
+
+
+/*  .twitter-logo:hover {
+    border: 4px solid #42ABF3;
+  }
+
+  .github-logo:hover {
+    border: 4px solid #201F1F;
+  }
+
+  .evernote-logo:hover {
+    border: 4px solid #89C741;
+  }
+
+  .instagram-logo:hover {
+    border: 4px solid #8F5545;
+  }
+
+  .wunderlist-logo:hover {
+    border: 4px solid #E03C31;
+  }
+
+  .instapaper-logo:hover {
+    border: 4px solid #ADACAB;
+  }
+
+  .fitbit-logo:hover {
+    border: 4px solid #5BC3C6;
+  }
+
+  .pocket-logo:hover {
+    border: 4px solid #E94154;
+  }
+
+  .facebook-logo:hover {
+    border: 4px solid #3B579E;
+  }
+
+  .lastfm-logo:hover {
+    border: 4px solid #CF372C;
+  }
+
+  .rescuetime-logo:hover {
+    border: 4px solid #C4332A;
+  }
+
+  .whatpulse-logo:hover {
+    border: 4px solid #96A5B0;
+  }*/
+}
