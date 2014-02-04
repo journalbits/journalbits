@@ -9,62 +9,97 @@
   
     %div.service-connection-container
       %a{href:"/users/auth/twitter"}
-        = image_tag "twitter250.png", class: "service-connection-img twitter-logo"
+        - if @user.twitter_oauth_token
+          %div.twitter-img.twitter-logo.service-connection-img
+        - else
+          %div.twitter-img-grayscale.twitter-logo.service-connection-img
         %h3 Twitter
 
     %div.service-connection-container
       %a{href:"https://github.com/login/oauth/authorize?client_id=ff7013fc7d06261543d7&scope=repo&state=bubble"}
-        = image_tag "github250.png", class: "service-connection-img github-logo"
+        - if @user.github_access_token
+          %div.github-img.github-logo.service-connection-img
+        - else
+          %div.github-img-grayscale.github-logo.service-connection-img
         %h3 GitHub
 
     %div.service-connection-container
       %a{href:"/users/auth/evernote"}
-        = image_tag "evernote250.png", class: "service-connection-img evernote-logo"
+        - if @user.evernote_oauth_token
+          %div.evernote-img.evernote-logo.service-connection-img
+        - else
+          %div.evernote-img-grayscale.evernote-logo.service-connection-img
         %h3 Evernote
     
     %div.service-connection-container
       %a{href:"/users/auth/instagram"}
-        = image_tag "instagram250.png", class: "service-connection-img instagram-logo"
+        - if @user.instagram_oauth_token
+          %div.instagram-img.instagram-logo.service-connection-img
+        - else
+          %div.instagram-img-grayscale.instagram-logo.service-connection-img
         %h3 Instagram
 
     %div.service-connection-container
       %a{href:"/auth/wunderlist"}
-        = image_tag "wunderlist250.png", class: "service-connection-img wunderlist-logo"
+        - if @user.wunderlist_token
+          %div.wunderlist-img.wunderlist-logo.service-connection-img
+        - else
+          %div.wunderlist-img-grayscale.wunderlist-logo.service-connection-img
         %h3 Wunderlist
 
     %div.service-connection-container
       %a{href:"/users/auth/facebook"}
-        = image_tag "facebook250.png", class: "service-connection-img facebook-logo"
+        - if @user.facebook_oauth_token
+          %div.facebook-img.facebook-logo.service-connection-img
+        - else
+          %div.facebook-img-grayscale.facebook-logo.service-connection-img
         %h3 Facebook
       
     %div.service-connection-container
       %a{href:"/users/auth/fitbit"}
-        %div.fitbit-img.fitbit-logo.service-connection-img
-        / = image_tag "fitbit250.png", class: "service-connection-img fitbit-logo"
+        - if @user.fitbit_oauth_token
+          %div.fitbit-img.fitbit-logo.service-connection-img
+        - else
+          %div.fitbit-img-grayscale.fitbit-logo.service-connection-img
         %h3 Fitbit
 
     %div.service-connection-container
       %a{href:"/users/auth/pocket"}
-        = image_tag "pocket250.png", class: "service-connection-img pocket-logo"
+        - if @user.pocket_oauth_token
+          %div.pocket-img.pocket-logo.service-connection-img
+        - else
+          %div.pocket-img-grayscale.pocket-logo.service-connection-img
         %h3 Pocket
 
     %div.service-connection-container
       %a{href:"/users/auth/lastfm"}
-        = image_tag "lastfm250.png", class: "service-connection-img lastfm-logo"
+        - if @user.lastfm_username
+          %div.lastfm-img.lastfm-logo.service-connection-img
+        - else
+          %div.lastfm-img-grayscale.lastfm-logo.service-connection-img
         %h3 LastFM
 
     %div.service-connection-container
       %a{href:"/users/auth/instapaper"}
-        = image_tag "instapaper250.png", class: "service-connection-img instapaper-logo"
+        - if @user.instapaper_oauth_token
+          %div.instapaper-img.instapaper-logo.service-connection-img
+        - else
+          %div.instapaper-img-grayscale.instapaper-logo.service-connection-img
         %h3 Instapaper
 
     %div.service-connection-container
       %a{href:"/auth/rescue_time"}
-        = image_tag "rescuetime250.png", class: "service-connection-img rescuetime-logo"
+        - if @user.rescue_time_key
+          %div.rescuetime-img.rescuetime-logo.service-connection-img
+        - else
+          %div.rescuetime-img-grayscale.rescuetime-logo.service-connection-img
         %h3 Rescue Time
 
     %div.service-connection-container
       %a{href:"/auth/whatpulse"}
-        = image_tag "whatpulse250.png", class: "service-connection-img whatpulse-logo"
+        - if @user.whatpulse_username
+          %div.whatpulse-img.whatpulse-logo.service-connection-img
+        - else
+          %div.whatpulse-img-grayscale.whatpulse-logo.service-connection-img
         %h3 WhatPulse
 

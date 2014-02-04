@@ -8,7 +8,7 @@ section.connections {
   h2.connections-intro {
     font-weight: 300;
     font-family: 'Nunito-Light';
-    margin: 1.5%;
+    margin: 1.5% auto;
     text-align: center;
   }
 
@@ -36,32 +36,15 @@ section.connections {
     }
 
     div {
-      margin: 14% auto;
-      @include size(160);
-      max-width: 100%;
-      // padding: 2.5%;
-      h3 {
-        position: absolute;
-        bottom: 0;
-      }
-    }
-
-    .fitbit-img {
-      background-image: image-url('fitbit250_grayscale.png');
-      background-size: contain;
-    }
-    
-    img {
       @include size(160);
       border: 4px solid #FFFFFF;
       border-radius: 10px;
+      margin: 14% auto 3%;
       max-width: 100%;
-      margin: 14% 1% 2%;
-      padding: 2.5%;
-    }
 
-    img:hover {
-      border: 4px solid #721A14;
+      &:hover {
+        // border: 4px solid #721A14;
+      }
     }
   }
 
@@ -72,7 +55,185 @@ section.connections {
   }
 }
 
+.fitbit-img {
+  background-image: image-url('fitbit250.png');
+  background-size: contain;
+}
 
+.fitbit-img-grayscale {
+  background-image: image-url('fitbit250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('fitbit250.png');
+    background-size: contain;
+  }
+}
+
+.facebook-img {
+  background-image: image-url('facebook250.png');
+  background-size: contain;
+}
+
+.facebook-img-grayscale {
+  background-image: image-url('facebook250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('facebook250.png');
+    background-size: contain;
+  }
+}
+
+.wunderlist-img {
+  background-image: image-url('wunderlist250.png');
+  background-size: contain;
+}
+
+.wunderlist-img-grayscale {
+  background-image: image-url('wunderlist250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('wunderlist250.png');
+    background-size: contain;
+  }
+}
+
+.instagram-img {
+  background-image: image-url('instagram250.png');
+  background-size: contain;
+}
+
+.instagram-img-grayscale {
+  background-image: image-url('instagram250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('instagram250.png');
+    background-size: contain;
+  }
+}
+
+.evernote-img {
+  background-image: image-url('evernote250.png');
+  background-size: contain;
+}
+
+.evernote-img-grayscale {
+  background-image: image-url('evernote250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('evernote250.png');
+    background-size: contain;
+  }
+}
+
+.github-img {
+  background-image: image-url('github250.png');
+  background-size: contain;
+}
+
+.github-img-grayscale {
+  background-image: image-url('github250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('github250.png');
+    background-size: contain;
+  }
+}
+
+.twitter-img {
+  background-image: image-url('twitter250.png');
+  background-size: contain;
+}
+
+.twitter-img-grayscale {
+  background-image: image-url('twitter250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('twitter250.png');
+    background-size: contain;
+  }
+}
+
+.pocket-img {
+  background-image: image-url('pocket250.png');
+  background-size: contain;
+}
+
+.pocket-img-grayscale {
+  background-image: image-url('pocket250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('pocket250.png');
+    background-size: contain;
+  }
+}
+
+.instapaper-img {
+  background-image: image-url('instapaper250.png');
+  background-size: contain;
+}
+
+.instapaper-img-grayscale {
+  background-image: image-url('instapaper250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('instapaper250.png');
+    background-size: contain;
+  }
+}
+
+.lastfm-img {
+  background-image: image-url('lastfm250.png');
+  background-size: contain;
+}
+
+.lastfm-img-grayscale {
+  background-image: image-url('lastfm250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('lastfm250.png');
+    background-size: contain;
+  }
+}
+
+.rescuetime-img {
+  background-image: image-url('rescuetime250.png');
+  background-size: contain;
+}
+
+.rescuetime-img-grayscale {
+  background-image: image-url('rescuetime250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('rescuetime250.png');
+    background-size: contain;
+  }
+}
+
+.whatpulse-img {
+  background-image: image-url('whatpulse250.png');
+  background-size: contain;
+}
+
+.whatpulse-img-grayscale {
+  background-image: image-url('whatpulse250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('whatpulse250.png');
+    background-size: contain;
+  }
+}
 
 // .twitter-logo:hover {
 //   border: 4px solid #42ABF3;
