@@ -35,6 +35,22 @@ section.connections {
       font-weight: 300;
     }
 
+    div {
+      margin: 14% auto;
+      @include size(160);
+      max-width: 100%;
+      // padding: 2.5%;
+      h3 {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    .fitbit-img {
+      background-image: image-url('fitbit250_grayscale.png');
+      background-size: contain;
+    }
+    
     img {
       @include size(160);
       border: 4px solid #FFFFFF;
@@ -54,52 +70,56 @@ section.connections {
       color: #000000
     }
   }
-
-/*  .twitter-logo:hover {
-    border: 4px solid #42ABF3;
-  }
-
-  .github-logo:hover {
-    border: 4px solid #201F1F;
-  }
-
-  .evernote-logo:hover {
-    border: 4px solid #89C741;
-  }
-
-  .instagram-logo:hover {
-    border: 4px solid #8F5545;
-  }
-
-  .wunderlist-logo:hover {
-    border: 4px solid #E03C31;
-  }
-
-  .instapaper-logo:hover {
-    border: 4px solid #ADACAB;
-  }
-
-  .fitbit-logo:hover {
-    border: 4px solid #5BC3C6;
-  }
-
-  .pocket-logo:hover {
-    border: 4px solid #E94154;
-  }
-
-  .facebook-logo:hover {
-    border: 4px solid #3B579E;
-  }
-
-  .lastfm-logo:hover {
-    border: 4px solid #CF372C;
-  }
-
-  .rescuetime-logo:hover {
-    border: 4px solid #C4332A;
-  }
-
-  .whatpulse-logo:hover {
-    border: 4px solid #96A5B0;
-  }*/
 }
+
+
+
+// .twitter-logo:hover {
+//   border: 4px solid #42ABF3;
+// }
+
+// .github-logo:hover {
+//   border: 4px solid #201F1F;
+// }
+
+// .evernote-logo:hover {
+//   border: 4px solid #89C741;
+// }
+
+// .instagram-logo:hover {
+//   border: 4px solid #8F5545;
+// }
+
+// .wunderlist-logo:hover {
+//   border: 4px solid #E03C31;
+// }
+
+// .instapaper-logo:hover {
+//   border: 4px solid #ADACAB;
+// }
+
+// .fitbit-logo:hover {
+//   border: 4px solid #5BC3C6;
+// }
+
+// .pocket-logo:hover {
+//   border: 4px solid #E94154;
+// }
+
+// .facebook-logo:hover {
+//   border: 4px solid #3B579E;
+// }
+
+// .lastfm-logo:hover {
+//   border: 4px solid #CF372C;
+// }
+
+// .rescuetime-logo:hover {
+//   border: 4px solid #C4332A;
+// }
+
+// .whatpulse-logo:hover {
+//   border: 4px solid #96A5B0;
+// }
+
+

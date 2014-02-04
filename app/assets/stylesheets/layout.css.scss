@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+html, body, .main-container {
+  height: 100%;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -88,11 +92,16 @@ a {
   content: "\e607";
 }
 
-body .main_body {
+.main-container {
+  height: auto; 
+  min-height: 100%;
+}
+
+.main_body {
   @include outer-container;
   font-family: 'Nunito-Light';
-  width: 100%;
-  margin: 0 auto;
+  // overflow:auto;
+  padding-bottom: 3em;
 }
 
 p.notice {
@@ -138,7 +147,6 @@ nav {
       float: right;
 
       ul.nav-list-right {
-        // width: 400px;
         float: right;
         margin-right: 0;
 
@@ -165,11 +173,13 @@ a, button {
 footer {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2%;
-  width: 70%;
+  width: 100%;
   text-align:center;
-  padding-top: 0.7%;
-  padding-bottom: 0.7%;
   border-top: 1px solid #d0d0d0;
   font-family: 'Nunito-Light';
+  padding-top: 0.5em;
+  clear: both;
+  position: relative;
+  height: 2.5em;
+  margin-top: -2.5em;
 }

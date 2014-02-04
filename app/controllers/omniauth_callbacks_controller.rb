@@ -3,7 +3,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted? && request.env["omniauth.auth"].provider == "twitter"
-      # raise request.env["omniauth.auth"].inspect
       sign_in user
       redirect_to "/connections"
     elsif user.persisted?
