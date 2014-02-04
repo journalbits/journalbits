@@ -1,6 +1,5 @@
 @import "bourbon";
 @import "grid-settings";
-// $visual-grid: true;
 @import "neat";
 
 section.connections {
@@ -11,11 +10,11 @@ section.connections {
     font-family: 'Nunito-Light';
     margin: 1.5%;
     text-align: center;
-    // letter-spacing: 0.2px;
   }
 
   div.service-connection-container {
-    
+    text-align: center;
+
     @include media($desktop) {
       @include span-columns(3);
       @include omega(4n); 
@@ -30,9 +29,6 @@ section.connections {
       @include span-columns(2);
       @include omega(2n);
     }
-
-
-    text-align: center;
 
     h3 {
       font-family: 'Nunito-Light';
@@ -58,7 +54,6 @@ section.connections {
       color: #000000
     }
   }
-
 
 /*  .twitter-logo:hover {
     border: 4px solid #42ABF3;
