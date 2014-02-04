@@ -12,31 +12,42 @@
           %div.nav
             %div.nav-left
               %a{href: "/"}
-                / %span.jb-home
-                Home
+                %span.jb-home.nav-symbol
+                %span.nav-text
+                  Journal Bits
             %div.nav-right
               %ul.nav-list-right
                 - if user_signed_in?
                   %li.nav-connections
                     %a{href: "/connections"}
-                      / %span.jb-connections
-                      Connections
+                      %span.jb-connections.nav-symbol
+                      %span.nav-text
+                        Connections
                   %li.nav-profile
                     %a{href: "/users/edit"}
-                      / %span.jb-profile
-                      Profile
+                      %span.jb-profile.nav-symbol
+                      %span.nav-text
+                        Profile
                   %li.nav-logout
-                    = link_to('Logout', destroy_user_session_path, :method => :delete)
-
+                    %a{"data-method" => "delete", href: "/users/sign_out", rel: "nofollow"}
+                      %span.jb-logout.nav-symbol
+                      %span.nav-text
+                        Logout
                 - else
                   %li.nav-login
-                    = link_to('Login', new_user_session_path)
+                    %a{href:"/users/sign_in"}
+                      %span.jb-login.nav-symbol
+                      %span.nav-text
+                        Login
                   %li.nav-register
-                    = link_to('Register', new_user_registration_path)
+                    %a{href:"/users/sign_up"}
+                      %span.jb-register.nav-symbol
+                      %span.nav-text
+                        Register
       %section.main_body
         %p.notice= notice
         %p.alert= alert
         = yield
       
     %footer
-      Journal Bits
+      Journal Bits 

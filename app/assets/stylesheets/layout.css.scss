@@ -82,7 +82,7 @@ a {
 .jb-upgrade:before {
   content: "\e605";
 }
-.jb-logout:before {
+.jb-login:before {
   content: "\e603";
 }
 .jb-entries:before {
@@ -90,6 +90,21 @@ a {
 }
 .jb-settings:before {
   content: "\e607";
+}
+.jb-register:before {
+  content: "\e608";
+}
+.jb-new:before {
+  content: "\e609";
+}
+.jb-logout:before {
+  content: "\e60a";
+}
+.jb-journal:before {
+  content: "\e60b";
+}
+.jb-data:before {
+  content: "\e60c";
 }
 
 .main-container {
@@ -139,6 +154,22 @@ nav {
 
       a {
         transition: color .5s, background .5s, height .5s;
+        
+        .nav-symbol {
+          @include media($desktop) {
+            display: none;
+          }
+
+          @include media($tablet) {
+            display: none;
+          }
+        }
+
+        .nav-text {
+          @include media($mobile) {
+            display: none;
+          }
+        }
       }
     }
 
@@ -155,16 +186,33 @@ nav {
           margin-right: 30px;
           list-style-type: none;
           
+          a {
+            .nav-symbol {
+              @include media($desktop) {
+                display: none;
+              }
+
+              @include media($tablet) {
+                display: none;
+              }
+            }
+
+            .nav-text {
+              @include media($mobile) {
+                display: none;
+              }
+            }
+          }
         }
         
         li.nav-logout {
           margin-right: 0px;
         }
-
       }
     }
   }
 }
+
 
 a, button {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
