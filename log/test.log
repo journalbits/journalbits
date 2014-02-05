@@ -2859,3 +2859,40 @@ Migrating to AddTimeCreatedColumnToRescueTimeEntries (20140130133112)
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'hamchapman@gmail.com' LIMIT 1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDays (20140204183357)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (28.2ms)[0m  [1mCREATE TABLE "days" ("id" serial primary key, "user_id" integer, "pretty_date" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140204183357"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDateStringToApiEntries (20140205181015)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "github_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "facebook_entries" ADD COLUMN "pretty_date" character varying(255)
+PG::UndefinedTable: ERROR:  relation "facebook_entries" does not exist
+: ALTER TABLE "facebook_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDateStringToApiEntries (20140205181015)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "github_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "facebook_photo_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (2.0ms)[0m  [1mALTER TABLE "fitbit_weight_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (2.1ms)[0m  ALTER TABLE "fitbit_activity_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "fitbit_sleep_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "whatpulse_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "instagram_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "instapaper_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "pocket_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "lastfm_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "evernote_entries" ADD COLUMN "pretty_date" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "wunderlist_entries" ADD COLUMN "pretty_date" character varying(255)
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205181015"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
