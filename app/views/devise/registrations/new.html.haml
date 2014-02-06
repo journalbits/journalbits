@@ -5,6 +5,10 @@
     = f.label :email
     %br/
     = f.email_field :email, :autofocus => true
+  %div
+    = f.label :username
+    %br/
+    = f.email_field :username
   - if f.object.password_required?
     %div
       = f.label :password

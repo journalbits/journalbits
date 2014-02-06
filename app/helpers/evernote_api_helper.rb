@@ -38,7 +38,7 @@ module EvernoteApiHelper
   def save_notes_created_on date, user, notes    
     notes.each do |note|
       unless EvernoteEntry.exists?(note_id: note.guid)
-        EvernoteEntry.create(user_id: user.id, time_created: date.to_s, note_id: note.guid, kind: "created", title: note.title)
+        EvernoteEntry.create(user_id: user.id, date: date.to_s[0..9], note_id: note.guid, kind: "created", title: note.title)
       end
     end
   end
@@ -46,7 +46,7 @@ module EvernoteApiHelper
   def save_notes_updated_on date, user, notes
     notes.each do |note|
       unless EvernoteEntry.exists?(note_id: note.guid)
-        EvernoteEntry.create(user_id: user.id, time_created: date.to_s, note_id: note.guid, kind: "updated", title: note.title)
+        EvernoteEntry.create(user_id: user.id, date: date.to_s[0..9], note_id: note.guid, kind: "updated", title: note.title)
       end
     end
   end

@@ -20,7 +20,7 @@ module TwitterApiHelper
 
   def save_twitter_entries_to_database date, client, user
     save_tweets_to_databse date, client, user
-    save_favorites_to_databse date, client, user
+    save_favourites_to_databse date, client, user
     save_mentions_to_databse date, client, user
   end
 
@@ -29,9 +29,9 @@ module TwitterApiHelper
     tweets.select { |tweet| tweet.created_at.to_s[0..9] == date.to_s[0..9] } if tweets != nil
   end
 
-  def user_favorites_on date, client
-    favorites = client.favorites
-    favorites.select { |fav| fav.created_at.to_s[0..9] == date.to_s[0..9] } if favorites != nil
+  def user_favourites_on date, client
+    favourites = client.favourites
+    favourites.select { |fav| fav.created_at.to_s[0..9] == date.to_s[0..9] } if favourites != nil
   end
 
   def user_mentions_on date, client
@@ -43,16 +43,16 @@ module TwitterApiHelper
     tweets = user_tweets_on date, client
     tweets.each do |tweet| 
       unless TwitterEntry.exists?(:tweet_id => tweet.id)
-        TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, time_created: tweet.created_at, tweet_url: tweet.url.to_s)
+        TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: user.id, tweet_id: tweet.id, date: date.to_s[0..9], tweet_url: tweet.url.to_s)
       end
     end
   end
 
-  def save_favorites_to_databse date, client, user
-    favorites = user_favorites_on date, client
-    favorites.each do |fav| 
+  def save_favourites_to_databse date, client, user
+    favourites = user_favourites_on date, client
+    favourites.each do |fav| 
       unless TwitterEntry.exists?(:tweet_id => fav.id)
-        TwitterEntry.create(text: fav.text, kind: "favorite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, time_created: fav.created_at, tweet_url: fav.url.to_s)
+        TwitterEntry.create(text: fav.text, kind: "favourite", tweeter: fav.user.username, user_id: user.id, tweet_id: fav.id, date: date.to_s[0..9], tweet_url: fav.url.to_s)
       end
     end
   end
@@ -61,7 +61,7 @@ module TwitterApiHelper
     mentions = user_mentions_on date, client
     mentions.each do |mention| 
       unless TwitterEntry.exists?(:tweet_id => mention.id)
-        TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, time_created: mention.created_at, tweet_url: mention.url.to_s)
+        TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: user.id, tweet_id: mention.id, date: date.to_s[0..9], tweet_url: mention.url.to_s)
       end
     end
   end

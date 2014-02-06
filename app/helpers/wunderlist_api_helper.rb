@@ -5,7 +5,7 @@ module WunderlistApiHelper
   def wunderlist_data
     User.all.each do |user|
       if user.wunderlist_token
-        save_wl_tasks_to_database (Time.now - 2.day), user
+        save_wl_tasks_to_database (Time.now - 1.day), user
       end
     end
   end
@@ -14,16 +14,16 @@ module WunderlistApiHelper
     all_tasks = combine_tasks_created_and_completed_on date, user.wunderlist_token
     lists = user_lists user.wunderlist_token
     all_tasks.each do |task|
-      save_individual_wl_task_to_database task, user, lists
+      save_individual_wl_task_to_database date, task, user, lists
     end
   end
 
-  def save_individual_wl_task_to_database task, user, lists
-    unless WunderlistEntry.exists?(task_id: task['id'])
+  def save_individual_wl_task_to_database date, task, user, lists
+    unless WunderlistEntry.exists?(task_id: task['id'], completed_at: task['completed_at'])
       if task['completed_at']
-        WunderlistEntry.create(completed_at: task['completed_at'], time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task['id'])
+        WunderlistEntry.create(completed_at: task['completed_at'], date: date.to_s[0..9], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task['id'], kind: "completed")
       else
-        WunderlistEntry.create(time_created: task['created_at'], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task['id'])
+        WunderlistEntry.create(date: date.to_s[0..9], title: task['title'], list: lists["#{task['list_id']}"], user_id: user.id, task_id: task['id'], kind: "created")
       end
     end
   end

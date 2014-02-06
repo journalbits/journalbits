@@ -21,7 +21,7 @@ module WhatpulseApiHelper
     pulses = user_pulses_on date, user
     pulses.each_pair do |pulse_id, pulse_hash|
       unless WhatpulseEntry.exists?(user_id: user.id, pulse_id: pulse_id)
-        WhatpulseEntry.create(user_id: user.id, time_created: date.to_s, pulse_id: pulse_id, keys: pulse_hash['Keys'], clicks: pulse_hash['Clicks'], download_mb: pulse_hash['DownloadMB'], upload_mb: pulse_hash['UploadMB'])
+        WhatpulseEntry.create(user_id: user.id, date: date.to_s[0..9], pulse_id: pulse_id, keys: pulse_hash['Keys'], clicks: pulse_hash['Clicks'], download_mb: pulse_hash['DownloadMB'], upload_mb: pulse_hash['UploadMB'])
       end
     end
   end

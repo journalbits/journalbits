@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205181015) do
+ActiveRecord::Schema.define(version: 20140206185201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "days", force: true do |t|
     t.integer  "user_id"
-    t.string   "pretty_date"
+    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "evernote_entries", force: true do |t|
     t.integer  "user_id"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "note_id"
     t.string   "kind"
     t.string   "title"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
 
   create_table "facebook_photo_entries", force: true do |t|
     t.integer  "user_id"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "photo_id"
     t.string   "source_url"
     t.string   "medium_url"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
   create_table "github_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "sha"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "commit_message"
     t.string   "committer"
     t.datetime "created_at"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
 
   create_table "instagram_entries", force: true do |t|
     t.integer  "user_id"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "kind"
     t.string   "thumbnail_url"
     t.string   "standard_url"
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
 
   create_table "instapaper_entries", force: true do |t|
     t.integer  "user_id"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "bookmark_id"
     t.string   "url"
     t.string   "title"
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
 
   create_table "lastfm_entries", force: true do |t|
     t.integer  "user_id"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "artist"
     t.string   "track"
     t.string   "uts"
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
     t.integer "time_spent_5"
     t.integer "productivity"
     t.integer "user_id"
-    t.string  "time_created"
+    t.string  "date"
     t.string  "pretty_date"
   end
 
@@ -166,8 +166,8 @@ ActiveRecord::Schema.define(version: 20140205181015) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "tweet_id",     limit: 8
-    t.string   "time_created"
+    t.integer  "tweet_id",    limit: 8
+    t.string   "date"
     t.string   "tweet_url"
     t.string   "pretty_date"
   end
@@ -215,7 +215,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
 
   create_table "whatpulse_entries", force: true do |t|
     t.integer  "user_id"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "pulse_id"
     t.string   "keys"
     t.string   "clicks"
@@ -228,7 +228,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
 
   create_table "wunderlist_entries", force: true do |t|
     t.string   "completed_at"
-    t.string   "time_created"
+    t.string   "date"
     t.string   "title"
     t.string   "list"
     t.integer  "user_id"
@@ -236,6 +236,7 @@ ActiveRecord::Schema.define(version: 20140205181015) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "pretty_date"
+    t.string   "kind"
   end
 
 end
