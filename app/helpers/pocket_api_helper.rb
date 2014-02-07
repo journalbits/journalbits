@@ -13,7 +13,7 @@ module PocketApiHelper
   def user_added_links_on unix_date, user
     access_token = user.pocket_oauth_token
     consumer_key = ENV['POCKET_CONSUMER_KEY']
-    uri = URI("https://getpocket.com/v3/get?access_token=#{access_token}&consumer_key=#{consumer_key}&since=#{date}")
+    uri = URI("https://getpocket.com/v3/get?access_token=#{access_token}&consumer_key=#{consumer_key}&since=#{unix_date}")
     req = Net::HTTP::Get.new uri
     response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http| 
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE

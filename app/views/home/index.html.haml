@@ -1,5 +1,7 @@
-= image_tag @user.gravatar_url 
+- if user_signed_in?
 
-- @tweets.each do |tweet|
-  = tweet.text
-  %br
+  = image_tag @user.gravatar_url 
+
+  - @tweets.each do |tweet|
+    = tweet.text
+    %br

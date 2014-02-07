@@ -12,7 +12,7 @@ module RescueTimeApiHelper
 
   def rt_save_data_to_database date, key, user
     data_to_save = data_for_db date, key, user
-    unless RescueTimeEntry.exists?(time_created: date.to_s[0..9], user_id: user.id)
+    unless RescueTimeEntry.exists?(date: date.to_s[0..9], user_id: user.id)
       RescueTimeEntry.create(data_to_save)
     end
   end

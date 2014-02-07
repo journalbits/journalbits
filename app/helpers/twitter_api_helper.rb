@@ -30,7 +30,7 @@ module TwitterApiHelper
   end
 
   def user_favourites_on date, client
-    favourites = client.favourites
+    favourites = client.favorites
     favourites.select { |fav| fav.created_at.to_s[0..9] == date.to_s[0..9] } if favourites != nil
   end
 

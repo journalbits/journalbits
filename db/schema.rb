@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206185201) do
+ActiveRecord::Schema.define(version: 20140206201733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "facebook_photo_entries", force: true do |t|
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "link_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "fitbit_activity_entries", force: true do |t|
@@ -55,7 +53,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.integer  "active_minutes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "fitbit_sleep_entries", force: true do |t|
@@ -69,7 +66,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "fitbit_weight_entries", force: true do |t|
@@ -79,7 +75,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "weight_unit"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "github_entries", force: true do |t|
@@ -91,7 +86,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "commit_url"
-    t.string   "pretty_date"
   end
 
   create_table "instagram_entries", force: true do |t|
@@ -104,7 +98,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "link_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "instapaper_entries", force: true do |t|
@@ -115,7 +108,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "lastfm_entries", force: true do |t|
@@ -127,7 +119,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "pocket_entries", force: true do |t|
@@ -138,7 +129,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "rescue_time_entries", force: true do |t|
@@ -155,7 +145,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.integer "productivity"
     t.integer "user_id"
     t.string  "date"
-    t.string  "pretty_date"
   end
 
   create_table "twitter_entries", force: true do |t|
@@ -166,10 +155,9 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "tweet_id",    limit: 8
+    t.integer  "tweet_id",   limit: 8
     t.string   "date"
     t.string   "tweet_url"
-    t.string   "pretty_date"
   end
 
   create_table "users", force: true do |t|
@@ -208,6 +196,7 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "instapaper_oauth_token"
     t.string   "instapaper_oauth_secret"
     t.string   "lastfm_username"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -223,7 +212,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.integer  "upload_mb"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
   end
 
   create_table "wunderlist_entries", force: true do |t|
@@ -235,7 +223,6 @@ ActiveRecord::Schema.define(version: 20140206185201) do
     t.string   "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pretty_date"
     t.string   "kind"
   end
 

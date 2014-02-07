@@ -2,10 +2,20 @@ class User < ActiveRecord::Base
   has_many :twitter_entries
 
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
   include Gravtastic
   gravtastic :size => 220
+
+  attr_accessor :login
+
+  # validates_presence_of :email
+  validates_presence_of :username
+
+  validates :username,
+  :uniqueness => {
+    :case_sensitive => false
+  }
 
   # Dirty methods that allow me to use current_user in a model
   class << self
@@ -104,9 +114,9 @@ class User < ActiveRecord::Base
 
   def self.check_for_non_twitter_login auth
     if current_user != nil && current_user.provider != "twitter"
-      save_twitter_data_for_current_user(auth)
+      save_twitter_data_for_current_user auth
     else
-      self.create_from_omniauth(auth)
+      self.create_from_omniauth auth
     end
   end
 
@@ -149,6 +159,15 @@ class User < ActiveRecord::Base
       update_attributes(params, *options)
     else
       super
+    end
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
     end
   end
 
