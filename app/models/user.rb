@@ -1,21 +1,21 @@
 class User < ActiveRecord::Base
-  has_many :twitter_entries
-
+  
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
-  include Gravtastic
-  gravtastic :size => 220
-
   attr_accessor :login
 
-  # validates_presence_of :email
+  validates_presence_of :email
   validates_presence_of :username
+  validates :username, :uniqueness => { :case_sensitive => false }
+  validates :slug, uniqueness:true, presence: true
 
-  validates :username,
-  :uniqueness => {
-    :case_sensitive => false
-  }
+  before_validation :generate_slug
+
+  has_many :twitter_entries
+
+  include Gravtastic
+  gravtastic :size => 220
 
   # Dirty methods that allow me to use current_user in a model
   class << self
@@ -26,6 +26,14 @@ class User < ActiveRecord::Base
     def current_user
       Thread.current[:current_user]
     end
+  end
+
+  def to_param
+    slug
+  end
+
+  def generate_slug
+    self.slug ||= username.parameterize
   end
 
   def self.from_omniauth auth
@@ -162,7 +170,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.find_first_by_auth_conditions(warden_conditions)
+  def self.find_first_by_auth_conditions warden_conditions 
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
