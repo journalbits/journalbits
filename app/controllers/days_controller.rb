@@ -21,7 +21,7 @@ class DaysController < ApplicationController
   end
 
   def show
-
+    raise "sdsds"
   end
 
 end
