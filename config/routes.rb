@@ -2,7 +2,18 @@ JournalBits::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-  resources :users do  
+  root :to => "home#index"
+
+  get 'auth/github' => 'authorization#github'
+  get 'connections' => 'authorization#index'
+  get 'auth/rescue_time' => 'authorization#rescue_time'
+  get 'auth/wunderlist' => 'authorization#wunderlist'
+  get 'auth/whatpulse' => 'authorization#whatpulse'
+  patch 'auth/wunderlist' => 'users#wunderlist_update'
+  patch 'auth/rescue_time' => 'users#rescue_time_update'
+  patch 'auth/whatpulse' => 'users#whatpulse_update'
+
+  resources :users,  path: "" do  
     resources :days, path: ""
     
     resources :twitter_entries
@@ -20,17 +31,6 @@ JournalBits::Application.routes.draw do
     resources :facebook_photo_entries
     resources :pocket_entries
   end
-  
-  root :to => "home#index"
-
-  get 'auth/github' => 'authorization#github'
-  get 'connections' => 'authorization#index'
-  get 'auth/rescue_time' => 'authorization#rescue_time'
-  get 'auth/wunderlist' => 'authorization#wunderlist'
-  get 'auth/whatpulse' => 'authorization#whatpulse'
-  patch 'auth/wunderlist' => 'users#wunderlist_update'
-  patch 'auth/rescue_time' => 'users#rescue_time_update'
-  patch 'auth/whatpulse' => 'users#whatpulse_update'
 
   # get 'auth/failure' => 'omniauth_callbacks#failure'
 
