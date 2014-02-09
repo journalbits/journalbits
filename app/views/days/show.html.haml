@@ -1,0 +1,110 @@
+- if @mentions
+  - @mentions.each do |mention|
+    = mention.text
+    %br
+
+%br
+
+- if @tweets
+  - @tweets.each do |tweet|
+    = tweet.text
+    %br
+
+- if @favourites
+  - @favourites.each do |favourite|
+    = favourite.text
+    %br
+
+%br
+
+- if @facebook_photos
+  - @facebook_photos.each do |photo|
+    = photo.link_url
+    %br
+
+%br
+
+- if @lastfm_songs
+  - @lastfm_songs.each do |song|
+    = song.artist
+    = song.track
+    %br
+
+%br
+
+- if @instagram_media
+  - @instagram_media.each do |media|
+    = media.link_url
+    %br
+
+%br
+
+- if @fitbit_sleep
+  = @fitbit_sleep.first
+  %br
+
+%br
+
+- if @fitbit_activity
+  = @fitbit_activity.first.steps
+  %br
+
+%br
+
+- if @fitbit_weight
+  = @fitbit_weight.first
+  %br
+
+%br
+
+- if @pocket_links
+  - @pocket_links.each do |link|
+    = link.title
+    %br
+
+%br
+
+- if @instapaper_links
+  - @instapaper_links.each do |link|
+    = link.title
+    %br
+
+- if @github_commits
+  - @github_commits.each do |commit|
+    = commit.commit_message
+    %br
+
+%br
+
+- if @evernote_notes
+  - @evernote_notes.each do |note|
+    = note.title
+    %br
+
+%br
+
+- if @rescue_time_data
+  = @rescue_time_data.first
+  = @rescue_time_data.first
+  %br
+
+%br
+
+- if @whatpulse_data
+  - @whatpulse_data.each do |pulse|
+    = pulse.keys
+    %br
+
+%br
+
+- if @wunderlist_tasks_completed
+  - @wunderlist_tasks_completed.each do |task|
+    = task.title
+    %br
+
+%br
+
+- if @wunderlist_tasks_created
+  - @wunderlist_tasks_created.each do |task|
+    = task.title
+    %br
