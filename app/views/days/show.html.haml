@@ -1,110 +1,207 @@
-- if @mentions
-  - @mentions.each do |mention|
-    = mention.text
-    %br
+- if @mentions || @tweets || @favourites
+  %h2 
+    Twitter
+  - if @mentions
+    - @mentions.each do |mention|
+      %div.tweeter
+        = "@#{mention.tweeter} -"
+      = mention.text
+      = mention.tweet_url
+      = mention.media
+      %br
 
-%br
+  %br
 
-- if @tweets
-  - @tweets.each do |tweet|
-    = tweet.text
-    %br
+  - if @tweets
+    - @tweets.each do |tweet|
+      %div.tweeter
+        = "@#{tweet.tweeter} -"
+      = tweet.text
+      = tweet.tweet_url
+      = tweet.media
+      %br
 
-- if @favourites
-  - @favourites.each do |favourite|
-    = favourite.text
-    %br
+  - if @favourites
+    - @favourites.each do |favourite|
+      %div.tweeter
+        = "@#{favourite.tweeter} -"
+      = favourite.text
+      = favourite.tweet_url
+      = favourite.media
+      %br
 
 %br
 
 - if @facebook_photos
+  %h2
+    Facebook
   - @facebook_photos.each do |photo|
-    = photo.link_url
-    %br
+    = link_to photo.link_url, class: "fb_photo_link" do
+      = image_tag photo.medium_url, class: "fb_photo"
 
 %br
 
 - if @lastfm_songs
+  %h2 
+    LastFM
   - @lastfm_songs.each do |song|
-    = song.artist
-    = song.track
+    = link_to "#{song.artist} - #{song.track}", song.url
     %br
 
 %br
 
 - if @instagram_media
+  %h2
+    Instagram
   - @instagram_media.each do |media|
-    = media.link_url
+    = link_to media.link_url, class: "instagram_link" do
+      = image_tag media.thumbnail_url, class: "instagram_thumbnail"
     %br
 
 %br
 
-- if @fitbit_sleep
-  = @fitbit_sleep.first
+- if @fitbit_weight || @fitbit_sleep || @fitbit_activity
+  %h2 
+    Fitbit
+    %br
+  - if @fitbit_sleep
+    Sleep
+    = "Minutes asleep: #{@fitbit_sleep.first.minutes_asleep}"
+    %br
+    = "Minutes awake: #{@fitbit_sleep.first.minutes_awake}"
+    %br
+    = "Minutes to fall asleep: #{@fitbit_sleep.first.minutes_to_fall_asleep}"
+    %br
+    = "Sleep efficiency: #{@fitbit_sleep.first.efficiency}"
+    %br
+    = "Times awake: #{@fitbit_sleep.first.times_awake}"
+    %br
+    = "Sleep start: #{@fitbit_sleep.first.start_time}"
+
   %br
 
-%br
+  - if @fitbit_activity
+    Activity
+    %br
+    = "Steps: #{@fitbit_activity.first.steps}"
+    %br
+    = "Distance: #{@fitbit_activity.first.distance}"
+    %br
+    = "Calories: #{@fitbit_activity.first.calories}"
+    %br
+    = "Active Minutes: #{@fitbit_activity.first.active_minutes}"
 
-- if @fitbit_activity
-  = @fitbit_activity.first.steps
   %br
 
-%br
-
-- if @fitbit_weight
-  = @fitbit_weight.first
-  %br
+  - if @fitbit_weight
+    Weight
+    %br
+    = "Weight: #{@fitbit_weight.first.weight}#{@fitbit_weight.first.weight_units}"
+    %br
 
 %br
 
 - if @pocket_links
+  %h2 
+    Pocket
   - @pocket_links.each do |link|
-    = link.title
+    = link_to link.title, link.url
     %br
 
 %br
 
 - if @instapaper_links
+  %h2 
+    Instapaper
   - @instapaper_links.each do |link|
-    = link.title
-    %br
-
-- if @github_commits
-  - @github_commits.each do |commit|
-    = commit.commit_message
+    = link_to link.title, link.url
     %br
 
 %br
 
-- if @evernote_notes
-  - @evernote_notes.each do |note|
-    = note.title
+- if @github_commits
+  %h2 
+    GitHub
+  - @github_commits.each do |commit|
+    = link_to commit.commit_message, commit.commit_url
     %br
+
+%br
+
+- if @evernote_notes_updated || @evernote_updated_created
+  %h2 
+    Evernote
+  - if @evernote_notes_created
+    Created
+    %br
+    - @evernote_notes_created.each do |note|
+      = note.title
+      %br
+    
+  - if @evernote_notes_updated
+    Updated
+    %br
+    - @evernote_notes_updated.each do |note|
+      = note.title
+      %br
 
 %br
 
 - if @rescue_time_data
-  = @rescue_time_data.first
-  = @rescue_time_data.first
+  %h2 
+    Rescue Time
+  = "Productivity Score: #{@rescue_time_data.first.productivity}"
+  %br
+  Top 5 Activities
+  %br
+  = @rescue_time_data.first.activity_1
+  = @rescue_time_data.first.time_spent_1 / 60
+  minutes
+  %br
+  = @rescue_time_data.first.activity_2
+  = @rescue_time_data.first.time_spent_2 / 60
+  minutes
+  %br
+  = @rescue_time_data.first.activity_3
+  = @rescue_time_data.first.time_spent_3 / 60
+  minutes
+  %br
+  = @rescue_time_data.first.activity_4
+  = @rescue_time_data.first.time_spent_4 / 60
+  minutes
+  %br
+  = @rescue_time_data.first.activity_5
+  = @rescue_time_data.first.time_spent_5 / 60
+  minutes
   %br
 
 %br
 
-- if @whatpulse_data
-  - @whatpulse_data.each do |pulse|
-    = pulse.keys
-    %br
+- if @whatpulse_keys
+  %h2 
+    WhatPulse
+  = "Keystrokes: #{@whatpulse_keys}"
+  = "Clicks: #{@whatpulse_clicks}"
+  = "Downloaded: #{@whatpulse_download}MB"
+  = "Uploaded: #{@whatpulse_upload}MB"
+  %br
 
 %br
 
-- if @wunderlist_tasks_completed
-  - @wunderlist_tasks_completed.each do |task|
-    = task.title
+- if @wunderlist_tasks_completed || @wunderlist_tasks_created
+  %h2 
+    Wunderlist
+  - if @wunderlist_tasks_completed
+    Completed Tasks 
     %br
+    - @wunderlist_tasks_completed.each do |task|
+      = "#{task.title} from #{task.list}"
+      %br
 
-%br
+  %br
 
-- if @wunderlist_tasks_created
-  - @wunderlist_tasks_created.each do |task|
-    = task.title
+  - if @wunderlist_tasks_created
+    Created Tasks 
     %br
+    - @wunderlist_tasks_created.each do |task|
+      = "#{task.title} from #{task.list}"

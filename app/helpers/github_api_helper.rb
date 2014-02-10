@@ -15,7 +15,7 @@ module GithubApiHelper
     commits = user_commits_on date, client, user
     commits.each do |commit|
       unless GithubEntry.exists?(:sha => commit.sha)
-        GithubEntry.create(sha: commit.sha, user_id: user.id, date: date.to_s[0..9], commit_message: commit.commit.message, committer: commit.commit.committer.name, commit_url: commit.rels[:self].href)
+        GithubEntry.create(sha: commit.sha, user_id: user.id, date: date.to_s[0..9], commit_message: commit.commit.message, committer: commit.commit.committer.name, commit_url: commit.rels[:self].href.gsub("api.", "").gsub("/repos", ""))
       end
     end
   end

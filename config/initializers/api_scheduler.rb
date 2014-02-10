@@ -36,7 +36,7 @@ scheduler.cron("55 23 * * *") do
   # rescue_time_data
 end
 
-scheduler.every("1m") do
+scheduler.every("10s") do
   # twitter_data
   # rescue_time_data
   # github_data
