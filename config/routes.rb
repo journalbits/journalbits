@@ -2,7 +2,7 @@ JournalBits::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-  root :to => "home#index"
+  root :to => "days#index"
 
   get 'auth/github' => 'authorization#github'
   get 'connections' => 'authorization#index'
