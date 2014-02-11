@@ -1,3 +1,7 @@
+= image_tag @user.gravatar_url
+%h1
+  = @user.username
+
 - if @mentions || @tweets || @favourites
   %h2 
     Twitter

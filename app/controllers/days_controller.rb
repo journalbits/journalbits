@@ -7,6 +7,8 @@ class DaysController < ApplicationController
 
   def show
     params[:id] ? date = params[:id] : date = (Time.now - 1.day).to_s[0..9]
+    @written_date = DateTime.parse(date).strftime("%A %-d %B %Y")
+    @user = User.where(username: params[:user_id]).first
     mentions = TwitterEntry.where(user_id: current_user.id, date: date, kind: "mention")
     @mentions = mentions if !mentions.empty?
     tweets = TwitterEntry.where(user_id: current_user.id, date: date, kind: "tweet")
@@ -43,10 +45,10 @@ class DaysController < ApplicationController
     @wunderlist_tasks_created = wunderlist_tasks_created if !wunderlist_tasks_created.empty?
     whatpulse_data = WhatpulseEntry.where(user_id: current_user.id, date: date)
     if !whatpulse_data.empty?
-      @whatpulse_keys = wp_total_keys_for_day whatpulse_data
-      @whatpulse_clicks = wp_total_clicks_for_day whatpulse_data
-      @whatpulse_upload = wp_total_upload_for_day whatpulse_data
-      @whatpulse_download = wp_total_download_for_day whatpulse_data
+      @whatpulse_keys = Day.wp_total_keys whatpulse_data
+      @whatpulse_clicks = Day.wp_total_clicks whatpulse_data
+      @whatpulse_upload = Day.wp_total_upload whatpulse_data
+      @whatpulse_download = Day.wp_total_download whatpulse_data
     end
   end
 

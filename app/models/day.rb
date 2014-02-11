@@ -12,20 +12,20 @@ class Day < ActiveRecord::Base
     self.slug ||= date.parameterize
   end
 
-  def wp_total_clicks_for_day pulses
-    pulses.inject(0) { |memo, pulse| memo + pulse.clicks }
+  def self.wp_total_clicks pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.clicks.to_i }
   end
 
-  def wp_total_keys_for_day pulses
-    pulses.inject(0) { |memo, pulse| memo + pulse.keys }
+  def self.wp_total_keys pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.keys.to_i }
   end
 
-  def wp_total_upload_for_day pulses
-    pulses.inject(0) { |memo, pulse| memo + pulse.upload_mb }
+  def self.wp_total_upload pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.upload_mb.to_i }
   end
 
-  def wp_total_download_for_day pulses
-    pulses.inject(0) { |memo, pulse| memo + pulse.download_mb }
+  def self.wp_total_download pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.download_mb.to_i }
   end
 
 end
