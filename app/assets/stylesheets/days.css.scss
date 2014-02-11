@@ -1,3 +1,36 @@
 // Place all the styles related to the Days controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+.days_container {
+  @include outer-container;
+
+  .daily-data-container {
+    // text-align: center;
+
+    @include media($desktop) {
+      @include span-columns(3);
+      @include omega(4n); 
+    }
+
+    @include media($tablet) {
+      @include span-columns(3);
+      @include omega(3n);
+    }
+
+    @include media($mobile) {
+      @include span-columns(2);
+      @include omega(2n);
+    }
+
+    h1 {
+      font-family: 'Nunito-Light';
+      font-weight: 300;
+    }
+
+  }
+}

@@ -1,6 +1,6 @@
 @import "bourbon";
 @import "grid-settings";
-// $visual-grid: true;
+$visual-grid: true;
 @import "neat";
 
 * {
@@ -55,7 +55,6 @@ a {
 [class^="jb-"], [class*=" jb-"] {
   font-family: 'journalbits';
   speak: none;
-  // color: white;
   font-size: 30px;
   font-style: normal;
   font-weight: normal;
@@ -115,7 +114,6 @@ a {
 .main_body {
   @include outer-container;
   font-family: 'Nunito-Light';
-  // overflow:auto;
   padding-bottom: 3em;
 }
 
