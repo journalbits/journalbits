@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
       when "instagram" then return process_for_instagram auth
       when "instapaper" then return process_for_instapaper auth
       when "lastfm" then return process_for_lastfm auth
+      when "clef" then return process_for_clef auth
     end
   end
 
@@ -114,6 +115,14 @@ class User < ActiveRecord::Base
   end
 
   def self.process_for_lastfm auth
+    user = current_user
+    user.lastfm_username = auth.credentials.name
+    user.save! if user.email != ""
+    user
+  end
+
+  def self.process_for_lastfm auth
+    raise auth.inspect
     user = current_user
     user.lastfm_username = auth.credentials.name
     user.save! if user.email != ""

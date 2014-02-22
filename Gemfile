@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'oauth2'
 gem 'simple_oauth'
 gem 'omniauth'
+gem 'omniauth-clef'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-fitbit'

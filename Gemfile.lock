@@ -161,6 +161,8 @@ GEM
     omniauth (1.2.1)
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
+    omniauth-clef (1.0.2)
+      omniauth-oauth2 (~> 1.1)
     omniauth-evernote (1.2.0)
       evernote-thrift
       multi_json (~> 1.0)
@@ -332,6 +334,7 @@ DEPENDENCIES
   oauth2
   octokit (~> 2.0)
   omniauth
+  omniauth-clef
   omniauth-evernote
   omniauth-facebook
   omniauth-fitbit
@@ -343,7 +346,7 @@ DEPENDENCIES
   omniauth-rdio
   omniauth-twitter
   pg
-  rails (= 4.0.0)
+  rails
   rspec-rails (~> 3.0.0.beta)
   rufus-scheduler
   sass-rails (~> 4.0.0)

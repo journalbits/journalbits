@@ -3369,3 +3369,372 @@ Migrating to AddSlugToUsers (20140207140634)
   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140207140634"]]
   [1m[35m (6.1ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (13.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20140107191825)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140107191825"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddOmniauthToUsers (20140108135711)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140108135711"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddUsernameToUser (20140108141326)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "username" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140108141326"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateTwitterEntries (20140108201418)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "twitter_entries" ("id" serial primary key, "date" date, "text" character varying(255), "media" character varying(255), "type" character varying(255), "tweeter" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140108201418"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddTwitterOauthToUsers (20140108203606)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "twitter_oauth_token" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "twitter_oauth_secret" character varying(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140108203606"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeTwitterEntryTextTypeToText (20140108204334)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "twitter_entries" ALTER COLUMN "text" TYPE text[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140108204334"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserIdToTwitterEntry (20140109102335)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "user_id" integer[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140109102335"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddTweetIdToTwitterEntry (20140109102547)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "tweet_id" integer[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140109102547"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeUsernameColumnNameToTwitterUsername (20140111160657)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "username" TO "twitter_username"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140111160657"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeColumnNameOfUidToTwitterUid (20140113130358)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "uid" TO "twitter_uid"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140113130358"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveDateFromTwitterEntries (20140113203805)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "twitter_entries" DROP "date"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140113203805"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddTimeCreatedToTwitterEntries (20140113204116)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "twitter_entries" ADD COLUMN "time_created" character varying(255)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140113204116"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to RenameTypeColumnInTwitterEntriesToKind (20140114131304)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "twitter_entries" RENAME COLUMN "type" TO "kind"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140114131304"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeTypeOfTweetIdFromIntegerToBigint (20140114131635)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.7ms)[0m  [1mALTER TABLE "twitter_entries" ALTER COLUMN "tweet_id" TYPE bigint[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140114131635"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRescueTimeEntriesTable (20140115005017)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "rescue_time_entries" ("id" serial primary key) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140115005017"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToRescueTimeEntries (20140115005047)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_1" character varying(255)[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_1" integer
+  [1m[36m (2.0ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_2" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_2" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_3" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_3" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_4" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_4" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "activity_5" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_spent_5" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "rescue_time_entries" ADD COLUMN "date" time[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "productivity" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115005047"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddRescueTimeKeyToUsers (20140115005413)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "rescue_time_key" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115005413"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to ChangeDateColumnTypeInRescueTimeEntriesToString (20140115012408)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.7ms)[0m  ALTER TABLE "rescue_time_entries" ALTER COLUMN "date" TYPE character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115012408"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to AddCreatedAtToRescueTimeEntries (20140115012516)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "created_at" timestamp
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115012516"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddUserIdToRescueTimeEntries (20140115110713)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "user_id" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115110713"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddGithubAccessTokenToUsers (20140115133622)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "github_access_token" character varying(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140115133622"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to CreateGithubEntries (20140116144318)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "github_entries" ("id" serial primary key, "user_id" integer, "sha" character varying(255), "time_created" character varying(255), "commit_message" character varying(255), "committer" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140116144318"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddCommitUrlToGithubEntry (20140116224158)
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "github_entries" ADD COLUMN "commit_url" character varying(255)
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140116224158"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to AddTweetUrlToTwitterEntry (20140116224658)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "twitter_entries" ADD COLUMN "tweet_url" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140116224658"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddWunderlistInfoToUser (20140121125732)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "wunderlist_email" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "wunderlist_password_digest" character varying(255)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140121125732"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveWunderlistInfoFromUsers (20140121143847)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" DROP "wunderlist_email"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" DROP "wunderlist_password_digest"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140121143847"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddWunderlistTokenToUsers (20140121143911)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "wunderlist_token" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140121143911"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateWunderlistEntries (20140122145851)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "wunderlist_entries" ("id" serial primary key, "completed_at" character varying(255), "time_created" character varying(255), "title" character varying(255), "list" character varying(255), "user_id" integer, "task_id" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140122145851"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddFitbitOauthDataToUsers (20140122160218)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "fitbit_oauth_token" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "fitbit_oauth_secret" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140122160218"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFitbitSleepEntries (20140123154024)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "fitbit_sleep_entries" ("id" serial primary key, "minutes_asleep" integer, "minutes_awake" integer, "minutes_to_fall_asleep" integer, "efficiency" integer, "times_awake" integer, "start_time" character varying(255), "user_id" integer, "date" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123154024"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFitbitActivityEntries (20140123155517)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "fitbit_activity_entries" ("id" serial primary key, "user_id" integer, "date" character varying(255), "calories" integer, "distance" float, "steps" integer, "active_minutes" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123155517"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFitbitWeightEntries (20140123160322)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "fitbit_weight_entries" ("id" serial primary key, "user_id" integer, "date" character varying(255), "weight" float, "weight_unit" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123160322"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddPocketOmniauthInfoToUser (20140126145620)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "pocket_oauth_token" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140126145620"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePocketEntries (20140126220843)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "pocket_entries" ("id" serial primary key, "user_id" integer, "date" character varying(255), "url" character varying(255), "title" character varying(255), "item_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140126220843"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddRdioOauthInfoToUser (20140126225022)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "rdio_oauth_token" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "rdio_oauth_secret" character varying(255)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140126225022"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddFacebookOauthInfoToUser (20140127142741)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "facebook_oauth_token" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "facebook_oauth_secret" character varying(255)[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127142741"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeFacebookOauthSecretColumnToTokenExpiresAtForUser (20140127143636)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "facebook_oauth_secret" TO "facebook_token_expires_at"[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127143636"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFacebookPhotoEntries (20140127180903)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "facebook_photo_entries" ("id" serial primary key, "user_id" integer, "time_created" character varying(255), "photo_id" float, "source_url" character varying(255), "medium_url" character varying(255), "link_url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127180903"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeDataTypeForFacebookPhotoIdFromIntegerToString (20140127190854)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mALTER TABLE "facebook_photo_entries" ALTER COLUMN "photo_id" TYPE character varying(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127190854"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddWhatpulseUsernameToUser (20140127235344)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "whatpulse_username" character varying(255)[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140127235344"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateWhatpulseEntries (20140128005103)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "whatpulse_entries" ("id" serial primary key, "user_id" integer, "time_created" character varying(255), "pulse_id" character varying(255), "keys" character varying(255), "clicks" character varying(255), "download_mb" integer, "upload_mb" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140128005103"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddEvernoteOauthInfoToUser (20140128113539)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "evernote_oauth_token" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "evernote_token_expires_at" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140128113539"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to CreateEvernoteEntries (20140128164519)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "evernote_entries" ("id" serial primary key, "user_id" integer, "time_created" character varying(255), "note_id" character varying(255), "kind" character varying(255), "title" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140128164519"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddInstagramOauthInfoToUser (20140128182220)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "instagram_oauth_token" character varying(255)
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140128182220"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to AddInstagramUidToUser (20140129111627)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" ADD COLUMN "instagram_uid" character varying(255)
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140129111627"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to CreateInstagramEntries (20140129132028)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "instagram_entries" ("id" serial primary key, "user_id" integer, "time_created" character varying(255), "kind" character varying(255), "thumbnail_url" character varying(255), "standard_url" character varying(255), "caption" character varying(255), "link_url" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140129132028"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddInstapaperOauthInfoToUser (20140129155622)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "instapaper_oauth_token" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "instapaper_oauth_secret" character varying(255)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140129155622"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateInstapaperEntries (20140129170047)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "instapaper_entries" ("id" serial primary key, "user_id" integer, "time_created" character varying(255), "bookmark_id" character varying(255), "url" character varying(255), "title" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140129170047"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddLastfmUsernameToUser (20140129215225)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "lastfm_username" character varying(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140129215225"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLastfmEntries (20140130004452)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "lastfm_entries" ("id" serial primary key, "user_id" integer, "time_created" character varying(255), "artist" character varying(255), "track" character varying(255), "uts" character varying(255), "url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140130004452"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveDateAndCreatedAtColumnsFromRescueTimeEntries (20140130132932)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rescue_time_entries" DROP "date"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rescue_time_entries" DROP "created_at"
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140130132932"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to AddTimeCreatedColumnToRescueTimeEntries (20140130133112)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "rescue_time_entries" ADD COLUMN "time_created" character varying(255)
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140130133112"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to CreateDays (20140204183357)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "days" ("id" serial primary key, "user_id" integer, "pretty_date" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140204183357"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to RenamePrettyDateToDateForDays (20140205211526)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "days" RENAME COLUMN "pretty_date" TO "date"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205211526"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDate (20140205211653)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "facebook_photo_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205211653"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForGithubEntries (20140205211912)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "github_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205211912"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForWunderlistEntries (20140205213453)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "wunderlist_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205213453"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForEvernoteEntries (20140205214644)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "evernote_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205214644"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForWhatpulseEntries (20140205214856)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "whatpulse_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140205214856"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForTwitterEntries (20140206104528)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "twitter_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206104528"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForRescueTimeEntries (20140206104631)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "rescue_time_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206104631"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForLastfmEntries (20140206182118)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "lastfm_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206182118"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForInstagramEntries (20140206182357)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "instagram_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206182357"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to ChangeTimeCreatedToDateForInstapaperEntries (20140206182458)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "instapaper_entries" RENAME COLUMN "time_created" TO "date"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206182458"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddKindToWunderlistEntries (20140206185201)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "wunderlist_entries" ADD COLUMN "kind" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206185201"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddUsernameToUsers (20140206201733)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "username" character varying(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140206201733"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddSlugToDays (20140207130939)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "days" ADD COLUMN "slug" character varying(255)
+  [1m[36m (1.0ms)[0m  [1mCREATE INDEX "index_days_on_slug" ON "days" ("slug")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140207130939"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddSlugToUsers (20140207140634)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "slug" character varying(255)[0m
+  [1m[35m (2.4ms)[0m  CREATE INDEX "index_users_on_slug" ON "users" ("slug")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140207140634"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
