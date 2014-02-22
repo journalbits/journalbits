@@ -69,6 +69,9 @@ gem 'haml-rails'
 # For chaning erb to haml
 gem 'html2haml'
 
+# For storing heroku env secrets
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
