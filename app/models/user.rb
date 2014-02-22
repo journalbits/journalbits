@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def generate_slug
-    self.slug ||= username.parameterize
+    self.slug ||= username.parameterize if username
   end
 
   def self.from_omniauth auth
@@ -57,6 +57,10 @@ class User < ActiveRecord::Base
     user.twitter_oauth_secret = auth.credentials.secret
     user.save! if user.email != ""
     user
+  end
+
+  def self.process_for_clef auth
+    user = where(clef_id: auth.uid).first || create_from_clef_omniauth(auth)
   end
 
   def self.process_for_fitbit auth
@@ -121,19 +125,11 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_lastfm auth
-    raise auth.inspect
-    user = current_user
-    user.lastfm_username = auth.credentials.name
-    user.save! if user.email != ""
-    user
-  end
-
   def self.check_for_non_twitter_login auth
     if current_user != nil && current_user.provider != "twitter"
       save_twitter_data_for_current_user auth
     else
-      self.create_from_omniauth auth
+      self.create_from_twitter_omniauth auth
     end
   end
 
@@ -146,13 +142,21 @@ class User < ActiveRecord::Base
     current_user
   end
 
-  def self.create_from_omniauth auth
+  def self.create_from_twitter_omniauth auth
     create do |user|
       user.provider = auth.provider
       user.twitter_uid = auth.uid
       user.twitter_username = auth.info.nickname
       user.twitter_oauth_token = auth.credentials.token
       user.twitter_oauth_secret = auth.credentials.secret
+    end
+  end
+
+  def self.create_from_clef_omniauth auth
+    create do |user|
+      user.provider = auth.provider
+      user.clef_id = auth.uid
+      user.email = auth.info.email
     end
   end
 
@@ -187,5 +191,14 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  protected
+
+    def check_user
+      if session[:user]
+        @user = User.find(session[:user])
+        redirect_to user_path(@user) if @user
+      end
+    end
 
 end

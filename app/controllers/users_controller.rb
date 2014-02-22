@@ -2,31 +2,6 @@ require "net/https"
 
 class UsersController < ApplicationController
 
-  def clef
-    code = params[:code]
-
-    data = {
-      body: {
-        code: code,
-        app_id: ENV['CLEF_APP_ID'],
-        app_secret: ENV['CLEF_APP_SECRET']
-      }
-    }
-
-    url = "https://clef.io/api/v1/authorize"
-    response = HTTParty.post(url, data)
-
-    if response['success']
-      access_token = response['access_token']
-      url = "https://clef.io/api/v1/info?access_token=#{access_token}"
-      response = HTTParty.get(url)
-      raise response.inspect
-      redirect_to "/connections"
-    else
-      p response['error']
-    end
-  end
-
   def rescue_time_update
     rescue_time_key = params['user']['rescue_time_key']
     User.where(id: current_user.id).take.update_attributes(rescue_time_key: rescue_time_key)
