@@ -19,6 +19,7 @@ a {
 
 @font-face {
   font-family: 'Nunito-Regular';
+  src: font-url('Nunito-Regular.eot');
   src: font-url('Nunito-Regular.eot') format('embedded-opentype'), 
        font-url('Nunito-Regular.woff') format('woff'), 
        font-url('Nunito-Regular.ttf')  format('truetype'),
@@ -27,6 +28,7 @@ a {
 
 @font-face {
   font-family: 'Nunito-Light';
+  src: font-url('Nunito-Light.eot');
   src: font-url('Nunito-Light.eot') format('embedded-opentype'), 
        font-url('Nunito-Light.woff') format('woff'), 
        font-url('Nunito-Light.ttf')  format('truetype'),
@@ -35,6 +37,7 @@ a {
 
 @font-face {
   font-family: 'Nunito-Bold';
+  src: font-url('Nunito-Bold.eot');
   src: font-url('Nunito-Bold.eot') format('embedded-opentype'), 
        font-url('Nunito-Bold.woff') format('woff'), 
        font-url('Nunito-Bold.ttf')  format('truetype'),
