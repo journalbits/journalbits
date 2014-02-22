@@ -20,6 +20,8 @@ class UsersController < ApplicationController
       access_token = response['access_token']
       url = "https://clef.io/api/v1/info?access_token=#{access_token}"
       response = HTTParty.get(url)
+      raise response.inspect
+      redirect_to "/connections"
     else
       p response['error']
     end
