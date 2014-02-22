@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :slug, uniqueness:true, presence: true
 
   before_validation :generate_slug
+
+  # before_filter :check_user, only: [:new]
 
   has_many :twitter_entries
 

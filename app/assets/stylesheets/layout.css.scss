@@ -43,11 +43,11 @@ a {
 
 @font-face {
   font-family: 'journalbits';
-  src:url('journalbits.eot');
-  src:url('journalbits.eot?#iefix') format('embedded-opentype'),
-    url('journalbits.woff') format('woff'),
-    url('journalbits.ttf') format('truetype'),
-    url('journalbits.svg#journalbits') format('svg');
+  src:font-url('journalbits.eot');
+  src:font-url('journalbits.eot?#iefix') format('embedded-opentype'),
+    font-url('journalbits.woff') format('woff'),
+    font-url('journalbits.ttf') format('truetype'),
+    font-url('journalbits.svg#journalbits') format('svg');
   font-weight: normal;
   font-style: normal;
 }
