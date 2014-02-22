@@ -18,6 +18,7 @@ module JournalBits
     # -- all .rb files in that directory are automatically loaded.
     config.assets.enabled = true 
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     # config.assets.precompile << Proc.new { |path|
     # if path =~ /\.(eot|svg|ttf|woff)\z/
     #   true
