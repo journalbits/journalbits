@@ -34,6 +34,8 @@
                       %span.nav-text
                         Logout
                 - else
+                  %li.nav-clef
+                    %a.clef{href: "https://clef.io/iframes/qr?app_id=#{ENV['CLEF_APP_ID']}&redirect_url=http://0.0.0.0:3000/auth/clef/callback"} Clef Login
                   %li.nav-login
                     %a{href:"/users/sign_in"}
                       %span.jb-login.nav-symbol

@@ -37,16 +37,16 @@ scheduler.cron("55 23 * * *") do
 end
 
 scheduler.every("20s") do
-  twitter_data
-  rescue_time_data
-  github_data
-  wunderlist_data
-  fitbit_data
+  # twitter_data
+  # rescue_time_data
+  # github_data
+  # wunderlist_data
+  # fitbit_data
   # pocket_data
   # facebook_data
-  whatpulse_data
+  # whatpulse_data
   # evernote_data
   # instagram_data
   # instapaper_data
-  lastfm_data
+  # lastfm_data
 end

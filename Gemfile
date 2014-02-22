@@ -40,14 +40,16 @@ gem 'omniauth-evernote'
 gem 'omniauth-instapaper'
 gem 'omniauth-instagram'
 gem 'omniauth-lastfm'
+gem 'omniauth-moves'
 
 # For API integration
 gem 'fitgem'
 gem 'twitter'
-gem "octokit", "~> 2.0"
-gem "koala", "~> 1.8.0rc1"
+gem 'octokit', '~> 2.0'
+gem 'koala', '~> 1.8.0rc1'
 gem 'evernote_oauth'
 gem 'instapaper'
+gem 'moves'
 
 # For user profiles and profile images
 gem 'devise'
@@ -73,7 +75,7 @@ group :test do
   gem 'database_cleaner'
   gem 'webmock'
   gem 'vcr'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :doc do

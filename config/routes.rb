@@ -12,6 +12,7 @@ JournalBits::Application.routes.draw do
   patch 'auth/wunderlist' => 'users#wunderlist_update'
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'
+  get 'auth/clef/callback' => 'users#clef'
 
   resources :users,  path: "" do  
     resources :days, path: ""

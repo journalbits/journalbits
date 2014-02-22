@@ -1,8 +1,13 @@
 class DaysController < ApplicationController
 
   def index
-    date = (Time.now - 1.day).to_s[0..9]
-    redirect_to "/#{current_user.username}/#{date}"
+    if current_user
+      date = (Time.now - 1.day).to_s[0..9]
+      redirect_to "/#{current_user.username}/#{date}"
+    else
+      redirect_to "/connections"
+    end
+
   end
 
   def show
