@@ -29,4 +29,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :instagram, :all
   alias_method :lastfm, :all
   alias_method :clef, :all
+  alias_method :moves, :all
 end

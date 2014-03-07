@@ -105,3 +105,11 @@
             %div.whatpulse-img-grayscale.whatpulse-logo.service-connection-img
           %h3 WhatPulse
 
+      %div.service-connection-container
+        %a{href:"/users/auth/moves"}
+          - if @user.whatpulse_username
+            %div.moves-img.moves-logo.service-connection-img
+          - else
+            %div.moves-img-grayscale.moves-logo.service-connection-img
+          %h3 Moves
+

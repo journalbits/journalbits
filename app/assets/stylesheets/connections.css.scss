@@ -235,6 +235,21 @@ section.connections {
   }
 }
 
+.moves-img {
+  background-image: image-url('moves250.png');
+  background-size: contain;
+}
+
+.moves-img-grayscale {
+  background-image: image-url('moves250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('moves250.png');
+    background-size: contain;
+  }
+}
+
 // .twitter-logo:hover {
 //   border: 4px solid #42ABF3;
 // }

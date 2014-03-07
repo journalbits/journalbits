@@ -50,6 +50,7 @@ class User < ActiveRecord::Base
       when "instapaper" then return process_for_instapaper auth
       when "lastfm" then return process_for_lastfm auth
       when "clef" then return process_for_clef auth
+      when "moves" then return process_for_moves auth
     end
   end
 
@@ -123,6 +124,14 @@ class User < ActiveRecord::Base
   def self.process_for_lastfm auth
     user = current_user
     user.lastfm_username = auth.credentials.name
+    user.save! if user.email != ""
+    user
+  end
+
+  def self.process_for_moves auth
+    raise auth.inspect
+    user = current_user
+    user.moves = auth.credentials.name
     user.save! if user.email != ""
     user
   end
