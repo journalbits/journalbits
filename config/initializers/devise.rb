@@ -242,7 +242,7 @@ Devise.setup do |config|
   config.omniauth :instagram, ENV['INSTAGRAM_ID'], ENV['INSTAGRAM_SECRET']
   config.omniauth :lastfm, ENV['LASTFM_CONSUMER_KEY'], ENV['LASTFM_CONSUMER_SECRET']
   config.omniauth :clef, ENV['CLEF_APP_ID'], ENV['CLEF_APP_SECRET']
-  config.omniauth :moves, ENV['MOVES_CLIENT_KEY'], ENV['MOVES_CLIENT_SECRET']
+  config.omniauth :moves, ENV['MOVES_CLIENT_KEY'], ENV['MOVES_CLIENT_SECRET'], :scope => 'activity location'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

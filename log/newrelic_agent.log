@@ -386,3 +386,241 @@
 [03/08/14 12:43:10 +0000 HaMacBookPro.local (21446)] INFO : Installing Rails4 Error instrumentation
 [03/08/14 12:43:10 +0000 HaMacBookPro.local (21446)] INFO : Finished instrumentation
 [03/08/14 12:43:10 +0000 HaMacBookPro.local (21446)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Enabling the Request Sampler.
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Environment: development
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Dispatcher: webrick
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Application: My Application
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] WARN : Agent configured not to send data in this environment.
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Installing Net instrumentation
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Installing deferred Rack instrumentation
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 13:47:03 +0000 HaMacBookPro.local (22351)] INFO : Finished instrumentation
+[03/08/14 13:47:04 +0000 HaMacBookPro.local (22351)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Enabling the Request Sampler.
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Environment: development
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Dispatcher: webrick
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Application: My Application
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] WARN : Agent configured not to send data in this environment.
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Installing Net instrumentation
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Installing deferred Rack instrumentation
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 13:48:38 +0000 HaMacBookPro.local (22422)] INFO : Finished instrumentation
+[03/08/14 13:48:39 +0000 HaMacBookPro.local (22422)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Enabling the Request Sampler.
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Environment: development
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Dispatcher: webrick
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Application: My Application
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] WARN : Agent configured not to send data in this environment.
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Installing Net instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Installing deferred Rack instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Finished instrumentation
+[03/08/14 13:51:03 +0000 HaMacBookPro.local (22510)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Enabling the Request Sampler.
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Environment: development
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Dispatcher: webrick
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Application: My Application
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] WARN : Agent configured not to send data in this environment.
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Installing Net instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Installing deferred Rack instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Finished instrumentation
+[03/08/14 13:51:38 +0000 HaMacBookPro.local (22548)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Enabling the Request Sampler.
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Environment: development
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Dispatcher: webrick
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Application: My Application
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] WARN : Agent configured not to send data in this environment.
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Installing Net instrumentation
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Installing deferred Rack instrumentation
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 14:16:13 +0000 HaMacBookPro.local (22782)] INFO : Finished instrumentation
+[03/08/14 14:16:14 +0000 HaMacBookPro.local (22782)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Enabling the Request Sampler.
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Environment: development
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Dispatcher: webrick
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Application: My Application
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] WARN : Agent configured not to send data in this environment.
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Installing Net instrumentation
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Installing deferred Rack instrumentation
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 14:17:27 +0000 HaMacBookPro.local (22857)] INFO : Finished instrumentation
+[03/08/14 14:17:28 +0000 HaMacBookPro.local (22857)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Enabling the Request Sampler.
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Environment: development
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Dispatcher: webrick
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Application: My Application
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] WARN : Agent configured not to send data in this environment.
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Installing Net instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Installing deferred Rack instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Finished instrumentation
+[03/08/14 14:18:18 +0000 HaMacBookPro.local (22921)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Enabling the Request Sampler.
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Environment: development
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Dispatcher: webrick
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Application: My Application
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] WARN : Agent configured not to send data in this environment.
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Installing Net instrumentation
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Installing deferred Rack instrumentation
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 14:19:13 +0000 HaMacBookPro.local (22967)] INFO : Finished instrumentation
+[03/08/14 14:19:14 +0000 HaMacBookPro.local (22967)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Enabling the Request Sampler.
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Environment: development
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Dispatcher: webrick
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Application: My Application
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] WARN : Agent configured not to send data in this environment.
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Installing Net instrumentation
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Installing deferred Rack instrumentation
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 14:22:34 +0000 HaMacBookPro.local (23094)] INFO : Finished instrumentation
+[03/08/14 14:22:35 +0000 HaMacBookPro.local (23094)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Enabling the Request Sampler.
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Environment: development
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Dispatcher: webrick
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Application: My Application
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] WARN : Agent configured not to send data in this environment.
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Installing Net instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Installing deferred Rack instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Finished instrumentation
+[03/08/14 15:11:08 +0000 HaMacBookPro.local (23443)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Enabling the Request Sampler.
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Environment: development
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Dispatcher: webrick
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Application: My Application
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] WARN : Agent configured not to send data in this environment.
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Installing Net instrumentation
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Installing deferred Rack instrumentation
+[03/08/14 15:11:42 +0000 HaMacBookPro.local (23483)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 15:11:43 +0000 HaMacBookPro.local (23483)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 15:11:43 +0000 HaMacBookPro.local (23483)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 15:11:43 +0000 HaMacBookPro.local (23483)] INFO : Finished instrumentation
+[03/08/14 15:11:43 +0000 HaMacBookPro.local (23483)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Enabling the Request Sampler.
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Environment: development
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Dispatcher: webrick
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Application: My Application
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] WARN : Agent configured not to send data in this environment.
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Installing Net instrumentation
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Installing deferred Rack instrumentation
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 15:12:01 +0000 HaMacBookPro.local (23520)] INFO : Finished instrumentation
+[03/08/14 15:12:02 +0000 HaMacBookPro.local (23520)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Enabling the Request Sampler.
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Environment: development
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Dispatcher: webrick
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Application: My Application
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] WARN : Agent configured not to send data in this environment.
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Installing Net instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Installing deferred Rack instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Finished instrumentation
+[03/08/14 15:13:08 +0000 HaMacBookPro.local (23558)] INFO : Doing deferred dependency-detection before Rack startup
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Starting the New Relic agent in "development" environment.
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Reading configuration from config/newrelic.yml
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : New Relic Agent Developer Mode enabled.
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Enabling the Request Sampler.
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Environment: development
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Dispatcher: webrick
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Application: My Application
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] WARN : Agent configured not to send data in this environment.
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Installing ActiveRecord 4 instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Installing Net instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Installing deferred Rack instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Installing Rails 4 Controller instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Installing Rails 4 view instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Installing Rails4 Error instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Finished instrumentation
+[03/08/14 15:20:14 +0000 HaMacBookPro.local (23646)] INFO : Doing deferred dependency-detection before Rack startup

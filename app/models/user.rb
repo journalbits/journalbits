@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth auth
+    raise "#{auth.provider}" if auth.provider != "twitter"
     case auth.provider
       when "twitter" then return process_for_twitter auth
       when "fitbit" then return process_for_fitbit auth
