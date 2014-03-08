@@ -41,6 +41,8 @@ scheduler.every("20s") do
   # lastfm_data
 end
 
-scheduler.schedule_every("2m", { first: "0.4s" }) do
-  
+scheduler.schedule_every("2m", { first: "1s" }) do
+  processor = ServiceProcessor::GlobalProcessor.new (Time.now - 1.day)
+  processor.process_all
+  puts "BOOM TIME"
 end
