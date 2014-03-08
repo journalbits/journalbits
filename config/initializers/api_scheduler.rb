@@ -1,31 +1,6 @@
 require 'rubygems'
 require 'rufus/scheduler'
-require 'evernote_processor'
-require 'facebook_processor'
-require 'fitbit_processor'
-require 'github_processor'
-require 'instagram_processor'
-require 'instapaper_processor'
-require 'lastfm_processor'
-require 'pocket_processor'
-require 'rescue_time_processor'
-require 'twitter_processor'
-require 'twitter_processor'
-require 'whatpulse_processor'
-require 'wunderlist_processor'
-
-# include TwitterApiHelper
-# include RescueTimeApiHelper
-# include GithubApiHelper
-# include WunderlistApiHelper
-# include FitbitApiHelper
-# include PocketApiHelper
-# include FacebookApiHelper
-# include WhatpulseApiHelper
-# include EvernoteApiHelper
-# include InstapaperApiHelper
-# include InstagramApiHelper
-# include LastfmApiHelper
+require 'service_processor'
 
 include ServiceProcessor
 
@@ -66,8 +41,6 @@ scheduler.every("20s") do
   # lastfm_data
 end
 
-scheduler.every("20s") do
-  # github = GithubProcessor Time.now, User.first
-  github = ServiceProcessor::GithubProcessor.new Time.now, User.first
-  github.process
+scheduler.schedule_every("2m", { first: "0.4s" }) do
+  
 end
