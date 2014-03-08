@@ -4,11 +4,12 @@ JournalBits::Application.routes.draw do
 
   root :to => "days#index"
 
-  get 'auth/github' => 'authorization#github'
   get 'connections' => 'authorization#index'
+  get 'auth/github' => 'authorization#github'
   get 'auth/rescue_time' => 'authorization#rescue_time'
   get 'auth/wunderlist' => 'authorization#wunderlist'
   get 'auth/whatpulse' => 'authorization#whatpulse'
+  # get 'auth/moves' => 'authorization#moves'
   patch 'auth/wunderlist' => 'users#wunderlist_update'
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'

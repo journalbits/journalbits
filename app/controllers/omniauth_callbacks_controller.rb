@@ -1,6 +1,8 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   def all
+    puts "*******************************************************"
+    puts "CALLBACK"
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted? && request.env["omniauth.auth"].provider == "twitter"
       sign_in user
@@ -14,7 +16,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  def failure 
+  def failure
     flash.notice = "Account authorization failed"
     redirect_to "/connections"
   end
