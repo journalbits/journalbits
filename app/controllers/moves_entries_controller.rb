@@ -1,0 +1,2 @@
+class MovesEntriesController < ApplicationController
+end

@@ -28,7 +28,14 @@ module ServiceProcessor
       media = user_media_on_date
       media.each do |item|
         unless InstagramEntry.exists?(link_url: item['link'])
-          InstagramEntry.create(user_id: @user.id, date: @date.to_s[0..9], kind: item['type'], thumbnail_url: item['images']['thumbnail']['url'], standard_url: item['images']['standard_resolution']['url'], caption: item['caption']['text'], link_url: item['link'])
+          InstagramEntry.create(user_id: @user.id, 
+                                date: @date.to_s[0..9], 
+                                kind: item['type'], 
+                                thumbnail_url: item['images']['thumbnail']['url'], 
+                                standard_url: item['images']['standard_resolution']['url'], 
+                                caption: item['caption']['text'], 
+                                link_url: item['link']
+                                )
         end
       end
     end

@@ -25,7 +25,12 @@ module ServiceProcessor
       bookmarks = user_bookmarks_on_date
       bookmarks.each do |bookmark|
         unless InstapaperEntry.exists?(bookmark_id: bookmark.bookmark_id.to_s)
-          InstapaperEntry.create(user_id: @user.id, date: @date.to_s[0..9], bookmark_id: bookmark.bookmark_id.to_s, title: bookmark.title, url: bookmark.url)
+          InstapaperEntry.create(user_id: @user.id, 
+                                 date: @date.to_s[0..9], 
+                                 bookmark_id: bookmark.bookmark_id.to_s, 
+                                 title: bookmark.title, 
+                                 url: bookmark.url
+                                 )
         end
       end
     end 

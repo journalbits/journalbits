@@ -16,7 +16,13 @@ module ServiceProcessor
       commits = user_commits_on_date
       commits.each do |commit|
         unless GithubEntry.exists?(:sha => commit.sha)
-          GithubEntry.create(sha: commit.sha, user_id: @user.id, date: @date.to_s[0..9], commit_message: commit.commit.message, committer: commit.commit.committer.name, commit_url: commit.rels[:self].href.gsub("api.", "").gsub("/repos", ""))
+          GithubEntry.create(sha: commit.sha, 
+                             user_id: @user.id, 
+                             date: @date.to_s[0..9], 
+                             commit_message: commit.commit.message, 
+                             committer: commit.commit.committer.name, 
+                             commit_url: commit.rels[:self].href.gsub("api.", "").gsub("/repos", "")
+                             )
         end
       end
     end

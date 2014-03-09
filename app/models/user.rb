@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth auth
-    raise "#{auth.provider}" if auth.provider != "twitter"
     case auth.provider
       when "twitter" then return process_for_twitter auth
       when "fitbit" then return process_for_fitbit auth
@@ -130,9 +129,9 @@ class User < ActiveRecord::Base
   end
 
   def self.process_for_moves auth
-    raise auth.inspect
     user = current_user
-    user.moves = auth.credentials.name
+    user.moves_oauth_token = auth.credentials.token
+    user.moves_refresh_token = auth.credentials.refresh_token
     user.save! if user.email != ""
     user
   end

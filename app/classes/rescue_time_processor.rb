@@ -22,7 +22,10 @@ module ServiceProcessor
     def data_for_db
       top_five_for_day = user_data_top_five
       top_five_hash = top_five_hash top_five_for_day
-      general_data = { productivity: productivity_score(top_five_for_day), date: @date.to_s[0..9], user_id: @user.id }
+      general_data = { productivity: productivity_score(top_five_for_day), 
+                       date: @date.to_s[0..9], 
+                       user_id: @user.id 
+                     }
       top_five_hash.merge(general_data)
     end
 

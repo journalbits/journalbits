@@ -22,9 +22,22 @@ module ServiceProcessor
     def save_individual_task_to_database task, lists
       unless WunderlistEntry.exists?(task_id: task['id'], completed_at: task['completed_at'])
         if task['completed_at']
-          WunderlistEntry.create(completed_at: task['completed_at'], date: @date.to_s[0..9], title: task['title'], list: lists["#{task['list_id']}"], user_id: @user.id, task_id: task['id'], kind: "completed")
+          WunderlistEntry.create(completed_at: task['completed_at'], 
+                                 date: @date.to_s[0..9], 
+                                 title: task['title'], 
+                                 list: lists["#{task['list_id']}"], 
+                                 user_id: @user.id, 
+                                 task_id: task['id'], 
+                                 kind: "completed"
+                                 )
         else
-          WunderlistEntry.create(date: @date.to_s[0..9], title: task['title'], list: lists["#{task['list_id']}"], user_id: @user.id, task_id: task['id'], kind: "created")
+          WunderlistEntry.create(date: @date.to_s[0..9], 
+                                 title: task['title'], 
+                                 list: lists["#{task['list_id']}"], 
+                                 user_id: @user.id, 
+                                 task_id: task['id'], 
+                                 kind: "created"
+                                 )
         end
       end
     end

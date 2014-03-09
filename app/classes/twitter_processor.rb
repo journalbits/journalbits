@@ -50,7 +50,14 @@ module ServiceProcessor
       tweets = user_tweets_on_date
       tweets.each do |tweet| 
         unless TwitterEntry.exists?(:tweet_id => tweet.id)
-          TwitterEntry.create(text: tweet.text, kind: "tweet", tweeter: tweet.user.username, user_id: @user.id, tweet_id: tweet.id, date: @date.to_s[0..9], tweet_url: tweet.url.to_s)
+          TwitterEntry.create(text: tweet.text, 
+                              kind: "tweet", 
+                              tweeter: tweet.user.username, 
+                              user_id: @user.id, 
+                              tweet_id: tweet.id, 
+                              date: @date.to_s[0..9], 
+                              tweet_url: tweet.url.to_s
+                              )
         end
       end
     end
@@ -59,7 +66,14 @@ module ServiceProcessor
       favourites = user_favourites_on_date
       favourites.each do |fav| 
         unless TwitterEntry.exists?(:tweet_id => fav.id)
-          TwitterEntry.create(text: fav.text, kind: "favourite", tweeter: fav.user.username, user_id: @user.id, tweet_id: fav.id, date: @date.to_s[0..9], tweet_url: fav.url.to_s)
+          TwitterEntry.create(text: fav.text, 
+                              kind: "favourite", 
+                              tweeter: fav.user.username, 
+                              user_id: @user.id, 
+                              tweet_id: fav.id, 
+                              date: @date.to_s[0..9], 
+                              tweet_url: fav.url.to_s
+                              )
         end
       end
     end
@@ -68,7 +82,14 @@ module ServiceProcessor
       mentions = user_mentions_on_date
       mentions.each do |mention| 
         unless TwitterEntry.exists?(:tweet_id => mention.id)
-          TwitterEntry.create(text: mention.text, kind: "mention", tweeter: mention.user.username, user_id: @user.id, tweet_id: mention.id, date: @date.to_s[0..9], tweet_url: mention.url.to_s)
+          TwitterEntry.create(text: mention.text, 
+                              kind: "mention", 
+                              tweeter: mention.user.username, 
+                              user_id: @user.id, 
+                              tweet_id: mention.id, 
+                              date: @date.to_s[0..9], 
+                              tweet_url: mention.url.to_s
+                              )
         end
       end
     end

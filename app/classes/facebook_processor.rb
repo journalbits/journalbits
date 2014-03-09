@@ -16,7 +16,13 @@ module ServiceProcessor
       photos = user_photos_on_date
       photos.each do |photo|
         unless FacebookPhotoEntry.exists?(user_id: @user.id, photo_id: photo['id'].to_s)
-          FacebookPhotoEntry.create(user_id: @user.id, date: @date.to_s[0..9], photo_id: photo['id'].to_s, source_url: photo['source'], link_url: photo['link'], medium_url: photo['images'][photo['images'].count / 2]['source'])
+          FacebookPhotoEntry.create(user_id: @user.id, 
+                                    date: @date.to_s[0..9], 
+                                    photo_id: photo['id'].to_s, 
+                                    source_url: photo['source'], 
+                                    link_url: photo['link'], 
+                                    medium_url: photo['images'][photo['images'].count / 2]['source']
+                                    )
         end
       end
     end

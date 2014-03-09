@@ -107,9 +107,8 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/moves"}
-          - if @user.whatpulse_username
+          - if @user.moves_oauth_token
             %div.moves-img.moves-logo.service-connection-img
           - else
             %div.moves-img-grayscale.moves-logo.service-connection-img
           %h3 Moves
-

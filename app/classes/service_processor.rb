@@ -5,7 +5,7 @@ require 'github_processor'
 require 'instagram_processor'
 require 'instapaper_processor'
 require 'lastfm_processor'
-# require 'moves_processor'
+require 'moves_processor'
 require 'pocket_processor'
 require 'rescue_time_processor'
 require 'twitter_processor'
@@ -30,7 +30,7 @@ module ServiceProcessor
         process_for_instagram user
         process_for_instapaper user
         process_for_lastfm user
-        # process_for_moves user
+        process_for_moves user
         process_for_pocket user
         process_for_rescue_time user
         process_for_twitter user
@@ -40,9 +40,7 @@ module ServiceProcessor
     end
 
     def process_for_evernote user
-      puts "Processing evernote"
       if user.evernote_oauth_token
-        puts "He has an evernote token"
         evernote = ServiceProcessor::EvernoteProcessor.new @date, user
         evernote.process
       end
@@ -90,12 +88,12 @@ module ServiceProcessor
       end
     end
 
-    # def process_for_moves user
-    #   if user.moves_oauth_token
-    #     moves = ServiceProcessor::MovesProcessor.new @date, user
-    #     moves.process
-    #   end
-    # end
+    def process_for_moves user
+      if user.moves_oauth_token
+        moves = ServiceProcessor::MovesProcessor.new @date, user
+        moves.process
+      end
+    end
 
     def process_for_pocket user
       if user.pocket_oauth_token

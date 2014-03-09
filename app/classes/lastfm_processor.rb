@@ -29,7 +29,13 @@ module ServiceProcessor
       tracks = user_tracks_on_date
       tracks.each do |track|
         unless LastfmEntry.exists?(user_id: @user.id, uts: track['date']['uts'])
-          LastfmEntry.create(user_id: @user.id, date: @date.to_s[0..9], artist: track['artist']['#text'], track: track['name'], uts: track['date']['uts'], url: track['url'])
+          LastfmEntry.create(user_id: @user.id, 
+                             date: @date.to_s[0..9], 
+                             artist: track['artist']['#text'], 
+                             track: track['name'], 
+                             uts: track['date']['uts'], 
+                             url: track['url']
+                             )
         end
       end
     end

@@ -3754,3 +3754,18 @@ Migrating to AddClefIdToUsers (20140222184649)
   [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140222184649"]]
   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMovesEntries (20140309151735)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (32.2ms)[0m  [1mCREATE TABLE "moves_entries" ("id" serial primary key, "user_id" integer, "date" character varying(255), "activity" character varying(255), "duration" integer, "distance" integer, "steps" integer, "calories" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140309151735"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddMovesOauthInfoToUser (20140309152127)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (8.7ms)[0m  [1mALTER TABLE "users" ADD COLUMN "moves_oauth_token" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "moves_refresh_token" character varying(255)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140309152127"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

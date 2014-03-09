@@ -29,7 +29,12 @@ module ServiceProcessor
       links = user_added_links_on_date
       links.each do |link|
         unless PocketEntry.exists?(item_id: link[1]['item_id'])
-          PocketEntry.create(date: @date.to_s[0..9], user_id: @user.id, item_id: link[1]['item_id'], title: link[1]['resolved_title'], url: link[1]['given_url'] )
+          PocketEntry.create(date: @date.to_s[0..9], 
+                             user_id: @user.id, 
+                             item_id: link[1]['item_id'], 
+                             title: link[1]['resolved_title'], 
+                             url: link[1]['given_url']
+                             )
         end
       end
     end

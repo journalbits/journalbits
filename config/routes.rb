@@ -1,5 +1,7 @@
 JournalBits::Application.routes.draw do
 
+  resources :moves_entries
+
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   root :to => "days#index"
