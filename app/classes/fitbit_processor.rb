@@ -66,7 +66,7 @@ module ServiceProcessor
 
     def save_activity_entries_on_date
       activity_data = user_activity_on_date
-      unless FitbitActivityEntry.exists?(date: @date.to_s[0..9], user_id: @user.id)
+      unless FitbitActivityEntry.exists?(date: @date.to_s[0..9], user_id: @user.id) || activity_data[:steps] == 0
         FitbitActivityEntry.create(calories: activity_data[:calories], 
                                    distance: activity_data[:distance], 
                                    steps: activity_data[:steps], 
