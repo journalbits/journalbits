@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', "~> 4.0.3"
+gem 'rails', "~> 4.0.4"
 # gem "rails", "~> 4.1.0.rc1"
 
 # Use postgresql as the database for Active Record
@@ -43,6 +43,7 @@ gem 'omniauth-instapaper'
 gem 'omniauth-instagram'
 gem 'omniauth-lastfm'
 gem 'omniauth-moves'
+gem 'omniauth-runkeeper'
 
 # For API integration
 gem 'fitgem'
@@ -52,6 +53,7 @@ gem 'koala', '~> 1.8.0rc1'
 gem 'evernote_oauth'
 gem 'instapaper'
 gem 'moves'
+gem 'health_graph'
 
 # For user profiles and profile images
 gem 'devise'
@@ -107,4 +109,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-ruby '2.1.0'
+ruby '2.1.1'

@@ -51,6 +51,7 @@ class User < ActiveRecord::Base
       when "lastfm" then return process_for_lastfm auth
       when "clef" then return process_for_clef auth
       when "moves" then return process_for_moves auth
+      when "runkeeper" then return process_for_runkeeper auth
     end
   end
 
@@ -132,6 +133,13 @@ class User < ActiveRecord::Base
     user = current_user
     user.moves_oauth_token = auth.credentials.token
     user.moves_refresh_token = auth.credentials.refresh_token
+    user.save! if user.email != ""
+    user
+  end
+
+  def self.process_for_runkeeper auth
+    user = current_user
+    user.health_graph_access_token = auth.credentials.token
     user.save! if user.email != ""
     user
   end

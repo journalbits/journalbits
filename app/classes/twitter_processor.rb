@@ -26,9 +26,9 @@ module ServiceProcessor
     end
 
     def save_entries_on_date
-      save_tweets_to_databse 
-      save_favourites_to_databse
-      save_mentions_to_databse
+      save_tweets_to_database 
+      save_favourites_to_database
+      save_mentions_to_database
     end
 
     def user_tweets_on_date
@@ -46,7 +46,7 @@ module ServiceProcessor
       mentions.select { |mention| mention.created_at.to_s[0..9] == @date.to_s[0..9] } if mentions != nil
     end
 
-    def save_tweets_to_databse
+    def save_tweets_to_database
       tweets = user_tweets_on_date
       tweets.each do |tweet| 
         unless TwitterEntry.exists?(:tweet_id => tweet.id)
@@ -62,7 +62,7 @@ module ServiceProcessor
       end
     end
 
-    def save_favourites_to_databse
+    def save_favourites_to_database
       favourites = user_favourites_on_date
       favourites.each do |fav| 
         unless TwitterEntry.exists?(:tweet_id => fav.id)
@@ -78,7 +78,7 @@ module ServiceProcessor
       end
     end
 
-    def save_mentions_to_databse
+    def save_mentions_to_database
       mentions = user_mentions_on_date
       mentions.each do |mention| 
         unless TwitterEntry.exists?(:tweet_id => mention.id)

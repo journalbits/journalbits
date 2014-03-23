@@ -243,6 +243,7 @@ Devise.setup do |config|
   config.omniauth :lastfm, ENV['LASTFM_CONSUMER_KEY'], ENV['LASTFM_CONSUMER_SECRET']
   config.omniauth :clef, ENV['CLEF_APP_ID'], ENV['CLEF_APP_SECRET']
   config.omniauth :moves, ENV['MOVES_CLIENT_KEY'], ENV['MOVES_CLIENT_SECRET'], :scope => 'activity location'
+  config.omniauth :runkeeper, ENV['HEALTH_GRAPH_CLIENT_ID'], ENV['HEALTH_GRAPH_CLIENT_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

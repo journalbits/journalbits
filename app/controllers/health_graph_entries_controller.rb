@@ -1,0 +1,2 @@
+class HealthGraphEntriesController < ApplicationController
+end

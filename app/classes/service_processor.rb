@@ -2,6 +2,7 @@ require 'evernote_processor'
 require 'facebook_processor'
 require 'fitbit_processor'
 require 'github_processor'
+require 'health_graph_processor'
 require 'instagram_processor'
 require 'instapaper_processor'
 require 'lastfm_processor'
@@ -21,21 +22,21 @@ module ServiceProcessor
     end
 
     def process_all
-      puts "Processing all"
       User.all.each do |user|
-        process_for_evernote user
-        process_for_facebook user
-        process_for_fitbit user
-        process_for_github user
-        process_for_instagram user
-        process_for_instapaper user
-        process_for_lastfm user
-        process_for_moves user
-        process_for_pocket user
-        process_for_rescue_time user
-        process_for_twitter user
-        process_for_whatpulse user
-        process_for_wunderlist user
+        # process_for_evernote user
+        # process_for_facebook user
+        # process_for_fitbit user
+        # process_for_github user
+        process_for_health_graph user
+        # process_for_instagram user
+        # process_for_instapaper user
+        # process_for_lastfm user
+        # process_for_moves user
+        # process_for_pocket user
+        # process_for_rescue_time user
+        # process_for_twitter user
+        # process_for_whatpulse user
+        # process_for_wunderlist user
       end
     end
 
@@ -64,6 +65,13 @@ module ServiceProcessor
       if user.github_access_token
         github = ServiceProcessor::GithubProcessor.new @date, user
         github.process
+      end
+    end
+
+    def process_for_health_graph user
+      if user.health_graph_access_token
+        health_graph = ServiceProcessor::HealthGraphProcessor.new @date, user
+        health_graph.process
       end
     end
 

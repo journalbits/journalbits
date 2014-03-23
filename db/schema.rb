@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309152127) do
+ActiveRecord::Schema.define(version: 20140323204337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,15 @@ ActiveRecord::Schema.define(version: 20140309152127) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "commit_url"
+  end
+
+  create_table "health_graph_entries", force: true do |t|
+    t.integer  "user_id"
+    t.string   "date"
+    t.integer  "time_asleep"
+    t.string   "kind"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "instagram_entries", force: true do |t|
@@ -216,6 +225,7 @@ ActiveRecord::Schema.define(version: 20140309152127) do
     t.integer  "clef_id"
     t.string   "moves_oauth_token"
     t.string   "moves_refresh_token"
+    t.string   "health_graph_access_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
