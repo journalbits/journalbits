@@ -28,6 +28,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# To make sprockets work
+gem 'sprockets', '2.11.0'
+
 # For authentication
 gem 'oauth2'
 gem 'simple_oauth'

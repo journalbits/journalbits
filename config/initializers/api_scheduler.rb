@@ -27,6 +27,6 @@ scheduler.cron("55 23 * * *") do
 end
 
 scheduler.schedule_every("2m", { first: "1s" }) do
-  processor = ServiceProcessor::GlobalProcessor.new (Time.now - 2.day)
-  processor.process_all
+  # processor = ServiceProcessor::GlobalProcessor.new (Time.now - 2.day)
+  # processor.process_all
 end

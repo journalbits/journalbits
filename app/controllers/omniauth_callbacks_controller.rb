@@ -31,4 +31,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :clef, :all
   alias_method :moves, :all
   alias_method :runkeeper, :all
+
 end

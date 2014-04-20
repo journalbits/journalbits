@@ -1,10 +1,9 @@
 JournalBits::Application.routes.draw do
 
   resources :health_graph_entries
-
   resources :moves_entries
 
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
 
   root :to => "days#index"
 
@@ -13,11 +12,11 @@ JournalBits::Application.routes.draw do
   get 'auth/rescue_time' => 'authorization#rescue_time'
   get 'auth/wunderlist' => 'authorization#wunderlist'
   get 'auth/whatpulse' => 'authorization#whatpulse'
-  # get 'auth/moves' => 'authorization#moves'
+  get 'auth/clef/callback' => 'users#clef'
+
   patch 'auth/wunderlist' => 'users#wunderlist_update'
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'
-  get 'auth/clef/callback' => 'users#clef'
 
   resources :users,  path: "" do  
     resources :days, path: ""
@@ -94,4 +93,5 @@ JournalBits::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
 end
