@@ -1,8 +1,6 @@
 JournalBits::Application.routes.draw do
 
-  resources :health_graph_entries
-  resources :moves_entries
-
+  use_doorkeeper
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
 
   root :to => "days#index"
@@ -18,9 +16,9 @@ JournalBits::Application.routes.draw do
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'
 
-  resources :users,  path: "" do  
+  resources :users,  path: "" do
     resources :days, path: ""
-    
+
     resources :twitter_entries
     resources :rescue_time_entries
     resources :github_entries
@@ -35,6 +33,15 @@ JournalBits::Application.routes.draw do
     resources :whatpulse_entries
     resources :facebook_photo_entries
     resources :pocket_entries
+    resources :health_graph_entries
+    resources :moves_entries
+  end
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :user
+
+    end
   end
 
   # get 'auth/failure' => 'omniauth_callbacks#failure'
@@ -93,5 +100,5 @@ JournalBits::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
+
 end

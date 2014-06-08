@@ -1,6 +1,6 @@
 class Day < ActiveRecord::Base
-
-  validates :slug, uniqueness:true, presence: true
+  validates :slug, uniqueness: true, presence: true
+  belongs_to :user
 
   before_validation :generate_slug
 
@@ -11,6 +11,14 @@ class Day < ActiveRecord::Base
   def generate_slug
     self.slug ||= date.parameterize
   end
+
+  ############################
+
+  # Do I still need this? |
+  #                       |
+  #                       |
+  #                       V
+
 
   def self.wp_total_clicks pulses
     pulses.inject(0) { |memo, pulse| memo + pulse.clicks.to_i }
@@ -27,5 +35,7 @@ class Day < ActiveRecord::Base
   def self.wp_total_download pulses
     pulses.inject(0) { |memo, pulse| memo + pulse.download_mb.to_i }
   end
+
+  ############################
 
 end

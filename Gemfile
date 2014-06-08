@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', "~> 4.0.4"
+gem 'rails', '~> 4.1'
 # gem "rails", "~> 4.1.0.rc1"
 
 # Use postgresql as the database for Active Record
@@ -74,6 +74,9 @@ gem 'haml-rails'
 
 # For chaning erb to haml
 gem 'html2haml'
+
+# For setting up OAuth with the API
+gem 'doorkeeper'
 
 # For storing heroku env secrets
 # gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'

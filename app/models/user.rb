@@ -14,7 +14,24 @@ class User < ActiveRecord::Base
 
   # before_filter :check_user, only: [:new]
 
+  has_many :evernote_entries
+  has_many :facebook_photo_entries
+  has_many :fitbit_activity_entries
+  has_many :fitbit_sleep_entries
+  has_many :fitbit_weight_entries
+  has_many :github_entries
+  has_many :health_graph_entries
+  has_many :instagram_entries
+  has_many :instapaper_entries
+  has_many :lastfm_entries
+  has_many :moves_entries
+  has_many :pocket_entries
+  has_many :rescue_time_entries
   has_many :twitter_entries
+  has_many :whatpulse_entries
+  has_many :wunderlist_entries
+
+  has_many :days
 
   include Gravtastic
   gravtastic :size => 220
@@ -202,7 +219,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.find_first_by_auth_conditions warden_conditions 
+  def self.find_first_by_auth_conditions warden_conditions
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first

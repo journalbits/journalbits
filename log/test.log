@@ -3783,3 +3783,17 @@ Migrating to CreateHealthGraphEntries (20140323204337)
   [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140323204337"]]
   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDoorkeeperTables (20140608152711)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (30.7ms)[0m  [1mCREATE TABLE "oauth_applications" ("id" serial primary key, "name" character varying(255) NOT NULL, "uid" character varying(255) NOT NULL, "secret" character varying(255) NOT NULL, "redirect_uri" text NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_oauth_applications_on_uid" ON "oauth_applications" ("uid")
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "oauth_access_grants" ("id" serial primary key, "resource_owner_id" integer NOT NULL, "application_id" integer NOT NULL, "token" character varying(255) NOT NULL, "expires_in" integer NOT NULL, "redirect_uri" text NOT NULL, "created_at" timestamp NOT NULL, "revoked_at" timestamp, "scopes" character varying(255)) [0m
+  [1m[35m (2.5ms)[0m  CREATE UNIQUE INDEX "index_oauth_access_grants_on_token" ON "oauth_access_grants" ("token")
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "oauth_access_tokens" ("id" serial primary key, "resource_owner_id" integer, "application_id" integer, "token" character varying(255) NOT NULL, "refresh_token" character varying(255), "expires_in" integer, "revoked_at" timestamp, "created_at" timestamp NOT NULL, "scopes" character varying(255)) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_oauth_access_tokens_on_token" ON "oauth_access_tokens" ("token")
+  [1m[36m (1.0ms)[0m  [1mCREATE INDEX "index_oauth_access_tokens_on_resource_owner_id" ON "oauth_access_tokens" ("resource_owner_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "index_oauth_access_tokens_on_refresh_token" ON "oauth_access_tokens" ("refresh_token")
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140608152711"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

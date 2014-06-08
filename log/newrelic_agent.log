@@ -1343,3 +1343,137 @@
 [03/30/14 23:12:52 +0100 HaMacBookPro.local (73689)] INFO : Installing Rails4 Error instrumentation
 [03/30/14 23:12:52 +0100 HaMacBookPro.local (73689)] INFO : Finished instrumentation
 [03/30/14 23:12:52 +0100 HaMacBookPro.local (73689)] INFO : Doing deferred dependency-detection before Rack startup
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Starting the New Relic agent in "development" environment.
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Reading configuration from config/newrelic.yml
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : New Relic Agent Developer Mode enabled.
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Enabling the Request Sampler.
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Environment: development
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Dispatcher: webrick
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Application: My Application
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] WARN : Agent configured not to send data in this environment.
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Installing ActiveRecord 4 instrumentation
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Installing Net instrumentation
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Installing deferred Rack instrumentation
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Installing Rails 4 Controller instrumentation
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Installing Rails 4 view instrumentation
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Installing Rails4 Error instrumentation
+[05/05/14 11:39:57 +0100 HaMacBookPro.local (6965)] INFO : Finished instrumentation
+[05/05/14 11:39:58 +0100 HaMacBookPro.local (6965)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : Enabling the Request Sampler.
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : Environment: development
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : No known dispatcher detected.
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] INFO : Application: My Application
+[06/08/14 16:25:43 +0100 hamacbookpro.home (10174)] WARN : Agent configured not to send data in this environment.
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Installing Net instrumentation
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Installing deferred Rack instrumentation
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 16:25:44 +0100 hamacbookpro.home (10174)] INFO : Finished instrumentation
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : Enabling the Request Sampler.
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : Environment: development
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : No known dispatcher detected.
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] INFO : Application: My Application
+[06/08/14 16:27:10 +0100 hamacbookpro.home (10240)] WARN : Agent configured not to send data in this environment.
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Installing Net instrumentation
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Installing deferred Rack instrumentation
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 16:27:11 +0100 hamacbookpro.home (10240)] INFO : Finished instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Enabling the Request Sampler.
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Environment: development
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Dispatcher: webrick
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Application: My Application
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] WARN : Agent configured not to send data in this environment.
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Installing Net instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Installing deferred Rack instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 17:12:53 +0100 hamacbookpro.home (11963)] INFO : Finished instrumentation
+[06/08/14 17:12:54 +0100 hamacbookpro.home (11963)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Enabling the Request Sampler.
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Environment: development
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Dispatcher: webrick
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Application: My Application
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] WARN : Agent configured not to send data in this environment.
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Installing Net instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Installing deferred Rack instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Finished instrumentation
+[06/08/14 17:29:20 +0100 hamacbookpro.home (42678)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Enabling the Request Sampler.
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Environment: development
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Dispatcher: webrick
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Application: My Application
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] WARN : Agent configured not to send data in this environment.
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Installing Net instrumentation
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Installing deferred Rack instrumentation
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 17:32:16 +0100 hamacbookpro.home (43453)] INFO : Finished instrumentation
+[06/08/14 17:32:17 +0100 hamacbookpro.home (43453)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Enabling the Request Sampler.
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Environment: development
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Dispatcher: webrick
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Application: My Application
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] WARN : Agent configured not to send data in this environment.
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Installing Net instrumentation
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Installing deferred Rack instrumentation
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 17:49:16 +0100 hamacbookpro.home (43691)] INFO : Finished instrumentation
+[06/08/14 17:49:17 +0100 hamacbookpro.home (43691)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Enabling the Request Sampler.
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Environment: development
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Dispatcher: webrick
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Application: My Application
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] WARN : Agent configured not to send data in this environment.
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Installing Net instrumentation
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Installing deferred Rack instrumentation
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 17:58:27 +0100 hamacbookpro.home (44095)] INFO : Finished instrumentation
+[06/08/14 17:58:28 +0100 hamacbookpro.home (44095)] INFO : Doing deferred dependency-detection before Rack startup
