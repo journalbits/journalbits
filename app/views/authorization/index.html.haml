@@ -1,14 +1,12 @@
-= stylesheet_link_tag "connections"
-
 - if user_signed_in?
 
   %section.connections
-    
+
     %h2.connections-intro
       Click on the services that you would like to connect to your account
 
     %section.connections-grid
-    
+
       %div.service-connection-container
         %a{href:"/users/auth/twitter"}
           - if @user.twitter_oauth_token
@@ -32,7 +30,7 @@
           - else
             %div.evernote-img-grayscale.evernote-logo.service-connection-img
           %h3 Evernote
-      
+
       %div.service-connection-container
         %a{href:"/users/auth/instagram"}
           - if @user.instagram_oauth_token
@@ -56,7 +54,7 @@
           - else
             %div.facebook-img-grayscale.facebook-logo.service-connection-img
           %h3 Facebook
-        
+
       %div.service-connection-container
         %a{href:"/users/auth/fitbit"}
           - if @user.fitbit_oauth_token
