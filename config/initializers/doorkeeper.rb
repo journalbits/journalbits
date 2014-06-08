@@ -3,20 +3,11 @@ Doorkeeper.configure do
   # Currently supported options are :active_record, :mongoid2, :mongoid3, :mongo_mapper
   orm :active_record
 
-  # This block will be called to check whether the resource owner is authenticated or not.
-  # resource_owner_authenticator do
-  #   # Put your resource owner authentication logic here.
-  #   # Example implementation:
-  #   User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
-  #   # routes.login_url(return_to: request.fullpath)
-  # end
-
-  # Maybe use this below given I'm using Devise |
-  #                                             V
-
   resource_owner_authenticator do
     current_user || warden.authenticate!(:scope => :user)
   end
+
+  enable_application_owner :confirmation => true
 
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
   # admin_authenticator do
@@ -42,9 +33,7 @@ Doorkeeper.configure do
   # Provide support for an owner to be assigned to each registered application (disabled by default)
   # Optional parameter :confirmation => true (default false) if you want to enforce ownership of
   # a registered application
-  # Note: you must also run the rails g doorkeeper:application_owner generator to provide the necessary support
   # enable_application_owner :confirmation => false
-
   # Define access token scopes for your provider
   # For more information go to
   # https://github.com/doorkeeper-gem/doorkeeper/wiki/Using-Scopes

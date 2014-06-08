@@ -3797,3 +3797,12 @@ Migrating to CreateDoorkeeperTables (20140608152711)
   [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140608152711"]]
   [1m[35m (1.6ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOwnerToApplication (20140608170353)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "oauth_applications" ADD COLUMN "owner_id" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "oauth_applications" ADD COLUMN "owner_type" character varying(255)
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_oauth_applications_on_owner_id_and_owner_type" ON "oauth_applications"  ("owner_id", "owner_type")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140608170353"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

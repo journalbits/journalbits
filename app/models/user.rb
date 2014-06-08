@@ -12,7 +12,12 @@ class User < ActiveRecord::Base
 
   before_validation :generate_slug
 
+  # Work out why this is here as well as protected method at bottom |
+  #                                                                 V
+
   # before_filter :check_user, only: [:new]
+
+  #########################################
 
   has_many :evernote_entries
   has_many :facebook_photo_entries
@@ -32,6 +37,8 @@ class User < ActiveRecord::Base
   has_many :wunderlist_entries
 
   has_many :days
+
+  has_many :oauth_applications, class_name: 'Doorkeeper::Application', as: :owner
 
   include Gravtastic
   gravtastic :size => 220
@@ -230,11 +237,11 @@ class User < ActiveRecord::Base
 
   protected
 
-    def check_user
-      if session[:user]
-        @user = User.find(session[:user])
-        redirect_to user_path(@user) if @user
-      end
+  def check_user
+    if session[:user]
+      @user = User.find(session[:user])
+      redirect_to user_path(@user) if @user
     end
+  end
 
 end
