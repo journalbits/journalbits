@@ -5,7 +5,6 @@ class Oauth::ApplicationsController < Doorkeeper::ApplicationsController
     @applications = current_user.oauth_applications
   end
 
-  # only needed if each application must have some owner
   def create
     @application = Doorkeeper::Application.new(application_params)
     @application.owner = current_user if Doorkeeper.configuration.confirm_application_owner?

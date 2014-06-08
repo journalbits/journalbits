@@ -235,13 +235,15 @@ class User < ActiveRecord::Base
     end
   end
 
-  protected
+  # See above for whether or not this is needed
 
-  def check_user
-    if session[:user]
-      @user = User.find(session[:user])
-      redirect_to user_path(@user) if @user
-    end
-  end
+  # protected
+
+  # def check_user
+  #   if session[:user]
+  #     @user = User.find(session[:user])
+  #     redirect_to user_path(@user) if @user
+  #   end
+  # end
 
 end

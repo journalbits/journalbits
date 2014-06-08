@@ -1544,3 +1544,20 @@
 [06/08/14 23:30:46 +0100 hamacbookpro.home (48252)] INFO : Installing Rails4 Error instrumentation
 [06/08/14 23:30:46 +0100 hamacbookpro.home (48252)] INFO : Finished instrumentation
 [06/08/14 23:30:47 +0100 hamacbookpro.home (48252)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Reading configuration from config/newrelic.yml
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Enabling the Request Sampler.
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Environment: development
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Dispatcher: sidekiq
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Application: My Application
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] WARN : Agent configured not to send data in this environment.
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing Net instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing deferred Rack instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing Sidekiq instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing Rails 4 view instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Installing Rails4 Error instrumentation
+[06/08/14 23:47:57 +0100 hamacbookpro.home (49108)] INFO : Finished instrumentation

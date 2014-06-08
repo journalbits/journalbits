@@ -42,8 +42,27 @@ JournalBits::Application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :user
+      # Maybe need to set the paths to "" as above
+      resources :user do
+        resources :days
 
+        resources :twitter_entries
+        resources :rescue_time_entries
+        resources :github_entries
+        resources :fitbit_weight_entries
+        resources :fitbit_activity_entries
+        resources :fitbit_sleep_entries
+        resources :wunderlist_entries
+        resources :lastfm_entries
+        resources :instapaper_entries
+        resources :instagram_entries
+        resources :evernote_entries
+        resources :whatpulse_entries
+        resources :facebook_photo_entries
+        resources :pocket_entries
+        resources :health_graph_entries
+        resources :moves_entries
+      end
     end
   end
 

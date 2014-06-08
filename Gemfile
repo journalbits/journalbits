@@ -84,6 +84,9 @@ gem 'doorkeeper'
 # For Heroku monitoring
 gem 'newrelic_rpm'
 
+# For running jobs in the background
+gem 'sidekiq'
+
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
