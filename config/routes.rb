@@ -1,12 +1,20 @@
+require 'sidekiq/web'
+
 JournalBits::Application.routes.draw do
 
   use_doorkeeper do
     controllers :applications => 'oauth/applications'
   end
 
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
 
   root :to => "days#index"
+
+  get 'test' => 'authorization#test'
 
   get 'connections' => 'authorization#index'
   get 'auth/github' => 'authorization#github'

@@ -84,8 +84,15 @@ gem 'doorkeeper'
 # For Heroku monitoring
 gem 'newrelic_rpm'
 
-# For running jobs in the background
+# For running jobs in the background and viewing them running
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
+
+# Web server
+gem 'unicorn'
+
+# For starting web and worker from procfile
+gem 'foreman'
 
 
 group :test do
@@ -119,3 +126,12 @@ end
 # gem 'debugger', group: [:development, :test]
 
 ruby '2.1.1'
+
+
+
+
+
+
+# FOR HEROKU
+
+# heroku config:set REDIS_PROVIDER=REDISTOGO_URL

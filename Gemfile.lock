@@ -76,6 +76,9 @@ GEM
     diff-lcs (1.2.5)
     doorkeeper (1.3.0)
       railties (>= 3.1)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
     equalizer (0.0.9)
     erubis (2.7.0)
     evernote-thrift (1.25.1)
@@ -94,6 +97,9 @@ GEM
       faraday (>= 0.7.4, < 0.9)
     fitgem (0.9.0)
       oauth
+    foreman (0.71.0)
+      dotenv (~> 0.11.1)
+      thor (~> 0.19.1)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     gravtastic (3.2.6)
@@ -140,6 +146,7 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    kgio (2.9.2)
     koala (1.8.0)
       addressable
       faraday
@@ -226,6 +233,8 @@ GEM
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.1)
@@ -248,6 +257,7 @@ GEM
       activesupport (= 4.1.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.13.0)
     rake (10.3.2)
     rash (0.4.0)
       hashie (~> 2.0.0)
@@ -302,6 +312,10 @@ GEM
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
     simple_oauth (0.2.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -336,6 +350,10 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     vcr (2.9.0)
     warden (1.2.3)
       rack (>= 1.0)
@@ -357,6 +375,7 @@ DEPENDENCIES
   evernote_oauth
   factory_girl_rails (~> 4.0)
   fitgem
+  foreman
   gravtastic
   haml-rails
   health_graph
@@ -393,9 +412,11 @@ DEPENDENCIES
   sdoc
   sidekiq
   simple_oauth
+  sinatra (>= 1.3.0)
   sprockets (= 2.11.0)
   turbolinks
   twitter
   uglifier (>= 1.3.0)
+  unicorn
   vcr
   webmock

@@ -15,7 +15,7 @@ class AuthorizationController < ApplicationController
     res = Net::HTTP.start(uri.host, uri.port,
       :use_ssl => uri.scheme == 'https') do |http|
       request = Net::HTTP::Post.new uri
-      
+
       response = http.request request
     end
     access_token = res.body.split("&")[0].split("=")[1]
@@ -34,6 +34,11 @@ class AuthorizationController < ApplicationController
 
   def whatpulse
     @user = current_user
+  end
+
+  def test
+    TestWorker.perform_async("chicken")
+    render :nothing => true
   end
 
 end
