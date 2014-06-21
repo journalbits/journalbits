@@ -1,3 +1,5 @@
+[ ![Codeship Status for journalbits/journalbits](https://www.codeship.io/projects/e0b43c80-db92-0131-5e33-32348e3cf281/status)](https://www.codeship.io/projects/24458)
+
 == README
 
 Rails: 4.1
