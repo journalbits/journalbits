@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: catchr_development
+  database: journalbits_development
   pool: 5
   username:
   password:
@@ -46,7 +46,7 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: catchr_test
+  database: journalbits_test
   pool: 5
   username:
   password:
@@ -54,7 +54,7 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: catchr_production
+  database: journalbits_production
   pool: 25
   username:
   password:
