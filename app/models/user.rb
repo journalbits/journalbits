@@ -235,6 +235,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def admin?
+    !Admin.where(user_id: self.id).first.blank?
+  end
+
   # See above for whether or not this is needed
 
   # protected

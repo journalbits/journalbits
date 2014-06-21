@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
-# gem "rails", "~> 4.1.0.rc1"
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -78,9 +77,6 @@ gem 'html2haml'
 # For setting up OAuth with the API
 gem 'doorkeeper'
 
-# For storing heroku env secrets
-# gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
-
 # For Heroku monitoring
 gem 'newrelic_rpm'
 
@@ -94,9 +90,12 @@ gem 'unicorn'
 # For starting web and worker from procfile
 gem 'foreman'
 
+# For storing environment variables
+gem 'figaro'
+
 
 group :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', '~> 3.0.0'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'webmock'
@@ -126,8 +125,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 ruby '2.1.1'
-
-
 
 
 

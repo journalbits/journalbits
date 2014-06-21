@@ -2050,3 +2050,271 @@
 [06/10/14 22:03:18 +0100 hamacbookpro.home (75092)] ERROR : Error running task in Agent Worker Loop:
 [06/10/14 22:03:18 +0100 hamacbookpro.home (75092)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
 [06/10/14 23:18:50 +0100 hamacbookpro.home (75092)] INFO : Starting Agent shutdown
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Starting the New Relic agent in "development" environment.
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : New Relic Agent Developer Mode enabled.
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Enabling the Request Sampler.
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Environment: development
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : No known dispatcher detected.
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Application: My Application
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] WARN : Agent configured not to send data in this environment.
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing Net instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:21:33 +0100 hamacbookpro.home (4236)] INFO : Finished instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Starting the New Relic agent in "development" environment.
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : New Relic Agent Developer Mode enabled.
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Enabling the Request Sampler.
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Environment: development
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Dispatcher: webrick
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Application: My Application
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] WARN : Agent configured not to send data in this environment.
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing Net instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:28:32 +0100 hamacbookpro.home (4673)] INFO : Finished instrumentation
+[06/10/14 23:28:33 +0100 hamacbookpro.home (4673)] INFO : Doing deferred dependency-detection before Rack startup
+[06/10/14 23:28:33 +0100 hamacbookpro.home (4673)] INFO : Installing Sinatra instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Starting the New Relic agent in "development" environment.
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : New Relic Agent Developer Mode enabled.
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Enabling the Request Sampler.
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Environment: development
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Dispatcher: webrick
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Application: My Application
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] WARN : Agent configured not to send data in this environment.
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing Net instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:29:36 +0100 hamacbookpro.home (4756)] INFO : Finished instrumentation
+[06/10/14 23:29:37 +0100 hamacbookpro.home (4756)] INFO : Doing deferred dependency-detection before Rack startup
+[06/10/14 23:29:37 +0100 hamacbookpro.home (4756)] INFO : Installing Sinatra instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Starting the New Relic agent in "production" environment.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Enabling the Request Sampler.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Environment: production
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Dispatcher: sidekiq
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Application: My Application
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Starting the New Relic agent in "development" environment.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : New Relic Agent Developer Mode enabled.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Enabling the Request Sampler.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Environment: development
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Dispatcher: unicorn
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Application: My Application
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] WARN : Agent configured not to send data in this environment.
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing Net instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6013)] INFO : Finished instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing Net instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:47:37 +0100 hamacbookpro.home (6014)] INFO : Finished instrumentation
+[06/10/14 23:47:38 +0100 hamacbookpro.home (6013)] INFO : Doing deferred dependency-detection before Rack startup
+[06/10/14 23:47:38 +0100 hamacbookpro.home (6013)] INFO : Installing Sinatra instrumentation
+[06/10/14 23:47:38 +0100 hamacbookpro.home (6014)] INFO : Reporting to: https://rpm.newrelic.com/accounts/477885/applications/3217834
+[06/10/14 23:47:39 +0100 hamacbookpro.home (6014)] INFO : Installing Sinatra instrumentation
+[06/10/14 23:54:29 +0100 hamacbookpro.home (6014)] INFO : Starting Agent shutdown
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Starting the New Relic agent in "production" environment.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Enabling the Request Sampler.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Environment: production
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Dispatcher: sidekiq
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Application: My Application
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Starting the New Relic agent in "development" environment.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Reading configuration from config/newrelic.yml
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : New Relic Agent Developer Mode enabled.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Enabling the Request Sampler.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Environment: development
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Dispatcher: unicorn
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Application: My Application
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] WARN : Agent configured not to send data in this environment.
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing Net instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6430)] INFO : Finished instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing ActiveRecord 4 instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing Net instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing deferred Rack instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing Sidekiq instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing Unicorn instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing Rails 4 Controller instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing Rails 4 view instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Installing Rails4 Error instrumentation
+[06/10/14 23:54:36 +0100 hamacbookpro.home (6431)] INFO : Finished instrumentation
+[06/10/14 23:54:38 +0100 hamacbookpro.home (6431)] INFO : Reporting to: https://rpm.newrelic.com/accounts/477885/applications/3217834
+[06/10/14 23:54:38 +0100 hamacbookpro.home (6430)] INFO : Doing deferred dependency-detection before Rack startup
+[06/10/14 23:54:38 +0100 hamacbookpro.home (6430)] INFO : Installing Sinatra instrumentation
+[06/10/14 23:54:38 +0100 hamacbookpro.home (6431)] INFO : Installing Sinatra instrumentation
+[06/11/14 01:44:12 +0100 hamacbookpro.home (6431)] WARN : Timed out opening connection to collector after 3694.409165 seconds. If this problem persists, please see http://status.newrelic.com
+[06/11/14 01:44:12 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 01:44:12 +0100 hamacbookpro.home (6431)] ERROR : Timeout::Error: execution expired
+[06/11/14 03:30:26 +0100 hamacbookpro.home (6431)] WARN : Timed out opening connection to collector after 5988.212237 seconds. If this problem persists, please see http://status.newrelic.com
+[06/11/14 03:30:26 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 03:30:26 +0100 hamacbookpro.home (6431)] ERROR : Timeout::Error: execution expired
+[06/11/14 08:53:59 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:53:59 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 08:54:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:54:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 08:55:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:55:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 08:56:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:56:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 08:57:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:57:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 08:58:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:58:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 08:59:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 08:59:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:00:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:00:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:01:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:01:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:02:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:02:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:03:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:03:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:04:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:04:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:05:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:05:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:06:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:06:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:07:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:07:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:08:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:08:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:09:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:09:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:10:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:10:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:11:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:11:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:12:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:12:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:13:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:13:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:14:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:14:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:15:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:15:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:16:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:16:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:17:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:17:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:18:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:18:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:19:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:19:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:20:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:20:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:21:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:21:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:22:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:22:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:23:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:23:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:24:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:24:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:25:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:25:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:26:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:26:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:27:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:27:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:28:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:28:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:29:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:29:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:30:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:30:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:31:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:31:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:32:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:32:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:33:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:33:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:34:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:34:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:35:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:35:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:36:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:36:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:37:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:37:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:38:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:38:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:39:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:39:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:40:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:40:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:41:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:41:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 09:42:38 +0100 hamacbookpro.home (6431)] ERROR : Error running task in Agent Worker Loop:
+[06/11/14 09:42:38 +0100 hamacbookpro.home (6431)] ERROR : SocketError: getaddrinfo: nodename nor servname provided, or not known
+[06/11/14 10:16:42 +0100 hamacbookpro.home (6431)] INFO : Starting Agent shutdown
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Starting the New Relic agent in "development" environment.
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Reading configuration from config/newrelic.yml
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : New Relic Agent Developer Mode enabled.
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Enabling the Request Sampler.
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Environment: development
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : No known dispatcher detected.
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Application: My Application
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] WARN : Agent configured not to send data in this environment.
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Installing ActiveRecord 4 instrumentation
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Installing Net instrumentation
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Installing deferred Rack instrumentation
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Installing Sidekiq instrumentation
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Installing Unicorn instrumentation
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[06/21/14 12:32:59 +0100 hamacbookpro.home (93572)] INFO : Installing Rails 4 Controller instrumentation
+[06/21/14 12:33:00 +0100 hamacbookpro.home (93572)] INFO : Installing Rails 4 view instrumentation
+[06/21/14 12:33:00 +0100 hamacbookpro.home (93572)] INFO : Installing Rails4 Error instrumentation
+[06/21/14 12:33:00 +0100 hamacbookpro.home (93572)] INFO : Finished instrumentation
