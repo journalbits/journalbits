@@ -1,18 +1,17 @@
+**JournalBits** 
+
 [ ![Codeship Status for journalbits/journalbits](https://www.codeship.io/projects/e0b43c80-db92-0131-5e33-32348e3cf281/status)](https://www.codeship.io/projects/24458)
 
-== README
+**Dependencies**
 
 Rails: 4.1
-
 Ruby: 2.1.0
-
 Database: Postgres
 
 *Configuration:*
 
-* You need to setup your own Twitter Application on the Twitter Dev portal and save its key and secret in environment variables.
-
-* Currently that is all the setup required other than running rake db:create and then rake db:migrate.
+* You need to setup your own Twitter Application on the Twitter Dev portal and save its key and secret in environment variables
+* Currently that is all the setup required other than running rake db:create and then rake db:migrate
 
 
 This is a work in progress. I am working towards implementing a digital journal that collets all of your data each day from the following services, using their APIs:
