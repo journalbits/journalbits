@@ -91,7 +91,7 @@ gem 'unicorn'
 gem 'foreman'
 
 # For storing environment variables
-gem 'figaro'
+gem 'figaro', '~> 1.0.0.rc1'
 
 
 group :test do
