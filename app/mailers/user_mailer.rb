@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: 'admin@journalbits.com'
- 
+  default from: 'admin@journalbits.net'
+
   def welcome user
     @user = user
     mail(to: @user.email, subject: 'Welcome to JournalBits')
