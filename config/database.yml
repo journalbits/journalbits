@@ -55,7 +55,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: catchr_production
-  pool: 5
+  pool: 25
   username:
   password:
 
