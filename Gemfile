@@ -83,6 +83,7 @@ gem 'newrelic_rpm'
 # For running jobs in the background and viewing them running
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'devise-async'
 
 # Web server
 gem 'unicorn'
@@ -114,9 +115,6 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
