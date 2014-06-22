@@ -11,7 +11,7 @@ class DaysController < ApplicationController
   end
 
   def show
-    params[:id] ? date = params[:id] : date = (Time.now - 1.day).to_s[0..9]
+    date = params[:id] ? params[:id] : (Time.now - 1.day).to_s[0..9]
     @written_date = DateTime.parse(date).strftime("%A %-d %B %Y")
     @user = User.where(username: params[:user_id]).first
     mentions = TwitterEntry.where(user_id: current_user.id, date: date, kind: "mention")
