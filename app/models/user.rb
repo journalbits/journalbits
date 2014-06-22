@@ -18,6 +18,21 @@ class User < ActiveRecord::Base
   # before_filter :check_user, only: [:new]
 
   #########################################
+  has_many :evernote_accounts
+  has_many :facebook_accounts
+  has_many :fitbit_accounts
+  has_many :github_accounts
+  has_many :health_graph_accounts
+  has_many :instagram_accounts
+  has_many :instapaper_accounts
+  has_many :lastfm_accounts
+  has_many :moves_accounts
+  has_many :pocket_accounts
+  has_many :rescue_time_accounts
+  has_many :twitter_accounts
+  has_many :whatpulse_accounts
+  has_many :wunderlist_accounts
+
 
   has_many :evernote_entries
   has_many :facebook_photo_entries
