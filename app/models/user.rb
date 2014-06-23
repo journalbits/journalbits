@@ -58,17 +58,6 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic :size => 220
 
-  # Dirty methods that allow me to use current_user in a model
-  # class << self
-  #   def current_user= user
-  #     Thread.current[:current_user] = user
-  #   end
-
-  #   def current_user
-  #     Thread.current[:current_user]
-  #   end
-  # end
-
   def to_param
     slug
   end
@@ -115,7 +104,6 @@ class User < ActiveRecord::Base
       oauth_token: auth.credentials.token,
       oauth_secret: auth.credentials.secret
     )
-    # user.save! if user.email != ""
     user
   end
 
@@ -125,7 +113,6 @@ class User < ActiveRecord::Base
       user_id: user.id,
       oauth_token: auth.credentials.token
     )
-    # user.save! if user.email != ""
     user
   end
 
@@ -139,55 +126,69 @@ class User < ActiveRecord::Base
 
   def self.process_for_facebook auth, current_user
     user = current_user
-    user.facebook_oauth_token = auth.credentials.token
-    user.facebook_token_expires_at = auth.credentials.expires_at
-    user.save! if user.email != ""
+    FacebookAccount.create!(
+      user_id: user.id,
+      oauth_token: auth.credentials.token,
+      token_expires_at: Time.at(auth.credentials.expires_at).to_datetime
+    )
     user
   end
 
   def self.process_for_evernote auth, current_user
     user = current_user
-    user.evernote_oauth_token = auth.credentials.token
-    user.evernote_token_expires_at = Time.now + 1.year
-    user.save! if user.email != ""
+    EvernoteAccount.create!(
+      user_id: user.id,
+      oauth_token: auth.credentials.token,
+      token_expires_at: Time.now + 1.year
+    )
     user
   end
 
   def self.process_for_instagram auth, current_user
     user = current_user
-    user.instagram_oauth_token = auth.credentials.token
-    user.instagram_uid = auth.uid
-    user.save! if user.email != ""
+    InstagramAccount.create!(
+      user_id: user.id,
+      oauth_token: auth.credentials.token,
+      uid: auth.uid
+    )
     user
   end
 
   def self.process_for_instapaper auth, current_user
     user = current_user
-    user.instapaper_oauth_token = auth.credentials.token
-    user.instapaper_oauth_secret = auth.credentials.secret
-    user.save! if user.email != ""
+    InstapaperAccount.create!(
+      user_id: user.id,
+      oauth_token: auth.credentials.token,
+      oauth_secret: auth.credentials.secret
+    )
     user
   end
 
   def self.process_for_lastfm auth, current_user
     user = current_user
-    user.lastfm_username = auth.credentials.name
-    user.save! if user.email != ""
+    LastfmAccount.create!(
+      user_id: user.id,
+      username: auth.credentials.name
+    )
     user
   end
 
   def self.process_for_moves auth, current_user
     user = current_user
-    user.moves_oauth_token = auth.credentials.token
-    user.moves_refresh_token = auth.credentials.refresh_token
-    user.save! if user.email != ""
+    MovesAccount.create!(
+      user_id: user.id,
+      oauth_token: auth.credentials.token,
+      refresh_token: auth.credentials.refresh_token
+    )
     user
   end
 
   def self.process_for_runkeeper auth, current_user
     user = current_user
-    user.health_graph_access_token = auth.credentials.token
-    user.save! if user.email != ""
+    HealthGraphAccount.create!(
+      user_id: user.id,
+      access_token: auth.credentials.token
+    )
     user
   end
 
@@ -201,18 +202,13 @@ class User < ActiveRecord::Base
 
   def self.save_twitter_data_for current_user, auth
     create_twitter_account_for current_user, auth
-    # current_user.save!
     current_user
   end
 
   def self.create_from_twitter_omniauth auth
-    # user = create do |u|
-    #   u.provider = auth.provider
-    # end
     user = User.create(
       provider: "twitter"
     )
-    # create_twitter_account_for user, auth
   end
 
   def self.create_twitter_account_for user, auth
