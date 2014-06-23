@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610222134) do
+ActiveRecord::Schema.define(version: 20140622224914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,12 +33,28 @@ ActiveRecord::Schema.define(version: 20140610222134) do
 
   add_index "days", ["slug"], name: "index_days_on_slug", using: :btree
 
+  create_table "evernote_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.datetime "token_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "evernote_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "note_id"
     t.string   "kind"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facebook_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.datetime "token_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,6 +66,14 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.string   "source_url"
     t.string   "medium_url"
     t.string   "link_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fitbit_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,6 +111,13 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.datetime "updated_at"
   end
 
+  create_table "github_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "github_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "sha"
@@ -98,11 +129,26 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.string   "commit_url"
   end
 
+  create_table "health_graph_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "health_graph_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "date"
     t.integer  "time_asleep"
     t.string   "kind"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instagram_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,12 +165,27 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.datetime "updated_at"
   end
 
+  create_table "instapaper_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "instapaper_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "bookmark_id"
     t.string   "url"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lastfm_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -136,6 +197,14 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.string   "track"
     t.string   "uts"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "moves_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.string   "refresh_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -194,12 +263,26 @@ ActiveRecord::Schema.define(version: 20140610222134) do
   add_index "oauth_applications", ["owner_id", "owner_type"], name: "index_oauth_applications_on_owner_id_and_owner_type", using: :btree
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
 
+  create_table "pocket_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "oauth_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pocket_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "url"
     t.string   "title"
     t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rescue_time_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -220,6 +303,16 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.string  "date"
   end
 
+  create_table "twitter_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.string   "username"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "twitter_entries", force: true do |t|
     t.text     "text"
     t.string   "media"
@@ -234,12 +327,12 @@ ActiveRecord::Schema.define(version: 20140610222134) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                     default: "", null: false
-    t.string   "encrypted_password",        default: "", null: false
+    t.string   "email",                               default: "", null: false
+    t.string   "encrypted_password",                  default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",             default: 0,  null: false
+    t.integer  "sign_in_count",                       default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -271,7 +364,7 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.string   "lastfm_username"
     t.string   "username"
     t.string   "slug"
-    t.integer  "clef_id"
+    t.integer  "clef_id",                   limit: 8
     t.string   "moves_oauth_token"
     t.string   "moves_refresh_token"
     t.string   "health_graph_access_token"
@@ -281,6 +374,13 @@ ActiveRecord::Schema.define(version: 20140610222134) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
+  create_table "whatpulse_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "whatpulse_entries", force: true do |t|
     t.integer  "user_id"
     t.string   "date"
@@ -289,6 +389,13 @@ ActiveRecord::Schema.define(version: 20140610222134) do
     t.string   "clicks"
     t.integer  "download_mb"
     t.integer  "upload_mb"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wunderlist_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

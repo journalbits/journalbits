@@ -59,15 +59,15 @@ class User < ActiveRecord::Base
   gravtastic :size => 220
 
   # Dirty methods that allow me to use current_user in a model
-  class << self
-    def current_user= user
-      Thread.current[:current_user] = user
-    end
+  # class << self
+  #   def current_user= user
+  #     Thread.current[:current_user] = user
+  #   end
 
-    def current_user
-      Thread.current[:current_user]
-    end
-  end
+  #   def current_user
+  #     Thread.current[:current_user]
+  #   end
+  # end
 
   def to_param
     slug
@@ -77,51 +77,59 @@ class User < ActiveRecord::Base
     self.slug ||= username.parameterize if username
   end
 
-  def self.from_omniauth auth
+  def self.from_omniauth auth, current_user
     case auth.provider
-      when "twitter" then return process_for_twitter auth
-      when "fitbit" then return process_for_fitbit auth
-      when "pocket" then return process_for_pocket auth
-      when "rdio" then return process_for_rdio auth
-      when "facebook" then return process_for_facebook auth
-      when "evernote" then return process_for_evernote auth
-      when "instagram" then return process_for_instagram auth
-      when "instapaper" then return process_for_instapaper auth
-      when "lastfm" then return process_for_lastfm auth
-      when "clef" then return process_for_clef auth
-      when "moves" then return process_for_moves auth
-      when "runkeeper" then return process_for_runkeeper auth
+      when "twitter" then return process_for_twitter auth, current_user
+      when "fitbit" then return process_for_fitbit auth, current_user
+      when "pocket" then return process_for_pocket auth, current_user
+      when "rdio" then return process_for_rdio auth, current_user
+      when "facebook" then return process_for_facebook auth, current_user
+      when "evernote" then return process_for_evernote auth, current_user
+      when "instagram" then return process_for_instagram auth, current_user
+      when "instapaper" then return process_for_instapaper auth, current_user
+      when "lastfm" then return process_for_lastfm auth, current_user
+      when "clef" then return process_for_clef auth, current_user
+      when "moves" then return process_for_moves auth, current_user
+      when "runkeeper" then return process_for_runkeeper auth, current_user
     end
   end
 
-  def self.process_for_twitter auth
-    user = where(twitter_uid: auth.uid).first || check_for_non_twitter_login(auth)
-    user.twitter_oauth_token = auth.credentials.token
-    user.twitter_oauth_secret = auth.credentials.secret
-    user.save! if user.email != ""
-    user
-  end
-
-  def self.process_for_clef auth
+  def self.process_for_clef auth, current_user
     user = where(clef_id: auth.uid).first || create_from_clef_omniauth(auth)
   end
 
-  def self.process_for_fitbit auth
-    user = current_user
-    user.fitbit_oauth_token = auth.credentials.token
-    user.fitbit_oauth_secret = auth.credentials.secret
-    user.save! if user.email != ""
+  def self.process_for_twitter auth, current_user
+    account = TwitterAccount.where(uid: auth.uid).first
+    user = account.nil? ? check_for_non_twitter_login(auth, current_user) : User.find(account.user_id)
+    # user = where(twitter_uid: auth.uid).first || check_for_non_twitter_login(auth)
+    # account.oauth_token = auth.credentials.token
+    # account.oauth_secret = auth.credentials.secret
+    # account.save! if user.email != ""
     user
   end
 
-  def self.process_for_pocket auth
+  def self.process_for_fitbit auth, current_user
     user = current_user
-    user.pocket_oauth_token = auth.credentials.token
-    user.save! if user.email != ""
+    FitbitAccount.create!(
+      user_id: user.id,
+      oauth_token: auth.credentials.token,
+      oauth_secret: auth.credentials.secret
+    )
+    # user.save! if user.email != ""
     user
   end
 
-  def self.process_for_rdio auth
+  def self.process_for_pocket auth, current_user
+    user = current_user
+    PocketAccount.create(
+      user_id: user.id,
+      oauth_token: auth.credentials.token
+    )
+    # user.save! if user.email != ""
+    user
+  end
+
+  def self.process_for_rdio auth, current_user
     user = current_user
     user.rdio_oauth_token = auth.credentials.token
     user.rdio_oauth_secret = auth.credentials.secret
@@ -129,7 +137,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_facebook auth
+  def self.process_for_facebook auth, current_user
     user = current_user
     user.facebook_oauth_token = auth.credentials.token
     user.facebook_token_expires_at = auth.credentials.expires_at
@@ -137,7 +145,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_evernote auth
+  def self.process_for_evernote auth, current_user
     user = current_user
     user.evernote_oauth_token = auth.credentials.token
     user.evernote_token_expires_at = Time.now + 1.year
@@ -145,7 +153,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_instagram auth
+  def self.process_for_instagram auth, current_user
     user = current_user
     user.instagram_oauth_token = auth.credentials.token
     user.instagram_uid = auth.uid
@@ -153,7 +161,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_instapaper auth
+  def self.process_for_instapaper auth, current_user
     user = current_user
     user.instapaper_oauth_token = auth.credentials.token
     user.instapaper_oauth_secret = auth.credentials.secret
@@ -161,14 +169,14 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_lastfm auth
+  def self.process_for_lastfm auth, current_user
     user = current_user
     user.lastfm_username = auth.credentials.name
     user.save! if user.email != ""
     user
   end
 
-  def self.process_for_moves auth
+  def self.process_for_moves auth, current_user
     user = current_user
     user.moves_oauth_token = auth.credentials.token
     user.moves_refresh_token = auth.credentials.refresh_token
@@ -176,38 +184,45 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_runkeeper auth
+  def self.process_for_runkeeper auth, current_user
     user = current_user
     user.health_graph_access_token = auth.credentials.token
     user.save! if user.email != ""
     user
   end
 
-  def self.check_for_non_twitter_login auth
+  def self.check_for_non_twitter_login auth, current_user
     if current_user != nil && current_user.provider != "twitter"
-      save_twitter_data_for_current_user auth
+      save_twitter_data_for current_user, auth
     else
       self.create_from_twitter_omniauth auth
     end
   end
 
-  def self.save_twitter_data_for_current_user auth
-    current_user.twitter_oauth_token = auth.credentials.token
-    current_user.twitter_oauth_secret = auth.credentials.secret
-    current_user.twitter_username = auth.info.nickname
-    current_user.twitter_uid = auth.uid
-    current_user.save!
+  def self.save_twitter_data_for current_user, auth
+    create_twitter_account_for current_user, auth
+    # current_user.save!
     current_user
   end
 
   def self.create_from_twitter_omniauth auth
-    create do |user|
-      user.provider = auth.provider
-      user.twitter_uid = auth.uid
-      user.twitter_username = auth.info.nickname
-      user.twitter_oauth_token = auth.credentials.token
-      user.twitter_oauth_secret = auth.credentials.secret
-    end
+    # user = create do |u|
+    #   u.provider = auth.provider
+    # end
+    user = User.create(
+      provider: "twitter"
+    )
+    # create_twitter_account_for user, auth
+  end
+
+  def self.create_twitter_account_for user, auth
+    TwitterAccount.create!(
+      user_id: user.id,
+      uid: auth.uid,
+      username: auth.info.nickname,
+      oauth_token: auth.credentials.token,
+      oauth_secret: auth.credentials.secret
+    )
   end
 
   def self.create_from_clef_omniauth auth
