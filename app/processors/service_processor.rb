@@ -27,7 +27,7 @@ module ServiceProcessor
         # process_for_facebook user
         # process_for_fitbit user
         # process_for_github user
-        process_for_health_graph user
+        # process_for_health_graph user
         # process_for_instagram user
         # process_for_instapaper user
         # process_for_lastfm user

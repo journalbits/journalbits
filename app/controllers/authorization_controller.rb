@@ -39,7 +39,8 @@ class AuthorizationController < ApplicationController
   end
 
   def test
-    TestWorker.perform_async("chicken")
+    # TestWorker.perform_async("chicken")
+    WunderlistWorker.perform_async(Time.now, current_user.id)
     render :nothing => true
   end
 

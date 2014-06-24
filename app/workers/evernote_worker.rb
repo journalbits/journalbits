@@ -1,6 +1,6 @@
 class EvernoteWorker
   include Sidekiq::Worker
-  sidekiq_options queue: "external_api"
+  sidekiq_options queue: 'external_api'
 
   def perform date, user_id
     user = User.find(user_id)

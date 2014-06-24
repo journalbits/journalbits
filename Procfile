@@ -1,2 +1,2 @@
 web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
-worker: bundle exec sidekiq -e production -c 4
+worker: bundle exec sidekiq -c 4 -q external_api -q default
