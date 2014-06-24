@@ -90,10 +90,6 @@ class User < ActiveRecord::Base
   def self.process_for_twitter auth, current_user
     account = TwitterAccount.where(uid: auth.uid).first
     user = account.nil? ? check_for_non_twitter_login(auth, current_user) : User.find(account.user_id)
-    # user = where(twitter_uid: auth.uid).first || check_for_non_twitter_login(auth)
-    # account.oauth_token = auth.credentials.token
-    # account.oauth_secret = auth.credentials.secret
-    # account.save! if user.email != ""
     user
   end
 

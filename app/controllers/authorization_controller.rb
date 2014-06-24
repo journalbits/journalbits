@@ -19,8 +19,10 @@ class AuthorizationController < ApplicationController
       response = http.request request
     end
     access_token = res.body.split("&")[0].split("=")[1]
-    user = User.where(id: current_user.id).take
-    user.update_attributes(github_access_token: access_token)
+    GithubAccount.create!(
+      user_id: current_user.id,
+      access_token: access_token
+    )
     redirect_to "/connections"
   end
 

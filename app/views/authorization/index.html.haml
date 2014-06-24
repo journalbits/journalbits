@@ -9,7 +9,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/twitter"}
-          - if @user.twitter_oauth_token
+          - if !@user.twitter_accounts.empty?
             %div.twitter-img.twitter-logo.service-connection-img
           - else
             %div.twitter-img-grayscale.twitter-logo.service-connection-img
@@ -17,7 +17,7 @@
 
       %div.service-connection-container
         %a{href:"https://github.com/login/oauth/authorize?client_id=ff7013fc7d06261543d7&scope=repo&state=bubble"}
-          - if @user.github_access_token
+          - if !@user.github_accounts.empty?
             %div.github-img.github-logo.service-connection-img
           - else
             %div.github-img-grayscale.github-logo.service-connection-img
@@ -25,7 +25,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/evernote"}
-          - if @user.evernote_oauth_token
+          - if !@user.evernote_accounts.empty?
             %div.evernote-img.evernote-logo.service-connection-img
           - else
             %div.evernote-img-grayscale.evernote-logo.service-connection-img
@@ -33,7 +33,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/instagram"}
-          - if @user.instagram_oauth_token
+          - if !@user.instagram_accounts.empty?
             %div.instagram-img.instagram-logo.service-connection-img
           - else
             %div.instagram-img-grayscale.instagram-logo.service-connection-img
@@ -41,7 +41,7 @@
 
       %div.service-connection-container
         %a{href:"/auth/wunderlist"}
-          - if @user.wunderlist_token
+          - if !@user.wunderlist_accounts.empty?
             %div.wunderlist-img.wunderlist-logo.service-connection-img
           - else
             %div.wunderlist-img-grayscale.wunderlist-logo.service-connection-img
@@ -49,7 +49,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/facebook"}
-          - if @user.facebook_oauth_token
+          - if !@user.facebook_accounts.empty?
             %div.facebook-img.facebook-logo.service-connection-img
           - else
             %div.facebook-img-grayscale.facebook-logo.service-connection-img
@@ -57,7 +57,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/fitbit"}
-          - if @user.fitbit_oauth_token
+          - if !@user.fitbit_accounts.empty?
             %div.fitbit-img.fitbit-logo.service-connection-img
           - else
             %div.fitbit-img-grayscale.fitbit-logo.service-connection-img
@@ -65,7 +65,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/pocket"}
-          - if @user.pocket_oauth_token
+          - if !@user.pocket_accounts.empty?
             %div.pocket-img.pocket-logo.service-connection-img
           - else
             %div.pocket-img-grayscale.pocket-logo.service-connection-img
@@ -73,7 +73,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/lastfm"}
-          - if @user.lastfm_username
+          - if !@user.lastfm_accounts.empty?
             %div.lastfm-img.lastfm-logo.service-connection-img
           - else
             %div.lastfm-img-grayscale.lastfm-logo.service-connection-img
@@ -81,7 +81,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/instapaper"}
-          - if @user.instapaper_oauth_token
+          - if !@user.instapaper_accounts.empty?
             %div.instapaper-img.instapaper-logo.service-connection-img
           - else
             %div.instapaper-img-grayscale.instapaper-logo.service-connection-img
@@ -89,7 +89,7 @@
 
       %div.service-connection-container
         %a{href:"/auth/rescue_time"}
-          - if @user.rescue_time_key
+          - if !@user.rescue_time_accounts.empty?
             %div.rescuetime-img.rescuetime-logo.service-connection-img
           - else
             %div.rescuetime-img-grayscale.rescuetime-logo.service-connection-img
@@ -97,7 +97,7 @@
 
       %div.service-connection-container
         %a{href:"/auth/whatpulse"}
-          - if @user.whatpulse_username
+          - if !@user.whatpulse_accounts.empty?
             %div.whatpulse-img.whatpulse-logo.service-connection-img
           - else
             %div.whatpulse-img-grayscale.whatpulse-logo.service-connection-img
@@ -105,7 +105,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/moves"}
-          - if @user.moves_oauth_token
+          - if !@user.moves_accounts.empty?
             %div.moves-img.moves-logo.service-connection-img
           - else
             %div.moves-img-grayscale.moves-logo.service-connection-img
@@ -113,7 +113,7 @@
 
       %div.service-connection-container
         %a{href:"/users/auth/runkeeper"}
-          - if @user.moves_oauth_token
+          - if !@user.health_graph_accounts.empty?
             %div.moves-img.moves-logo.service-connection-img
           - else
             %div.moves-img-grayscale.moves-logo.service-connection-img

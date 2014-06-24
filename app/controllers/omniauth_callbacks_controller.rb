@@ -21,17 +21,17 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to "/connections"
   end
 
-  alias_method :twitter, :all
+  alias_method :clef, :all
+  alias_method :evernote, :all
+  alias_method :facebook, :all
   alias_method :fitbit, :all
+  alias_method :instagram, :all
+  alias_method :instapaper, :all
+  alias_method :lastfm, :all
+  alias_method :moves, :all
   alias_method :pocket, :all
   alias_method :rdio, :all
-  alias_method :facebook, :all
-  alias_method :evernote, :all
-  alias_method :instapaper, :all
-  alias_method :instagram, :all
-  alias_method :lastfm, :all
-  alias_method :clef, :all
-  alias_method :moves, :all
   alias_method :runkeeper, :all
+  alias_method :twitter, :all
 
 end
