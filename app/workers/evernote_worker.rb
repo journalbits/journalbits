@@ -23,6 +23,7 @@ class EvernoteWorker
   end
 
   def create_client_for user
+    # TODO: Check what's going on here with client being defined twice
     client = EvernoteOAuth::Client.new(consumer_key: ENV['EVERNOTE_CONSUMER_KEY'],
                                        consumer_secret: ENV['EVERNOTE_CONSUMER_SECRET'],
                                        sandbox:true)
