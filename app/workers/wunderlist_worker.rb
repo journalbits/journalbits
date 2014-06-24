@@ -2,7 +2,7 @@ require "net/https"
 
 class WunderlistWorker
   include Sidekiq::Worker
-  sidekiq_options queue: "external_api"
+  sidekiq_options queue: 'external_api'
 
   def perform date, user_id
     user = User.find(user_id)
@@ -22,7 +22,7 @@ class WunderlistWorker
                                list: lists["#{task['list_id']}"],
                                user_id: user.id,
                                task_id: task['id'],
-                               kind: "completed"
+                               kind: 'completed'
                                )
       else
         WunderlistEntry.create(date: @date.to_s[0..9],
@@ -30,7 +30,7 @@ class WunderlistWorker
                                list: lists["#{task['list_id']}"],
                                user_id: user.id,
                                task_id: task['id'],
-                               kind: "created"
+                               kind: 'created'
                                )
       end
     end
@@ -43,24 +43,24 @@ class WunderlistWorker
   end
 
   def user_lists
-    lists_array = api_request "lists"
+    lists_array = api_request 'lists'
     Hash[lists_array.map { |list| [list['id'], list['title']] }]
   end
 
   def user_tasks_created_on date
-    tasks = api_request "tasks"
+    tasks = api_request 'tasks'
     tasks.select { |task| task['created_at'][0..9] == date.to_s[0..9] }
   end
 
   def user_tasks_completed_on date
-    tasks = api_request "tasks"
+    tasks = api_request 'tasks'
     tasks.select { |task| task['completed_at'] && task['completed_at'][0..9] == date.to_s[0..9] }
   end
 
   def api_request type
     uri = URI("https://api.wunderlist.com/me/#{type}")
     req = Net::HTTP::Get.new uri
-    req.add_field "Authorization", "Bearer #{@user.wunderlist_token}"
+    req.add_field "Authorization", "Bearer #{user.wunderlist_accounts.first.token}"
     response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) do |http|
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       http.ssl_version = :SSLv3

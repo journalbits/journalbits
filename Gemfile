@@ -95,6 +95,9 @@ gem 'foreman'
 # For storing environment variables
 gem 'figaro', '~> 1.0.0.rc1'
 
+# For testing for security vulnerabilities
+gem 'brakeman'
+
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
