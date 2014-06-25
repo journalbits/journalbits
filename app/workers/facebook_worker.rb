@@ -4,25 +4,29 @@ class FacebookWorker
 
   def perform date, user_id
     user = User.find(user_id)
-    client = create_client_for user
-    save_photos_on date, client, user_id
+    accounts = user.facebook_accounts.select { |a| a.activated }
+    accounts.each do |account|
+      client = create_client_for account
+      save_photos_on date, client, user_id
+    end
   end
 
-  def create_client_for user
-    Koala::Facebook::API.new(user.facebook_accounts.first.oauth_token)
+  def create_client_for account
+    Koala::Facebook::API.new(account.oauth_token)
   end
 
   def save_photos_on date, client, user_id
     photos = user_photos_on date, client
     photos.each do |photo|
       unless FacebookPhotoEntry.exists?(user_id: user_id, photo_id: photo['id'].to_s)
-        FacebookPhotoEntry.create(user_id: user_id,
-                                  date: date.to_s[0..9],
-                                  photo_id: photo['id'].to_s,
-                                  source_url: photo['source'],
-                                  link_url: photo['link'],
-                                  medium_url: photo['images'][photo['images'].count / 2]['source']
-                                  )
+        FacebookPhotoEntry.create(
+          user_id: user_id,
+          date: date.to_s[0..9],
+          photo_id: photo['id'].to_s,
+          source_url: photo['source'],
+          link_url: photo['link'],
+          medium_url: photo['images'][photo['images'].count / 2]['source']
+        )
       end
     end
   end

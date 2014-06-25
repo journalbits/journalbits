@@ -6,33 +6,38 @@ class WunderlistWorker
 
   def perform date, user_id
     user = User.find(user_id)
-    token = user.wunderlist_accounts.first.token
-    all_tasks = combine_tasks_created_and_completed_on date, token
-    lists = user_lists token
-    all_tasks.each do |task|
-      save_individual_task_to_database task, lists, user, date
+    accounts = user.wunderlist_accounts.select { |a| a.activated }
+    accounts.each do |account|
+      token = account.token
+      all_tasks = combine_tasks_created_and_completed_on date, token
+      lists = user_lists token
+      all_tasks.each do |task|
+        save_individual_task_to_database task, lists, user, date
+      end
     end
   end
 
   def save_individual_task_to_database task, lists, user, date
     unless WunderlistEntry.exists?(task_id: task['id'], completed_at: task['completed_at'])
       if task['completed_at']
-        WunderlistEntry.create(completed_at: task['completed_at'],
-                               date: date.to_s[0..9],
-                               title: task['title'],
-                               list: lists["#{task['list_id']}"],
-                               user_id: user.id,
-                               task_id: task['id'],
-                               kind: 'completed'
-                               )
+        WunderlistEntry.create(
+          completed_at: task['completed_at'],
+          date: date.to_s[0..9],
+          title: task['title'],
+          list: lists["#{task['list_id']}"],
+          user_id: user.id,
+          task_id: task['id'],
+          kind: 'completed'
+        )
       else
-        WunderlistEntry.create(date: @date.to_s[0..9],
-                               title: task['title'],
-                               list: lists["#{task['list_id']}"],
-                               user_id: user.id,
-                               task_id: task['id'],
-                               kind: 'created'
-                               )
+        WunderlistEntry.create(
+          date: @date.to_s[0..9],
+          title: task['title'],
+          list: lists["#{task['list_id']}"],
+          user_id: user.id,
+          task_id: task['id'],
+          kind: 'created'
+        )
       end
     end
   end
@@ -69,5 +74,4 @@ class WunderlistWorker
     end
     JSON.parse(response.body)
   end
-
 end

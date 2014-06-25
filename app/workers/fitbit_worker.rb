@@ -4,19 +4,23 @@ class FitbitWorker
 
   def perform date, user_id
     user = User.find(user_id)
-    client = create_client_for user
-    save_sleep_entries_on date, client, user_id
-    save_activity_entries_on date, client, user_id
-    save_weight_entries_on date, client, user_id
+    accounts = user.fitbit_accounts.select { |a| a.activated }
+    accounts.each do |account|
+      client = create_client_for account
+      save_sleep_entries_on date, client, user_id
+      save_activity_entries_on date, client, user_id
+      save_weight_entries_on date, client, user_id
+    end
   end
 
-  def create_client_for user
-    client = Fitgem::Client.new( { consumer_key: ENV['FITBIT_CONSUMER_KEY'],
-                                   consumer_secret: ENV['FITBIT_CONSUMER_SECRET'],
-                                   oauth_token: "default",
-                                   oauth_secret: "default" }
-                                   )
-    client.reconnect("#{user.fitbit_accounts.first.oauth_token}", "#{user.fitbit_accounts.first.oauth_secret}")
+  def create_client_for account
+    client = Fitgem::Client.new(
+      consumer_key: ENV['FITBIT_CONSUMER_KEY'],
+      consumer_secret: ENV['FITBIT_CONSUMER_SECRET'],
+      oauth_token: "default",
+      oauth_secret: "default"
+    )
+    client.reconnect(account.oauth_token, account.oauth_secret)
   end
 
   def user_sleep_on date, client
@@ -48,28 +52,30 @@ class FitbitWorker
     sleep_data = user_sleep_on date, client
     return if !sleep_data
     unless FitbitSleepEntry.exists?(date: date.to_s[0..9], user_id: user_id)
-      FitbitSleepEntry.create(minutes_asleep: sleep_data[:minutes_asleep],
-                              minutes_awake: sleep_data[:minutes_awake],
-                              minutes_to_fall_asleep: sleep_data[:minutes_to_fall_asleep],
-                              efficiency: sleep_data[:efficiency],
-                              times_awake: sleep_data[:times_awake],
-                              start_time: sleep_data[:sleep_start_time],
-                              date: date.to_s[0..9],
-                              user_id: user_id
-                              )
+      FitbitSleepEntry.create(
+        minutes_asleep: sleep_data[:minutes_asleep],
+        minutes_awake: sleep_data[:minutes_awake],
+        minutes_to_fall_asleep: sleep_data[:minutes_to_fall_asleep],
+        efficiency: sleep_data[:efficiency],
+        times_awake: sleep_data[:times_awake],
+        start_time: sleep_data[:sleep_start_time],
+        date: date.to_s[0..9],
+        user_id: user_id
+      )
     end
   end
 
   def save_activity_entries_on date, client, user_id
     activity_data = user_activity_on date, client
     unless FitbitActivityEntry.exists?(date: date.to_s[0..9], user_id: user_id) || activity_data[:steps] == 0
-      FitbitActivityEntry.create(calories: activity_data[:calories],
-                                 distance: activity_data[:distance],
-                                 steps: activity_data[:steps],
-                                 active_minutes: activity_data[:active_minutes],
-                                 date: date.to_s[0..9],
-                                 user_id: user_id
-                                 )
+      FitbitActivityEntry.create(
+        calories: activity_data[:calories],
+        distance: activity_data[:distance],
+        steps: activity_data[:steps],
+        active_minutes: activity_data[:active_minutes],
+        date: date.to_s[0..9],
+        user_id: user_id
+      )
     end
   end
 
@@ -77,11 +83,12 @@ class FitbitWorker
     weight_data = user_weight_on date, client
     return if !weight_data[:weight]
     unless FitbitWeightEntry.exists?(date: date.to_s[0..9], user_id: user_id)
-      FitbitWeightEntry.create(weight: weight_data[:weight],
-                               weight_unit: weight_data[:weight_unit],
-                               date: date.to_s[0..9],
-                               user_id: user_id
-                               )
+      FitbitWeightEntry.create(
+        weight: weight_data[:weight],
+        weight_unit: weight_data[:weight_unit],
+        date: date.to_s[0..9],
+        user_id: user_id
+      )
     end
   end
 end
