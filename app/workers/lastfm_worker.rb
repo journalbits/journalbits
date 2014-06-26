@@ -12,7 +12,7 @@ class LastfmWorker
     end
   end
 
-  def user_tracks_on_date date, username
+  def user_tracks_on date, username
     tracks = get_user_tracks username
     tracks.select do |track|
       Time.at(track['date']['uts'].to_i).to_s[0..9] == date.to_s[0..9] if track['date']

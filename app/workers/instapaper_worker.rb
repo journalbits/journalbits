@@ -13,12 +13,13 @@ class InstapaperWorker
   end
 
   def create_client_for account
-    Instapaper.configure do |config|
+    client = Instapaper.configure do |config|
       config.consumer_key = ENV['INSTAPAPER_CONSUMER_KEY']
       config.consumer_secret = ENV['INSTAPAPER_CONSUMER_SECRET']
       config.oauth_token = account.oauth_token
       config.oauth_token_secret = account.oauth_secret
     end
+    client
   end
 
   def save_bookmarks_created_on date, client, user_id

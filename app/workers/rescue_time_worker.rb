@@ -8,7 +8,7 @@ class RescueTimeWorker
     accounts = RescueTimeAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       key = account.key
-      save_links_on date, oauth_token, user_id
+      save_data_on date, key, user_id
     end
   end
 

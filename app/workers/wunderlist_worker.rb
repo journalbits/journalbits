@@ -31,7 +31,7 @@ class WunderlistWorker
         )
       else
         WunderlistEntry.create(
-          date: @date.to_s[0..9],
+          date: date.to_s[0..9],
           title: task['title'],
           list: lists["#{task['list_id']}"],
           user_id: user.id,

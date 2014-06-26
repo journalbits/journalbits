@@ -4,7 +4,7 @@ class GithubWorker
 
   def perform date, user_id
     user = User.find(user_id)
-    accounts = user.wunderlist_accounts.select { |a| a.activated }
+    accounts = user.github_accounts.select { |a| a.activated }
     accounts.each do |account|
       client = create_client_for account
       save_commits_to_database date, client, user_id

@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     username = params['user']['whatpulse_username']
     WhatpulseAccount.create!(
       user_id: current_user.id,
-      username: username
+      token: username
     )
     redirect_to "/connections"
   end

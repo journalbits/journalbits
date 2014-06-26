@@ -4,7 +4,7 @@ class HealthGraphWorker
 
   def perform date, user_id
     user = User.find(user_id)
-    accounts = user.wunderlist_accounts.select { |a| a.activated }
+    accounts = user.health_graph_accounts.select { |a| a.activated }
     accounts.each do |account|
       client = create_client_for account
       save_sleep_to_database date, client, user_id
@@ -22,7 +22,7 @@ class HealthGraphWorker
 
   def save_sleep_to_database date, client, user_id
     sleep = user_sleep_on(date, client).first
-    if !sleep.empty?
+    if !sleep.blank?
       unless HealthGraphEntry.exists?(:user_id => user_id, :date => date.to_s[0..9])
         HealthGraphEntry.create(
           time_asleep: sleep.total_sleep,

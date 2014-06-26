@@ -32,7 +32,7 @@ class EvernoteWorker
       consumer_secret: ENV['EVERNOTE_CONSUMER_SECRET'],
       sandbox:true
     )
-    token = account.token
+    token = account.oauth_token
     client = EvernoteOAuth::Client.new(token: token)
   end
 

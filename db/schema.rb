@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626190211) do
+ActiveRecord::Schema.define(version: 20140626221105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",           default: true
+    t.boolean  "activated",        default: true
   end
 
   create_table "evernote_entries", force: true do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",           default: true
+    t.boolean  "activated",        default: true
   end
 
   create_table "facebook_photo_entries", force: true do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",       default: true
+    t.boolean  "activated",    default: true
   end
 
   create_table "fitbit_activity_entries", force: true do |t|
@@ -125,6 +128,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",       default: true
+    t.boolean  "activated",    default: true
   end
 
   create_table "github_entries", force: true do |t|
@@ -145,6 +149,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",       default: true
+    t.boolean  "activated",    default: true
   end
 
   create_table "health_graph_entries", force: true do |t|
@@ -164,6 +169,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",      default: true
+    t.boolean  "activated",   default: true
   end
 
   create_table "instagram_entries", force: true do |t|
@@ -186,6 +192,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",       default: true
+    t.boolean  "activated",    default: true
   end
 
   create_table "instapaper_entries", force: true do |t|
@@ -205,6 +212,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",     default: true
+    t.boolean  "activated",  default: true
   end
 
   create_table "lastfm_entries", force: true do |t|
@@ -226,6 +234,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",        default: true
+    t.boolean  "activated",     default: true
   end
 
   create_table "moves_entries", force: true do |t|
@@ -289,6 +298,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",      default: true
+    t.boolean  "activated",   default: true
   end
 
   create_table "pocket_entries", force: true do |t|
@@ -308,6 +318,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",     default: true
+    t.boolean  "activated",  default: true
   end
 
   create_table "rescue_time_entries", force: true do |t|
@@ -336,6 +347,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",       default: true
+    t.boolean  "activated",    default: true
   end
 
   create_table "twitter_entries", force: true do |t|
@@ -407,6 +419,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",     default: true
+    t.boolean  "activated",  default: true
   end
 
   create_table "whatpulse_entries", force: true do |t|
@@ -428,6 +441,7 @@ ActiveRecord::Schema.define(version: 20140626190211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",     default: true
+    t.boolean  "activated",  default: true
   end
 
   create_table "wunderlist_entries", force: true do |t|

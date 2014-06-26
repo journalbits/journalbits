@@ -21,6 +21,7 @@ class FitbitWorker
       oauth_secret: "default"
     )
     client.reconnect(account.oauth_token, account.oauth_secret)
+    client
   end
 
   def user_sleep_on date, client
