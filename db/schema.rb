@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626184530) do
+ActiveRecord::Schema.define(version: 20140626185029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.datetime "token_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",           default: true
   end
 
   create_table "evernote_entries", force: true do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.datetime "token_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",           default: true
   end
 
   create_table "facebook_photo_entries", force: true do |t|
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",       default: true
   end
 
   create_table "fitbit_activity_entries", force: true do |t|
@@ -116,6 +119,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",       default: true
   end
 
   create_table "github_entries", force: true do |t|
@@ -134,6 +138,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",       default: true
   end
 
   create_table "health_graph_entries", force: true do |t|
@@ -151,6 +156,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",      default: true
   end
 
   create_table "instagram_entries", force: true do |t|
@@ -171,6 +177,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",       default: true
   end
 
   create_table "instapaper_entries", force: true do |t|
@@ -188,6 +195,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: true
   end
 
   create_table "lastfm_entries", force: true do |t|
@@ -207,6 +215,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "refresh_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",        default: true
   end
 
   create_table "moves_entries", force: true do |t|
@@ -268,6 +277,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "oauth_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",      default: true
   end
 
   create_table "pocket_entries", force: true do |t|
@@ -285,6 +295,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: true
   end
 
   create_table "rescue_time_entries", force: true do |t|
@@ -311,6 +322,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "oauth_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",       default: true
   end
 
   create_table "twitter_entries", force: true do |t|
@@ -380,6 +392,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: true
   end
 
   create_table "whatpulse_entries", force: true do |t|
@@ -399,6 +412,7 @@ ActiveRecord::Schema.define(version: 20140626184530) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: true
   end
 
   create_table "wunderlist_entries", force: true do |t|
