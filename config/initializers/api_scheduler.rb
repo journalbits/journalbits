@@ -26,7 +26,7 @@ scheduler.cron("55 23 * * *") do
   # rescue_time_data
 end
 
-scheduler.schedule_every("2m", { first: "1s" }) do
+scheduler.schedule_every("10m", { first: "1s" }) do
   # processor = ServiceProcessor::GlobalProcessor.new (Time.now - 2.day)
   # processor.process_all
 end
