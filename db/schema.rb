@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626185029) do
+ActiveRecord::Schema.define(version: 20140626190211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "evernote_account_id"
   end
 
   create_table "facebook_accounts", force: true do |t|
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "link_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "facebook_account_id"
   end
 
   create_table "fitbit_accounts", force: true do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.integer  "active_minutes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "fitbit_account_id"
   end
 
   create_table "fitbit_sleep_entries", force: true do |t|
@@ -103,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "fitbit_account_id"
   end
 
   create_table "fitbit_weight_entries", force: true do |t|
@@ -112,6 +116,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "weight_unit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "fitbit_account_id"
   end
 
   create_table "github_accounts", force: true do |t|
@@ -131,6 +136,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "commit_url"
+    t.integer  "github_account_id"
   end
 
   create_table "health_graph_accounts", force: true do |t|
@@ -148,6 +154,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "health_graph_account_id"
   end
 
   create_table "instagram_accounts", force: true do |t|
@@ -169,6 +176,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "link_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "instagram_account_id"
   end
 
   create_table "instapaper_accounts", force: true do |t|
@@ -188,6 +196,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "instapaper_account_id"
   end
 
   create_table "lastfm_accounts", force: true do |t|
@@ -207,6 +216,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lastfm_account_id"
   end
 
   create_table "moves_accounts", force: true do |t|
@@ -228,6 +238,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.integer  "calories"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "moves_account_id"
   end
 
   create_table "oauth_access_grants", force: true do |t|
@@ -288,6 +299,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pocket_account_id"
   end
 
   create_table "rescue_time_accounts", force: true do |t|
@@ -312,6 +324,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.integer "productivity"
     t.integer "user_id"
     t.string  "date"
+    t.integer "rescue_time_account_id"
   end
 
   create_table "twitter_accounts", force: true do |t|
@@ -333,9 +346,10 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "tweet_id",   limit: 8
+    t.integer  "tweet_id",           limit: 8
     t.string   "date"
     t.string   "tweet_url"
+    t.integer  "twitter_account_id"
   end
 
   create_table "users", force: true do |t|
@@ -405,6 +419,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.integer  "upload_mb"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "whatpulse_account_id"
   end
 
   create_table "wunderlist_accounts", force: true do |t|
@@ -425,6 +440,7 @@ ActiveRecord::Schema.define(version: 20140626185029) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "kind"
+    t.integer  "wunderlist_account_id"
   end
 
 end
