@@ -25,7 +25,7 @@ class FitbitWorker
   end
 
   def user_sleep_on date, client
-    sleep_data = client.sleep_on_date date
+    sleep_data = client.sleep_on_date date.to_s[0..9]
     { minutes_asleep: sleep_data['sleep'].first['minutesAsleep'],
       minutes_awake: sleep_data['sleep'].first['minutesAwake'],
       minutes_to_fall_asleep: sleep_data['sleep'].first['minutesToFallAsleep'],
@@ -35,13 +35,13 @@ class FitbitWorker
     } if !sleep_data['sleep'].empty?
   end
 
-  def user_weight_on date, client
+  def user_weight client
     user_info = client.user_info
     { weight: user_info['weight'], weight_unit: user_info['weightUnit'] }
   end
 
   def user_activity_on date, client
-    activities = client.activities_on_date date
+    activities = client.activities_on_date date.to_s[0..9]
     { calories: activities['summary']['caloriesOut'],
       distance: activities['summary']['distances'].first['distance'],
       steps: activities['summary']['steps'],
@@ -81,7 +81,7 @@ class FitbitWorker
   end
 
   def save_weight_entries_on date, client, user_id
-    weight_data = user_weight_on date, client
+    weight_data = user_weight client
     return if !weight_data[:weight]
     unless FitbitWeightEntry.exists?(date: date.to_s[0..9], user_id: user_id)
       FitbitWeightEntry.create(
