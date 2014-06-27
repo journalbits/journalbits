@@ -7,7 +7,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in user
       redirect_to "/connections"
     elsif user.persisted?
-      flash.notice = "Account authorized"
+      flash[:notice] = "Account authorized"
       redirect_to "/connections"
     else
       session['devise.user_attributes'] = user.attributes
@@ -17,7 +17,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    flash.notice = "Account authorization failed"
+    flash[:error] = "Account authorization failed"
     redirect_to "/connections"
   end
 

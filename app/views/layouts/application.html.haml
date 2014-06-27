@@ -49,8 +49,12 @@
                       %span.nav-text
                         Register
       %section.main_body
-        %p.notice= notice
-        %p.alert= alert
+        -if flash[:notice]
+          %p.notice= flash[:notice]
+        -if flash[:alert]
+          %p.alert= flash[:alert]
+        -if flash[:error]
+          %p.error= flash[:error]
         = yield
 
     %footer
