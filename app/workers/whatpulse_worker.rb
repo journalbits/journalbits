@@ -7,7 +7,7 @@ class WhatpulseWorker
   def perform date, user_id
     accounts = WhatpulseAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
-      username = account.token
+      username = account.username
       save_pulses_on date, username, user_id
     end
   end
