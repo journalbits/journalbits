@@ -20,8 +20,8 @@ a {
 @font-face {
   font-family: 'Nunito-Regular';
   src: font-url('Nunito-Regular.eot');
-  src: font-url('Nunito-Regular.eot') format('embedded-opentype'), 
-       font-url('Nunito-Regular.woff') format('woff'), 
+  src: font-url('Nunito-Regular.eot') format('embedded-opentype'),
+       font-url('Nunito-Regular.woff') format('woff'),
        font-url('Nunito-Regular.ttf')  format('truetype'),
        font-url('Nunito-Regular.svg') format('svg');
 }
@@ -29,8 +29,8 @@ a {
 @font-face {
   font-family: 'Nunito-Light';
   src: font-url('Nunito-Light.eot');
-  src: font-url('Nunito-Light.eot') format('embedded-opentype'), 
-       font-url('Nunito-Light.woff') format('woff'), 
+  src: font-url('Nunito-Light.eot') format('embedded-opentype'),
+       font-url('Nunito-Light.woff') format('woff'),
        font-url('Nunito-Light.ttf')  format('truetype'),
        font-url('Nunito-Light.svg') format('svg');
 }
@@ -38,8 +38,8 @@ a {
 @font-face {
   font-family: 'Nunito-Bold';
   src: font-url('Nunito-Bold.eot');
-  src: font-url('Nunito-Bold.eot') format('embedded-opentype'), 
-       font-url('Nunito-Bold.woff') format('woff'), 
+  src: font-url('Nunito-Bold.eot') format('embedded-opentype'),
+       font-url('Nunito-Bold.woff') format('woff'),
        font-url('Nunito-Bold.ttf')  format('truetype'),
        font-url('Nunito-Bold.svg') format('svg');
 }
@@ -110,7 +110,7 @@ a {
 }
 
 .main-container {
-  height: auto; 
+  height: auto;
   min-height: 100%;
 }
 
@@ -121,18 +121,35 @@ a {
 }
 
 p.notice {
-  background: #d00319;
+  background: #23d000;
   color: white;
-  font-size: 1.1em;
+  // font-size: 1.1em;
   text-align: center;
   border-radius: 10px;
   margin: 1.5%;
-  margin: auto;
+  margin: 8px auto;
   width: 30%;
 }
 
 p.alert {
+  background: #d06300;
+  color: white;
+  // font-size: 1.1em;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
 
+p.error {
+  background: #d00319;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
 }
 
 nav {
@@ -142,7 +159,7 @@ nav {
   height: 42px;
   list-style: none;
   border-bottom: 1px solid #d0d0d0;
-  
+
   div.nav {
     max-width: 960px;
     margin-left:auto;
@@ -155,7 +172,7 @@ nav {
 
       a {
         transition: color .5s, background .5s, height .5s;
-        
+
         .nav-symbol {
           @include media($desktop) {
             display: none;
@@ -186,7 +203,7 @@ nav {
           float: left;
           margin-right: 30px;
           list-style-type: none;
-          
+
           a {
             .nav-symbol {
               @include media($desktop) {
@@ -205,7 +222,7 @@ nav {
             }
           }
         }
-        
+
         li.nav-logout {
           margin-right: 0px;
         }
