@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     response = wunderlist_login payload
 
     token = JSON.parse(response.body)['token']
-    # User.where(id: current_user.id).take.update_attributes(wunderlist_token: wunderlist_token)
     WunderlistAccount.create!(
       user_id: current_user.id,
       token: token
