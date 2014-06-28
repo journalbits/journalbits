@@ -17,4 +17,17 @@ class RegistrationsController < Devise::RegistrationsController
     )
   end
 
+  private
+
+  def sign_up_params
+    zone = ActiveSupport::TimeZone[params[:user][:time_zone]]
+    offset = zone.now.utc_offset
+    params[:user][:time_zone] = offset
+    params.require(:user).permit(:email, :username, :password, :password_confirmation, :time_zone)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:email, :username, :password, :password_confirmation, :current_password, :time_zone)
+  end
+
 end
