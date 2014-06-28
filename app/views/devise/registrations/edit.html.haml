@@ -14,7 +14,7 @@
     %br/
     = f.text_field :username
   %div
-    = f.label :password
+    = f.label :password, 'New Password'
     %i (leave blank if you don't want to change it)
     %br/
     = f.password_field :password, :autocomplete => "off"
@@ -28,8 +28,13 @@
       %i (we need your current password to confirm your changes)
       %br/
       = f.password_field :current_password
+  %div
+    = f.time_zone_select :time_zone, nil, default: "London"
+  %div
+    = f.label :daily_email
+    %br/
+    = f.check_box :daily_email
   %div= f.submit "Update"
 %h3 Cancel my account
 %p
   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
-= link_to "Back", :back

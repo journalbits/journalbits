@@ -1,4 +1,4 @@
-class SuperWorker
+class NotifyReauthWorker
   include Sidekiq::Worker
 
   def perform date
@@ -19,6 +19,6 @@ class SuperWorker
   end
 
   def notify user_id, service, expires_at
-    UserMailer.notify_reauth(user_id, ).deliver
+    UserMailer.notify_reauth(user_id, service, expires_at).deliver
   end
 end

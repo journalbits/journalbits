@@ -7,6 +7,11 @@ require 'service_processor'
 scheduler = Rufus::Scheduler.new
 
 
+# Runs once a day at 00:01
+scheduler.cron("1 0 * * *") do
+  # NotifyReauthWorker.perform_async Time.now
+end
+
 # Runs every hour at one minute past the hour
 scheduler.cron("1 * * * *") do
   puts "This is where the normal processor goes"
@@ -23,8 +28,9 @@ scheduler.cron('25,55 * * * *') do
   # LateNightWorker.perform_async Time.now
 end
 
-scheduler.schedule_every("10m", { first: "1s" }) do
+scheduler.schedule_every("10m", { first: "6s" }) do
   # processor = ServiceProcessor::GlobalProcessor.new (Time.now)
   # processor.process_all
   # SuperWorker.perform_async Time.now
+  # NotifyReauthWorker.perform_async Time.now
 end
