@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628225448) do
+ActiveRecord::Schema.define(version: 20140629220036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140628225448) do
     t.datetime "updated_at"
     t.boolean  "public",           default: true
     t.boolean  "activated",        default: true
+    t.string   "username"
   end
 
   create_table "evernote_entries", force: true do |t|

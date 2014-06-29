@@ -13,6 +13,11 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "Reauthorize #{service} on JournalBits")
   end
 
+  def daily_summary user_id
+    @user = User.find(user_id)
+    mail(to: @user.email, subject: 'JournalBits Daily Summary')
+  end
+
   private
 
   def day_week_or_month? expires_at

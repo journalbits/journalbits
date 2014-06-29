@@ -28,8 +28,6 @@ JournalBits::Application.routes.draw do
   patch 'auth/whatpulse' => 'users#whatpulse_update'
 
   resources :users,  path: "" do
-    resources :days, path: ""
-
     resources :evernote_entries
     resources :facebook_photo_entries
     resources :fitbit_activity_entries
@@ -61,6 +59,8 @@ JournalBits::Application.routes.draw do
     resources :twitter_accounts
     resources :whatpulse_accounts
     resources :wunderlist_accounts
+
+    resources :days, path: ""
   end
 
   namespace :api, defaults: {format: 'json'} do

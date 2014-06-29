@@ -14,6 +14,8 @@
           - else
             %div.twitter-img-grayscale.twitter-logo.service-connection-img
           %h3 Twitter
+          %div
+            = link_to 'Manage Accounts', user_evernote_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"https://github.com/login/oauth/authorize?client_id=ff7013fc7d06261543d7&scope=repo&state=bubble"}
