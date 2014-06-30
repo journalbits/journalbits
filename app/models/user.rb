@@ -66,61 +66,52 @@ class User < ActiveRecord::Base
     self.slug ||= username.parameterize if username
   end
 
-  def self.from_omniauth auth, current_user
+  def self.from_omniauth auth, current_user, account_id = nil
     case auth.provider
-      when "twitter" then return process_for_twitter auth, current_user
-      when "fitbit" then return process_for_fitbit auth, current_user
-      when "pocket" then return process_for_pocket auth, current_user
-      when "rdio" then return process_for_rdio auth, current_user
-      when "facebook" then return process_for_facebook auth, current_user
-      when "evernote" then return process_for_evernote auth, current_user
-      when "instagram" then return process_for_instagram auth, current_user
-      when "instapaper" then return process_for_instapaper auth, current_user
-      when "lastfm" then return process_for_lastfm auth, current_user
-      when "clef" then return process_for_clef auth, current_user
-      when "moves" then return process_for_moves auth, current_user
-      when "runkeeper" then return process_for_runkeeper auth, current_user
+      when "twitter" then return process_for_twitter auth, current_user, account_id
+      when "fitbit" then return process_for_fitbit auth, current_user, account_id
+      when "pocket" then return process_for_pocket auth, current_user, account_id
+      when "rdio" then return process_for_rdio auth, current_user, account_id
+      when "facebook" then return process_for_facebook auth, current_user, account_id
+      when "evernote" then return process_for_evernote auth, current_user, account_id
+      when "instagram" then return process_for_instagram auth, current_user, account_id
+      when "instapaper" then return process_for_instapaper auth, current_user, account_id
+      when "lastfm" then return process_for_lastfm auth, current_user, account_id
+      when "clef" then return process_for_clef auth, current_user, account_id
+      when "moves" then return process_for_moves auth, current_user, account_id
+      when "runkeeper" then return process_for_runkeeper auth, current_user, account_id
     end
   end
 
-  def self.process_for_clef auth, current_user
+  def self.process_for_clef auth, current_user, account_id
     user = where(clef_id: auth.uid).first || create_from_clef_omniauth(auth)
   end
 
-  def self.process_for_twitter auth, current_user
-    account = TwitterAccount.where(uid: auth.uid).first
-    user = account.nil? ? check_for_non_twitter_login(auth, current_user) : User.find(account.user_id)
-    user
-  end
-
-  def self.process_for_fitbit auth, current_user
+  def self.process_for_evernote auth, current_user, account_id
     user = current_user
-    FitbitAccount.create!(
-      user_id: user.id,
-      oauth_token: auth.credentials.token,
-      oauth_secret: auth.credentials.secret
-    )
+    if !account_id.nil?
+      update_evernote_account auth, user.id, account_id
+    else
+      EvernoteAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        token_expires_at: Time.now + 1.year
+      )
+    end
     user
   end
 
-  def self.process_for_pocket auth, current_user
-    user = current_user
-    PocketAccount.create(
-      user_id: user.id,
-      oauth_token: auth.credentials.token
-    )
-    user
+  def self.update_evernote_account auth, user_id, account_id
+    account = EvernoteAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        token_expires_at: Time.now + 1.year
+      )
+    end
   end
 
-  def self.process_for_rdio auth, current_user
-    user = current_user
-    user.rdio_oauth_token = auth.credentials.token
-    user.rdio_oauth_secret = auth.credentials.secret
-    user.save! if user.email != ""
-    user
-  end
-
-  def self.process_for_facebook auth, current_user
+  def self.process_for_facebook auth, current_user, account_id
     user = current_user
     FacebookAccount.create!(
       user_id: user.id,
@@ -130,17 +121,17 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_evernote auth, current_user
+  def self.process_for_fitbit auth, current_user, account_id
     user = current_user
-    EvernoteAccount.create!(
+    FitbitAccount.create!(
       user_id: user.id,
       oauth_token: auth.credentials.token,
-      token_expires_at: Time.now + 1.year
+      oauth_secret: auth.credentials.secret
     )
     user
   end
 
-  def self.process_for_instagram auth, current_user
+  def self.process_for_instagram auth, current_user, account_id
     user = current_user
     InstagramAccount.create!(
       user_id: user.id,
@@ -150,7 +141,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_instapaper auth, current_user
+  def self.process_for_instapaper auth, current_user, account_id
     user = current_user
     InstapaperAccount.create!(
       user_id: user.id,
@@ -160,7 +151,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_lastfm auth, current_user
+  def self.process_for_lastfm auth, current_user, account_id
     user = current_user
     LastfmAccount.create!(
       user_id: user.id,
@@ -169,7 +160,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_moves auth, current_user
+  def self.process_for_moves auth, current_user, account_id
     user = current_user
     MovesAccount.create!(
       user_id: user.id,
@@ -179,12 +170,35 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.process_for_runkeeper auth, current_user
+  def self.process_for_pocket auth, current_user, account_id
+    user = current_user
+    PocketAccount.create(
+      user_id: user.id,
+      oauth_token: auth.credentials.token
+    )
+    user
+  end
+
+  def self.process_for_rdio auth, current_user, account_id
+    user = current_user
+    user.rdio_oauth_token = auth.credentials.token
+    user.rdio_oauth_secret = auth.credentials.secret
+    user.save! if user.email != ""
+    user
+  end
+
+  def self.process_for_runkeeper auth, current_user, account_id
     user = current_user
     HealthGraphAccount.create!(
       user_id: user.id,
       access_token: auth.credentials.token
     )
+    user
+  end
+
+  def self.process_for_twitter auth, current_user, account_id
+    account = TwitterAccount.where(uid: auth.uid).first
+    user = account.nil? ? check_for_non_twitter_login(auth, current_user, account_id) : User.find(account.user_id)
     user
   end
 

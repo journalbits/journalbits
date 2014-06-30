@@ -24,6 +24,15 @@ class EvernoteAccountsController < ApplicationController
     end
   end
 
+  def reauthorize
+    session[:account_id] = params[:id]
+    redirect_to '/users/auth/evernote'
+  end
+
+  def create
+    redirect_to '/users/auth/evernote'
+  end
+
   private
 
   def update_params

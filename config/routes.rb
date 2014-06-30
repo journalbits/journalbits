@@ -27,6 +27,9 @@ JournalBits::Application.routes.draw do
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'
 
+
+  post 'users/reauth/evernote' => 'evernote_accounts#reauthorize'
+
   resources :users,  path: "" do
     resources :evernote_entries
     resources :facebook_photo_entries
@@ -63,6 +66,7 @@ JournalBits::Application.routes.draw do
     resources :days, path: ""
   end
 
+
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       # Maybe need to set the paths to "" as above
@@ -88,5 +92,4 @@ JournalBits::Application.routes.draw do
       end
     end
   end
-
 end
