@@ -1,4 +1,4 @@
-**JournalBits** 
+**JournalBits**
 
 [ ![Codeship Status for journalbits/journalbits](https://www.codeship.io/projects/e0b43c80-db92-0131-5e33-32348e3cf281/status)](https://www.codeship.io/projects/24458)
 
@@ -22,14 +22,14 @@ This is a work in progress. I am working towards implementing a digital journal 
    * Wunderlist
    * Pocket
    * Fitbit
-   * WhatPulse
-   * RescueTime
    * Evernote
    * Instapaper
    * Instagram
    * Last.fm
    * Moves
-   * Health Graph
+   * Health Graph (Runkeeper's API - includes Sleep Cycle integration)
+   * WhatPulse
+   * RescueTime
 
 Potentially others will be added but those are the inital services I'm aiming for.
 
