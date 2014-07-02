@@ -24,7 +24,7 @@ class EvernoteAccountsController < ApplicationController
     end
   end
 
-  def reauthorize
+  def reauth
     session[:account_id] = params[:id]
     redirect_to '/users/auth/evernote'
   end

@@ -10,8 +10,8 @@ class EvernoteWorker
       updated_notes = user_notes_updated_on date, client
       created_notes = user_notes_created_on date, client
       updated_notes = updated_notes - created_notes
-      save_notes_created_on date, created_notes, user_id
-      save_notes_updated_on date, updated_notes, user_id
+      save_notes_created_on date, created_notes, user_id, account_id
+      save_notes_updated_on date, updated_notes, user_id, account_id
     end
   end
 
@@ -35,7 +35,7 @@ class EvernoteWorker
     client = EvernoteOAuth::Client.new(token: token)
   end
 
-  def save_notes_created_on date, notes, user_id
+  def save_notes_created_on date, notes, user_id, account_id
     notes.each do |note|
       unless EvernoteEntry.exists?(note_id: note.guid)
         EvernoteEntry.create(
@@ -43,13 +43,14 @@ class EvernoteWorker
           date: date.to_s[0..9],
           note_id: note.guid,
           kind: "created",
-          title: note.title
+          title: note.title,
+          evernote_account_id: account_id
         )
       end
     end
   end
 
-  def save_notes_updated_on date, notes, user_id
+  def save_notes_updated_on date, notes, user_id, account_id
     notes.each do |note|
       unless EvernoteEntry.exists?(note_id: note.guid)
         EvernoteEntry.create(
@@ -57,7 +58,8 @@ class EvernoteWorker
           date: date.to_s[0..9],
           note_id: note.guid,
           kind: "updated",
-          title: note.title
+          title: note.title,
+          evernote_account_id: account_id
         )
       end
     end

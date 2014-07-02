@@ -28,7 +28,7 @@ JournalBits::Application.routes.draw do
   patch 'auth/whatpulse' => 'users#whatpulse_update'
 
 
-  post 'users/reauth/evernote' => 'evernote_accounts#reauthorize'
+  post 'users/reauth/evernote' => 'evernote_accounts#reauth'
 
   resources :users,  path: "" do
     resources :evernote_entries
