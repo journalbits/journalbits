@@ -1,6 +1,7 @@
 **JournalBits**
 
-[ ![Codeship Status for journalbits/journalbits](https://www.codeship.io/projects/e0b43c80-db92-0131-5e33-32348e3cf281/status)](https://www.codeship.io/projects/24458)
+[ ![Codeship Status for launsh/journalbits](https://www.codeship.io/projects/92039d00-e686-0131-cf84-6e586953192b/status)](https://www.codeship.io/projects/25852)
+
 
 **Dependencies**
 
