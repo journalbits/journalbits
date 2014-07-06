@@ -17,7 +17,6 @@ JournalBits::Application.routes.draw do
   get 'test' => 'authorization#test'
 
   get 'connections' => 'authorization#index'
-  get 'auth/github' => 'authorization#github'
   get 'auth/rescue_time' => 'authorization#rescue_time'
   get 'auth/wunderlist' => 'authorization#wunderlist'
   get 'auth/whatpulse' => 'authorization#whatpulse'
@@ -29,6 +28,9 @@ JournalBits::Application.routes.draw do
 
 
   post 'users/reauth/evernote' => 'evernote_accounts#reauth'
+  post 'users/reauth/facebook' => 'facebook_accounts#reauth'
+  post 'users/reauth/fitbit' => 'fitbit_accounts#reauth'
+  post 'users/reauth/github' => 'github_accounts#reauth'
 
   resources :users,  path: "" do
     resources :evernote_entries

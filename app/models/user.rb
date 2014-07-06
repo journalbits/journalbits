@@ -68,18 +68,19 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth auth, current_user, account_id = nil
     case auth.provider
-      when "twitter" then return process_for_twitter auth, current_user, account_id
-      when "fitbit" then return process_for_fitbit auth, current_user, account_id
-      when "pocket" then return process_for_pocket auth, current_user, account_id
-      when "rdio" then return process_for_rdio auth, current_user, account_id
-      when "facebook" then return process_for_facebook auth, current_user, account_id
+      when "clef" then return process_for_clef auth, current_user, account_id
       when "evernote" then return process_for_evernote auth, current_user, account_id
+      when "facebook" then return process_for_facebook auth, current_user, account_id
+      when "fitbit" then return process_for_fitbit auth, current_user, account_id
+      when "github" then return process_for_github auth, current_user, account_id
       when "instagram" then return process_for_instagram auth, current_user, account_id
       when "instapaper" then return process_for_instapaper auth, current_user, account_id
       when "lastfm" then return process_for_lastfm auth, current_user, account_id
-      when "clef" then return process_for_clef auth, current_user, account_id
       when "moves" then return process_for_moves auth, current_user, account_id
+      when "pocket" then return process_for_pocket auth, current_user, account_id
+      when "rdio" then return process_for_rdio auth, current_user, account_id
       when "runkeeper" then return process_for_runkeeper auth, current_user, account_id
+      when "twitter" then return process_for_twitter auth, current_user, account_id
     end
   end
 
@@ -113,12 +114,27 @@ class User < ActiveRecord::Base
 
   def self.process_for_facebook auth, current_user, account_id
     user = current_user
-    FacebookAccount.create!(
-      user_id: user.id,
-      oauth_token: auth.credentials.token,
-      token_expires_at: Time.at(auth.credentials.expires_at).to_datetime
-    )
+    if !account_id.nil?
+      update_facebook_account auth, user.id, account_id
+    else
+      FacebookAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        token_expires_at: Time.at(auth.credentials.expires_at).to_datetime,
+        name: auth.info.name
+      )
+    end
     user
+  end
+
+  def self.update_facebook_account auth, user_id, account_id
+    account = FacebookAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        token_expires_at: Time.at(auth.credentials.expires_at).to_datetime
+      )
+    end
   end
 
   def self.process_for_fitbit auth, current_user, account_id
@@ -129,6 +145,29 @@ class User < ActiveRecord::Base
       oauth_secret: auth.credentials.secret
     )
     user
+  end
+
+  def self.process_for_github auth, current_user, account_id
+    user = current_user
+    if !account_id.nil?
+      update_github_account auth, user.id, account_id
+    else
+      GithubAccount.create!(
+        user_id: user.id,
+        access_token: auth.credentials.token,
+        username: auth.info.nickname
+      )
+    end
+    user
+  end
+
+  def self.update_github_account auth, user_id, account_id
+    account = GithubAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        access_token: auth.credentials.token
+      )
+    end
   end
 
   def self.process_for_instagram auth, current_user, account_id
@@ -202,7 +241,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.check_for_non_twitter_login auth, current_user
+  def self.check_for_non_twitter_login auth, current_user, account_id
     if current_user != nil && current_user.provider != "twitter"
       save_twitter_data_for current_user, auth
     else

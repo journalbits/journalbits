@@ -2,7 +2,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def all
     auth = request.env["omniauth.auth"]
-    # puts auth.inspect
+    puts "****************************************************************"
+    puts auth.inspect
     user = User.from_omniauth(auth, current_user, session[:account_id])
     session.delete(:account_id) if !session[:account_id].nil?
     if user.persisted? && auth.provider == "twitter"
@@ -27,6 +28,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :evernote, :all
   alias_method :facebook, :all
   alias_method :fitbit, :all
+  alias_method :github, :all
   alias_method :instagram, :all
   alias_method :instapaper, :all
   alias_method :lastfm, :all

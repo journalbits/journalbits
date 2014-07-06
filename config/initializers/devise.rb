@@ -232,18 +232,19 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
 
-  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
-  config.omniauth :fitbit, ENV['FITBIT_CONSUMER_KEY'], ENV['FITBIT_CONSUMER_SECRET']
-  config.omniauth :pocket, ENV["POCKET_CONSUMER_KEY"]
-  config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :scope => 'user_photos,user_status,user_videos,user_events,user_checkins,read_stream'
-  config.omniauth :evernote, ENV['EVERNOTE_CONSUMER_KEY'], ENV['EVERNOTE_CONSUMER_SECRET'], :client_options => { :site => 'https://sandbox.evernote.com' }
-  config.omniauth :instapaper, ENV['INSTAPAPER_CONSUMER_KEY'], ENV['INSTAPAPER_CONSUMER_SECRET']
-  config.omniauth :instagram, ENV['INSTAGRAM_ID'], ENV['INSTAGRAM_SECRET']
-  config.omniauth :lastfm, ENV['LASTFM_CONSUMER_KEY'], ENV['LASTFM_CONSUMER_SECRET']
   config.omniauth :clef, ENV['CLEF_APP_ID'], ENV['CLEF_APP_SECRET']
-  config.omniauth :moves, ENV['MOVES_CLIENT_KEY'], ENV['MOVES_CLIENT_SECRET'], :scope => 'activity location'
+  config.omniauth :evernote, ENV['EVERNOTE_CONSUMER_KEY'], ENV['EVERNOTE_CONSUMER_SECRET'], client_options: { site: 'https://sandbox.evernote.com' }
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'user_photos,user_status,user_videos,user_events,user_checkins,read_stream'
+  config.omniauth :fitbit, ENV['FITBIT_CONSUMER_KEY'], ENV['FITBIT_CONSUMER_SECRET']
+  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user,repo,gist'
+  config.omniauth :instagram, ENV['INSTAGRAM_ID'], ENV['INSTAGRAM_SECRET']
+  config.omniauth :instapaper, ENV['INSTAPAPER_CONSUMER_KEY'], ENV['INSTAPAPER_CONSUMER_SECRET']
+  config.omniauth :lastfm, ENV['LASTFM_CONSUMER_KEY'], ENV['LASTFM_CONSUMER_SECRET']
+  config.omniauth :moves, ENV['MOVES_CLIENT_KEY'], ENV['MOVES_CLIENT_SECRET'], scope: 'activity location'
+  config.omniauth :pocket, ENV['POCKET_CONSUMER_KEY']
+  config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
   config.omniauth :runkeeper, ENV['HEALTH_GRAPH_CLIENT_ID'], ENV['HEALTH_GRAPH_CLIENT_SECRET']
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

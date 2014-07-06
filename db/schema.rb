@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629220036) do
+ActiveRecord::Schema.define(version: 20140706173530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140629220036) do
     t.datetime "updated_at"
     t.boolean  "public",           default: true
     t.boolean  "activated",        default: true
+    t.string   "name"
   end
 
   create_table "facebook_photo_entries", force: true do |t|
@@ -130,6 +131,7 @@ ActiveRecord::Schema.define(version: 20140629220036) do
     t.datetime "updated_at"
     t.boolean  "public",       default: true
     t.boolean  "activated",    default: true
+    t.string   "username"
   end
 
   create_table "github_entries", force: true do |t|
