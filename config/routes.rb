@@ -6,9 +6,9 @@ JournalBits::Application.routes.draw do
     controllers :applications => 'oauth/applications'
   end
 
-  authenticate :user, lambda { |u| u.admin? } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  # authenticate :user, lambda { |u| u.admin? } do
+  # end
+  mount Sidekiq::Web => '/sidekiq'
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
 
