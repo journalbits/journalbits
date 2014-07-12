@@ -14,8 +14,9 @@
           - else
             %div.twitter-img-grayscale.twitter-logo.service-connection-img
           %h3 Twitter
-          %div
-            = link_to 'Manage Accounts', user_twitter_accounts_path(@user)
+          - if !@user.twitter_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_twitter_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/github"}
@@ -24,8 +25,9 @@
           - else
             %div.github-img-grayscale.github-logo.service-connection-img
           %h3 GitHub
-          %div
-            = link_to 'Manage Accounts', user_github_accounts_path(@user)
+          - if !@user.github_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_github_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/evernote"}
@@ -34,8 +36,9 @@
           - else
             %div.evernote-img-grayscale.evernote-logo.service-connection-img
           %h3 Evernote
-          %div
-            = link_to 'Manage Accounts', user_evernote_accounts_path(@user)
+          - if !@user.evernote_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_evernote_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/instagram"}
@@ -44,8 +47,9 @@
           - else
             %div.instagram-img-grayscale.instagram-logo.service-connection-img
           %h3 Instagram
-          %div
-            = link_to 'Manage Accounts', user_instagram_accounts_path(@user)
+          - if !@user.instagram_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_instagram_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/auth/wunderlist"}
@@ -54,8 +58,9 @@
           - else
             %div.wunderlist-img-grayscale.wunderlist-logo.service-connection-img
           %h3 Wunderlist
-          %div
-            = link_to 'Manage Accounts', user_wunderlist_accounts_path(@user)
+          - if !@user.wunderlist_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_wunderlist_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/facebook"}
@@ -64,8 +69,9 @@
           - else
             %div.facebook-img-grayscale.facebook-logo.service-connection-img
           %h3 Facebook
-          %div
-            = link_to 'Manage Accounts', user_facebook_accounts_path(@user)
+          - if !@user.facebook_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_facebook_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/fitbit"}
@@ -74,8 +80,9 @@
           - else
             %div.fitbit-img-grayscale.fitbit-logo.service-connection-img
           %h3 Fitbit
-          %div
-            = link_to 'Manage Accounts', user_fitbit_accounts_path(@user)
+          - if !@user.fitbit_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_fitbit_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/pocket"}
@@ -84,8 +91,9 @@
           - else
             %div.pocket-img-grayscale.pocket-logo.service-connection-img
           %h3 Pocket
-          %div
-            = link_to 'Manage Accounts', user_pocket_accounts_path(@user)
+          - if !@user.pocket_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_pocket_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/lastfm"}
@@ -94,8 +102,9 @@
           - else
             %div.lastfm-img-grayscale.lastfm-logo.service-connection-img
           %h3 LastFM
-          %div
-            = link_to 'Manage Accounts', user_lastfm_accounts_path(@user)
+          - if !@user.lastfm_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_lastfm_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/instapaper"}
@@ -104,8 +113,9 @@
           - else
             %div.instapaper-img-grayscale.instapaper-logo.service-connection-img
           %h3 Instapaper
-          %div
-            = link_to 'Manage Accounts', user_instapaper_accounts_path(@user)
+          - if !@user.instapaper_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_instapaper_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/auth/rescue_time"}
@@ -114,8 +124,9 @@
           - else
             %div.rescuetime-img-grayscale.rescuetime-logo.service-connection-img
           %h3 Rescue Time
-          %div
-            = link_to 'Manage Accounts', user_rescue_time_accounts_path(@user)
+          - if !@user.rescue_time_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_rescue_time_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/auth/whatpulse"}
@@ -124,8 +135,9 @@
           - else
             %div.whatpulse-img-grayscale.whatpulse-logo.service-connection-img
           %h3 WhatPulse
-          %div
-            = link_to 'Manage Accounts', user_whatpulse_accounts_path(@user)
+          - if !@user.whatpulse_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_whatpulse_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/moves"}
@@ -134,8 +146,9 @@
           - else
             %div.moves-img-grayscale.moves-logo.service-connection-img
           %h3 Moves
-          %div
-            = link_to 'Manage Accounts', user_moves_accounts_path(@user)
+          - if !@user.moves_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_moves_accounts_path(@user)
 
       %div.service-connection-container
         %a{href:"/users/auth/runkeeper"}
@@ -144,5 +157,6 @@
           - else
             %div.sleepcycle-img-grayscale.sleepcycle-logo.service-connection-img
           %h3 Sleep Cycle
-          %div
-            = link_to 'Manage Accounts', user_health_graph_accounts_path(@user)
+          - if !@user.health_graph_accounts.empty?
+            %span
+              = link_to 'Manage Accounts', user_health_graph_accounts_path(@user)

@@ -7,9 +7,9 @@ class FitbitWorker
     accounts = user.fitbit_accounts.select { |a| a.activated }
     accounts.each do |account|
       client = create_client_for account
-      save_sleep_entries_on date, client, user_id
-      save_activity_entries_on date, client, user_id
-      save_weight_entries_on date, client, user_id
+      save_sleep_entries_on date, client, user_id, account.id
+      save_activity_entries_on date, client, user_id, account.id
+      save_weight_entries_on date, client, user_id, account.id
     end
   end
 
@@ -49,7 +49,7 @@ class FitbitWorker
     }
   end
 
-  def save_sleep_entries_on date, client, user_id
+  def save_sleep_entries_on date, client, user_id, account_id
     sleep_data = user_sleep_on date, client
     return if !sleep_data
     unless FitbitSleepEntry.exists?(date: date.to_s[0..9], user_id: user_id)
@@ -61,12 +61,13 @@ class FitbitWorker
         times_awake: sleep_data[:times_awake],
         start_time: sleep_data[:sleep_start_time],
         date: date.to_s[0..9],
-        user_id: user_id
+        user_id: user_id,
+        fitbit_account_id: account_id
       )
     end
   end
 
-  def save_activity_entries_on date, client, user_id
+  def save_activity_entries_on date, client, user_id, account_id
     activity_data = user_activity_on date, client
     unless FitbitActivityEntry.exists?(date: date.to_s[0..9], user_id: user_id) || activity_data[:steps] == 0
       FitbitActivityEntry.create(
@@ -75,12 +76,13 @@ class FitbitWorker
         steps: activity_data[:steps],
         active_minutes: activity_data[:active_minutes],
         date: date.to_s[0..9],
-        user_id: user_id
+        user_id: user_id,
+        fitbit_account_id: account_id
       )
     end
   end
 
-  def save_weight_entries_on date, client, user_id
+  def save_weight_entries_on date, client, user_id, account_id
     weight_data = user_weight client
     return if !weight_data[:weight]
     unless FitbitWeightEntry.exists?(date: date.to_s[0..9], user_id: user_id)
@@ -88,7 +90,8 @@ class FitbitWorker
         weight: weight_data[:weight],
         weight_unit: weight_data[:weight_unit],
         date: date.to_s[0..9],
-        user_id: user_id
+        user_id: user_id,
+        fitbit_account_id: account_id
       )
     end
   end

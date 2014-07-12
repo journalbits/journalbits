@@ -139,12 +139,28 @@ class User < ActiveRecord::Base
 
   def self.process_for_fitbit auth, current_user, account_id
     user = current_user
-    FitbitAccount.create!(
-      user_id: user.id,
-      oauth_token: auth.credentials.token,
-      oauth_secret: auth.credentials.secret
-    )
+    if !account_id.nil?
+      update_fitbit_account auth, user.id, account_id
+    else
+      FitbitAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        oauth_secret: auth.credentials.secret,
+        name: auth.info.full_name
+      )
+    end
     user
+  end
+
+  def self.update_fitbit_account auth, user_id, account_id
+    account = FitbitAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        oauth_secret: auth.credentials.secret,
+        name: auth.info.full_name
+      )
+    end
   end
 
   def self.process_for_github auth, current_user, account_id
