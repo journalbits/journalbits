@@ -8,7 +8,7 @@ class PocketWorker
     accounts = PocketAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       oauth_token = account.oauth_token
-      save_links_on date, oauth_token, user_id
+      save_links_on date, oauth_token, user_id, account.id
     end
   end
 
@@ -25,7 +25,7 @@ class PocketWorker
     JSON.parse(response.body)['list']
   end
 
-  def save_links_on date, oauth_token, user_id
+  def save_links_on date, oauth_token, user_id, account_id
     links = user_added_links_on date, oauth_token
     links.each do |link|
       unless PocketEntry.exists?(item_id: link[1]['item_id'])
@@ -34,7 +34,8 @@ class PocketWorker
           user_id: user_id,
           item_id: link[1]['item_id'],
           title: link[1]['resolved_title'],
-          url: link[1]['given_url']
+          url: link[1]['given_url'],
+          pocket_account_id: account_id
         )
       end
     end

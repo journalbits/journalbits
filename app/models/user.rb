@@ -66,26 +66,45 @@ class User < ActiveRecord::Base
     self.slug ||= username.parameterize if username
   end
 
-  def self.from_omniauth auth, current_user, account_id = nil
+  def self.omniauth_login_or_signup auth
     case auth.provider
-      when "clef" then return process_for_clef auth, current_user, account_id
-      when "evernote" then return process_for_evernote auth, current_user, account_id
-      when "facebook" then return process_for_facebook auth, current_user, account_id
-      when "fitbit" then return process_for_fitbit auth, current_user, account_id
-      when "github" then return process_for_github auth, current_user, account_id
-      when "instagram" then return process_for_instagram auth, current_user, account_id
-      when "instapaper" then return process_for_instapaper auth, current_user, account_id
-      when "lastfm" then return process_for_lastfm auth, current_user, account_id
-      when "moves" then return process_for_moves auth, current_user, account_id
-      when "pocket" then return process_for_pocket auth, current_user, account_id
-      when "rdio" then return process_for_rdio auth, current_user, account_id
-      when "runkeeper" then return process_for_health_graph auth, current_user, account_id
-      when "twitter" then return process_for_twitter auth, current_user, account_id
+      when 'twitter' then return signin_or_create_for_twitter auth
+      when 'clef' then return signin_or_create_for_clef auth
     end
   end
 
-  def self.process_for_clef auth, current_user, account_id
+  def self.signin_or_create_for_clef auth
     user = where(clef_id: auth.uid).first || create_from_clef_omniauth(auth)
+  end
+
+  def self.signin_or_create_for_twitter auth
+    user = nil
+    account = TwitterAuthAccount.where(uid: auth.uid).first
+    if !account.nil?
+      user = User.find(account.user_id)
+    else
+      user = User.create(
+        provider: 'twitter'
+      )
+    end
+    user
+  end
+
+  def self.omniauth_update_or_create_service auth, current_user, account_id = nil
+    case auth.provider
+      when 'evernote' then return process_for_evernote auth, current_user, account_id
+      when 'facebook' then return process_for_facebook auth, current_user, account_id
+      when 'fitbit' then return process_for_fitbit auth, current_user, account_id
+      when 'github' then return process_for_github auth, current_user, account_id
+      when 'instagram' then return process_for_instagram auth, current_user, account_id
+      when 'instapaper' then return process_for_instapaper auth, current_user, account_id
+      when 'lastfm' then return process_for_lastfm auth, current_user, account_id
+      when 'moves' then return process_for_moves auth, current_user, account_id
+      when 'pocket' then return process_for_pocket auth, current_user, account_id
+      when 'rdio' then return process_for_rdio auth, current_user, account_id
+      when 'runkeeper' then return process_for_health_graph auth, current_user, account_id
+      when 'twitter' then return process_for_twitter auth, current_user, account_id
+    end
   end
 
   def self.process_for_evernote auth, current_user, account_id
@@ -311,11 +330,26 @@ class User < ActiveRecord::Base
 
   def self.process_for_pocket auth, current_user, account_id
     user = current_user
-    PocketAccount.create(
-      user_id: user.id,
-      oauth_token: auth.credentials.token
-    )
+    if !account_id.nil?
+      update_pocket_account auth, user.id, account_id
+    else
+      PocketAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        username: auth.info.nickname
+      )
+    end
     user
+  end
+
+  def self.update_pocket_account auth, user_id, account_id
+    account = PocketAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        username: auth.info.nickname
+      )
+    end
   end
 
   def self.process_for_rdio auth, current_user, account_id
@@ -327,38 +361,29 @@ class User < ActiveRecord::Base
   end
 
   def self.process_for_twitter auth, current_user, account_id
-    account = TwitterAccount.where(uid: auth.uid).first
-    user = account.nil? ? check_for_non_twitter_login(auth, current_user, account_id) : User.find(account.user_id)
+    user = current_user
+    if !account_id.nil?
+      update_twitter_account auth, user.id, account_id
+    else
+      TwitterAccount.create!(
+        user_id: user.id,
+        uid: auth.uid,
+        username: auth.info.nickname,
+        oauth_token: auth.credentials.token,
+        oauth_secret: auth.credentials.secret
+      )
+    end
     user
   end
 
-  def self.check_for_non_twitter_login auth, current_user, account_id
-    if current_user != nil && current_user.provider != "twitter"
-      save_twitter_data_for current_user, auth
-    else
-      self.create_from_twitter_omniauth auth
+  def self.update_twitter_account auth, user_id, account_id
+    account = TwitterAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        oauth_secret: auth.credentials.secret
+      )
     end
-  end
-
-  def self.save_twitter_data_for current_user, auth
-    create_twitter_account_for current_user, auth
-    current_user
-  end
-
-  def self.create_from_twitter_omniauth auth
-    user = User.create(
-      provider: "twitter"
-    )
-  end
-
-  def self.create_twitter_account_for user, auth
-    TwitterAccount.create!(
-      user_id: user.id,
-      uid: auth.uid,
-      username: auth.info.nickname,
-      oauth_token: auth.credentials.token,
-      oauth_secret: auth.credentials.secret
-    )
   end
 
   def self.create_from_clef_omniauth auth

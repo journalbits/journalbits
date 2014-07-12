@@ -6,7 +6,7 @@ class TwitterWorker
     accounts = TwitterAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       client = create_client_for account
-      save_entries_on date, client, user_id
+      save_entries_on date, client, user_id, account.id
     end
   end
 
@@ -20,10 +20,10 @@ class TwitterWorker
     client
   end
 
-  def save_entries_on date, client, user_id
-    save_tweets_to_database date, client, user_id
-    save_favourites_to_database date, client, user_id
-    save_mentions_to_database date, client, user_id
+  def save_entries_on date, client, user_id, account_id
+    save_tweets_to_database date, client, user_id, account_id
+    save_favourites_to_database date, client, user_id, account_id
+    save_mentions_to_database date, client, user_id, account_id
   end
 
   def user_tweets_on date, client
@@ -41,7 +41,7 @@ class TwitterWorker
     mentions.select { |mention| mention.created_at.to_s[0..9] == date.to_s[0..9] } if mentions != nil
   end
 
-  def save_tweets_to_database date, client, user_id
+  def save_tweets_to_database date, client, user_id, account_id
     tweets = user_tweets_on date, client
     tweets.each do |tweet|
       unless TwitterEntry.exists?(:tweet_id => tweet.id)
@@ -52,13 +52,14 @@ class TwitterWorker
           user_id: user_id,
           tweet_id: tweet.id,
           date: date.to_s[0..9],
-          tweet_url: tweet.url.to_s
+          tweet_url: tweet.url.to_s,
+          twitter_account_id: account_id
         )
       end
     end
   end
 
-  def save_favourites_to_database date, client, user_id
+  def save_favourites_to_database date, client, user_id, account_id
     favourites = user_favourites_on date, client
     favourites.each do |fav|
       unless TwitterEntry.exists?(:tweet_id => fav.id)
@@ -69,13 +70,14 @@ class TwitterWorker
           user_id: user_id,
           tweet_id: fav.id,
           date: date.to_s[0..9],
-          tweet_url: fav.url.to_s
+          tweet_url: fav.url.to_s,
+          twitter_account_id: account_id
         )
       end
     end
   end
 
-  def save_mentions_to_database date, client, user_id
+  def save_mentions_to_database date, client, user_id, account_id
     mentions = user_mentions_on date, client
     mentions.each do |mention|
       unless TwitterEntry.exists?(:tweet_id => mention.id)
@@ -86,7 +88,8 @@ class TwitterWorker
           user_id: user_id,
           tweet_id: mention.id,
           date: date.to_s[0..9],
-          tweet_url: mention.url.to_s
+          tweet_url: mention.url.to_s,
+          twitter_account_id: account_id
         )
       end
     end

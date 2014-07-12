@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140712152102) do
+ActiveRecord::Schema.define(version: 20140712185600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -308,6 +308,7 @@ ActiveRecord::Schema.define(version: 20140712152102) do
     t.datetime "updated_at"
     t.boolean  "public",      default: true
     t.boolean  "activated",   default: true
+    t.string   "username"
   end
 
   create_table "pocket_entries", force: true do |t|
@@ -357,6 +358,16 @@ ActiveRecord::Schema.define(version: 20140712152102) do
     t.datetime "updated_at"
     t.boolean  "public",       default: true
     t.boolean  "activated",    default: true
+  end
+
+  create_table "twitter_auth_accounts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.string   "username"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "twitter_entries", force: true do |t|

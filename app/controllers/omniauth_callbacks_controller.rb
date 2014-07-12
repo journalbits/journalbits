@@ -3,21 +3,29 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     auth = request.env["omniauth.auth"]
     puts "****************************************************************"
-    puts auth.inspect
-    puts auth.keys.inspect
-    account_id = session[:account_id].nil? ? nil : session[:account_id]
-    session.delete(:account_id)
-    user = User.from_omniauth(auth, current_user, account_id)
-    if user.persisted? && auth.provider == "twitter"
-      sign_in user
-      redirect_to "/connections"
-    elsif user.persisted?
-      flash[:notice] = "Account authorized"
-      redirect_to "/connections"
+    # puts auth.inspect
+    # puts auth.keys.inspect
+
+    if current_user
+      account_id = session[:account_id].nil? ? nil : session[:account_id]
+      session.delete(:account_id)
+      user = User.omniauth_update_or_create_service(auth, current_user, account_id)
+      if user.persisted?
+        flash[:notice] = 'Account authorized'
+      else
+        flash[:error] = 'An error occurred'
+      end
+      redirect_to '/connections'
     else
-      session['devise.user_attributes'] = user.attributes
-      session['omniauth.auth'] = { uid: auth.uid, nickname: auth.info.nickname, token: auth.credentials.token, secret: auth.credentials.secret }
-      redirect_to new_user_registration_url
+      user = User.omniauth_login_or_signup(auth)
+      if user.persisted?
+        sign_in user
+        redirect_to '/connections'
+      else
+        session['devise.user_attributes'] = user.attributes
+        session['omniauth.auth'] = { uid: auth.uid, nickname: auth.info.nickname, token: auth.credentials.token, secret: auth.credentials.secret, provider: auth.provider }
+        redirect_to new_user_registration_url
+      end
     end
   end
 
