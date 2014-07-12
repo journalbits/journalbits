@@ -18,33 +18,6 @@ a {
 }
 
 @font-face {
-  font-family: 'Nunito-Regular';
-  src: font-url('Nunito-Regular.eot');
-  src: font-url('Nunito-Regular.eot') format('embedded-opentype'),
-       font-url('Nunito-Regular.woff') format('woff'),
-       font-url('Nunito-Regular.ttf')  format('truetype'),
-       font-url('Nunito-Regular.svg') format('svg');
-}
-
-@font-face {
-  font-family: 'Nunito-Light';
-  src: font-url('Nunito-Light.eot');
-  src: font-url('Nunito-Light.eot') format('embedded-opentype'),
-       font-url('Nunito-Light.woff') format('woff'),
-       font-url('Nunito-Light.ttf')  format('truetype'),
-       font-url('Nunito-Light.svg') format('svg');
-}
-
-@font-face {
-  font-family: 'Nunito-Bold';
-  src: font-url('Nunito-Bold.eot');
-  src: font-url('Nunito-Bold.eot') format('embedded-opentype'),
-       font-url('Nunito-Bold.woff') format('woff'),
-       font-url('Nunito-Bold.ttf')  format('truetype'),
-       font-url('Nunito-Bold.svg') format('svg');
-}
-
-@font-face {
   font-family: 'journalbits';
   src:font-url('journalbits.eot');
   src:font-url('journalbits.eot?#iefix') format('embedded-opentype'),
@@ -116,7 +89,10 @@ a {
 
 .main_body {
   @include outer-container;
-  font-family: 'Nunito-Light';
+  /* font-family: 'Nunito-Light'; */
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 300;
   padding-bottom: 3em;
 }
 
@@ -153,7 +129,9 @@ p.error {
 }
 
 nav {
-  font-family: 'Nunito-Bold';
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 1.2em;
   width: 100%;
   height: 42px;
@@ -240,12 +218,25 @@ footer {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  text-align:center;
+  text-align: center;
   border-top: 1px solid #d0d0d0;
-  font-family: 'Nunito-Light';
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
   padding-top: 0.5em;
   clear: both;
   position: relative;
-  height: 2.5em;
-  margin-top: -2.5em;
+  height: 3.5em;
+  margin-top: -3.5em;
+  vertical-align: middle;
+}
+
+.footer-text {
+  margin-top: 10px;
+  margin-left: 118px;
+}
+
+#heap-badge {
+  float: right;
+  margin-right: 10px;
 }

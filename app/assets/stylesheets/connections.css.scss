@@ -6,8 +6,9 @@ section.connections {
   @include outer-container;
 
   h2.connections-intro {
-    font-weight: 300;
-    font-family: 'Nunito-Light';
+    font-family: 'lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
     margin: 1.5% auto;
     text-align: center;
   }
@@ -31,8 +32,9 @@ section.connections {
     }
 
     h3 {
-      font-family: 'Nunito-Light';
-      font-weight: 300;
+      font-family: 'lato', sans-serif;
+      font-style: normal;
+      font-weight: 400;
     }
 
     div {
