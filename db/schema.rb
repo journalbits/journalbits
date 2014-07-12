@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706173530) do
+ActiveRecord::Schema.define(version: 20140712093214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 20140706173530) do
     t.datetime "updated_at"
     t.string   "commit_url"
     t.integer  "github_account_id"
+    t.boolean  "private"
   end
 
   create_table "health_graph_accounts", force: true do |t|

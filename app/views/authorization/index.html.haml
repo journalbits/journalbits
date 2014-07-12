@@ -140,9 +140,9 @@
       %div.service-connection-container
         %a{href:"/users/auth/runkeeper"}
           - if !@user.health_graph_accounts.empty?
-            %div.moves-img.moves-logo.service-connection-img
+            %div.sleepcycle-img.sleepcycle-logo.service-connection-img
           - else
-            %div.moves-img-grayscale.moves-logo.service-connection-img
-          %h3 Health Graph
+            %div.sleepcycle-img-grayscale.sleepcycle-logo.service-connection-img
+          %h3 Sleep Cycle
           %div
             = link_to 'Manage Accounts', user_health_graph_accounts_path(@user)

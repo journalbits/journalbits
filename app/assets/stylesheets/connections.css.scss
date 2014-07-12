@@ -17,7 +17,7 @@ section.connections {
 
     @include media($desktop) {
       @include span-columns(3);
-      @include omega(4n); 
+      @include omega(4n);
     }
 
     @include media($tablet) {
@@ -250,6 +250,21 @@ section.connections {
   }
 }
 
+.sleepcycle-img {
+  background-image: image-url('sleepcycle250.png');
+  background-size: contain;
+}
+
+.sleepcycle-img-grayscale {
+  background-image: image-url('sleepcycle250_grayscale.png');
+  background-size: contain;
+
+  &:hover {
+    background-image: image-url('sleepcycle250.png');
+    background-size: contain;
+  }
+}
+
 // .twitter-logo:hover {
 //   border: 4px solid #42ABF3;
 // }
@@ -297,5 +312,3 @@ section.connections {
 // .whatpulse-logo:hover {
 //   border: 4px solid #96A5B0;
 // }
-
-

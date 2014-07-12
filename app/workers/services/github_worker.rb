@@ -28,7 +28,8 @@ class GithubWorker
           commit_message: commit.commit.message,
           committer: commit.commit.committer.name,
           commit_url: commit.rels[:self].href.gsub("api.", "").gsub("/repos", ""),
-          github_account_id: account.id
+          github_account_id: account.id,
+          private: commit.private
         )
       end
     end
@@ -43,7 +44,12 @@ class GithubWorker
     client.repositories.each do |repo|
       commits_on_repo = client.commits_on(repo.full_name.to_s, date.to_s[0..9])
       if !commits_on_repo.empty?
-        commits_on_repo.each { |commit| commits << commit if commit.author.login == login }
+        commits_on_repo.each do |commit|
+          if commit.author.login == login
+            commit.private = client.repo(repo.full_name.to_s).private
+            commits << commit
+          end
+        end
       end
     end
     commits
@@ -55,7 +61,12 @@ class GithubWorker
       client.org_repos(org.login).each do |repo|
         commits_on_repo = client.commits_on(repo.full_name.to_s, date.to_s[0..9])
         if !commits_on_repo.empty?
-          commits_on_repo.each { |commit| commits << commit if commit.author.login == login }
+          commits_on_repo.each do |commit|
+            if commit.author.login == login
+              commit.private = client.repo(repo.full_name.to_s).private
+              commits << commit
+            end
+          end
         end
       end
     end

@@ -5,6 +5,14 @@
     %script{src: "//use.typekit.net/wgu7auc.js", type: "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
+    - if Rails.env.development?
+      :javascript
+        window.heap=window.heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
+        heap.load("3168722061");
+    - elsif Rails.env.production?
+      :javascript
+        window.heap=window.heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
+        heap.load("1533881964");
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -58,4 +66,6 @@
         = yield
 
     %footer
+      %a{href:"https://heapanalytics.com/?utm_source=badge"}
+        %img{style:"width:108px;height:41px", src:"//heapanalytics.com/img/badgeLight.png", alt:"Heap - iOS and Web Analytics"}
       Journal Bits
