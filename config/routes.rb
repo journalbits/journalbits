@@ -31,6 +31,7 @@ JournalBits::Application.routes.draw do
   post 'users/reauth/facebook' => 'facebook_accounts#reauth'
   post 'users/reauth/fitbit' => 'fitbit_accounts#reauth'
   post 'users/reauth/github' => 'github_accounts#reauth'
+  post 'users/reauth/healthgraph' => 'health_graph_accounts#reauth'
 
   resources :users,  path: "" do
     resources :evernote_entries

@@ -1,0 +1,22 @@
+%h4
+  Sleep Cycle Accounts
+%div
+  = link_to 'Add Account', user_health_graph_accounts_path(@user), method: :post
+- @accounts.each do |account|
+  %div.account-name
+    = account.username
+  %div.account-info
+    %div.account-form
+      = form_for [current_user, account] do |f|
+        %div
+          = f.label :public
+          = f.check_box :public
+        %div
+          = f.label :activated
+          = f.check_box :activated
+        %div
+          = f.submit 'Update Account'
+    %div
+      = link_to 'Delete Account', user_health_graph_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete
+    %div
+      = link_to 'Reauthorize Account', '/users/reauth/healthgraph?' + { id: account.id }.to_param, method: :post

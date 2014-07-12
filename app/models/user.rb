@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
       when "moves" then return process_for_moves auth, current_user, account_id
       when "pocket" then return process_for_pocket auth, current_user, account_id
       when "rdio" then return process_for_rdio auth, current_user, account_id
-      when "runkeeper" then return process_for_runkeeper auth, current_user, account_id
+      when "runkeeper" then return process_for_health_graph auth, current_user, account_id
       when "twitter" then return process_for_twitter auth, current_user, account_id
     end
   end
@@ -186,6 +186,29 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.process_for_health_graph auth, current_user, account_id
+    user = current_user
+    if !account_id.nil?
+      update_health_graph_account auth, user.id, account_id
+    else
+      HealthGraphAccount.create!(
+        user_id: user.id,
+        access_token: auth.credentials.token
+      )
+    end
+    user
+  end
+
+  def self.update_health_graph_account auth, user_id, account_id
+    account = HealthGraphAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        access_token: auth.credentials.token,
+        username: auth.info.nickname
+      )
+    end
+  end
+
   def self.process_for_instagram auth, current_user, account_id
     user = current_user
     InstagramAccount.create!(
@@ -239,15 +262,6 @@ class User < ActiveRecord::Base
     user.rdio_oauth_token = auth.credentials.token
     user.rdio_oauth_secret = auth.credentials.secret
     user.save! if user.email != ""
-    user
-  end
-
-  def self.process_for_runkeeper auth, current_user, account_id
-    user = current_user
-    HealthGraphAccount.create!(
-      user_id: user.id,
-      access_token: auth.credentials.token
-    )
     user
   end
 
