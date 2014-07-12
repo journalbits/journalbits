@@ -8,7 +8,7 @@ class LastfmWorker
     accounts = LastfmAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       username = account.username
-      save_tracks_on date, username, user_id
+      save_tracks_on date, username, user_id, account.id
     end
   end
 
@@ -25,7 +25,7 @@ class LastfmWorker
     JSON.parse(response)['recenttracks']['track']
   end
 
-  def save_tracks_on date, username, user_id
+  def save_tracks_on date, username, user_id, account_id
     tracks = user_tracks_on date, username
     tracks.each do |track|
       unless LastfmEntry.exists?(user_id: user_id, uts: track['date']['uts'])
@@ -34,7 +34,8 @@ class LastfmWorker
           artist: track['artist']['#text'],
           track: track['name'],
           uts: track['date']['uts'],
-          url: track['url']
+          url: track['url'],
+          lastfm_account_id: account_id
         )
       end
     end

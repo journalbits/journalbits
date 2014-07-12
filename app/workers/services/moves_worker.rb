@@ -6,12 +6,10 @@ class MovesWorker
   sidekiq_options queue: "external_api"
 
   def perform date, user_id
-    # user = User.find(user_id)
-    # accounts = user.facebook_accounts.select { |a| a.activated }
     accounts = MovesAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       client = create_client_for account
-      save_media_on date, client, user_id
+      save_media_on date, client, user_id, account.id
     end
   end
 
@@ -24,14 +22,15 @@ class MovesWorker
     summary = client.daily_summary(formatted_date)[0]
   end
 
-  def save_media_on date, client, user_id
+  def save_media_on date, client, user_id, account_id
     summary = user_summary_on date, client
     unless MovesEntry.exists?(user_id: user_id, date: date.to_s[0..9], activity: "total")
       MovesEntry.create(
         user_id: user_id,
         date: date.to_s[0..9],
         activity: "total",
-        calories: summary['caloriesIdle']
+        calories: summary['caloriesIdle'],
+        moves_account_id: account_id
       )
     end
     activities = summary['summary']
@@ -44,7 +43,8 @@ class MovesWorker
           duration: activity['duration'],
           distance: activity['distance'],
           steps: activity['steps'],
-          calories: activity['calories']
+          calories: activity['calories'],
+          moves_account_id: account_id
         )
       end
     end

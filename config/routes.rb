@@ -26,7 +26,6 @@ JournalBits::Application.routes.draw do
   patch 'auth/rescue_time' => 'users#rescue_time_update'
   patch 'auth/whatpulse' => 'users#whatpulse_update'
 
-
   post 'users/reauth/evernote' => 'evernote_accounts#reauth'
   post 'users/reauth/facebook' => 'facebook_accounts#reauth'
   post 'users/reauth/fitbit' => 'fitbit_accounts#reauth'
@@ -34,6 +33,13 @@ JournalBits::Application.routes.draw do
   post 'users/reauth/healthgraph' => 'health_graph_accounts#reauth'
   post 'users/reauth/instagram' => 'instagram_accounts#reauth'
   post 'users/reauth/instapaper' => 'instapaper_accounts#reauth'
+  post 'users/reauth/lastfm' => 'lastfm_accounts#reauth'
+  post 'users/reauth/moves' => 'moves_accounts#reauth'
+  post 'users/reauth/pocket' => 'pocket_accounts#reauth'
+  post 'users/reauth/rescuetime' => 'rescue_time_accounts#reauth'
+  post 'users/reauth/twitter' => 'twitter_accounts#reauth'
+  post 'users/reauth/whatpulse' => 'whatpulse_accounts#reauth'
+  post 'users/reauth/wunderlist' => 'wunderlist_accounts#reauth'
 
   resources :users,  path: "" do
     resources :evernote_entries

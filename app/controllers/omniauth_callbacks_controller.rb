@@ -4,8 +4,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth = request.env["omniauth.auth"]
     puts "****************************************************************"
     puts auth.inspect
-    user = User.from_omniauth(auth, current_user, session[:account_id])
-    session.delete(:account_id) if !session[:account_id].nil?
+    puts auth.keys.inspect
+    account_id = session[:account_id].nil? ? nil : session[:account_id]
+    session.delete(:account_id)
+    user = User.from_omniauth(auth, current_user, account_id)
     if user.persisted? && auth.provider == "twitter"
       sign_in user
       redirect_to "/connections"

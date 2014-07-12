@@ -263,21 +263,50 @@ class User < ActiveRecord::Base
 
   def self.process_for_lastfm auth, current_user, account_id
     user = current_user
-    LastfmAccount.create!(
-      user_id: user.id,
-      username: auth.credentials.name
-    )
+    if !account_id.nil?
+      update_lastfm_account auth, user.id, account_id
+    else
+      LastfmAccount.create!(
+        user_id: user.id,
+        username: auth.credentials.name
+      )
+    end
     user
+  end
+
+  def self.update_lastfm_account auth, user_id, account_id
+    account = LastfmAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        username: auth.credentials.name
+      )
+    end
   end
 
   def self.process_for_moves auth, current_user, account_id
     user = current_user
-    MovesAccount.create!(
-      user_id: user.id,
-      oauth_token: auth.credentials.token,
-      refresh_token: auth.credentials.refresh_token
-    )
+    if !account_id.nil?
+      update_moves_account auth, user.id, account_id
+    else
+      MovesAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        refresh_token: auth.credentials.refresh_token,
+        platform: auth.extra.raw_info.profile.platform
+      )
+    end
     user
+  end
+
+  def self.update_moves_account auth, user_id, account_id
+    account = MovesAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        refresh_token: auth.credentials.refresh_token,
+        platform: auth.extra.raw_info.profile.platform
+      )
+    end
   end
 
   def self.process_for_pocket auth, current_user, account_id

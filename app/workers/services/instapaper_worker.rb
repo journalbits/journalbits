@@ -8,7 +8,7 @@ class InstapaperWorker
     accounts = InstapaperAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       client = create_client_for account
-      save_bookmarks_created_on date, client, user_id
+      save_bookmarks_created_on date, client, user_id, account.id
     end
   end
 
@@ -22,7 +22,7 @@ class InstapaperWorker
     client
   end
 
-  def save_bookmarks_created_on date, client, user_id
+  def save_bookmarks_created_on date, client, user_id, account_id
     bookmarks = user_bookmarks_on date, client
     bookmarks.each do |bookmark|
       unless InstapaperEntry.exists?(bookmark_id: bookmark.bookmark_id.to_s)
@@ -31,7 +31,8 @@ class InstapaperWorker
           date: date.to_s[0..9],
           bookmark_id: bookmark.bookmark_id.to_s,
           title: bookmark.title,
-          url: bookmark.url
+          url: bookmark.url,
+          instapaper_account_id: account_id
         )
       end
     end
