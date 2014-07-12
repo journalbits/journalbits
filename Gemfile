@@ -99,6 +99,9 @@ gem 'figaro', '~> 1.0.0.rc1'
 # For testing for security vulnerabilities
 gem 'brakeman'
 
+# For reporting errors
+gem 'rollbar'
+
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
