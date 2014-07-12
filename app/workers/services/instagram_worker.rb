@@ -9,7 +9,7 @@ class InstagramWorker
     # accounts = user.instagram_accounts.select { |a| a.activated }
     accounts = InstagramAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
-      save_media_on date, account, user_id
+      save_media_on date, account, user_id, account.id
     end
   end
 
@@ -26,7 +26,7 @@ class InstagramWorker
     JSON.parse(response)['data']
   end
 
-  def save_media_on date, account, user_id
+  def save_media_on date, account, user_id, account_id
     media = user_media_on date, account
     media.each do |item|
       unless InstagramEntry.exists?(link_url: item['link'])
@@ -37,7 +37,8 @@ class InstagramWorker
           thumbnail_url: item['images']['thumbnail']['url'],
           standard_url: item['images']['standard_resolution']['url'],
           caption: item['caption']['text'],
-          link_url: item['link']
+          link_url: item['link'],
+          instagram_account_id: account_id
         )
       end
     end

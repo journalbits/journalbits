@@ -7,7 +7,7 @@ class HealthGraphWorker
     accounts = user.health_graph_accounts.select { |a| a.activated }
     accounts.each do |account|
       client = create_client_for account
-      save_sleep_to_database date, client, user_id
+      save_sleep_to_database date, client, user_id, account.id
     end
   end
 
@@ -20,15 +20,16 @@ class HealthGraphWorker
     sleep.select { |night| Time.parse(night.timestamp).to_s[0..9] == date.to_s[0..9] } if sleep != nil
   end
 
-  def save_sleep_to_database date, client, user_id
+  def save_sleep_to_database date, client, user_id, account_id
     sleep = user_sleep_on(date, client).first
     if !sleep.blank?
       unless HealthGraphEntry.exists?(:user_id => user_id, :date => date.to_s[0..9])
         HealthGraphEntry.create(
           time_asleep: sleep.total_sleep,
-          kind: "sleep",
+          kind: 'sleep',
           user_id: user_id,
           date: date.to_s[0..9],
+          health_graph_account: account_id
         )
       end
     end

@@ -26,7 +26,7 @@ class HealthGraphAccountsController < ApplicationController
 
   def reauth
     session[:account_id] = params[:id]
-    redirect_to '/users/auth/runkeeper?'
+    redirect_to '/users/auth/runkeeper'
   end
 
   def create

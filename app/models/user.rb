@@ -211,22 +211,54 @@ class User < ActiveRecord::Base
 
   def self.process_for_instagram auth, current_user, account_id
     user = current_user
-    InstagramAccount.create!(
-      user_id: user.id,
-      oauth_token: auth.credentials.token,
-      uid: auth.uid
-    )
+    if !account_id.nil?
+      update_instagram_account auth, user.id, account_id
+    else
+      InstagramAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        uid: auth.uid,
+        username: auth.info.nickname
+      )
+    end
     user
+  end
+
+  def self.update_instagram_account auth, user_id, account_id
+    account = InstagramAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        uid: auth.uid,
+        username: auth.info.nickname
+      )
+    end
   end
 
   def self.process_for_instapaper auth, current_user, account_id
     user = current_user
-    InstapaperAccount.create!(
-      user_id: user.id,
-      oauth_token: auth.credentials.token,
-      oauth_secret: auth.credentials.secret
-    )
+    if !account_id.nil?
+      update_instapaper_account auth, user.id, account_id
+    else
+      InstapaperAccount.create!(
+        user_id: user.id,
+        oauth_token: auth.credentials.token,
+        oauth_secret: auth.credentials.secret,
+        name: auth.info.name
+      )
+    end
     user
+  end
+
+  def self.update_instapaper_account auth, user_id, account_id
+    account = InstapaperAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        oauth_token: auth.credentials.token,
+        oauth_secret: auth.credentials.secret,
+        name: auth.info.name
+      )
+    end
   end
 
   def self.process_for_lastfm auth, current_user, account_id
