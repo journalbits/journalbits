@@ -17,14 +17,11 @@ JournalBits::Application.routes.draw do
   get 'test' => 'authorization#test'
 
   get 'connections' => 'authorization#index'
-  get 'auth/rescue_time' => 'authorization#rescue_time'
-  get 'auth/wunderlist' => 'authorization#wunderlist'
-  get 'auth/whatpulse' => 'authorization#whatpulse'
   get 'auth/clef/callback' => 'users#clef'
 
-  patch 'auth/wunderlist' => 'users#wunderlist_update'
-  patch 'auth/rescue_time' => 'users#rescue_time_update'
-  patch 'auth/whatpulse' => 'users#whatpulse_update'
+  get 'users/auth/whatpulse' => 'authorization#whatpulse'
+  get 'users/auth/wunderlist' => 'authorization#wunderlist'
+  get 'users/auth/rescuetime' => 'authorization#rescue_time'
 
   post 'users/reauth/evernote' => 'evernote_accounts#reauth'
   post 'users/reauth/facebook' => 'facebook_accounts#reauth'
@@ -36,9 +33,7 @@ JournalBits::Application.routes.draw do
   post 'users/reauth/lastfm' => 'lastfm_accounts#reauth'
   post 'users/reauth/moves' => 'moves_accounts#reauth'
   post 'users/reauth/pocket' => 'pocket_accounts#reauth'
-  post 'users/reauth/rescuetime' => 'rescue_time_accounts#reauth'
   post 'users/reauth/twitter' => 'twitter_accounts#reauth'
-  post 'users/reauth/whatpulse' => 'whatpulse_accounts#reauth'
   post 'users/reauth/wunderlist' => 'wunderlist_accounts#reauth'
 
   resources :users,  path: "" do

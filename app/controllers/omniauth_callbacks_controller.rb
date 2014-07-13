@@ -2,10 +2,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def all
     auth = request.env["omniauth.auth"]
-    puts "****************************************************************"
+    # puts "****************************************************************"
     # puts auth.inspect
     # puts auth.keys.inspect
-
     if current_user
       account_id = session[:account_id].nil? ? nil : session[:account_id]
       session.delete(:account_id)
@@ -47,5 +46,4 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :rdio, :all
   alias_method :runkeeper, :all
   alias_method :twitter, :all
-
 end

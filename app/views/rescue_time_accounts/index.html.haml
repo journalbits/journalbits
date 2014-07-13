@@ -1,0 +1,23 @@
+%h4
+  Rescue Time Accounts
+%div
+  = link_to 'Add Account', '/users/auth/rescuetime'
+- @accounts.each do |account|
+  %div.account-name
+    = account.key
+  %div.account-info
+    %div.account-form
+      = form_for [current_user, account] do |f|
+        %div
+          = f.label :key
+          = f.text_field :key
+        %div
+          = f.label :public
+          = f.check_box :public
+        %div
+          = f.label :activated
+          = f.check_box :activated
+        %div
+          = f.submit 'Update Account'
+    %div
+      = link_to 'Delete Account', user_rescue_time_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete

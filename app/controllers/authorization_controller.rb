@@ -1,5 +1,3 @@
-require 'net/http'
-
 class AuthorizationController < ApplicationController
 
   def index

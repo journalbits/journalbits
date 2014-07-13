@@ -52,7 +52,7 @@
               = link_to 'Manage Accounts', user_instagram_accounts_path(@user)
 
       %div.service-connection-container
-        %a{href:"/auth/wunderlist"}
+        %a{href:"/users/auth/wunderlist"}
           - if !@user.wunderlist_accounts.empty?
             %div.wunderlist-img.wunderlist-logo.service-connection-img
           - else
@@ -118,7 +118,7 @@
               = link_to 'Manage Accounts', user_instapaper_accounts_path(@user)
 
       %div.service-connection-container
-        %a{href:"/auth/rescue_time"}
+        %a{href:"/users/auth/rescuetime"}
           - if !@user.rescue_time_accounts.empty?
             %div.rescuetime-img.rescuetime-logo.service-connection-img
           - else
@@ -129,7 +129,7 @@
               = link_to 'Manage Accounts', user_rescue_time_accounts_path(@user)
 
       %div.service-connection-container
-        %a{href:"/auth/whatpulse"}
+        %a{href:"/users/auth/whatpulse"}
           - if !@user.whatpulse_accounts.empty?
             %div.whatpulse-img.whatpulse-logo.service-connection-img
           - else

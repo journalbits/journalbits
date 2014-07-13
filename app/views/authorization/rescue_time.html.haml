@@ -1,5 +1,5 @@
-= form_for @user, url: "/auth/rescue_time" do |f|
-  = f.label "Rescue Time API Key"
+= form_for @user, url: user_rescue_time_accounts_path(@user), method: :post do |f|
+  = f.label 'Rescue Time API Key'
   = f.text_field :rescue_time_key
   %br/
-  = f.submit "Connect"
+  = f.submit 'Connect'
