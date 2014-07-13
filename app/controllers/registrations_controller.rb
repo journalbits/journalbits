@@ -25,7 +25,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation, :current_password, :time_zone, :daily_email)
+    params.require(:user).permit(:email, :username, :password, :password_confirmation, :current_password, :time_zone, :daily_email, :public)
   end
 
   def create_twitter_auth_account_for user_id, auth

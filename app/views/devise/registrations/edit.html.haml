@@ -17,7 +17,7 @@
     = f.label :password, 'New Password'
     %i (leave blank if you don't want to change it)
     %br/
-    = f.password_field :password, :autocomplete => "off"
+    = f.password_field :password, :autocomplete => 'off'
   %div
     = f.label :password_confirmation
     %br/
@@ -29,12 +29,17 @@
       %br/
       = f.password_field :current_password
   %div
-    = f.time_zone_select :time_zone, nil, default: "London"
+    = f.time_zone_select :time_zone, nil, default: 'London'
   %div
     = f.label :daily_email
     %br/
     = f.check_box :daily_email
-  %div= f.submit "Update"
+  %div
+    = f.label 'Make your information publicly accessible?'
+    %br/
+    = f.check_box :public
+    = f.label '(You can choose to make individual accounts and services private if you want)'
+  %div= f.submit 'Update'
 %h3 Cancel my account
 %p
   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
