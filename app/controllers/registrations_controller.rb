@@ -10,11 +10,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def create_twitter_accounts_for user_id, auth
-    create_twitter_account_for user_id, auth
-    create_twitter_auth_account_for user_id, auth
-  end
-
   private
 
   def sign_up_params
@@ -22,6 +17,11 @@ class RegistrationsController < Devise::RegistrationsController
     offset = zone.now.utc_offset
     params[:user][:time_zone] = offset
     params.require(:user).permit(:email, :username, :password, :password_confirmation, :time_zone)
+  end
+
+  def create_twitter_accounts_for user_id, auth
+    create_twitter_account_for user_id, auth
+    create_twitter_auth_account_for user_id, auth
   end
 
   def account_update_params
@@ -47,5 +47,4 @@ class RegistrationsController < Devise::RegistrationsController
       oauth_secret: auth[:secret]
     )
   end
-
 end
