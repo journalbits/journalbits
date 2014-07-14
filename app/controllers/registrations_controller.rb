@@ -15,17 +15,20 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up_params
     zone = ActiveSupport::TimeZone[params[:user][:time_zone]]
     offset = zone.now.utc_offset
-    params[:user][:time_zone] = offset
-    params.require(:user).permit(:email, :username, :password, :password_confirmation, :time_zone)
+    params[:user][:time_zone_offset] = offset
+    params.require(:user).permit(:email, :username, :password, :password_confirmation, :time_zone, :time_zone_offset)
+  end
+
+  def account_update_params
+    zone = ActiveSupport::TimeZone[params[:user][:time_zone]]
+    offset = zone.now.utc_offset
+    params[:user][:time_zone_offset] = offset
+    params.require(:user).permit(:email, :username, :password, :password_confirmation, :current_password, :time_zone, :time_zone_offset, :daily_email, :public)
   end
 
   def create_twitter_accounts_for user_id, auth
     create_twitter_account_for user_id, auth
     create_twitter_auth_account_for user_id, auth
-  end
-
-  def account_update_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation, :current_password, :time_zone, :daily_email, :public)
   end
 
   def create_twitter_auth_account_for user_id, auth
