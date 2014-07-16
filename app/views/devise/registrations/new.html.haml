@@ -9,6 +9,10 @@
     = f.label :username
     %br/
     = f.text_field :username
+  %div
+    = f.label :name
+    %br/
+    = f.text_field :name
   - if f.object.password_required?
     %div
       = f.label :password

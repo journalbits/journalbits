@@ -3,7 +3,7 @@
   %div.daily-data-container
     = image_tag @user.gravatar_url
     %h1
-      = @user.username
+      = @user.name
   %div.daily-data-container
     - if @mentions || @tweets || @favourites
       %h2
