@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716213309) do
+ActiveRecord::Schema.define(version: 20140716214357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -385,12 +385,12 @@ ActiveRecord::Schema.define(version: 20140716213309) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                               default: "",    null: false
-    t.string   "encrypted_password",                  default: "",    null: false
+    t.string   "email",                            default: "",    null: false
+    t.string   "encrypted_password",               default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       default: 0,     null: false
+    t.integer  "sign_in_count",                    default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -398,37 +398,12 @@ ActiveRecord::Schema.define(version: 20140716213309) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
-    t.string   "twitter_uid"
-    t.string   "twitter_username"
-    t.string   "twitter_oauth_token"
-    t.string   "twitter_oauth_secret"
-    t.string   "rescue_time_key"
-    t.string   "github_access_token"
-    t.string   "wunderlist_token"
-    t.string   "fitbit_oauth_token"
-    t.string   "fitbit_oauth_secret"
-    t.string   "pocket_oauth_token"
-    t.string   "rdio_oauth_token"
-    t.string   "rdio_oauth_secret"
-    t.string   "facebook_oauth_token"
-    t.string   "facebook_token_expires_at"
-    t.string   "whatpulse_username"
-    t.string   "evernote_oauth_token"
-    t.string   "evernote_token_expires_at"
-    t.string   "instagram_oauth_token"
-    t.string   "instagram_uid"
-    t.string   "instapaper_oauth_token"
-    t.string   "instapaper_oauth_secret"
-    t.string   "lastfm_username"
     t.string   "username"
     t.string   "slug"
-    t.integer  "clef_id",                   limit: 8
-    t.string   "moves_oauth_token"
-    t.string   "moves_refresh_token"
-    t.string   "health_graph_access_token"
-    t.boolean  "public",                              default: false
+    t.integer  "clef_id",                limit: 8
+    t.boolean  "public",                           default: false
     t.integer  "time_zone_offset"
-    t.boolean  "daily_email",                         default: true
+    t.boolean  "daily_email",                      default: true
     t.string   "time_zone"
     t.string   "name"
   end
