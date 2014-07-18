@@ -25,7 +25,7 @@ class WhatpulseAccountsController < ApplicationController
   end
 
   def create
-    username = params['user']['whatpulse_username']
+    username = params['whatpulse_account']['username']
     WhatpulseAccount.create!(
       user_id: current_user.id,
       username: username
