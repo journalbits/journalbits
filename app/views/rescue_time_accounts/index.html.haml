@@ -11,9 +11,10 @@
         %div
           = f.label :key
           = f.text_field :key
-        %div
-          = f.label :public
-          = f.check_box :public
+        - if current_user.public
+          %div
+            = f.label :public
+            = f.check_box :public
         %div
           = f.label :activated
           = f.check_box :activated

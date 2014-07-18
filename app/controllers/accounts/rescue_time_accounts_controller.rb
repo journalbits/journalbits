@@ -25,7 +25,7 @@ class RescueTimeAccountsController < ApplicationController
   end
 
   def create
-    key = params['user']['rescue_time_key']
+    key = params['rescue_time_account']['key']
     RescueTimeAccount.create!(
       user_id: current_user.id,
       key: key

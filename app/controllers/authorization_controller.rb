@@ -6,14 +6,17 @@ class AuthorizationController < ApplicationController
 
   def rescue_time
     @user = current_user
+    @account = RescueTimeAccount.new
   end
 
   def wunderlist
     @user = current_user
+    @account = WunderlistAccount.new
   end
 
   def whatpulse
     @user = current_user
+    @account = WhatpulseAccount.new
   end
 
   def test

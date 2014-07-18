@@ -8,9 +8,10 @@
   %div.account-info
     %div.account-form
       = form_for [current_user, account] do |f|
-        %div
-          = f.label :public
-          = f.check_box :public
+        - if current_user.public
+          %div
+            = f.label :public
+            = f.check_box :public
         %div
           = f.label :activated
           = f.check_box :activated
@@ -19,7 +20,7 @@
 
       = form_for [current_user, account], url: '/users/reauth/wunderlist', method: :post do |f|
         %div
-          = hidden_field_tag :account_id, account.id 
+          = hidden_field_tag :account_id, account.id
           = f.label 'Wunderlist Account Email'
           = text_field_tag 'email'
         %div
