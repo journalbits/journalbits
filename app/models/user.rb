@@ -212,7 +212,8 @@ class User < ActiveRecord::Base
     else
       HealthGraphAccount.create!(
         user_id: user.id,
-        access_token: auth.credentials.token
+        access_token: auth.credentials.token,
+        username: auth.info.nickname
       )
     end
     user

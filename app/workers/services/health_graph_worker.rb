@@ -21,15 +21,16 @@ class HealthGraphWorker
   end
 
   def save_sleep_to_database date, client, user_id, account_id
-    sleep = user_sleep_on(date, client).first
+    sleep = user_sleep_on(date, client)
+    sleep_hash = Hash[*sleep.collect{|h| h.to_a}.flatten]
     if !sleep.blank?
-      unless HealthGraphEntry.exists?(:user_id => user_id, :date => date.to_s[0..9])
+      unless HealthGraphEntry.exists?(user_id: user_id, date: date.to_s[0..9])
         HealthGraphEntry.create(
-          time_asleep: sleep.total_sleep,
+          time_asleep: sleep_hash['total_sleep'],
           kind: 'sleep',
           user_id: user_id,
           date: date.to_s[0..9],
-          health_graph_account: account_id
+          health_graph_account_id: account_id
         )
       end
     end

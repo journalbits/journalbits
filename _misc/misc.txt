@@ -1,0 +1,1 @@
+DATABASE_URL: postgres://journalbits:ZnlyNjd1ODNubTRYWVI4WUFZSGpGNWhReURKSVIvYkVROVY4ZTkrWExjYz0K@172.17.0.17:5432/journalbits_production

@@ -22,7 +22,9 @@ class AuthorizationController < ApplicationController
   def test
     # TestWorker.perform_async("chicken")
     # WunderlistWorker.perform_async(Time.now, current_user.id)
-    GithubWorker.perform_async(Time.now, current_user.id)
+    # GithubWorker.perform_async(Time.now, current_user.id)
+    # HealthGraphWorker.perform_async(Time.now - 1.day, current_user.id)
+    # MovesWorker.perform_async(Time.now - 1.day, current_user.id)
     render :nothing => true
   end
 
