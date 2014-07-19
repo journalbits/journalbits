@@ -66,8 +66,13 @@
         = yield
 
     %footer
+      %div.footer-text
+        Journal Bits
       %div#heap-badge
         %a{href:"https://heapanalytics.com/?utm_source=badge"}
           %img{style:"width:108px;height:41px", src:"//heapanalytics.com/img/badgeLight.png", alt:"Heap - iOS and Web Analytics"}
-      %div.footer-text
-        Journal Bits
+      %section.nav-footer
+        %ul
+          %li.nav-support
+            %a{href: "/support"}
+              Support
