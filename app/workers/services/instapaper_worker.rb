@@ -3,8 +3,6 @@ class InstapaperWorker
   sidekiq_options queue: "external_api"
 
   def perform date, user_id
-    # user = User.find(user_id)
-    # accounts = user.facebook_accounts.select { |a| a.activated }
     accounts = InstapaperAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       client = create_client_for account

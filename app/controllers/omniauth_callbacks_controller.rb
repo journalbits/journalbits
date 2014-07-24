@@ -2,8 +2,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def all
     auth = request.env["omniauth.auth"]
-    puts "****************************************************************"
-    puts auth.inspect
+    # puts "****************************************************************"
+    # puts auth.inspect
     # puts auth.keys.inspect
     if current_user
       account_id = session[:account_id].nil? ? nil : session[:account_id]
