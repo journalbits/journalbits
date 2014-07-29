@@ -119,6 +119,7 @@ GEM
       thor (~> 0.19.1)
     gherkin (2.12.2)
       multi_json (~> 1.3)
+    git (1.2.7)
     gravtastic (3.2.6)
     haml (4.1.0.beta.1)
       tilt
@@ -289,6 +290,8 @@ GEM
       redis (~> 3.0.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rewinder (0.0.1)
+      git
     rollbar (0.13.2)
       multi_json (~> 1.3)
     rspec-core (3.0.2)
@@ -437,6 +440,7 @@ DEPENDENCIES
   pg
   rails (~> 4.1.4)
   rails_12factor
+  rewinder
   rollbar
   rspec-rails (~> 3.0.0)
   rufus-scheduler
