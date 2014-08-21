@@ -1,16 +1,29 @@
 @import "bourbon";
 @import "grid-settings";
-// $visual-grid: true;
+/* \$visual-grid: true; */
 @import "neat";
 
 * {
   color: #4D4C4D;
   margin: 0;
+  outline: none;
+  /* font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 300; */
+}
+
+*:focus {
+  outline: none;
 }
 
 html, body, .main-container {
   height: 100%;
   background-color: #FFFFFF;
+}
+
+body {
+  text-align: center;
+  /* font-family: 'lato', 'Lato', sans-serif; */
 }
 
 a {
@@ -149,6 +162,16 @@ nav {
       float: left;
       margin-left: 5%;
 
+      div.nav-logo {
+        float: left;
+        background-image: image-url('nav-logo.png');
+        background-size: cover;
+        width: 25px;
+        height: 31px;
+        margin-top: -4px;
+        margin-right: 10px;
+      }
+
       a {
         transition: color .5s, background .5s, height .5s;
 
@@ -179,7 +202,7 @@ nav {
         margin-right: 0;
 
         li {
-          float: left;
+          display: inline-block;
           margin-right: 30px;
           list-style-type: none;
 
@@ -200,6 +223,10 @@ nav {
               }
             }
           }
+        }
+
+        li:last-of-type {
+          margin-right: 0;
         }
 
         li.nav-logout {
@@ -233,7 +260,7 @@ footer {
 
 .footer-text {
   margin-top: 10px;
-  margin-left: 118px;
+  margin-left: 300px;
   display: inline-block;
 }
 
@@ -248,7 +275,82 @@ footer {
   margin-right: 15px;
 
   li {
+    float: left;
     list-style: none;
     margin-left: 10px;
   }
+}
+
+
+
+
+
+
+// GENERAL STYLES
+
+
+.btn {
+  border: 1px solid #4D4C4D;
+  background-color: #FFF;
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 100px;
+}
+
+.btn:hover {
+  -webkit-transition: all linear 0.15s;
+  -moz-transition: all linear 0.15s;
+  -o-transition: all linear 0.15s;
+  transition: all linear 0.15s;
+  color: #fc7750;
+  border-color: #fc7750;
+}
+
+.btn-wide {
+  width: 200px;
+}
+
+input {
+  -webkit-transition: border-bottom linear 0.2s;
+  -moz-transition: border-bottom linear 0.2s;
+  -o-transition: border-bottom linear 0.2s;
+  transition: border-bottom linear 0.2s;
+}
+
+input[type='text'], input[type='password'], input[type='email'] {
+  border: none;
+  border-bottom: 1px solid #c7c7c7;
+  width: 220px;
+  font-size: 16px;
+}
+
+input[type='text']:focus, input[type='password']:focus, input[type='email']:focus, input[type='text']:hover, input[type='password']:hover, input[type='email']:hover {
+  border-bottom: 1px solid #000;
+}
+
+.inp-sm {
+  width: 160px;
+  font-size: 14px;
+}
+
+select {
+  background-color: transparent;
+  font-size: 14px;
+  width: 220px
+}
+
+.form-field {
+  padding: 6px;
+}
+
+.form-button {
+  padding: 8px;
+}
+
+.form-select {
+  padding: 6px;
+}
+
+h2 {
+  padding: 10px;
 }

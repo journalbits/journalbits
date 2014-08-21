@@ -22,6 +22,7 @@
         %nav
           %div.nav
             %div.nav-left
+              %div.nav-logo
               %a{href: "/"}
                 %span.jb-home.nav-symbol
                 %span.nav-text
@@ -45,7 +46,7 @@
                       %span.nav-text
                         Logout
                 - else
-                  %li.nav-clef
+                  -# %li.nav-clef
                   %li.nav-login
                     %a{href:"/users/sign_in"}
                       %span.jb-login.nav-symbol
@@ -73,6 +74,9 @@
           %img{style:"width:108px;height:41px", src:"//heapanalytics.com/img/badgeLight.png", alt:"Heap - iOS and Web Analytics"}
       %section.nav-footer
         %ul
-          %li.nav-support
-            %a{href: "/support"}
+          %li
+            %a{href: '/support'}
               Support
+          %li
+            %a{href: '/about'}
+              About

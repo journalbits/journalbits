@@ -1,24 +1,18 @@
 %h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :username
-    %br/
-    = f.text_field :username
-  %div
-    = f.label :name
-    %br/
-    = f.text_field :name
+  %div.form-field
+    = f.text_field :name, placeholder: 'Name', autofocus: true
+  %div.form-field
+    = f.email_field :email, placeholder: 'Email'
+  %div.form-field
+    = f.text_field :username, placeholder: 'Username'
   - if f.object.password_required?
-    %div
-      = f.label :password
-      %br/
-      = f.password_field :password
-  %div
+    %div.form-field
+      = f.password_field :password, placeholder: 'Password'
+  %div.form-select
     = f.time_zone_select :time_zone, nil, default: "London"
-  %div= f.submit "Sign up"
-= render "devise/shared/links"
+  %div.form-button
+    = f.submit 'Sign up', class: 'btn'
+- if devise_mapping.omniauthable?
+  = link_to "Sign up with Twitter", omniauth_authorize_path(resource_name, "twitter")

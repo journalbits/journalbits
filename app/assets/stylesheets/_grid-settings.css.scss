@@ -1,8 +1,8 @@
-@import "neat-helpers"; 
+@import "neat-helpers";
 
 // $grid-columns: 12;
 $max-width: em(960);
-
+/* \$visual-grid: true; */
 // Define your breakpoints
 
 $desktop: new-breakpoint(min-width 801px 12);
