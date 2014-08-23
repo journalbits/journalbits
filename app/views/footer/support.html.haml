@@ -1,0 +1,64 @@
+:css
+
+  .contact-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .support-content {
+    width: 600px;
+    margin: auto;
+    text-align: left;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .question {
+    font-weight: 500;
+    font-size: 17px;
+    margin: 10px auto;
+  }
+
+  .answer {
+    margin-bottom: 5px;
+  }
+
+  .faq-section {
+    margin: 20px auto 50px;
+  }
+
+
+%h2
+  Support
+
+%section.support-content
+  %section.faq-section
+    %h3
+      FAQ
+    %div.question
+      Why is Whatpulse showing lower values than I'm expecting?
+
+    %div.answer
+      Whatpulse only sends "pulses" of data from your machine to their servers once certain conditions have been met.
+      For example, every 10,000 keyboard hits often acts as a trigger for a pulse to be sent to Whatpulse.
+      If you want to collect more accurate data then lower your trigger numbers so that, for example, every 1,000 keyboard hits triggers a pulse.
+
+  %p
+    Any other questions should be sent to me via email or Twitter (use the links below).
+  %br/
+
+  %p
+    If you have any services that you use that you'd like Journal Bits to collect data from then let me know by getting in touch via email or Twitter as listed below.
+    Similarly, if you have any feature requests or you'd like to get involved then don't hesitate to get in touch.
+  %br/
+
+  %section.contact-section
+    Email
+    %a{href: 'mailto:admin@journalbits.net', class: 'body-link'}
+      admin@journalbits.net
+
+    or tweet
+    %a{href: 'http://twitter.com/journalbits', class: 'body-link'}
+      @journalbits.

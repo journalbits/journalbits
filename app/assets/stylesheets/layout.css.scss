@@ -29,6 +29,10 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  -webkit-transition: color linear 0.2s;
+  -moz-transition: color linear 0.2s;
+  -o-transition: color linear 0.2s;
+  transition: color linear 0.2s;  
 }
 
 @font-face {
@@ -108,6 +112,7 @@ a {
   font-style: normal;
   font-weight: 300;
   padding-bottom: 3em;
+  margin-bottom: 30px;
 }
 
 p.notice {
@@ -203,7 +208,7 @@ nav {
 
         li {
           display: inline-block;
-          margin-right: 30px;
+          margin-right: 20px;
           list-style-type: none;
 
           a {
@@ -353,4 +358,16 @@ select {
 
 h2 {
   padding: 10px;
+}
+
+.prompt-text {
+  font-size: 13px;
+}
+
+.body-link {
+  color: #DF6D5E;
+
+  &:hover, &:focus {
+    color: #f40000;
+  }
 }

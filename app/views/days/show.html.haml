@@ -2,10 +2,13 @@
 
   %div.day-info-container
     = image_tag @user.gravatar_url, class: 'user-gravatar'
-    %div.day-info
-      = @user.name
-    %div.day-info
-      = @written_date
+    %div.day-info-text
+      %div.day-info
+        = "#{@user.name}"
+      %div.day-info.day-info-hyphen
+        = "-"
+      %div.day-info
+        = @written_date
 
   - if @mentions || @tweets || @favourites
     %div.daily-data-container

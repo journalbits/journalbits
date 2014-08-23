@@ -13,6 +13,10 @@
   .daily-data-container {
     text-align: left;
     padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
 
     @include media($desktop) {
       @include span-columns(6);
@@ -29,6 +33,10 @@
       @include omega(n);
     }
 
+    &:hover {
+      border-color: #d0d0d0;
+    }
+
     h1 {
       font-family: 'lato', sans-serif;
       font-style: normal;
@@ -36,37 +44,56 @@
     }
 
     span {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 500;
     }
 
   }
 
   .day-info-container {
+    padding: 20px;
+
     .user-gravatar {
       width: 50px;
       display: inline-block;
+      margin-right: 10px;
     }
 
-    .day-info {
+    .day-info-text {
+      vertical-align: top;
+      margin-top: 15px;
       display: inline-block;
-      font-weight: 500;
-      font-size: 18px;
+
+      .day-info {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      .day-info-hyphen {
+        margin: 0px 5px;
+      }
     }
+
   }
 }
 
 .service-data-header {
   text-align: center;
   margin: auto;
+  padding: 6px 6px 16px;
 }
 
 .service-logo {
   display: inline-block;
-  margin-bottom: -6px;
+  margin-bottom: -9px;
   background-size: cover;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
+}
+
+.service-data-content {
+  padding: 0px 20px;
 }
 
 .evernote-logo-circle {

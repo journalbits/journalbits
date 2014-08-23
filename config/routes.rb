@@ -36,6 +36,9 @@ JournalBits::Application.routes.draw do
   post 'users/reauth/twitter' => 'twitter_accounts#reauth'
   post 'users/reauth/wunderlist' => 'wunderlist_accounts#reauth'
 
+  get '/about' => 'footer#about'
+  get '/support' => 'footer#support'
+
   resources :users,  path: "" do
     resources :evernote_entries
     resources :facebook_photo_entries
