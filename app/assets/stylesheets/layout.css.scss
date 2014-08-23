@@ -3,6 +3,9 @@
 /* \$visual-grid: true; */
 @import "neat";
 
+
+/*      GENERAL     */
+
 * {
   color: #4D4C4D;
   margin: 0;
@@ -32,8 +35,61 @@ a {
   -webkit-transition: color linear 0.2s;
   -moz-transition: color linear 0.2s;
   -o-transition: color linear 0.2s;
-  transition: color linear 0.2s;  
+  transition: color linear 0.2s;
 }
+
+.main-container {
+  height: auto;
+  min-height: 100%;
+}
+
+.main_body {
+  @include outer-container;
+
+  font-family: 'lato', 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  padding-bottom: 3em;
+  margin-bottom: 30px;
+}
+
+p.notice {
+  padding: 3px;
+  background: #23d000;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
+
+p.alert {
+  padding: 3px;
+  background: #d06300;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
+
+p.error {
+  padding: 3px;
+  background: #d00319;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
+
+/* ---------------- */
+
+
+/*       FONTS      */
 
 @font-face {
   font-family: 'journalbits';
@@ -100,52 +156,10 @@ a {
   content: "\e60c";
 }
 
-.main-container {
-  height: auto;
-  min-height: 100%;
-}
+/* ---------------- */
 
-.main_body {
-  @include outer-container;
-  /* font-family: 'Nunito-Light'; */
-  font-family: 'lato', sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  padding-bottom: 3em;
-  margin-bottom: 30px;
-}
 
-p.notice {
-  background: #23d000;
-  color: white;
-  // font-size: 1.1em;
-  text-align: center;
-  border-radius: 10px;
-  margin: 1.5%;
-  margin: 8px auto;
-  width: 30%;
-}
-
-p.alert {
-  background: #d06300;
-  color: white;
-  // font-size: 1.1em;
-  text-align: center;
-  border-radius: 10px;
-  margin: 1.5%;
-  margin: 8px auto;
-  width: 30%;
-}
-
-p.error {
-  background: #d00319;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  margin: 1.5%;
-  margin: 8px auto;
-  width: 30%;
-}
+/*      NAVBAR      */
 
 nav {
   font-family: 'lato', sans-serif;
@@ -242,6 +256,10 @@ nav {
   }
 }
 
+/* ---------------- */
+
+
+/*      FOOTER      */
 
 a, button {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -286,20 +304,40 @@ footer {
   }
 }
 
+/* ---------------- */
 
 
+/* DEVISE OVERRIDES */
+
+#error_explanation {
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      color: #E85541;
+    }
+  }
+}
+
+/* ---------------- */
 
 
-
-// GENERAL STYLES
+/*  GENERAL STYLES  */
 
 
 .btn {
   border: 1px solid #4D4C4D;
   background-color: #FFF;
-  border-radius: 10px;
+  border-radius: 15px;
   font-size: 14px;
   min-width: 100px;
+  font-weight: 500;
+  padding: 2px 8px;
 }
 
 .btn:hover {
@@ -356,8 +394,20 @@ select {
   padding: 6px;
 }
 
-h2 {
+.page-header {
   padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.service-account-management-header {
+  display: inline-block;
+  padding: 20px 5px;
+}
+
+.circle-logo-lg {
+  margin-bottom: -16px;
+  background-size: cover;
 }
 
 .prompt-text {
@@ -371,3 +421,110 @@ h2 {
     color: #f40000;
   }
 }
+
+/* ---------------- */
+
+
+.evernote-logo-circle {
+  background-image: image-url('evernote50_circular.png');
+}
+
+.facebook-logo-circle {
+  background-image: image-url('facebook50_circular.png');
+}
+
+.fitbit-logo-circle {
+  background-image: image-url('fitbit50_circular.png');
+}
+
+.github-logo-circle {
+  background-image: image-url('github50_circular.png');
+}
+
+.instagram-logo-circle {
+  background-image: image-url('instagram50_circular.png');
+}
+
+.instapaper-logo-circle {
+  background-image: image-url('instapaper50_circular.png');
+}
+
+.lastfm-logo-circle {
+  background-image: image-url('lastfm50_circular.png');
+}
+
+.moves-logo-circle {
+  background-image: image-url('moves50_circular.png');
+}
+
+.pocket-logo-circle {
+  background-image: image-url('pocket50_circular.png');
+}
+
+.rescuetime-logo-circle {
+  background-image: image-url('rescue_time50_circular.png');
+}
+
+.sleepcycle-logo-circle {
+  background-image: image-url('sleepcycle50_circular.png');
+}
+
+.twitter-logo-circle {
+  background-image: image-url('twitter50_circular.png');
+}
+
+.whatpulse-logo-circle {
+  background-image: image-url('whatpulse50_circular.png');
+}
+
+.wunderlist-logo-circle {
+  background-image: image-url('wunderlist50_circular.png');
+}
+
+.circle-logo-lg {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+.add-service-account-btn {
+  margin: 10px auto 20px;
+}
+
+.account-management-buttons {
+  div {
+    display: inline-block;
+    margin: 10px;
+  }
+}
+
+.service-account-table {
+  margin: 10px auto;
+}
+
+.service-account-table-value {
+  text-align: left;
+  padding-left: 4px;
+}
+
+.service-account-table-label {
+  text-align: right;
+  padding-right: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+

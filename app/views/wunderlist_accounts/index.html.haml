@@ -1,32 +1,57 @@
-%h4
+%div.circle-logo-lg.wunderlist-logo-circle
+%div.page-header.service-account-management-header
   Wunderlist Accounts
-%div
-  = link_to 'Add Account', '/users/auth/wunderlist'
-- @accounts.each do |account|
-  %div.account-name
-    = account.email
-  %div.account-info
-    %div.account-form
-      = form_for [current_user, account] do |f|
-        - if current_user.public
-          %div
-            = f.label :public
-            = f.check_box :public
-        %div
-          = f.label :activated
-          = f.check_box :activated
-        %div
-          = f.submit 'Update Account'
 
-      = form_for [current_user, account], url: '/users/reauth/wunderlist', method: :post do |f|
-        %div
-          = hidden_field_tag :account_id, account.id
-          = f.label 'Wunderlist Account Email'
-          = text_field_tag 'email'
-        %div
-          = f.label 'Wunderlist Password'
-          = password_field_tag 'password'
-        %div
-          = f.submit 'Reauthorize Account'
-    %div
-      = link_to 'Delete Account', user_wunderlist_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete
+%div.add-service-account-btn
+  = link_to 'Add Account', '/users/auth/wunderlist', class: 'btn'
+%div
+  - @accounts.each do |account|
+    = form_for [current_user, account] do |f|
+      %table.service-account-table
+        %tr
+          %td.service-account-table-label
+            %b
+              Email
+          %td.service-account-table-value
+            %div.account-name
+              = account.email
+        - if current_user.public
+          %tr
+            %td.service-account-table-label
+              %b
+                = f.label :public
+            %td.service-account-table-value
+              = f.check_box :public
+        %tr
+          %td.service-account-table-label
+            %b
+              = f.label :activated
+          %td.service-account-table-value
+            = f.check_box :activated
+
+      %div
+        = f.submit 'Update Account', class: 'btn'
+
+    = form_for [current_user, account] do |f|
+      = hidden_field_tag :account_id, account.id
+      %table.service-account-table
+        %tr
+          %td.service-account-table-label
+            %b
+              Wunderlist Account Email
+          %td.service-account-table-value
+            = text_field_tag 'email'
+
+        %tr
+          %td.service-account-table-label
+            %b
+              Wunderlist Password
+          %td.service-account-table-value
+            = password_field_tag 'password'
+
+      %div
+        = f.submit 'Reauthorize Account', class: 'btn'
+
+    %div.account-management-buttons
+      %div
+        = link_to 'Delete Account', user_wunderlist_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete, class: 'btn'
