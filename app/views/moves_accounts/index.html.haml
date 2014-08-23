@@ -1,10 +1,10 @@
 %h4
   Moves Accounts
 %div
-  = link_to 'Add Account', user_moves_accounts_path(@user), method: :post
+  = link_to 'Add Account', user_moves_accounts_path(@user), method: :post, class: 'btn'
 - @accounts.each do |account|
   %div.account-name
-    = account.platform
+    = "Platform: #{account.platform}"
   %div.account-info
     %div.account-form
       = form_for [current_user, account] do |f|
@@ -16,8 +16,8 @@
           = f.label :activated
           = f.check_box :activated
         %div
-          = f.submit 'Update Account'
+          = f.submit 'Update Account', class: 'btn'
     %div
-      = link_to 'Delete Account', user_moves_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete
+      = link_to 'Delete Account', user_moves_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete, class: 'btn'
     %div
-      = link_to 'Reauthorize Account', '/users/reauth/moves?' + { id: account.id }.to_param, method: :post
+      = link_to 'Reauthorize Account', '/users/reauth/moves?' + { id: account.id }.to_param, method: :post, class: 'btn'

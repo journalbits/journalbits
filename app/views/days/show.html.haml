@@ -1,184 +1,259 @@
 %section.day_container
 
-  %div.daily-data-container
-    = image_tag @user.gravatar_url
-    %h1
+  %div.day-info-container
+    = image_tag @user.gravatar_url, class: 'user-gravatar'
+    %div.day-info
       = @user.name
-  %div.daily-data-container
-    - if @mentions || @tweets || @favourites
-      %h2
-        Twitter
-      - if @mentions
-        - @mentions.each do |mention|
-          %div.tweeter
-            = "@#{mention.tweeter} -"
-          = link_to mention.text, mention.tweet_url, class: "tweet_link"
-          = mention.media
-          %br
+    %div.day-info
+      = @written_date
 
-      - if @tweets
-        - @tweets.each do |tweet|
-          %div.tweeter
-            = "@#{tweet.tweeter} -"
-          = link_to tweet.text, tweet.tweet_url, class: "tweet_link"
-          = tweet.media
-          %br
+  - if @mentions || @tweets || @favourites
+    %div.daily-data-container
+      %div.service-data-header
+        %div.service-logo.twitter-logo-circle
+        %span
+          Twitter
+      %div.service-data-content
+        - if @mentions
+          - @mentions.each do |mention|
+            %div.tweeter
+              = "@#{mention.tweeter} -"
+            = link_to mention.text, mention.tweet_url, class: "tweet_link"
+            = mention.media
+            %br
 
-      - if @favourites
-        - @favourites.each do |favourite|
-          %div.tweeter
-            = "@#{favourite.tweeter} -"
-          = link_to favourite.text, favourite.tweet_url, class: "tweet_link"
-          = favourite.media
+        - if @tweets
+          - @tweets.each do |tweet|
+            %div.tweeter
+              = "@#{tweet.tweeter} -"
+            = link_to tweet.text, tweet.tweet_url, class: "tweet_link"
+            = tweet.media
+            %br
+
+        - if @favourites
+          - @favourites.each do |favourite|
+            %div.tweeter
+              = "@#{favourite.tweeter} -"
+            = link_to favourite.text, favourite.tweet_url, class: "tweet_link"
+            = favourite.media
+            %br
+
+  - if @facebook_photos
+    %div.daily-data-container
+      %div.service-data-header
+        %div.service-logo.facebook-logo-circle
+        %span
+          Facebook
+      %div.service-data-content
+        - @facebook_photos.each do |photo|
+          = link_to photo.link_url, class: "fb_photo_link" do
+            = image_tag photo.medium_url, class: "fb_photo"
           %br
-  %div.daily-data-container
-    - if @facebook_photos
-      %h2
-        Facebook
-      - @facebook_photos.each do |photo|
-        = link_to photo.link_url, class: "fb_photo_link" do
-          = image_tag photo.medium_url, class: "fb_photo"
-        %br
 
   - if @lastfm_songs
     %div.daily-data-container
-      %h2
-        LastFM
-      - @lastfm_songs.each do |song|
-        = link_to "#{song.artist} - #{song.track}", song.url
-        %br
+      %div.service-data-header
+        %div.service-logo.lastfm-logo-circle
+        %span
+          LastFM
+      %div.service-data-content
+        - @lastfm_songs.each do |song|
+          = link_to "#{song.artist} - #{song.track}", song.url
+          %br
 
   - if @instagram_media
     %div.daily-data-container
-      %h2
-        Instagram
-      - @instagram_media.each do |media|
-        = link_to media.link_url, class: "instagram_link" do
-          = image_tag media.thumbnail_url, class: "instagram_thumbnail"
-        %br
+      %div.service-data-header
+        %div.service-logo.instagram-logo-circle
+        %span
+          Instagram
+      %div.service-data-content
+        - @instagram_media.each do |media|
+          = link_to media.link_url, class: "instagram_link" do
+            = image_tag media.thumbnail_url, class: "instagram_thumbnail"
+          %br
 
   - if @fitbit_weight || @fitbit_sleep || @fitbit_activity
     %div.daily-data-container
-      %h2
-        Fitbit
-      - if @fitbit_sleep
-        Sleep
-        = "Minutes asleep: #{@fitbit_sleep.first.minutes_asleep}"
-        %br
-        = "Minutes awake: #{@fitbit_sleep.first.minutes_awake}"
-        %br
-        = "Minutes to fall asleep: #{@fitbit_sleep.first.minutes_to_fall_asleep}"
-        %br
-        = "Sleep efficiency: #{@fitbit_sleep.first.efficiency}"
-        %br
-        = "Times awake: #{@fitbit_sleep.first.times_awake}"
-        %br
-        = "Sleep start: #{@fitbit_sleep.first.start_time}"
+      %div.service-data-header
+        %div.service-logo.fitbit-logo-circle
+        %span
+          Fitbit
+      %div.service-data-content
+        - if @fitbit_sleep
+          Sleep
+          = "Minutes asleep: #{@fitbit_sleep.first.minutes_asleep}"
+          %br
+          = "Minutes awake: #{@fitbit_sleep.first.minutes_awake}"
+          %br
+          = "Minutes to fall asleep: #{@fitbit_sleep.first.minutes_to_fall_asleep}"
+          %br
+          = "Sleep efficiency: #{@fitbit_sleep.first.efficiency}"
+          %br
+          = "Times awake: #{@fitbit_sleep.first.times_awake}"
+          %br
+          = "Sleep start: #{@fitbit_sleep.first.start_time}"
 
-      - if @fitbit_activity
-        Activity
-        = "Steps: #{@fitbit_activity.first.steps}"
-        %br
-        = "Distance: #{@fitbit_activity.first.distance}"
-        %br
-        = "Calories: #{@fitbit_activity.first.calories}"
-        %br
-        = "Active Minutes: #{@fitbit_activity.first.active_minutes}"
+        - if @fitbit_activity
+          Activity
+          = "Steps: #{@fitbit_activity.first.steps}"
+          %br
+          = "Distance: #{@fitbit_activity.first.distance}"
+          %br
+          = "Calories: #{@fitbit_activity.first.calories}"
+          %br
+          = "Active Minutes: #{@fitbit_activity.first.active_minutes}"
 
-      - if @fitbit_weight
-        Weight
-        = "Weight: #{@fitbit_weight.first.weight}#{@fitbit_weight.first.weight_units}"
+        - if @fitbit_weight
+          Weight
+          = "Weight: #{@fitbit_weight.first.weight}#{@fitbit_weight.first.weight_units}"
 
   - if @pocket_links
     %div.daily-data-container
-      %h2
-        Pocket
-      - @pocket_links.each do |link|
-        = link_to link.title, link.url
-        %br
+      %div.service-data-header
+        %div.service-logo.pocket-logo-circle
+        %span
+          Pocket
+      %div.service-data-content
+        - @pocket_links.each do |link|
+          = link_to link.title, link.url
+          %br
 
   - if @instapaper_links
     %div.daily-data-container
-      %h2
-        Instapaper
-      - @instapaper_links.each do |link|
-        = link_to link.title, link.url
-        %br
+      %div.service-data-header
+        %div.service-logo.instapaper-logo-circle
+        %span
+          Instapaper
+      %div.service-data-content
+        - @instapaper_links.each do |link|
+          = link_to link.title, link.url
+          %br
 
   - if @github_commits
     %div.daily-data-container
-      %h2
-        GitHub
-      - @github_commits.each do |commit|
-        = link_to commit.commit_message, commit.commit_url
-        %br
+      %div.service-data-header
+        %div.service-logo.github-logo-circle
+        %span
+          GitHub
+      %div.service-data-content
+        - @github_commits.each do |commit|
+          = link_to commit.commit_message, commit.commit_url
+          %br
 
   - if @evernote_notes_updated || @evernote_updated_created
     %div.daily-data-container
-      %h2
-        Evernote
-      - if @evernote_notes_created
-        Created
-        - @evernote_notes_created.each do |note|
-          = note.title
-          %br
+      %div.service-data-header
+        %div.service-logo.evernote-logo-circle
+        %span
+          Evernote
+      %div.service-data-content
+        - if @evernote_notes_created
+          Created
+          - @evernote_notes_created.each do |note|
+            = note.title
+            %br
 
-      - if @evernote_notes_updated
-        Updated
-        - @evernote_notes_updated.each do |note|
-          = note.title
-          %br
+        - if @evernote_notes_updated
+          Updated
+          - @evernote_notes_updated.each do |note|
+            = note.title
+            %br
 
   - if @rescue_time_data
     %div.daily-data-container
-      %h2
-        Rescue Time
-      = "Productivity Score: #{@rescue_time_data.first.productivity}"
-      %br
-      Top 5 Activities
-      %br
-      = @rescue_time_data.first.activity_1
-      = @rescue_time_data.first.time_spent_1 / 60
-      minutes
-      %br
-      = @rescue_time_data.first.activity_2
-      = @rescue_time_data.first.time_spent_2 / 60
-      minutes
-      %br
-      = @rescue_time_data.first.activity_3
-      = @rescue_time_data.first.time_spent_3 / 60
-      minutes
-      %br
-      = @rescue_time_data.first.activity_4
-      = @rescue_time_data.first.time_spent_4 / 60
-      minutes
-      %br
-      = @rescue_time_data.first.activity_5
-      = @rescue_time_data.first.time_spent_5 / 60
-      minutes
-      %br
+      %div.service-data-header
+        %div.service-logo.rescuetime-logo-circle
+        %span
+          Rescue Time
+      %div.service-data-content
+        = "Productivity Score: #{@rescue_time_data.first.productivity}"
+        %br
+        Top 5 Activities
+        %br
+        = @rescue_time_data.first.activity_1
+        = @rescue_time_data.first.time_spent_1 / 60
+        minutes
+        %br
+        = @rescue_time_data.first.activity_2
+        = @rescue_time_data.first.time_spent_2 / 60
+        minutes
+        %br
+        = @rescue_time_data.first.activity_3
+        = @rescue_time_data.first.time_spent_3 / 60
+        minutes
+        %br
+        = @rescue_time_data.first.activity_4
+        = @rescue_time_data.first.time_spent_4 / 60
+        minutes
+        %br
+        = @rescue_time_data.first.activity_5
+        = @rescue_time_data.first.time_spent_5 / 60
+        minutes
+        %br
 
   - if @whatpulse_keys
     %div.daily-data-container
-      %h2
-        WhatPulse
-      = "Keystrokes: #{@whatpulse_keys}"
-      = "Clicks: #{@whatpulse_clicks}"
-      = "Downloaded: #{@whatpulse_download}MB"
-      = "Uploaded: #{@whatpulse_upload}MB"
+      %div.service-data-header
+        %div.service-logo.whatpulse-logo-circle
+        %span
+          WhatPulse
+      %div.service-data-content
+        = "Keystrokes: #{@whatpulse_keys}"
+        = "Clicks: #{@whatpulse_clicks}"
+        = "Downloaded: #{@whatpulse_download}MB"
+        = "Uploaded: #{@whatpulse_upload}MB"
 
   - if @wunderlist_tasks_completed || @wunderlist_tasks_created
     %div.daily-data-container
-      %h2
-        Wunderlist
-      - if @wunderlist_tasks_completed
-        Completed Tasks
-        - @wunderlist_tasks_completed.each do |task|
-          = "#{task.title} from #{task.list}"
-          %br
+      %div.service-data-header
+        %div.service-logo.wunderlist-logo-circle
+        %span
+          Wunderlist
+      %div.service-data-content
+        - if @wunderlist_tasks_completed
+          Completed Tasks
+          - @wunderlist_tasks_completed.each do |task|
+            = "#{task.title} from #{task.list}"
+            %br
 
-      - if @wunderlist_tasks_created
-        Created Tasks
-        - @wunderlist_tasks_created.each do |task|
-          = "#{task.title} from #{task.list}"
-          %br
+        - if @wunderlist_tasks_created
+          Created Tasks
+          - @wunderlist_tasks_created.each do |task|
+            = "#{task.title} from #{task.list}"
+            %br
+
+  - if @moves_data
+    %div.daily-data-container
+      %div.service-data-header
+        %div.service-logo.moves-logo-circle
+        %span
+          Moves
+      %div.service-data-content
+        - @moves_data.each do |data|
+          - if data.activity == 'total'
+            = "Total Calories Burned: #{data.calories}"
+          - else
+            = "#{data.activity.capitalize}"
+            %br/
+            %ul
+              %li
+                = "Distance: #{data.distance}m"
+              %li
+                = "Duration: #{data.duration / 60} minutes"
+              - if data.calories
+                %li
+                  = "Calories Burned: #{data.calories}"
+              - if data.steps
+                %li
+                  = "Steps: #{data.steps}"
+          %br/
+
+  - if @sleepcycle_data
+    %div.daily-data-container
+      %div.service-data-header
+        %div.service-logo.sleepcycle-logo-circle
+        %span
+          SleepCycle
+      %div.service-data-content
+        = "Time asleep: #{@sleepcycle_data.first.time_asleep / 60} hours #{@sleepcycle_data.first.time_asleep % 60} minutes"

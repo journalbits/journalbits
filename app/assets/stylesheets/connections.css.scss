@@ -23,13 +23,13 @@ section.connections {
     }
 
     @include media($tablet) {
-      @include span-columns(3);
-      @include omega(3n);
+      @include span-columns(4);
+      @include omega(2n);
     }
 
     @include media($mobile) {
-      @include span-columns(2);
-      @include omega(2n);
+      @include span-columns(4);
+      @include omega(n);
     }
 
     h3 {
