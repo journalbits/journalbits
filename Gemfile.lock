@@ -283,6 +283,7 @@ GEM
     rake (10.3.2)
     rash (0.4.0)
       hashie (~> 2.0.0)
+    rb-readline (0.5.1)
     rdoc (4.1.1)
       json (~> 1.4)
     redis (3.0.7)
@@ -440,6 +441,7 @@ DEPENDENCIES
   pg
   rails (~> 4.1.4)
   rails_12factor
+  rb-readline
   rewinder
   rollbar
   rspec-rails (~> 3.0.0)
