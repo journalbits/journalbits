@@ -30,10 +30,10 @@ JournalBits::Application.configure do
     :address   => "smtp.mandrillapp.com",
     :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "admin@journalbits.com",
+    :user_name => "admin@journalbits.net",
     :password  => ENV['MANDRILL_API_KEY'], # SMTP password is any valid API key
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'journalbits.com', # your domain to identify your server when connecting
+    :domain => 'journalbits.net', # your domain to identify your server when connecting
   }
 
   # Debug mode disables concatenation and preprocessing of assets.

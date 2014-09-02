@@ -1,5 +1,12 @@
-= form_for [@user, @account], url: user_whatpulse_accounts_path(@user), method: :post do |f|
-  = f.label 'WhatPulse Username'
-  = f.text_field :username
-  %br/
-  = f.submit 'Connect'
+%div.circle-logo-lg.whatpulse-logo-circle
+%div.page-header.service-account-management-header
+  New WhatPulse Account
+
+%div.manual-auth-form
+  = form_for [@user, @account], url: user_whatpulse_accounts_path(@user), method: :post do |f|
+    %b
+      WhatPulse Username
+    = f.text_field :username
+
+    %div.manual-auth-button
+      = f.submit 'Connect', class: 'btn'

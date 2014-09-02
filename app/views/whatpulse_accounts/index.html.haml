@@ -14,7 +14,7 @@
               Username
           %td.service-account-table-value
             %div.account-name
-              = account.username
+              = f.text_field :username
         - if current_user.public
           %tr
             %td.service-account-table-label

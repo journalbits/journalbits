@@ -10,9 +10,6 @@
   color: #4D4C4D;
   margin: 0;
   outline: none;
-  /* font-family: 'lato', sans-serif;
-  font-style: normal;
-  font-weight: 300; */
 }
 
 *:focus {
@@ -334,6 +331,7 @@ footer {
   border: 1px solid #4D4C4D;
   background-color: #FFF;
   border-radius: 15px;
+  font-family: 'lato', sans-serif;
   font-size: 14px;
   min-width: 100px;
   font-weight: 500;
@@ -420,6 +418,14 @@ select {
   &:hover, &:focus {
     color: #f40000;
   }
+}
+
+.manual-auth-form {
+  padding: 20px;
+}
+
+.manual-auth-button {
+  margin: 15px auto;
 }
 
 /* ---------------- */

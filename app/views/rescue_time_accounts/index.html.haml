@@ -14,7 +14,7 @@
               Key
           %td.service-account-table-value
             %div.account-name
-              = account.key
+              = f.text_field :key
         - if current_user.public
           %tr
             %td.service-account-table-label

@@ -1,8 +1,24 @@
-= form_for [@user, @account], url: user_wunderlist_accounts_path(@user), method: :post do |f|
-  = f.label 'Wunderlist Email'
-  = text_field_tag 'wunderlist_email'
-  %br/
-  = f.label 'Wunderlist Password'
-  = password_field_tag 'wunderlist_password'
-  %br/
-  = f.submit 'Connect'
+%div.circle-logo-lg.wunderlist-logo-circle
+%div.page-header.service-account-management-header
+  New Wunderlist Account
+
+%div.manual-auth-form
+  = form_for [@user, @account], url: user_wunderlist_accounts_path(@user), method: :post do |f|
+    %table.service-account-table
+      %tr
+        %td.service-account-table-label
+          %b
+            Wunderlist Email
+        %td.service-account-table-value
+          %div.account-name
+            = text_field_tag 'wunderlist_email'
+
+      %tr
+        %td.service-account-table-label
+          %b
+            Wunderlist Password
+        %td.service-account-table-value
+          = password_field_tag 'wunderlist_password'
+
+    %div.manual-auth-button
+      = f.submit 'Connect', class: 'btn'
