@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: days
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  date       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  slug       :string(255)
+#
+# Indexes
+#
+#  index_days_on_slug  (slug)
+#
+
 class Day < ActiveRecord::Base
   validates :slug, uniqueness: true, presence: true
   belongs_to :user

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.1.4'
+gem 'rails', '~> 4.2.0.beta1'
 
 # To make sure readline is available
 gem 'rb-readline'
@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 1.2'
 
 # To make sprockets work
 gem 'sprockets', '2.11.0'
+
+# To annotate models, tests, factories etc
+gem 'annotate'
 
 # For authentication
 gem 'oauth2'
