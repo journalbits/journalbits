@@ -11,13 +11,13 @@ gem 'rb-readline'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0.0.beta1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -32,7 +32,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # To make sprockets work
-gem 'sprockets', '2.11.0'
+gem 'sprockets'
 
 # To annotate models, tests, factories etc
 gem 'annotate'
@@ -66,7 +66,7 @@ gem 'moves'
 gem 'health_graph'
 
 # For user profiles and profile images
-gem 'devise'
+gem 'devise', :git => "https://github.com/plataformatec/devise.git", :branch => "lm-rails-4-2"
 gem 'gravtastic'
 
 # For background tasks
