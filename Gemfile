@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.0.beta1'
+gem 'rails', '~> 4.1.6'
 
 # To make sure readline is available
 gem 'rb-readline'
@@ -11,7 +11,7 @@ gem 'rb-readline'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'sass-rails', '~> 4.0.3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -31,8 +31,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# To make sprockets work
+# To make sprockets work and gives better errors
 gem 'sprockets'
+# gem 'sprockets_better_errors'
 
 # To annotate models, tests, factories etc
 gem 'annotate'
@@ -125,6 +126,11 @@ end
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Use ActiveModel has_secure_password

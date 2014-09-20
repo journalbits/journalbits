@@ -1,0 +1,1110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+/* \$visual-grid: true; */
+/* line 2, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* \$visual-grid: true; */
+/* \$visual-grid: true; */
+/* line 2, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 5, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+/* line 15, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/bourbon-4.0.2/app/assets/stylesheets/addons/_clearfix.scss */
+section.connections:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 9, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections h2.connections-intro {
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  margin: 1.5% auto;
+  text-align: center;
+}
+/* line 17, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections div.service-connection-container {
+  text-align: center;
+}
+@media screen and (min-width: 801px) {
+  /* line 17, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+  section.connections div.service-connection-container {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 38, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_span-columns.scss */
+  section.connections div.service-connection-container:last-child {
+    margin-right: 0;
+  }
+  /* line 52, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  section.connections div.service-connection-container:nth-child(4n) {
+    margin-right: 0;
+  }
+  /* line 57, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  section.connections div.service-connection-container:nth-child(4n+1) {
+    clear: left;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  /* line 17, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+  section.connections div.service-connection-container {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+  }
+  /* line 38, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_span-columns.scss */
+  section.connections div.service-connection-container:last-child {
+    margin-right: 0;
+  }
+  /* line 52, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  section.connections div.service-connection-container:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 57, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  section.connections div.service-connection-container:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 17, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+  section.connections div.service-connection-container {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 38, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_span-columns.scss */
+  section.connections div.service-connection-container:last-child {
+    margin-right: 0;
+  }
+  /* line 52, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  section.connections div.service-connection-container:nth-child(n) {
+    margin-right: 0;
+  }
+}
+/* line 35, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections div.service-connection-container h3 {
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+/* line 41, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections div.service-connection-container div {
+  border: 4px solid #FFFFFF;
+  border-radius: 10px;
+  margin: 14% auto 3%;
+  max-width: 100%;
+}
+/* line 52, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections div.service-connection-container span {
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+/* line 60, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+section.connections div.service-connection-container:hover h3 {
+  color: #000000;
+}
+
+/* line 66, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.fitbit-img {
+  background-image: url("/assets/fitbit250.png");
+  background-size: contain;
+}
+
+/* line 71, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.fitbit-img-grayscale {
+  background-image: url("/assets/fitbit250_grayscale.png");
+  background-size: contain;
+}
+/* line 75, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.fitbit-img-grayscale:hover {
+  background-image: url(/assets/fitbit250.png);
+  background-size: contain;
+}
+
+/* line 81, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.facebook-img {
+  background-image: url(/assets/facebook250.png);
+  background-size: contain;
+}
+
+/* line 86, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.facebook-img-grayscale {
+  background-image: url(/assets/facebook250_grayscale.png);
+  background-size: contain;
+}
+/* line 90, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.facebook-img-grayscale:hover {
+  background-image: url(/assets/facebook250.png);
+  background-size: contain;
+}
+
+/* line 96, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.wunderlist-img {
+  background-image: url(/assets/wunderlist250.png);
+  background-size: contain;
+}
+
+/* line 101, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.wunderlist-img-grayscale {
+  background-image: url(/assets/wunderlist250_grayscale.png);
+  background-size: contain;
+}
+/* line 105, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.wunderlist-img-grayscale:hover {
+  background-image: url(/assets/wunderlist250.png);
+  background-size: contain;
+}
+
+/* line 111, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.instagram-img {
+  background-image: url(/assets/instagram250.png);
+  background-size: contain;
+}
+
+/* line 116, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.instagram-img-grayscale {
+  background-image: url(/assets/instagram250_grayscale.png);
+  background-size: contain;
+}
+/* line 120, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.instagram-img-grayscale:hover {
+  background-image: url(/assets/instagram250.png);
+  background-size: contain;
+}
+
+/* line 126, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.evernote-img {
+  background-image: url(/assets/evernote250.png);
+  background-size: contain;
+}
+
+/* line 131, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.evernote-img-grayscale {
+  background-image: url(/assets/evernote250_grayscale.png);
+  background-size: contain;
+}
+/* line 135, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.evernote-img-grayscale:hover {
+  background-image: url(/assets/evernote250.png);
+  background-size: contain;
+}
+
+/* line 141, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.github-img {
+  background-image: url(/assets/github250.png);
+  background-size: contain;
+}
+
+/* line 146, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.github-img-grayscale {
+  background-image: url(/assets/github250_grayscale.png);
+  background-size: contain;
+}
+/* line 150, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.github-img-grayscale:hover {
+  background-image: url(/assets/github250.png);
+  background-size: contain;
+}
+
+/* line 156, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.twitter-img {
+  background-image: url(/assets/twitter250.png);
+  background-size: contain;
+}
+
+/* line 161, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.twitter-img-grayscale {
+  background-image: url(/assets/twitter250_grayscale.png);
+  background-size: contain;
+}
+/* line 165, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.twitter-img-grayscale:hover {
+  background-image: url(/assets/twitter250.png);
+  background-size: contain;
+}
+
+/* line 171, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.pocket-img {
+  background-image: url(/assets/pocket250.png);
+  background-size: contain;
+}
+
+/* line 176, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.pocket-img-grayscale {
+  background-image: url(/assets/pocket250_grayscale.png);
+  background-size: contain;
+}
+/* line 180, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.pocket-img-grayscale:hover {
+  background-image: url(/assets/pocket250.png);
+  background-size: contain;
+}
+
+/* line 186, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.instapaper-img {
+  background-image: url(/assets/instapaper250.png);
+  background-size: contain;
+}
+
+/* line 191, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.instapaper-img-grayscale {
+  background-image: url(/assets/instapaper250_grayscale.png);
+  background-size: contain;
+}
+/* line 195, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.instapaper-img-grayscale:hover {
+  background-image: url(/assets/instapaper250.png);
+  background-size: contain;
+}
+
+/* line 201, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.lastfm-img {
+  background-image: url(/assets/lastfm250.png);
+  background-size: contain;
+}
+
+/* line 206, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.lastfm-img-grayscale {
+  background-image: url(/assets/lastfm250_grayscale.png);
+  background-size: contain;
+}
+/* line 210, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.lastfm-img-grayscale:hover {
+  background-image: url(/assets/lastfm250.png);
+  background-size: contain;
+}
+
+/* line 216, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.rescuetime-img {
+  background-image: url(/assets/rescuetime250.png);
+  background-size: contain;
+}
+
+/* line 221, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.rescuetime-img-grayscale {
+  background-image: url(/assets/rescuetime250_grayscale.png);
+  background-size: contain;
+}
+/* line 225, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.rescuetime-img-grayscale:hover {
+  background-image: url(/assets/rescuetime250.png);
+  background-size: contain;
+}
+
+/* line 231, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.whatpulse-img {
+  background-image: url(/assets/whatpulse250.png);
+  background-size: contain;
+}
+
+/* line 236, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.whatpulse-img-grayscale {
+  background-image: url(/assets/whatpulse250_grayscale.png);
+  background-size: contain;
+}
+/* line 240, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.whatpulse-img-grayscale:hover {
+  background-image: url(/assets/whatpulse250.png);
+  background-size: contain;
+}
+
+/* line 246, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.moves-img {
+  background-image: url(/assets/moves250.png);
+  background-size: contain;
+}
+
+/* line 251, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.moves-img-grayscale {
+  background-image: url(/assets/moves250_grayscale.png);
+  background-size: contain;
+}
+/* line 255, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.moves-img-grayscale:hover {
+  background-image: url(/assets/moves250.png);
+  background-size: contain;
+}
+
+/* line 261, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.sleepcycle-img {
+  background-image: url(/assets/sleepcycle250.png);
+  background-size: contain;
+}
+
+/* line 266, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.sleepcycle-img-grayscale {
+  background-image: url(/assets/sleepcycle250_grayscale.png);
+  background-size: contain;
+}
+/* line 270, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/connections.css.scss */
+.sleepcycle-img-grayscale:hover {
+  background-image: url(/assets/sleepcycle250.png);
+  background-size: contain;
+}
+/* \$visual-grid: true; */
+/* line 2, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container {
+  margin-top: 10px;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 15, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/bourbon-4.0.2/app/assets/stylesheets/addons/_clearfix.scss */
+.day_container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 13, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .daily-data-container {
+  text-align: left;
+  padding: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+}
+@media screen and (min-width: 801px) {
+  /* line 13, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+  .day_container .daily-data-container {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
+  /* line 38, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .day_container .daily-data-container:last-child {
+    margin-right: 0;
+  }
+  /* line 52, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  .day_container .daily-data-container:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 57, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  .day_container .daily-data-container:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  /* line 13, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+  .day_container .daily-data-container {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+  }
+  /* line 38, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .day_container .daily-data-container:last-child {
+    margin-right: 0;
+  }
+  /* line 52, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  .day_container .daily-data-container:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 57, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  .day_container .daily-data-container:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 13, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+  .day_container .daily-data-container {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 38, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .day_container .daily-data-container:last-child {
+    margin-right: 0;
+  }
+  /* line 52, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_omega.scss */
+  .day_container .daily-data-container:nth-child(n) {
+    margin-right: 0;
+  }
+}
+/* line 36, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .daily-data-container:hover {
+  border-color: #d0d0d0;
+}
+/* line 40, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .daily-data-container h1 {
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+/* line 46, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .daily-data-container span {
+  font-size: 22px;
+  font-weight: 500;
+}
+/* line 53, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .day-info-container {
+  padding: 20px;
+}
+/* line 56, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .day-info-container .user-gravatar {
+  width: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 62, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .day-info-container .day-info-text {
+  vertical-align: top;
+  margin-top: 15px;
+  display: inline-block;
+}
+/* line 67, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .day-info-container .day-info-text .day-info {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 18px;
+}
+/* line 73, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.day_container .day-info-container .day-info-text .day-info-hyphen {
+  margin: 0px 5px;
+}
+
+/* line 81, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.service-data-header {
+  text-align: center;
+  margin: auto;
+  padding: 6px 6px 16px;
+}
+
+/* line 87, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.service-logo {
+  display: inline-block;
+  margin-bottom: -9px;
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+}
+
+/* line 95, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/days.css.scss */
+.service-data-content {
+  padding: 0px 20px;
+}
+/* \$visual-grid: true; */
+/* \$visual-grid: true; */
+/* line 2, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/neat-1.6.0/app/assets/stylesheets/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*      GENERAL     */
+/* line 9, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+* {
+  color: #4D4C4D;
+  margin: 0;
+  outline: none;
+}
+
+/* line 15, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+*:focus {
+  outline: none;
+}
+
+/* line 19, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+html, body, .main-container {
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+/* line 24, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+body {
+  text-align: center;
+  /* font-family: 'lato', 'Lato', sans-serif; */
+}
+
+/* line 29, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: color linear 0.2s;
+  -moz-transition: color linear 0.2s;
+  -o-transition: color linear 0.2s;
+  transition: color linear 0.2s;
+}
+
+/* line 38, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.main-container {
+  height: auto;
+  min-height: 100%;
+}
+
+/* line 43, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.main_body {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'lato', 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  padding-bottom: 3em;
+  margin-bottom: 30px;
+}
+/* line 15, /Users/Hami/.rvm/gems/ruby-2.1.2/gems/bourbon-4.0.2/app/assets/stylesheets/addons/_clearfix.scss */
+.main_body:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 53, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+p.notice {
+  padding: 3px;
+  background: #23d000;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
+
+/* line 64, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+p.alert {
+  padding: 3px;
+  background: #d06300;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
+
+/* line 75, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+p.error {
+  padding: 3px;
+  background: #d00319;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin: 1.5%;
+  margin: 8px auto;
+  width: 30%;
+}
+
+/* ---------------- */
+/*       FONTS      */
+@font-face {
+  font-family: 'journalbits';
+  src: url(/assets/journalbits.eot);
+  src: url(/assets/journalbits.eot?#iefix) format("embedded-opentype"), url(/assets/journalbits.woff) format("woff"), url(/assets/journalbits.ttf) format("truetype"), url(/assets/journalbits.svg#journalbits) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 102, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+[class^="jb-"], [class*=" jb-"] {
+  font-family: 'journalbits';
+  speak: none;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 116, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-twitter:before {
+  content: "\e600";
+}
+
+/* line 119, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-connections:before {
+  content: "\e601";
+}
+
+/* line 122, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-home:before {
+  content: "\e602";
+}
+
+/* line 125, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-profile:before {
+  content: "\e604";
+}
+
+/* line 128, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-upgrade:before {
+  content: "\e605";
+}
+
+/* line 131, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-login:before {
+  content: "\e603";
+}
+
+/* line 134, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-entries:before {
+  content: "\e606";
+}
+
+/* line 137, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-settings:before {
+  content: "\e607";
+}
+
+/* line 140, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-register:before {
+  content: "\e608";
+}
+
+/* line 143, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-new:before {
+  content: "\e609";
+}
+
+/* line 146, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-logout:before {
+  content: "\e60a";
+}
+
+/* line 149, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-journal:before {
+  content: "\e60b";
+}
+
+/* line 152, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.jb-data:before {
+  content: "\e60c";
+}
+
+/* ---------------- */
+/*      NAVBAR      */
+/* line 161, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav {
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2em;
+  width: 100%;
+  height: 42px;
+  list-style: none;
+  border-bottom: 1px solid #d0d0d0;
+}
+/* line 171, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
+/* line 177, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-left {
+  float: left;
+  margin-left: 5%;
+}
+/* line 181, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-left div.nav-logo {
+  float: left;
+  background-image: url(/assets/nav-logo.png);
+  background-size: cover;
+  width: 25px;
+  height: 31px;
+  margin-top: -4px;
+  margin-right: 10px;
+}
+/* line 191, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-left a {
+  transition: color .5s, background .5s, height .5s;
+}
+@media screen and (min-width: 801px) {
+  /* line 194, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+  nav div.nav div.nav-left a .nav-symbol {
+    display: none;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  /* line 194, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+  nav div.nav div.nav-left a .nav-symbol {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 204, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+  nav div.nav div.nav-left a .nav-text {
+    display: none;
+  }
+}
+/* line 212, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-right {
+  margin-right: 5%;
+  float: right;
+}
+/* line 216, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-right ul.nav-list-right {
+  float: right;
+  margin-right: 0;
+}
+/* line 220, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-right ul.nav-list-right li {
+  display: inline-block;
+  margin-right: 20px;
+  list-style-type: none;
+}
+@media screen and (min-width: 801px) {
+  /* line 226, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+  nav div.nav div.nav-right ul.nav-list-right li a .nav-symbol {
+    display: none;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  /* line 226, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+  nav div.nav div.nav-right ul.nav-list-right li a .nav-symbol {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 236, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+  nav div.nav div.nav-right ul.nav-list-right li a .nav-text {
+    display: none;
+  }
+}
+/* line 244, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-right ul.nav-list-right li:last-of-type {
+  margin-right: 0;
+}
+/* line 248, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+nav div.nav div.nav-right ul.nav-list-right li.nav-logout {
+  margin-right: 0px;
+}
+
+/* ---------------- */
+/*      FOOTER      */
+/* line 261, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 264, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+footer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #d0d0d0;
+  font-family: 'lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  padding-top: 0.5em;
+  clear: both;
+  position: relative;
+  height: 3.5em;
+  margin-top: -3.5em;
+  vertical-align: middle;
+}
+
+/* line 281, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.footer-text {
+  margin-top: 10px;
+  margin-left: 300px;
+  display: inline-block;
+}
+
+/* line 287, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+#heap-badge {
+  float: right;
+  margin-right: 10px;
+}
+
+/* line 292, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.nav-footer {
+  float: right;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+/* line 297, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.nav-footer li {
+  float: left;
+  list-style: none;
+  margin-left: 10px;
+}
+
+/* ---------------- */
+/* DEVISE OVERRIDES */
+/* line 310, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+#error_explanation h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+/* line 315, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+#error_explanation ul {
+  list-style: none;
+}
+/* line 318, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+#error_explanation ul li {
+  color: #E85541;
+}
+
+/* ---------------- */
+/*  GENERAL STYLES  */
+/* line 330, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.btn {
+  border: 1px solid #4D4C4D;
+  background-color: #FFF;
+  border-radius: 15px;
+  font-family: 'lato', sans-serif;
+  font-size: 14px;
+  min-width: 100px;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+/* line 341, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.btn:hover {
+  -webkit-transition: all linear 0.15s;
+  -moz-transition: all linear 0.15s;
+  -o-transition: all linear 0.15s;
+  transition: all linear 0.15s;
+  color: #fc7750;
+  border-color: #fc7750;
+}
+
+/* line 350, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.btn-wide {
+  width: 200px;
+}
+
+/* line 354, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+input {
+  -webkit-transition: border-bottom linear 0.2s;
+  -moz-transition: border-bottom linear 0.2s;
+  -o-transition: border-bottom linear 0.2s;
+  transition: border-bottom linear 0.2s;
+}
+
+/* line 361, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+input[type='text'], input[type='password'], input[type='email'] {
+  border: none;
+  border-bottom: 1px solid #c7c7c7;
+  width: 220px;
+  font-size: 16px;
+}
+
+/* line 368, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+input[type='text']:focus, input[type='password']:focus, input[type='email']:focus, input[type='text']:hover, input[type='password']:hover, input[type='email']:hover {
+  border-bottom: 1px solid #000;
+}
+
+/* line 372, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.inp-sm {
+  width: 160px;
+  font-size: 14px;
+}
+
+/* line 377, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+select {
+  background-color: transparent;
+  font-size: 14px;
+  width: 220px;
+}
+
+/* line 383, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.form-field {
+  padding: 6px;
+}
+
+/* line 387, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.form-button {
+  padding: 8px;
+}
+
+/* line 391, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.form-select {
+  padding: 6px;
+}
+
+/* line 395, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.page-header {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* line 401, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.service-account-management-header {
+  display: inline-block;
+  padding: 20px 5px;
+}
+
+/* line 406, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.circle-logo-lg {
+  margin-bottom: -16px;
+  background-size: cover;
+}
+
+/* line 411, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.prompt-text {
+  font-size: 13px;
+}
+
+/* line 415, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.body-link {
+  color: #DF6D5E;
+}
+/* line 418, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.body-link:hover, .body-link:focus {
+  color: #f40000;
+}
+
+/* line 423, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.manual-auth-form {
+  padding: 20px;
+}
+
+/* line 427, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.manual-auth-button {
+  margin: 15px auto;
+}
+
+/* ---------------- */
+/* line 434, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.evernote-logo-circle {
+  background-image: url(/assets/evernote50_circular.png);
+}
+
+/* line 438, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.facebook-logo-circle {
+  background-image: url(/assets/facebook50_circular.png);
+}
+
+/* line 442, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.fitbit-logo-circle {
+  background-image: url(/assets/fitbit50_circular.png);
+}
+
+/* line 446, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.github-logo-circle {
+  background-image: url(/assets/github50_circular.png);
+}
+
+/* line 450, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.instagram-logo-circle {
+  background-image: url(/assets/instagram50_circular.png);
+}
+
+/* line 454, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.instapaper-logo-circle {
+  background-image: url(/assets/instapaper50_circular.png);
+}
+
+/* line 458, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.lastfm-logo-circle {
+  background-image: url(/assets/lastfm50_circular.png);
+}
+
+/* line 462, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.moves-logo-circle {
+  background-image: url(/assets/moves50_circular.png);
+}
+
+/* line 466, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.pocket-logo-circle {
+  background-image: url(/assets/pocket50_circular.png);
+}
+
+/* line 470, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.rescuetime-logo-circle {
+  background-image: url(/assets/rescue_time50_circular.png);
+}
+
+/* line 474, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.sleepcycle-logo-circle {
+  background-image: url(/assets/sleepcycle50_circular.png);
+}
+
+/* line 478, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.twitter-logo-circle {
+  background-image: url(/assets/twitter50_circular.png);
+}
+
+/* line 482, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.whatpulse-logo-circle {
+  background-image: url(/assets/whatpulse50_circular.png);
+}
+
+/* line 486, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.wunderlist-logo-circle {
+  background-image: url(/assets/wunderlist50_circular.png);
+}
+
+/* line 490, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.circle-logo-lg {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+/* line 502, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.add-service-account-btn {
+  margin: 10px auto 20px;
+}
+
+/* line 507, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.account-management-buttons div {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* line 513, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.service-account-table {
+  margin: 10px auto;
+}
+
+/* line 517, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.service-account-table-value {
+  text-align: left;
+  padding-left: 4px;
+}
+
+/* line 522, /Users/Hami/Documents/Ruby/journal_bits/app/assets/stylesheets/layout.css.scss */
+.service-account-table-label {
+  text-align: right;
+  padding-right: 4px;
+}
