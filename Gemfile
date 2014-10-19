@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1.6'
@@ -31,9 +31,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# To make sprockets work and gives better errors
+# To make sprockets work
 gem 'sprockets'
-# gem 'sprockets_better_errors'
 
 # To annotate models, tests, factories etc
 gem 'annotate'
