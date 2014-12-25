@@ -1,3 +1,5 @@
+%link{rel: :stylesheet, type: :"text/css", href: "/assets/stylesheets/pikaday.css"}
+
 %section.day_container
 
   %div.day-info-container
@@ -5,10 +7,8 @@
     %div.day-info-text
       %div.day-info
         = "#{@user.name}"
-      %div.day-info.day-info-hyphen
-        = "-"
       %div.day-info
-        = @written_date
+        %input#datepicker{ type: 'text' }
 
   - if @mentions || @tweets || @favourites
     %div.daily-data-container
@@ -260,3 +260,15 @@
           SleepCycle
       %div.service-data-content
         = "Time asleep: #{@sleepcycle_data.first.time_asleep / 60} hours #{@sleepcycle_data.first.time_asleep % 60} minutes"
+:javascript
+  var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    defaultDate: new Date("#{@written_date}"),
+    setDefaultDate: true,
+    maxDate: new Date(),
+    onSelect: function() {
+      $('#datepicker').val(picker.toString('dddd Do MMMM YYYY'));
+      document.location.href = "/" + "#{current_user.slug}/" + picker.toString('YYYY-MM-DD');
+    }
+  });
+  $('#datepicker').val(picker.toString('dddd Do MMMM YYYY'));
