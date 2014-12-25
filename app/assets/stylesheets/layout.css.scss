@@ -36,8 +36,14 @@ a {
 }
 
 .main-container {
-  height: auto;
   min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -3.5em;
+}
+
+.push {
+  height: 3.5em;
 }
 
 .main_body {
@@ -272,9 +278,7 @@ footer {
   font-weight: 500;
   padding-top: 0.5em;
   clear: both;
-  position: relative;
   height: 3.5em;
-  margin-top: -3.5em;
   vertical-align: middle;
 }
 
@@ -523,14 +527,4 @@ select {
   text-align: right;
   padding-right: 4px;
 }
-
-
-
-
-
-
-
-
-
-
 
