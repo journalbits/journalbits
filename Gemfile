@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.2.0'
 
 # To make sure readline is available
 gem 'rb-readline'
@@ -11,7 +11,7 @@ gem 'rb-readline'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -39,6 +39,10 @@ gem 'annotate'
 
 # For using intro.js with the assest pipeline
  gem 'introjs-rails'
+
+# For realtime messaging between the server and the client
+ gem 'pusher'
+ gem 'pusher-client'
 
 # For authentication
 gem 'oauth2'
@@ -69,7 +73,7 @@ gem 'moves'
 gem 'health_graph'
 
 # For user profiles and profile images
-gem 'devise', :git => "https://github.com/plataformatec/devise.git", :branch => "lm-rails-4-2"
+gem 'devise'
 gem 'gravtastic'
 
 # For background tasks
@@ -103,7 +107,7 @@ gem 'unicorn'
 gem 'foreman'
 
 # For storing environment variables
-gem 'figaro', '~> 1.0.0.rc1'
+gem 'figaro', '~> 1.0.0'
 
 # For testing for security vulnerabilities
 gem 'brakeman'
