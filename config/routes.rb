@@ -12,7 +12,15 @@ JournalBits::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
 
-  root :to => "days#index"
+  # root :to => "days#index"
+
+  authenticated do
+    root to: 'days#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root to: 'home#index'
+  end
 
   get 'test' => 'authorization#test'
 
