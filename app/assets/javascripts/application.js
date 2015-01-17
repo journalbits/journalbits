@@ -17,3 +17,4 @@
 
 //= require moment
 //= require pikaday
+//= require introjs

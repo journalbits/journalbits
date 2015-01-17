@@ -171,6 +171,9 @@ GEM
       multi_json (~> 1)
       rash (~> 0.3)
       simple_oauth (~> 0.1)
+    introjs-rails (0.5.0)
+      sass-rails (>= 3.2)
+      thor (~> 0.14)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -434,6 +437,7 @@ DEPENDENCIES
   html2haml
   httparty
   instapaper
+  introjs-rails
   jbuilder (~> 1.2)
   jquery-rails
   koala (~> 1.8.0rc1)

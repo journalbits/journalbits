@@ -37,6 +37,9 @@ gem 'sprockets'
 # To annotate models, tests, factories etc
 gem 'annotate'
 
+# For using intro.js with the assest pipeline
+ gem 'introjs-rails'
+
 # For authentication
 gem 'oauth2'
 gem 'simple_oauth'
