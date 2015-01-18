@@ -47,6 +47,10 @@ JournalBits::Application.routes.draw do
   get '/about' => 'footer#about'
   get '/support' => 'footer#support'
 
+  namespace :onboarding do
+    get 'setup_connections'
+  end
+
   resources :users,  path: "" do
     resources :evernote_entries
     resources :facebook_photo_entries

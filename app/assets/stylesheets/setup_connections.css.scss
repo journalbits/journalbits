@@ -1,0 +1,58 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+section.setup-container {
+  @include outer-container;
+  margin-bottom: 20px;
+
+  h2.connections-intro {
+    font-family: 'lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin: 1.5% auto;
+    text-align: center;
+  }
+
+  div.setup-block {
+    text-align: center;
+
+    @include media($desktop) {
+      @include span-columns(6);
+      @include omega(4n);
+    }
+
+    @include media($tablet) {
+      @include span-columns(4);
+      @include omega(2n);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include omega(n);
+    }
+
+    h3 {
+      font-family: 'lato', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    div.setup-image {
+      @include size(160px);
+      border: 4px solid #FFFFFF;
+      border-radius: 10px;
+      margin: 14% auto 3%;
+      max-width: 100%;
+
+      &:hover {
+        // border: 4px solid #721A14;
+      }
+    }
+    span {
+      font-family: 'lato', sans-serif;
+      font-style: normal;
+      font-weight: 100;
+    }
+  }
+}

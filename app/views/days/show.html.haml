@@ -1,14 +1,14 @@
 %link{rel: :stylesheet, type: :"text/css", href: "/assets/stylesheets/pikaday.css"}
 
-%section.day_container
+%section.day_container{ "data-step" => "2", "data-intro" => "and here's the container at step 2" }
 
   %div.day-info-container
-    = image_tag @user.gravatar_url, class: 'user-gravatar'
+    = image_tag current_user.gravatar_url, class: 'user-gravatar'
     %div.day-info-text
       %div.day-info
-        = "#{@user.name}"
+        = "#{current_user.name}"
       %div.day-info
-        %input#datepicker{ type: 'text' }
+        %input#datepicker{ type: 'text', "data-step" => "1", "data-intro" => "testing out intro.js" }
 
   - if @mentions || @tweets || @favourites
     %div.daily-data-container
@@ -272,3 +272,18 @@
     }
   });
   $('#datepicker').val(picker.toString('dddd Do MMMM YYYY'));
+
+  var signInCount = parseInt("#{@sign_in_count}", 10);
+  var hasEntries = "#{@has_entries}";
+
+  if(signInCount < 400 && hasEntries == "0") {
+    introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
+      window.location.href = '/connections';
+    });
+    introJs().start();
+  }
+
+
+
+
+  // TODO: Find good library for doing intial run through of how to use app

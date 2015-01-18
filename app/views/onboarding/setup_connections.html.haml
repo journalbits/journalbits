@@ -1,0 +1,48 @@
+= stylesheet_link_tag "connections", media: "all"
+
+%div.day-info-container
+  = image_tag current_user.gravatar_url, class: 'user-gravatar'
+  %div.day-info-text
+    %div.day-info
+      = "#{current_user.name}"
+    %div.day-info
+      = @written_date
+
+%section.setup-container
+  %section.setup-block
+    %div.setup-image
+      %div.twitter-img.twitter-logo.service-connection-img
+      %h3
+        Twitter
+
+  %section.setup-block
+    %div.setup-output
+      here's some silly ouput
+
+  %section.setup-block
+    %div.setup-image
+      %div.github-img.github-logo.service-connection-img
+      %h3
+        GitHub
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+
+  %section.setup-block
+    %div.setup-output
+
+  %section.setup-block
+    %div.setup-image
+
+  %section.setup-block
+    %div.setup-output
+
+  %section.setup-block
+    %div.setup-image
+
+  %section.setup-block
+    %div.setup-output

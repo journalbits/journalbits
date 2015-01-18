@@ -100,6 +100,25 @@ class User < ActiveRecord::Base
     self.slug ||= username.parameterize if username
   end
 
+  def has_entries?
+    EvernoteEntry.exists?(user_id: self.id) ||
+    FacebookPhotoEntry.exists?(user_id: self.id) ||
+    FitbitActivityEntry.exists?(user_id: self.id) ||
+    FitbitSleepEntry.exists?(user_id: self.id) ||
+    FitbitWeightEntry.exists?(user_id: self.id) ||
+    GithubEntry.exists?(user_id: self.id) ||
+    HealthGraphEntry.exists?(user_id: self.id) ||
+    InstagramEntry.exists?(user_id: self.id) ||
+    InstapaperEntry.exists?(user_id: self.id) ||
+    LastfmEntry.exists?(user_id: self.id) ||
+    MovesEntry.exists?(user_id: self.id) ||
+    PocketEntry.exists?(user_id: self.id) ||
+    RescueTimeEntry.exists?(user_id: self.id) ||
+    TwitterEntry.exists?(user_id: self.id) ||
+    WhatpulseEntry.exists?(user_id: self.id) ||
+    WunderlistEntry.exists?(user_id: self.id)
+  end
+
   def self.omniauth_login_or_signup auth
     case auth.provider
       when 'twitter' then return signin_or_create_for_twitter auth
