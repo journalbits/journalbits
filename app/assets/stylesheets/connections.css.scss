@@ -39,7 +39,7 @@ section.connections {
     }
 
     div {
-      @include size(160);
+      @include size(160px);
       border: 4px solid #FFFFFF;
       border-radius: 10px;
       margin: 14% auto 3%;
