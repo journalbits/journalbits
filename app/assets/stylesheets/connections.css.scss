@@ -1,3 +1,5 @@
+// TODO: Find out if bourbon, neat etc need to be imported here
+
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
@@ -72,10 +74,10 @@ section.connections {
   background-image: image-url('fitbit250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('fitbit250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('fitbit250.png');
+  //   background-size: contain;
+  // }
 }
 
 .facebook-img {
@@ -87,10 +89,10 @@ section.connections {
   background-image: image-url('facebook250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('facebook250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('facebook250.png');
+  //   background-size: contain;
+  // }
 }
 
 .wunderlist-img {
@@ -102,10 +104,10 @@ section.connections {
   background-image: image-url('wunderlist250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('wunderlist250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('wunderlist250.png');
+  //   background-size: contain;
+  // }
 }
 
 .instagram-img {
@@ -117,10 +119,10 @@ section.connections {
   background-image: image-url('instagram250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('instagram250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('instagram250.png');
+  //   background-size: contain;
+  // }
 }
 
 .evernote-img {
@@ -132,10 +134,10 @@ section.connections {
   background-image: image-url('evernote250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('evernote250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('evernote250.png');
+  //   background-size: contain;
+  // }
 }
 
 .github-img {
@@ -147,10 +149,10 @@ section.connections {
   background-image: image-url('github250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('github250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('github250.png');
+  //   background-size: contain;
+  // }
 }
 
 .twitter-img {
@@ -162,10 +164,10 @@ section.connections {
   background-image: image-url('twitter250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('twitter250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('twitter250.png');
+  //   background-size: contain;
+  // }
 }
 
 .pocket-img {
@@ -177,10 +179,10 @@ section.connections {
   background-image: image-url('pocket250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('pocket250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('pocket250.png');
+  //   background-size: contain;
+  // }
 }
 
 .instapaper-img {
@@ -192,10 +194,10 @@ section.connections {
   background-image: image-url('instapaper250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('instapaper250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('instapaper250.png');
+  //   background-size: contain;
+  // }
 }
 
 .lastfm-img {
@@ -207,10 +209,10 @@ section.connections {
   background-image: image-url('lastfm250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('lastfm250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('lastfm250.png');
+  //   background-size: contain;
+  // }
 }
 
 .rescuetime-img {
@@ -222,10 +224,10 @@ section.connections {
   background-image: image-url('rescuetime250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('rescuetime250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('rescuetime250.png');
+  //   background-size: contain;
+  // }
 }
 
 .whatpulse-img {
@@ -237,10 +239,10 @@ section.connections {
   background-image: image-url('whatpulse250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('whatpulse250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('whatpulse250.png');
+  //   background-size: contain;
+  // }
 }
 
 .moves-img {
@@ -252,10 +254,10 @@ section.connections {
   background-image: image-url('moves250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('moves250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('moves250.png');
+  //   background-size: contain;
+  // }
 }
 
 .sleepcycle-img {
@@ -267,56 +269,15 @@ section.connections {
   background-image: image-url('sleepcycle250_grayscale.png');
   background-size: contain;
 
-  &:hover {
-    background-image: image-url('sleepcycle250.png');
-    background-size: contain;
-  }
+  // &:hover {
+  //   background-image: image-url('sleepcycle250.png');
+  //   background-size: contain;
+  // }
 }
 
-// .twitter-logo:hover {
-//   border: 4px solid #42ABF3;
-// }
-
-// .github-logo:hover {
-//   border: 4px solid #201F1F;
-// }
-
-// .evernote-logo:hover {
-//   border: 4px solid #89C741;
-// }
-
-// .instagram-logo:hover {
-//   border: 4px solid #8F5545;
-// }
-
-// .wunderlist-logo:hover {
-//   border: 4px solid #E03C31;
-// }
-
-// .instapaper-logo:hover {
-//   border: 4px solid #ADACAB;
-// }
-
-// .fitbit-logo:hover {
-//   border: 4px solid #5BC3C6;
-// }
-
-// .pocket-logo:hover {
-//   border: 4px solid #E94154;
-// }
-
-// .facebook-logo:hover {
-//   border: 4px solid #3B579E;
-// }
-
-// .lastfm-logo:hover {
-//   border: 4px solid #CF372C;
-// }
-
-// .rescuetime-logo:hover {
-//   border: 4px solid #C4332A;
-// }
-
-// .whatpulse-logo:hover {
-//   border: 4px solid #96A5B0;
-// }
+.desaturate {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}

@@ -1,7 +1,10 @@
+// TODO: Find out if bourbon, neat etc need to be imported here
+
 @import "bourbon";
 @import "grid-settings";
 /* \$visual-grid: true; */
 @import "neat";
+@import "colours";
 
 
 /*      GENERAL     */
@@ -56,37 +59,26 @@ a {
   margin-bottom: 30px;
 }
 
-p.notice {
+p.flash-message {
   padding: 3px;
-  background: #23d000;
   color: white;
   text-align: center;
   border-radius: 10px;
   margin: 1.5%;
   margin: 8px auto;
   width: 30%;
+}
+
+p.notice {
+  background: $notice-colour;
 }
 
 p.alert {
-  padding: 3px;
-  background: #d06300;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  margin: 1.5%;
-  margin: 8px auto;
-  width: 30%;
+  background: $alert-colour;
 }
 
 p.error {
-  padding: 3px;
-  background: #d00319;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  margin: 1.5%;
-  margin: 8px auto;
-  width: 30%;
+  background: $error-colour;
 }
 
 /* ---------------- */
