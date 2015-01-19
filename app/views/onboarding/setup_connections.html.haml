@@ -1,4 +1,9 @@
-= stylesheet_link_tag "connections", media: "all"
+// TODO: Finish this page
+
+- content_for :javascripts do
+  = javascript_include_tag "https://js.pusher.com/2.2/pusher.min.js"
+- content_for :stylesheetss do
+  = stylesheet_link_tag "connections", media: "all"
 
 %div.day-info-container
   = image_tag current_user.gravatar_url, class: 'user-gravatar'

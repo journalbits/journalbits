@@ -60,11 +60,11 @@
                         Register
       %section.main_body
         -if flash[:notice]
-          %p.notice= flash[:notice]
+          %p.notice.flash-message= flash[:notice]
         -if flash[:alert]
-          %p.alert= flash[:alert]
+          %p.alert.flash-message= flash[:alert]
         -if flash[:error]
-          %p.error= flash[:error]
+          %p.error.flash-message= flash[:error]
         = yield
 
       %section.push
@@ -83,3 +83,5 @@
           %li
             %a{href: '/about'}
               About
+    = yield(:javascripts)
+    = yield(:stylesheets)

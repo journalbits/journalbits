@@ -1,3 +1,6 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag "connections"
+
 - if user_signed_in?
 
   %section.connections
@@ -160,3 +163,11 @@
           - if !@user.health_graph_accounts.empty?
             %span
               = link_to 'Manage Accounts', user_health_graph_accounts_path(@user)
+  :javascript
+    $('.service-connection-img').hover(function() {
+      $(this).addClass('desaturate');
+    }, function() {
+      $(this).removeClass('desaturate');
+    })
+
+    // TODO: Finish off desaturing images (transition, remove uneeded images), and consider already grayscale images e.g. instapaper
