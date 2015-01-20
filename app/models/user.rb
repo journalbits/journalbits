@@ -119,6 +119,81 @@ class User < ActiveRecord::Base
     WunderlistEntry.exists?(user_id: self.id)
   end
 
+  def has_accounts?
+    EvernoteAccount.exists?(user_id: self.id) ||
+    FacebookAccount.exists?(user_id: self.id) ||
+    FitbitAccount.exists?(user_id: self.id) ||
+    GithubAccount.exists?(user_id: self.id) ||
+    HealthGraphAccount.exists?(user_id: self.id) ||
+    InstagramAccount.exists?(user_id: self.id) ||
+    InstapaperAccount.exists?(user_id: self.id) ||
+    LastfmAccount.exists?(user_id: self.id) ||
+    MovesAccount.exists?(user_id: self.id) ||
+    PocketAccount.exists?(user_id: self.id) ||
+    RescueTimeAccount.exists?(user_id: self.id) ||
+    TwitterAccount.exists?(user_id: self.id) ||
+    WhatpulseAccount.exists?(user_id: self.id) ||
+    WunderlistAccount.exists?(user_id: self.id)
+  end
+
+  def accounts
+    [ EvernoteAccount.where(user_id: self.id),
+      FacebookAccount.where(user_id: self.id),
+      FitbitAccount.where(user_id: self.id),
+      GithubAccount.where(user_id: self.id),
+      HealthGraphAccount.where(user_id: self.id),
+      InstagramAccount.where(user_id: self.id),
+      InstapaperAccount.where(user_id: self.id),
+      LastfmAccount.where(user_id: self.id),
+      MovesAccount.where(user_id: self.id),
+      PocketAccount.where(user_id: self.id),
+      RescueTimeAccount.where(user_id: self.id),
+      TwitterAccount.where(user_id: self.id),
+      WhatpulseAccount.where(user_id: self.id),
+      WunderlistAccount.where(user_id: self.id)
+      ].flatten(1)
+  end
+
+  def entries
+    [ EvernoteEntry.where(user_id: self.id),
+      FacebookPhotoEntry.where(user_id: self.id),
+      FitbitActivityEntry.where(user_id: self.id),
+      FitbitSleepEntry.where(user_id: self.id),
+      FitbitWeightEntry.where(user_id: self.id),
+      GithubEntry.where(user_id: self.id),
+      HealthGraphEntry.where(user_id: self.id),
+      InstagramEntry.where(user_id: self.id),
+      InstapaperEntry.where(user_id: self.id),
+      LastfmEntry.where(user_id: self.id),
+      MovesEntry.where(user_id: self.id),
+      PocketEntry.where(user_id: self.id),
+      RescueTimeEntry.where(user_id: self.id),
+      TwitterEntry.where(user_id: self.id),
+      WhatpulseEntry.where(user_id: self.id),
+      WunderlistEntry.where(user_id: self.id)
+      ].flatten(1)
+  end
+
+  def entries_for date = Time.now - 1.day
+    [ EvernoteEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      FacebookPhotoEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      FitbitActivityEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      FitbitSleepEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      FitbitWeightEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      GithubEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      HealthGraphEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      InstagramEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      InstapaperEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      LastfmEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      MovesEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      PocketEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      RescueTimeEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      TwitterEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      WhatpulseEntry.where(user_id: self.id, date: date.to_s[0..9]),
+      WunderlistEntry.where(user_id: self.id, date: date.to_s[0..9])
+      ].flatten(1)
+  end
+
   def self.omniauth_login_or_signup auth
     case auth.provider
       when 'twitter' then return signin_or_create_for_twitter auth

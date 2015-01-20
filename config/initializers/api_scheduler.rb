@@ -13,9 +13,10 @@ scheduler.cron("1 0 * * *") do
 end
 
 # Runs every hour at one minute past the hour
-scheduler.cron("1 * * * *") do
+scheduler.cron("0 * * * *") do
   puts "This is where the normal processor goes"
   # SuperWorker.perform_async Time.now
+  # DailySummaryWorker.perform_async
 end
 
 # THIS ONE IS FOR 23:55 EVERY DAY
