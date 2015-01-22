@@ -1,4 +1,104 @@
-// TODO: Sort out moving logos to this file
+/* Rounded Square 250px */
+
+.fitbit-img {
+  background-image: image-url('fitbit250.png');
+  background-size: contain;
+}
+
+.facebook-img {
+  background-image: image-url('facebook250.png');
+  background-size: contain;
+}
+
+.wunderlist-img {
+  background-image: image-url('wunderlist250.png');
+  background-size: contain;
+}
+
+.instagram-img {
+  background-image: image-url('instagram250.png');
+  background-size: contain;
+}
+
+.evernote-img {
+  background-image: image-url('evernote250.png');
+  background-size: contain;
+}
+
+.github-img {
+  background-image: image-url('github250.png');
+  background-size: contain;
+}
+
+.twitter-img {
+  background-image: image-url('twitter250.png');
+  background-size: contain;
+}
+
+.pocket-img {
+  background-image: image-url('pocket250.png');
+  background-size: contain;
+}
+
+.instapaper-img {
+  background-image: image-url('instapaper250.png');
+  background-size: contain;
+}
+
+.lastfm-img {
+  background-image: image-url('lastfm250.png');
+  background-size: contain;
+}
+
+.rescuetime-img {
+  background-image: image-url('rescuetime250.png');
+  background-size: contain;
+}
+
+.whatpulse-img {
+  background-image: image-url('whatpulse250.png');
+  background-size: contain;
+}
+
+.moves-img {
+  background-image: image-url('moves250.png');
+  background-size: contain;
+}
+
+.sleepcycle-img {
+  background-image: image-url('sleepcycle250.png');
+  background-size: contain;
+}
+
+.saturated {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.desaturated {
+  transition: 0.25s -webkit-filter linear;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  &:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
+}
+
+.desaturated-b-and-w {
+  transition: 0.3s -webkit-filter linear;
+  -webkit-filter: contrast(0.8);
+  filter: contrast(0.8);
+
+  &:hover {
+    -webkit-filter: contrast(1);
+    filter: contrast(1);
+  }
+}
+
+
+/* Circular 50px */
 
 .evernote-logo-circle {
   background-image: image-url('evernote50_circular.png');

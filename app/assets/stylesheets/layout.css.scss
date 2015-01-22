@@ -1,16 +1,9 @@
-// TODO: Find out if bourbon, neat etc need to be imported here
-
-@import "bourbon";
-@import "grid-settings";
 /* \$visual-grid: true; */
-@import "neat";
-@import "colours";
-
 
 /*      GENERAL     */
 
 * {
-  color: #4D4C4D;
+  color: #$default-font-colour;
   margin: 0;
   outline: none;
 }
@@ -26,7 +19,7 @@ html, body, .main-container {
 
 body {
   text-align: center;
-  /* font-family: 'lato', 'Lato', sans-serif; */
+  font-family: $lato;
 }
 
 a {
@@ -52,7 +45,6 @@ a {
 .main_body {
   @include outer-container;
 
-  font-family: 'lato', 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 300;
   padding-bottom: 3em;
@@ -157,7 +149,6 @@ p.error {
 /*      NAVBAR      */
 
 nav {
-  font-family: 'lato', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.2em;
@@ -265,7 +256,6 @@ footer {
   width: 100%;
   text-align: center;
   border-top: 1px solid #d0d0d0;
-  font-family: 'lato', sans-serif;
   font-style: normal;
   font-weight: 500;
   padding-top: 0.5em;
@@ -324,10 +314,9 @@ footer {
 
 
 .btn {
-  border: 1px solid #4D4C4D;
+  border: 1px solid $default-font-colour;
   background-color: #FFF;
   border-radius: 15px;
-  font-family: 'lato', sans-serif;
   font-size: 14px;
   min-width: 100px;
   font-weight: 500;
