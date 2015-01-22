@@ -14,5 +14,5 @@
 
 class PocketAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :pocket_entries
 end

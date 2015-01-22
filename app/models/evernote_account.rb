@@ -15,6 +15,7 @@
 
 class EvernoteAccount < ActiveRecord::Base
   belongs_to :user
+  has_many :evernote_entries
 
   after_create :save_username
 

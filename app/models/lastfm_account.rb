@@ -13,5 +13,5 @@
 
 class LastfmAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :lastfm_entries
 end

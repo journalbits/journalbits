@@ -559,7 +559,7 @@ class User < ActiveRecord::Base
     !Admin.where(user_id: self.id).first.blank?
   end
 
-  # See above for whether or not this is needed
+  # TODO: See above for whether or not this is needed
 
   # protected
 

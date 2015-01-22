@@ -14,5 +14,5 @@
 
 class GithubAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :github_entries
 end

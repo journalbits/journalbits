@@ -15,5 +15,5 @@
 
 class InstapaperAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :instapaper_entries
 end

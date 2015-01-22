@@ -13,5 +13,5 @@
 
 class WhatpulseAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :whatpulse_entries
 end

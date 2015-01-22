@@ -15,5 +15,5 @@
 
 class MovesAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :moves_entries
 end

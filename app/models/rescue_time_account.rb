@@ -13,5 +13,5 @@
 
 class RescueTimeAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :rescue_time_entries
 end

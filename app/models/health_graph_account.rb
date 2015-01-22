@@ -14,4 +14,5 @@
 
 class HealthGraphAccount < ActiveRecord::Base
   belongs_to :user
+  has_many :health_graph_entries
 end

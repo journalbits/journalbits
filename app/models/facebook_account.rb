@@ -15,5 +15,6 @@
 
 class FacebookAccount < ActiveRecord::Base
   belongs_to :user
+  has_many :facebook_photo_entries
 
 end

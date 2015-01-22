@@ -20,4 +20,20 @@ class WhatpulseEntry < ServiceEntry
   belongs_to :whatpulse_account
 
   include EntryPusher
+
+  def self.total_clicks pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.clicks.to_i }
+  end
+
+  def self.total_keys pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.keys.to_i }
+  end
+
+  def self.total_upload pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.upload_mb.to_i }
+  end
+
+  def self.total_download pulses
+    pulses.inject(0) { |memo, pulse| memo + pulse.download_mb.to_i }
+  end
 end

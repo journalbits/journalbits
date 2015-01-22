@@ -15,5 +15,8 @@
 
 class FitbitAccount < ActiveRecord::Base
   belongs_to :user
+  has_many :fitbit_activity_entries
+  has_many :fitbit_sleep_entries
+  has_many :fitbit_weight_entries
 
 end

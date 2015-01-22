@@ -15,5 +15,5 @@
 
 class InstagramAccount < ActiveRecord::Base
   belongs_to :user
-
+  has_many :instagram_entries
 end
