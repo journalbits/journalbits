@@ -2,14 +2,18 @@
 
 - content_for :javascripts do
   = javascript_include_tag "https://js.pusher.com/2.2/pusher.min.js"
-- content_for :stylesheetss do
+- content_for :stylesheets do
   = stylesheet_link_tag "connections", media: "all"
+  = stylesheet_link_tag "setup_connections", media: "all"
+
 
 %div.day-info-container
   = image_tag current_user.gravatar_url, class: 'user-gravatar'
   %div.day-info-text
     %div.day-info
       = "#{current_user.name}"
+    %div.day-info.day-info-hyphen
+      = "-"
     %div.day-info
       = @written_date
 
@@ -17,8 +21,8 @@
   %section.setup-block
     %div.setup-image
       %div.twitter-img.twitter-logo.service-connection-img
-      %h3
-        Twitter
+      %div.service-connect-btn.twitter-connect-btn
+        Connect to Twitter
 
   %section.setup-block
     %div.setup-output
@@ -27,8 +31,8 @@
   %section.setup-block
     %div.setup-image
       %div.github-img.github-logo.service-connection-img
-      %h3
-        GitHub
+      %div.service-connect-btn.github-connect-btn
+        Connect to GitHub
 
   %section.setup-block
     %div.setup-output
@@ -36,18 +40,120 @@
 
   %section.setup-block
     %div.setup-image
+      %div.instagram-img.instagram-logo.service-connection-img
+      %div.service-connect-btn.instagram-connect-btn
+        Connect to Instagram
 
   %section.setup-block
     %div.setup-output
+      Instagram photos
 
   %section.setup-block
     %div.setup-image
+      %div.evernote-img.evernote-logo.service-connection-img
+      %div.service-connect-btn.evernote-connect-btn
+        Connect to Evernote
 
   %section.setup-block
     %div.setup-output
+      And some nerdy code output
 
   %section.setup-block
     %div.setup-image
+      %div.wunderlist-img.wunderlist-logo.service-connection-img
+      %div.service-connect-btn.wunderlist-connect-btn
+        Connect to Wunderlist
 
   %section.setup-block
     %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.facebook-img.facebook-logo.service-connection-img
+      %div.service-connect-btn.facebook-connect-btn
+        Connect to Facebook
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.fitbit-img.fitbit-logo.service-connection-img
+      %div.service-connect-btn.fitbit-connect-btn
+        Connect to Fitbit
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.pocket-img.pocket-logo.service-connection-img
+      %div.service-connect-btn.pocket-connect-btn
+        Connect to Pocket
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.lastfm-img.lastfm-logo.service-connection-img
+      %div.service-connect-btn.lastfm-connect-btn
+        Connect to LastFM
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.instapaper-img.instapaper-logo.service-connection-img
+      %div.service-connect-btn.instapaper-connect-btn
+        Connect to Instapaper
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.rescuetime-img.rescuetime-logo.service-connection-img
+      %div.service-connect-btn.rescuetime-connect-btn
+        Connect to Rescue Time
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.whatpulse-img.whatpulse-logo.service-connection-img
+      %div.service-connect-btn.whatpulse-connect-btn
+        Connect to WhatPulse
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.moves-img.moves-logo.service-connection-img
+      %div.service-connect-btn.moves-connect-btn
+        Connect to Moves
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output
+
+  %section.setup-block
+    %div.setup-image
+      %div.sleepcycle-img.sleepcycle-logo.service-connection-img
+      %div.service-connect-btn.sleepcycle-connect-btn
+        Connect to Sleep Cycle
+
+  %section.setup-block
+    %div.setup-output
+      And some nerdy code output

@@ -3,6 +3,7 @@
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
+@import "colours";
 
 section.setup-container {
   @include outer-container;
@@ -18,6 +19,7 @@ section.setup-container {
 
   section.setup-block {
     text-align: center;
+    padding: 40px 0;
 
     @include media($desktop) {
       @include span-columns(3);
@@ -43,7 +45,6 @@ section.setup-container {
     div.setup-image {
       div.service-connection-img {
         @include size(160px);
-        border: 4px solid #FFFFFF;
         border-radius: 10px;
         margin: 14% auto 3%;
         max-width: 100%;
@@ -58,5 +59,175 @@ section.setup-container {
       font-style: normal;
       font-weight: 100;
     }
+  }
+}
+
+.day-info-container {
+  padding: 20px;
+
+  .user-gravatar {
+    width: 50px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .day-info-text {
+    vertical-align: top;
+    margin-top: 15px;
+    display: inline-block;
+
+    .day-info {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .day-info-hyphen {
+      margin: 0px 5px;
+    }
+  }
+
+}
+
+
+.service-connect-btn {
+  padding: 1px 5px;
+  border-radius: 10px;
+  color: #fff;
+  width: 85%;
+  margin: auto;
+  transition: 0.25s all linear;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.twitter-connect-btn {
+  background-color: $twitter-hover;
+  border: 2px solid $twitter-hover;
+
+  &:hover {
+    color: $twitter-hover;
+  }
+}
+
+.github-connect-btn {
+  background-color: $github-hover;
+  border: 2px solid $github-hover;
+
+  &:hover {
+    color: $github-hover;
+  }
+}
+
+.instagram-connect-btn {
+  background-color: $instagram-hover;
+  border: 2px solid $instagram-hover;
+
+  &:hover {
+    color: $instagram-hover;
+  }
+}
+
+.evernote-connect-btn {
+  background-color: $evernote-hover;
+  border: 2px solid $evernote-hover;
+
+  &:hover {
+    color: $evernote-hover;
+  }
+}
+
+.wunderlist-connect-btn {
+  background-color: $wunderlist-hover;
+  border: 2px solid $wunderlist-hover;
+
+  &:hover {
+    color: $wunderlist-hover;
+  }
+}
+
+.facebook-connect-btn {
+  background-color: $facebook-hover;
+  border: 2px solid $facebook-hover;
+
+  &:hover {
+    color: $facebook-hover;
+  }
+}
+
+.fitbit-connect-btn {
+  background-color: $fitbit-hover;
+  border: 2px solid $fitbit-hover;
+
+  &:hover {
+    color: $fitbit-hover;
+  }
+}
+
+.pocket-connect-btn {
+  background-color: $pocket-hover;
+  border: 2px solid $pocket-hover;
+
+  &:hover {
+    color: $pocket-hover;
+  }
+}
+
+.lastfm-connect-btn {
+  background-color: $lastfm-hover;
+  border: 2px solid $lastfm-hover;
+
+  &:hover {
+    color: $lastfm-hover;
+  }
+}
+
+.instapaper-connect-btn {
+  background-color: $instapaper-hover;
+  border: 2px solid $instapaper-hover;
+
+  &:hover {
+    color: $instapaper-hover;
+  }
+}
+
+.rescuetime-connect-btn {
+  background-color: $rescuetime-hover;
+  border: 2px solid $rescuetime-hover;
+
+  &:hover {
+    color: $rescuetime-hover;
+  }
+}
+
+.whatpulse-connect-btn {
+  background-color: $whatpulse-hover;
+  border: 2px solid $whatpulse-hover;
+
+  &:hover {
+    color: $whatpulse-hover;
+  }
+}
+
+.moves-connect-btn {
+  background-color: $moves-hover;
+  border: 2px solid $moves-hover;
+
+  &:hover {
+    color: $moves-hover;
+  }
+}
+
+.sleepcycle-connect-btn {
+  background-color: $sleepcycle-hover;
+  border: 2px solid $sleepcycle-hover;
+
+  &:hover {
+    color: $sleepcycle-hover;
   }
 }

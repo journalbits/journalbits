@@ -1,4 +1,6 @@
-%link{rel: :stylesheet, type: :"text/css", href: "/assets/stylesheets/pikaday.css"}
+- content_for :stylesheets do
+  = stylesheet_link_tag "days", media: "all"
+  = stylesheet_link_tag "pikaday", media: "all"
 
 %section.day_container{ "data-step" => "2", "data-intro" => "and here's the container at step 2" }
 
