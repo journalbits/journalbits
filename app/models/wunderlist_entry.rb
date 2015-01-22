@@ -15,7 +15,9 @@
 #  wunderlist_account_id :integer
 #
 
-class WunderlistEntry < ActiveRecord::Base
+class WunderlistEntry < ServiceEntry
   belongs_to :user
   belongs_to :wunderlist_account
+
+  include EntryPusher
 end

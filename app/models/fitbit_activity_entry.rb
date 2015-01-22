@@ -14,6 +14,9 @@
 #  fitbit_account_id :integer
 #
 
-class FitbitActivityEntry < ActiveRecord::Base
+class FitbitActivityEntry < ServiceEntry
+  belongs_to :user
   belongs_to :fitbit_account
+
+  include EntryPusher
 end

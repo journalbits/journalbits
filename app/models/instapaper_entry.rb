@@ -13,7 +13,9 @@
 #  instapaper_account_id :integer
 #
 
-class InstapaperEntry < ActiveRecord::Base
+class InstapaperEntry < ServiceEntry
   belongs_to :user
   belongs_to :instapaper_account
+
+  include EntryPusher
 end

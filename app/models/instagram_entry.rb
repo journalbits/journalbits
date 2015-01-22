@@ -15,7 +15,9 @@
 #  instagram_account_id :integer
 #
 
-class InstagramEntry < ActiveRecord::Base
+class InstagramEntry < ServiceEntry
   belongs_to :user
   belongs_to :instagram_account
+
+  include EntryPusher
 end

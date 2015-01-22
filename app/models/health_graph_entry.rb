@@ -12,7 +12,9 @@
 #  health_graph_account_id :integer
 #
 
-class HealthGraphEntry < ActiveRecord::Base
+class HealthGraphEntry < ServiceEntry
   belongs_to :user
   belongs_to :health_graph_account
+
+  include EntryPusher
 end

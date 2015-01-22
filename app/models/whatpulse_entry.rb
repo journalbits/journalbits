@@ -15,7 +15,9 @@
 #  whatpulse_account_id :integer
 #
 
-class WhatpulseEntry < ActiveRecord::Base
+class WhatpulseEntry < ServiceEntry
   belongs_to :user
   belongs_to :whatpulse_account
+
+  include EntryPusher
 end

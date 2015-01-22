@@ -14,7 +14,9 @@
 #  lastfm_account_id :integer
 #
 
-class LastfmEntry < ActiveRecord::Base
+class LastfmEntry < ServiceEntry
   belongs_to :user
   belongs_to :lastfm_account
+
+  include EntryPusher
 end

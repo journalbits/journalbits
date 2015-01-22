@@ -15,7 +15,9 @@
 #  moves_account_id :integer
 #
 
-class MovesEntry < ActiveRecord::Base
+class MovesEntry < ServiceEntry
   belongs_to :user
   belongs_to :moves_account
+
+  include EntryPusher
 end

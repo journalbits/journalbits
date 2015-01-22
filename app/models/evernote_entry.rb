@@ -13,6 +13,9 @@
 #  evernote_account_id :integer
 #
 
-class EvernoteEntry < ActiveRecord::Base
+class EvernoteEntry < ServiceEntry
+  belongs_to :user
   belongs_to :evernote_account
+
+  include EntryPusher
 end

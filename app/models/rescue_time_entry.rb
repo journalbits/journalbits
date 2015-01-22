@@ -19,7 +19,9 @@
 #  rescue_time_account_id :integer
 #
 
-class RescueTimeEntry < ActiveRecord::Base
+class RescueTimeEntry < ServiceEntry
   belongs_to :user
   belongs_to :rescue_time_account
+
+  include EntryPusher
 end

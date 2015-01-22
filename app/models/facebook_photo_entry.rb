@@ -14,6 +14,9 @@
 #  facebook_account_id :integer
 #
 
-class FacebookPhotoEntry < ActiveRecord::Base
+class FacebookPhotoEntry < ServiceEntry
+  belongs_to :user
   belongs_to :facebook_account
+
+  include EntryPusher
 end

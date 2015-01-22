@@ -13,7 +13,9 @@
 #  pocket_account_id :integer
 #
 
-class PocketEntry < ActiveRecord::Base
+class PocketEntry < ServiceEntry
   belongs_to :user
   belongs_to :pocket_account
+
+  include EntryPusher
 end

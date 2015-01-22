@@ -16,8 +16,9 @@
 #  twitter_account_id :integer
 #
 
-class TwitterEntry < ActiveRecord::Base
+class TwitterEntry < ServiceEntry
   belongs_to :user
   belongs_to :twitter_account
 
+  include EntryPusher
 end

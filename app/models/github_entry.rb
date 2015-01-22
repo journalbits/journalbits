@@ -15,6 +15,9 @@
 #  private           :boolean
 #
 
-class GithubEntry < ActiveRecord::Base
+class GithubEntry < ServiceEntry
+  belongs_to :user
   belongs_to :github_account
+
+  include EntryPusher
 end
