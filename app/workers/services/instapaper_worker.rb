@@ -11,12 +11,12 @@ class InstapaperWorker
   end
 
   def create_client_for account
-    client = Instapaper.configure do |config|
-      config.consumer_key = ENV['INSTAPAPER_CONSUMER_KEY']
-      config.consumer_secret = ENV['INSTAPAPER_CONSUMER_SECRET']
-      config.oauth_token = account.oauth_token
-      config.oauth_token_secret = account.oauth_secret
-    end
+    client = Instapaper::Client.new({
+      consumer_key: ENV['INSTAPAPER_CONSUMER_KEY'],
+      consumer_secret: ENV['INSTAPAPER_CONSUMER_SECRET'],
+      oauth_token: account.oauth_token,
+      oauth_token_secret: account.oauth_secret
+    })
     client
   end
 
@@ -38,6 +38,6 @@ class InstapaperWorker
 
   def user_bookmarks_on date, client
     bookmarks = client.bookmarks
-    bookmarks.select { |bookmark| Time.at(bookmark.time).to_s[0..9] == date.to_s[0..9] }
+    bookmarks.nil? ? [] : bookmarks.select { |bookmark| Time.at(bookmark.time).to_s[0..9] == date.to_s[0..9] }
   end
 end
