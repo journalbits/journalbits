@@ -30,6 +30,7 @@ scheduler.cron('25,55 * * * *') do
 end
 
 scheduler.schedule_every("10m", { first: "6s" }) do
+  SuperWorker.perform_async Time.now
   # processor = ServiceProcessor::GlobalProcessor.new (Time.now)
   # processor.process_all
   # SuperWorker.perform_async Time.now
