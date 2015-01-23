@@ -12,13 +12,14 @@ class DaysController < ApplicationController
   end
 
   def show
-    if params[:user_id] == current_user.slug
+    @user = User.find_by_slug(params[:user_id]_
+    if @user.slug == current_user.slug
       @sign_in_count = current_user.sign_in_count
       @has_entries = current_user.has_entries? ? "1" : "0"
     end
     date = params[:id] ? params[:id] : (Time.now - 1.day).to_s[0..9]
     @written_date = DateTime.parse(date).strftime("%A %-d %B %Y")
-    @entries = @owner ? owner_entries(date) : public_entries(date, params[:user_id])
+    @entries = @owner ? owner_entries(date) : public_entries(date, @user)
   end
 
   private
@@ -36,8 +37,7 @@ class DaysController < ApplicationController
     current_user.entries_for date
   end
 
-  def public_entries date, user_slug
-    user = User.find_by_slug(user_slug)
+  def public_entries date, user
     user.entries_for date, true
   end
 
