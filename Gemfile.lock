@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/launsh/pocket-ruby.git
+  revision: a92d00e8d498ae1ba985514e51dd5176604496d3
+  specs:
+    pocket-ruby (0.0.5)
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9)
+      hashie (>= 0.4.0)
+      multi_json (~> 1.0, >= 1.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -490,6 +500,7 @@ DEPENDENCIES
   omniauth-runkeeper
   omniauth-twitter
   pg
+  pocket-ruby!
   pusher
   pusher-client
   rails (~> 4.2.0)

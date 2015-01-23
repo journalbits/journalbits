@@ -71,6 +71,7 @@ gem 'evernote_oauth'
 gem 'instapaper'
 gem 'moves'
 gem 'health_graph'
+gem 'pocket-ruby', git: 'https://github.com/launsh/pocket-ruby.git'
 
 # For user profiles and profile images
 gem 'devise'
