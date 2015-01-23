@@ -46,12 +46,8 @@ class User < ActiveRecord::Base
 
   before_validation :generate_slug
 
-  # Work out why this is here as well as protected method at bottom |
-  #                                                                 V
-
   # before_filter :check_user, only: [:new]
 
-  #########################################
   has_many :evernote_accounts
   has_many :facebook_accounts
   has_many :fitbit_accounts
@@ -527,8 +523,6 @@ class User < ActiveRecord::Base
   def admin?
     !Admin.where(user_id: self.id).first.blank?
   end
-
-  # TODO: See above for whether or not this is needed
 
   # protected
 
