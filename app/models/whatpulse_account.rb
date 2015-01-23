@@ -11,7 +11,7 @@
 #  activated  :boolean          default(TRUE)
 #
 
-class WhatpulseAccount < ActiveRecord::Base
+class WhatpulseAccount < ServiceAccount
   belongs_to :user
   has_many :whatpulse_entries
 end

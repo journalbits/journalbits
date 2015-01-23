@@ -12,7 +12,7 @@
 #  email      :string(255)
 #
 
-class WunderlistAccount < ActiveRecord::Base
+class WunderlistAccount < ServiceAccount
   belongs_to :user
   has_many :wunderlist_entries
 end

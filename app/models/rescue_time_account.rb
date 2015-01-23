@@ -11,7 +11,7 @@
 #  activated  :boolean          default(TRUE)
 #
 
-class RescueTimeAccount < ActiveRecord::Base
+class RescueTimeAccount < ServiceAccount
   belongs_to :user
   has_many :rescue_time_entries
 end

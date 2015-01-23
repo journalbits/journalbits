@@ -12,7 +12,7 @@
 #  username    :string(255)
 #
 
-class PocketAccount < ActiveRecord::Base
+class PocketAccount < ServiceAccount
   belongs_to :user
   has_many :pocket_entries
 end

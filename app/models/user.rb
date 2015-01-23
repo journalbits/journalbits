@@ -154,44 +154,13 @@ class User < ActiveRecord::Base
       ].flatten(1)
   end
 
-  def entries
-    [ EvernoteEntry.where(user_id: self.id),
-      FacebookPhotoEntry.where(user_id: self.id),
-      FitbitActivityEntry.where(user_id: self.id),
-      FitbitSleepEntry.where(user_id: self.id),
-      FitbitWeightEntry.where(user_id: self.id),
-      GithubEntry.where(user_id: self.id),
-      HealthGraphEntry.where(user_id: self.id),
-      InstagramEntry.where(user_id: self.id),
-      InstapaperEntry.where(user_id: self.id),
-      LastfmEntry.where(user_id: self.id),
-      MovesEntry.where(user_id: self.id),
-      PocketEntry.where(user_id: self.id),
-      RescueTimeEntry.where(user_id: self.id),
-      TwitterEntry.where(user_id: self.id),
-      WhatpulseEntry.where(user_id: self.id),
-      WunderlistEntry.where(user_id: self.id)
-      ].flatten(1)
-  end
-
-  def entries_for date = Time.now - 1.day
-    [ EvernoteEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      FacebookPhotoEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      FitbitActivityEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      FitbitSleepEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      FitbitWeightEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      GithubEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      HealthGraphEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      InstagramEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      InstapaperEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      LastfmEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      MovesEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      PocketEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      RescueTimeEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      TwitterEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      WhatpulseEntry.where(user_id: self.id, date: date.to_s[0..9]),
-      WunderlistEntry.where(user_id: self.id, date: date.to_s[0..9])
-      ].flatten(1)
+  def entries_for date = (Time.now - 1.day).to_s[0..9], only_public = false
+    accounts = only_public ? self.accounts.select { |a| a.public? }
+                           : self.accounts
+    accounts.inject({}) do |entries_hash, acc|
+      entries_hash.merge!(acc.entries("user_id = #{self.id} AND date = '#{date}'"))
+      entries_hash
+    end
   end
 
   def self.omniauth_login_or_signup auth

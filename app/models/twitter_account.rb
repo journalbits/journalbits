@@ -14,7 +14,7 @@
 #  activated    :boolean          default(TRUE)
 #
 
-class TwitterAccount < ActiveRecord::Base
+class TwitterAccount < ServiceAccount
   belongs_to :user
   has_many :twitter_entries
 end

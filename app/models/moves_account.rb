@@ -13,7 +13,7 @@
 #  platform      :string(255)
 #
 
-class MovesAccount < ActiveRecord::Base
+class MovesAccount < ServiceAccount
   belongs_to :user
   has_many :moves_entries
 end

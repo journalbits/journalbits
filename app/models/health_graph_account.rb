@@ -12,7 +12,7 @@
 #  username     :string(255)
 #
 
-class HealthGraphAccount < ActiveRecord::Base
+class HealthGraphAccount < ServiceAccount
   belongs_to :user
   has_many :health_graph_entries
 end

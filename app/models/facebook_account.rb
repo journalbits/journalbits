@@ -13,7 +13,7 @@
 #  name             :string(255)
 #
 
-class FacebookAccount < ActiveRecord::Base
+class FacebookAccount < ServiceAccount
   belongs_to :user
   has_many :facebook_photo_entries
 

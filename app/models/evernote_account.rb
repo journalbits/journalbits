@@ -13,7 +13,7 @@
 #  username         :string(255)
 #
 
-class EvernoteAccount < ActiveRecord::Base
+class EvernoteAccount < ServiceAccount
   belongs_to :user
   has_many :evernote_entries
 

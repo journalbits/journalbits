@@ -13,7 +13,7 @@
 #  name         :string(255)
 #
 
-class InstapaperAccount < ActiveRecord::Base
+class InstapaperAccount < ServiceAccount
   belongs_to :user
   has_many :instapaper_entries
 end

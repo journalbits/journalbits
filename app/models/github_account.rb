@@ -12,7 +12,7 @@
 #  username     :string(255)
 #
 
-class GithubAccount < ActiveRecord::Base
+class GithubAccount < ServiceAccount
   belongs_to :user
   has_many :github_entries
 end

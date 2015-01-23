@@ -11,7 +11,7 @@
 #  activated  :boolean          default(TRUE)
 #
 
-class LastfmAccount < ActiveRecord::Base
+class LastfmAccount < ServiceAccount
   belongs_to :user
   has_many :lastfm_entries
 end

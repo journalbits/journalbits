@@ -13,7 +13,7 @@
 #  username    :string(255)
 #
 
-class InstagramAccount < ActiveRecord::Base
+class InstagramAccount < ServiceAccount
   belongs_to :user
   has_many :instagram_entries
 end

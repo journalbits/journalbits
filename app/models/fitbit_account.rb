@@ -13,7 +13,7 @@
 #  name         :string(255)
 #
 
-class FitbitAccount < ActiveRecord::Base
+class FitbitAccount < ServiceAccount
   belongs_to :user
   has_many :fitbit_activity_entries
   has_many :fitbit_sleep_entries
