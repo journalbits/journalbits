@@ -5,10 +5,10 @@
 %section.day_container{ "data-step" => "2", "data-intro" => "and here's the container at step 2" }
 
   %div.day-info-container
-    = image_tag current_user.gravatar_url, class: 'user-gravatar'
+    = image_tag @user.gravatar_url, class: 'user-gravatar'
     %div.day-info-text
       %div.day-info
-        = "#{current_user.name}"
+        = "#{@user.name}"
       %div.day-info
         %input#datepicker{ type: 'text', "data-step" => "1", "data-intro" => "testing out intro.js" }
 
@@ -270,7 +270,7 @@
     maxDate: new Date(),
     onSelect: function() {
       $('#datepicker').val(picker.toString('dddd Do MMMM YYYY'));
-      document.location.href = "/" + "#{current_user.slug}/" + picker.toString('YYYY-MM-DD');
+      document.location.href = "/" + "#{@user.slug}/" + picker.toString('YYYY-MM-DD');
     }
   });
   $('#datepicker').val(picker.toString('dddd Do MMMM YYYY'));
