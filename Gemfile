@@ -140,8 +140,6 @@ group :development do
   gem 'binding_of_caller'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -150,8 +148,3 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rewinder'
-
-
-# FOR HEROKU
-
-# heroku config:set REDIS_PROVIDER=REDISTOGO_URL
