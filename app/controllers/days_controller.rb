@@ -12,7 +12,7 @@ class DaysController < ApplicationController
   end
 
   def show
-    @user = User.find_by_slug(params[:user_id]_
+    @user = User.find_by_slug(params[:user_id])
     if @user.slug == current_user.slug
       @sign_in_count = current_user.sign_in_count
       @has_entries = current_user.has_entries? ? "1" : "0"
