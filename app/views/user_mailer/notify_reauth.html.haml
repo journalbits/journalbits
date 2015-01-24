@@ -4,11 +4,13 @@
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
     %h4
-      Hello #{@user.username},
+      Hi #{@user.username}!
     %p
       Your #{@service} account needs to be re-authorized within the next #{@time} to make sure that we don't miss out on collecting information for you.
     %p
-      To do this just login to your account, navigate to your connections and then re-authorized your #{@service} account there.
+      -# TODO: Finish this account specific URL creation VVVV
+
+      To do this just login to your account, navigate to your connections, and then re-authorize your #{@service} account there.
     %p
       If for some reason it doesn't work then reply to this email and let me know.
     %p

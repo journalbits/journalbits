@@ -6,11 +6,12 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Welcome to JournalBits')
   end
 
-  def notify_reauth user_id, service, expires_at
-    @user = User.find(user_id)
+  def notify_reauth acc, service, expires_at
+    @user = User.find(acc.user_id)
     @time = day_week_or_month? expires_at
-    @service = service
-    mail(to: @user.email, subject: "Reauthorize #{service} on JournalBits")
+    @service = acc.class == EvernoteAccount ? "#{service} (#{acc.username})"
+                                            : service
+    mail(to: @user.email, subject: "Reauthorize #{@service} on JournalBits")
   end
 
   def daily_summary user_id
