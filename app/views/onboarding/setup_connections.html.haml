@@ -5,6 +5,14 @@
   = stylesheet_link_tag "setup_connections", media: "all"
 
 
+:javascript
+  var pusher = new Pusher('6d5321c29d3df32c50f4');
+  var entryChannel = pusher.subscribe("private-user-" + "#{current_user.id}");
+  entryChannel.bind('new-entry', function(entry) {
+    alert(entry);
+  });
+
+
 %div.day-info-container
   = image_tag current_user.gravatar_url, class: 'user-gravatar'
   %div.day-info-text
@@ -23,7 +31,7 @@
         Connect to Twitter
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.twitter-output
       here's some silly ouput
 
   %section.setup-block
@@ -33,7 +41,7 @@
         Connect to GitHub
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.github-output
       And some nerdy code output
 
   %section.setup-block
@@ -43,7 +51,7 @@
         Connect to Instagram
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.instagram-output
       Instagram photos
 
   %section.setup-block
@@ -53,7 +61,7 @@
         Connect to Evernote
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.evernote-output
       And some nerdy code output
 
   %section.setup-block
@@ -63,7 +71,7 @@
         Connect to Wunderlist
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.wunderlist-output
       And some nerdy code output
 
   %section.setup-block
@@ -73,7 +81,7 @@
         Connect to Facebook
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.facebook-output
       And some nerdy code output
 
   %section.setup-block
@@ -83,7 +91,7 @@
         Connect to Fitbit
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.fitbit-output
       And some nerdy code output
 
   %section.setup-block
@@ -93,7 +101,7 @@
         Connect to Pocket
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.pocket-output
       And some nerdy code output
 
   %section.setup-block
@@ -103,7 +111,7 @@
         Connect to LastFM
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.lastfm-output
       And some nerdy code output
 
   %section.setup-block
@@ -113,7 +121,7 @@
         Connect to Instapaper
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.instapaper-output
       And some nerdy code output
 
   %section.setup-block
@@ -123,7 +131,7 @@
         Connect to Rescue Time
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.rescuetime-output
       And some nerdy code output
 
   %section.setup-block
@@ -133,7 +141,7 @@
         Connect to WhatPulse
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.whatpulse-output
       And some nerdy code output
 
   %section.setup-block
@@ -143,7 +151,7 @@
         Connect to Moves
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.moves-output
       And some nerdy code output
 
   %section.setup-block
@@ -153,5 +161,5 @@
         Connect to Sleep Cycle
 
   %section.setup-block
-    %div.setup-output
+    %div.setup-output.sleepcycle-output
       And some nerdy code output
