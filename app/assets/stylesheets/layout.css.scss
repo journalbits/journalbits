@@ -73,6 +73,16 @@ p.error {
   background: $error-colour;
 }
 
+.vertical-center-container {
+  display: table;
+  height: 100%;
+}
+
+.vertical-center-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 /* ---------------- */
 
 
@@ -97,7 +107,7 @@ p.error {
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  line-height: 0.8;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -191,6 +201,8 @@ nav {
         }
 
         .nav-text {
+          line-height: 1.4;
+
           @include media($mobile) {
             display: none;
           }
@@ -223,6 +235,8 @@ nav {
             }
 
             .nav-text {
+              line-height: 1.4;
+
               @include media($mobile) {
                 display: none;
               }
