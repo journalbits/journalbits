@@ -38,11 +38,14 @@ gem 'sprockets'
 gem 'annotate'
 
 # For using intro.js with the assest pipeline
- gem 'introjs-rails'
+gem 'introjs-rails'
 
 # For realtime messaging between the server and the client
- gem 'pusher'
- gem 'pusher-client'
+gem 'pusher'
+gem 'pusher-client'
+
+# For quicker JSON work
+gem 'oj'
 
 # For authentication
 gem 'oauth2'

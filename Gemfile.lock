@@ -237,6 +237,7 @@ GEM
       rack (~> 1.2)
     octokit (2.7.2)
       sawyer (~> 0.5.2)
+    oj (2.11.4)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
@@ -485,6 +486,7 @@ DEPENDENCIES
   newrelic_rpm
   oauth2
   octokit (~> 2.0)
+  oj
   omniauth
   omniauth-clef
   omniauth-evernote
