@@ -1,1 +1,19 @@
-hello there mr unauthenticated
+- content_for :stylesheets do
+  = stylesheet_link_tag "landing", media: "all"
+
+%section.full-height.full-width.intro-section.outer-container
+  %div.container-block.vertical-center-container
+    %div.vertical-center-content
+      %div.logo-image
+  %div.container-block.vertical-center-container
+    %div.vertical-center-content
+      %div.intro-text
+        Automatically journal everything you do online
+
+%section.full-height.full-width.explain-section.outer-container
+  %div.intro-text
+  %div.screenshot-image
+
+%section.half-height.full-width.signup-section
+  %div.signup-spiel
+  %div.signup-btn

@@ -1,0 +1,61 @@
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+section.outer-container {
+  @include outer-container;
+
+  div.container-block {
+    @include media($desktop) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media($tablet) {
+      @include span-columns(4);
+      @include omega(2n);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include omega(n);
+    }
+  }
+}
+
+div.logo-image {
+  background-image: image-url('landing-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 80%;
+  width: 100%;
+}
+
+section.main_body {
+  max-width: 100vw;
+}
+
+section.full-height {
+  height: 100vh;
+}
+
+section.half-height {
+  height: 50vh;
+}
+
+section.full-width {
+  width: 100vw;
+}
+
+section.intro-section {
+  background-color: red;
+}
+
+section.explain-section {
+  background-color: blue;
+}
+
+section.signup-section {
+  background-color: green;
+}
