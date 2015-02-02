@@ -1,55 +1,53 @@
-// Place all the styles related to the Days controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "bourbon";
 @import "grid-settings";
 @import "neat";
 
 .day_container {
   margin-top: 10px;
-  @include outer-container;
 
-  .daily-data-container {
-    text-align: left;
-    padding: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border: 1px solid #FFF;
-    border-radius: 10px;
+  section.daily-data-grid {
+    @include outer-container;
 
-    @include media($desktop) {
-      @include span-columns(6);
-      @include omega(2n);
+    div.daily-data-container {
+      text-align: left;
+      padding: 15px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #FFF;
+      border-radius: 10px;
+
+      @include media($desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
+      @include media($tablet) {
+        @include span-columns(4);
+        @include omega(2n);
+      }
+
+      @include media($mobile) {
+        @include span-columns(4);
+        @include omega(n);
+      }
+
+      &:hover {
+        border-color: #d0d0d0;
+      }
+
+      h1 {
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 22px;
+        font-weight: 500;
+      }
     }
-
-    @include media($tablet) {
-      @include span-columns(4);
-      @include omega(2n);
-    }
-
-    @include media($mobile) {
-      @include span-columns(4);
-      @include omega(n);
-    }
-
-    &:hover {
-      border-color: #d0d0d0;
-    }
-
-    h1 {
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    span {
-      font-size: 22px;
-      font-weight: 500;
-    }
-
   }
 
-  .day-info-container {
+  div.day-info-container {
     padding: 20px;
 
     .user-gravatar {
