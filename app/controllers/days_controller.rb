@@ -13,7 +13,7 @@ class DaysController < ApplicationController
 
   def show
     @user = User.find_by_slug(params[:user_id])
-    if @user.slug == current_user.slug
+    if current_user && @user.slug == current_user.slug
       @sign_in_count = current_user.sign_in_count
       @has_entries = current_user.has_entries? ? "1" : "0"
     end
@@ -25,10 +25,10 @@ class DaysController < ApplicationController
   private
 
   def check_permissions
-    if !User.find_by_slug(params[:user_id]).public? && current_user.slug != params[:user_id]
+    if !User.find_by_slug(params[:user_id]).public? && current_user && current_user.slug != params[:user_id]
       flash[:error] = 'The account you tried to view is not public'
       redirect_to '/'
-    elsif current_user.slug == params[:user_id]
+    elsif current_user && current_user.slug == params[:user_id]
       @owner = true
     end
   end
