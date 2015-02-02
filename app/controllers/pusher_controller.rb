@@ -2,7 +2,7 @@ class PusherController < ApplicationController
   protect_from_forgery except: [:auth]
 
   def auth
-    if current_user && current_user.id == params[:channel_name].split("-")[-1]
+    if current_user && current_user.id == params[:channel_name].split("-")[-1].to_i
       response = Pusher[params[:channel_name]].authenticate(params[:socket_id])
       render json: response
     else
