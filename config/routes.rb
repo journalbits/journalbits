@@ -50,7 +50,7 @@ JournalBits::Application.routes.draw do
   end
 
   namespace :pusher do
-    get 'auth'
+    post 'auth'
   end
 
   resources :users,  path: "" do
