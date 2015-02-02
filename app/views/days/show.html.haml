@@ -13,255 +13,256 @@
         %input#datepicker{ type: 'text', "data-step" => "1", "data-intro" => "testing out intro.js" }
 
 
-  - if !@entries[:twitter_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.twitter-logo-circle
-        %span
-          Twitter
-      %div.service-data-content
-        - @entries[:twitter_entries].select { |e| e.kind == 'mention' }.each do |mention|
-          %div.tweeter
-            = "@#{mention.tweeter} -"
-          = link_to mention.text, mention.tweet_url, class: "tweet_link"
-          = mention.media
-          %br
-
-
-        - @entries[:twitter_entries].select { |e| e.kind == 'tweet' }.each do |tweet|
-          %div.tweeter
-            = "@#{tweet.tweeter} -"
-          = link_to tweet.text, tweet.tweet_url, class: "tweet_link"
-          = tweet.media
-          %br
-
-
-        - @entries[:twitter_entries].select { |e| e.kind == 'favourite' }.each do |favourite|
-          %div.tweeter
-            = "@#{favourite.tweeter} -"
-          = link_to favourite.text, favourite.tweet_url, class: "tweet_link"
-          = favourite.media
-          %br
-
-  - if !@entries[:facebook_photo_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.facebook-logo-circle
-        %span
-          Facebook
-      %div.service-data-content
-        - @entries[:facebook_photo_entries].each do |photo|
-          = link_to photo.link_url, class: "fb_photo_link" do
-            = image_tag photo.medium_url, class: "fb_photo"
-          %br
-
-  - if !@entries[:lastfm_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.lastfm-logo-circle
-        %span
-          LastFM
-      %div.service-data-content
-        - @entries[:lastfm_entries].each do |song|
-          = link_to "#{song.artist} - #{song.track}", song.url
-          %br
-
-  - if !@entries[:instagram_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.instagram-logo-circle
-        %span
-          Instagram
-      %div.service-data-content
-        - @entries[:instagram_entries].each do |media|
-          = link_to media.link_url, class: "instagram_link" do
-            = image_tag media.thumbnail_url, class: "instagram_thumbnail"
-          %br
-
-  - if !@entries[:fitbit_sleep_entries].nil? || !@entries[:fitbit_activity_entries].nil? || !@entries[:fitbit_weight_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.fitbit-logo-circle
-        %span
-          Fitbit
-      %div.service-data-content
-        - if @entries[:fitbit_sleep_entries]
-          Sleep
-          = "Minutes asleep: #{@entries[:fitbit_sleep_entries].first.minutes_asleep}"
-          %br
-          = "Minutes awake: #{@entries[:fitbit_sleep_entries].first.minutes_awake}"
-          %br
-          = "Minutes to fall asleep: #{@entries[:fitbit_sleep_entries].first.minutes_to_fall_asleep}"
-          %br
-          = "Sleep efficiency: #{@entries[:fitbit_sleep_entries].first.efficiency}"
-          %br
-          = "Times awake: #{@entries[:fitbit_sleep_entries].first.times_awake}"
-          %br
-          = "Sleep start: #{@entries[:fitbit_sleep_entries].first.start_time}"
-
-        - if @entries[:fitbit_activity_entries]
-          Activity
-          = "Steps: #{@entries[:fitbit_activity_entries].first.steps}"
-          %br
-          = "Distance: #{@entries[:fitbit_activity_entries].first.distance}"
-          %br
-          = "Calories: #{@entries[:fitbit_activity_entries].first.calories}"
-          %br
-          = "Active Minutes: #{@entries[:fitbit_activity_entries].first.active_minutes}"
-
-        - if @entries[:fitbit_weight_entries]
-          Weight
-          = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{@entries[:fitbit_weight_entries].first.weight_units}"
-
-  - if !@entries[:pocket_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.pocket-logo-circle
-        %span
-          Pocket
-      %div.service-data-content
-        - @entries[:pocket_entries].each do |link|
-          = link_to link.title, link.url
-          %br
-
-  - if !@entries[:instapaper_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.instapaper-logo-circle
-        %span
-          Instapaper
-      %div.service-data-content
-        - @entries[:instapaper_entries].each do |link|
-          = link_to link.title, link.url
-          %br
-
-  - if !@entries[:github_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.github-logo-circle
-        %span
-          GitHub
-      %div.service-data-content
-        - @entries[:github_entries].each do |commit|
-          = link_to commit.commit_message, commit.commit_url
-          %br
-
-  - if !@entries[:evernote_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.evernote-logo-circle
-        %span
-          Evernote
-      %div.service-data-content
-        - if !@entries[:evernote_entries].select { |e| e.kind == 'created' }.empty?
-          Created
-          - @entries[:evernote_entries].select { |e| e.kind == 'created' }.each do |note|
-            = note.title
+  %section.daily-data-grid
+    - if !@entries[:twitter_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.twitter-logo-circle
+          %span
+            Twitter
+        %div.service-data-content
+          - @entries[:twitter_entries].select { |e| e.kind == 'mention' }.each do |mention|
+            %div.tweeter
+              = "@#{mention.tweeter} -"
+            = link_to mention.text, mention.tweet_url, class: "tweet_link"
+            = mention.media
             %br
 
-        - if !@entries[:evernote_entries].select { |e| e.kind == 'updated' }.empty?
-          Updated
-          - @entries[:evernote_entries].select { |e| e.kind == 'updated' }.each do |note|
-            = note.title
+
+          - @entries[:twitter_entries].select { |e| e.kind == 'tweet' }.each do |tweet|
+            %div.tweeter
+              = "@#{tweet.tweeter} -"
+            = link_to tweet.text, tweet.tweet_url, class: "tweet_link"
+            = tweet.media
             %br
 
-  - if !@entries[:rescue_time_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.rescuetime-logo-circle
-        %span
-          Rescue Time
-      %div.service-data-content
-        = "Productivity Score: #{@entries[:rescue_time_entries].first.productivity}"
-        %br
-        Top 5 Activities
-        %br
-        = @entries[:rescue_time_entries].first.activity_1
-        = @entries[:rescue_time_entries].first.time_spent_1 / 60
-        minutes
-        %br
-        = @entries[:rescue_time_entries].first.activity_2
-        = @entries[:rescue_time_entries].first.time_spent_2 / 60
-        minutes
-        %br
-        = @entries[:rescue_time_entries].first.activity_3
-        = @entries[:rescue_time_entries].first.time_spent_3 / 60
-        minutes
-        %br
-        = @entries[:rescue_time_entries].first.activity_4
-        = @entries[:rescue_time_entries].first.time_spent_4 / 60
-        minutes
-        %br
-        = @entries[:rescue_time_entries].first.activity_5
-        = @entries[:rescue_time_entries].first.time_spent_5 / 60
-        minutes
-        %br
 
-  - if !@entries[:whatpulse_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.whatpulse-logo-circle
-        %span
-          WhatPulse
-      %div.service-data-content
-        = "Keystrokes: #{WhatpulseEntry.total_keys(@entries[:whatpulse_entries])}"
-        = "Clicks: #{WhatpulseEntry.total_clicks(@entries[:whatpulse_entries])}"
-        = "Downloaded: #{WhatpulseEntry.total_download(@entries[:whatpulse_entries])}MB"
-        = "Uploaded: #{WhatpulseEntry.total_upload(@entries[:whatpulse_entries])}MB"
-
-  - if !@entries[:wunderlist_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.wunderlist-logo-circle
-        %span
-          Wunderlist
-      %div.service-data-content
-        - if !@entries[:wunderlist_entries].select { |e| e.kind == 'completed' }.empty?
-          Completed Tasks
-          - @entries[:wunderlist_entries].select { |e| e.kind == 'completed' }.each do |task|
-            = "#{task.title} from #{task.list}"
+          - @entries[:twitter_entries].select { |e| e.kind == 'favourite' }.each do |favourite|
+            %div.tweeter
+              = "@#{favourite.tweeter} -"
+            = link_to favourite.text, favourite.tweet_url, class: "tweet_link"
+            = favourite.media
             %br
 
-        - if !@entries[:wunderlist_entries].select { |e| e.kind == 'created' }.empty?
-          Created Tasks
-          - @entries[:wunderlist_entries].select { |e| e.kind == 'created' }.each do |task|
-            = "#{task.title} from #{task.list}"
+    - if !@entries[:facebook_photo_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.facebook-logo-circle
+          %span
+            Facebook
+        %div.service-data-content
+          - @entries[:facebook_photo_entries].each do |photo|
+            = link_to photo.link_url, class: "fb_photo_link" do
+              = image_tag photo.medium_url, class: "fb_photo"
             %br
 
-  - if !@entries[:moves_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.moves-logo-circle
-        %span
-          Moves
-      %div.service-data-content
-        - @entries[:moves_entries].each do |data|
-          - if data.activity == 'total'
-            = "Total Calories Burned: #{data.calories}"
-          - else
-            = "#{data.activity.capitalize}"
+    - if !@entries[:lastfm_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.lastfm-logo-circle
+          %span
+            LastFM
+        %div.service-data-content
+          - @entries[:lastfm_entries].each do |song|
+            = link_to "#{song.artist} - #{song.track}", song.url
+            %br
+
+    - if !@entries[:instagram_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.instagram-logo-circle
+          %span
+            Instagram
+        %div.service-data-content
+          - @entries[:instagram_entries].each do |media|
+            = link_to media.link_url, class: "instagram_link" do
+              = image_tag media.thumbnail_url, class: "instagram_thumbnail"
+            %br
+
+    - if !@entries[:fitbit_sleep_entries].nil? || !@entries[:fitbit_activity_entries].nil? || !@entries[:fitbit_weight_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.fitbit-logo-circle
+          %span
+            Fitbit
+        %div.service-data-content
+          - if @entries[:fitbit_sleep_entries]
+            Sleep
+            = "Minutes asleep: #{@entries[:fitbit_sleep_entries].first.minutes_asleep}"
+            %br
+            = "Minutes awake: #{@entries[:fitbit_sleep_entries].first.minutes_awake}"
+            %br
+            = "Minutes to fall asleep: #{@entries[:fitbit_sleep_entries].first.minutes_to_fall_asleep}"
+            %br
+            = "Sleep efficiency: #{@entries[:fitbit_sleep_entries].first.efficiency}"
+            %br
+            = "Times awake: #{@entries[:fitbit_sleep_entries].first.times_awake}"
+            %br
+            = "Sleep start: #{@entries[:fitbit_sleep_entries].first.start_time}"
+
+          - if @entries[:fitbit_activity_entries]
+            Activity
+            = "Steps: #{@entries[:fitbit_activity_entries].first.steps}"
+            %br
+            = "Distance: #{@entries[:fitbit_activity_entries].first.distance}"
+            %br
+            = "Calories: #{@entries[:fitbit_activity_entries].first.calories}"
+            %br
+            = "Active Minutes: #{@entries[:fitbit_activity_entries].first.active_minutes}"
+
+          - if @entries[:fitbit_weight_entries]
+            Weight
+            = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{@entries[:fitbit_weight_entries].first.weight_units}"
+
+    - if !@entries[:pocket_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.pocket-logo-circle
+          %span
+            Pocket
+        %div.service-data-content
+          - @entries[:pocket_entries].each do |link|
+            = link_to link.title, link.url
+            %br
+
+    - if !@entries[:instapaper_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.instapaper-logo-circle
+          %span
+            Instapaper
+        %div.service-data-content
+          - @entries[:instapaper_entries].each do |link|
+            = link_to link.title, link.url
+            %br
+
+    - if !@entries[:github_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.github-logo-circle
+          %span
+            GitHub
+        %div.service-data-content
+          - @entries[:github_entries].each do |commit|
+            = link_to commit.commit_message, commit.commit_url
+            %br
+
+    - if !@entries[:evernote_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.evernote-logo-circle
+          %span
+            Evernote
+        %div.service-data-content
+          - if !@entries[:evernote_entries].select { |e| e.kind == 'created' }.empty?
+            Created
+            - @entries[:evernote_entries].select { |e| e.kind == 'created' }.each do |note|
+              = note.title
+              %br
+
+          - if !@entries[:evernote_entries].select { |e| e.kind == 'updated' }.empty?
+            Updated
+            - @entries[:evernote_entries].select { |e| e.kind == 'updated' }.each do |note|
+              = note.title
+              %br
+
+    - if !@entries[:rescue_time_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.rescuetime-logo-circle
+          %span
+            Rescue Time
+        %div.service-data-content
+          = "Productivity Score: #{@entries[:rescue_time_entries].first.productivity}"
+          %br
+          Top 5 Activities
+          %br
+          = @entries[:rescue_time_entries].first.activity_1
+          = @entries[:rescue_time_entries].first.time_spent_1 / 60
+          minutes
+          %br
+          = @entries[:rescue_time_entries].first.activity_2
+          = @entries[:rescue_time_entries].first.time_spent_2 / 60
+          minutes
+          %br
+          = @entries[:rescue_time_entries].first.activity_3
+          = @entries[:rescue_time_entries].first.time_spent_3 / 60
+          minutes
+          %br
+          = @entries[:rescue_time_entries].first.activity_4
+          = @entries[:rescue_time_entries].first.time_spent_4 / 60
+          minutes
+          %br
+          = @entries[:rescue_time_entries].first.activity_5
+          = @entries[:rescue_time_entries].first.time_spent_5 / 60
+          minutes
+          %br
+
+    - if !@entries[:whatpulse_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.whatpulse-logo-circle
+          %span
+            WhatPulse
+        %div.service-data-content
+          = "Keystrokes: #{WhatpulseEntry.total_keys(@entries[:whatpulse_entries])}"
+          = "Clicks: #{WhatpulseEntry.total_clicks(@entries[:whatpulse_entries])}"
+          = "Downloaded: #{WhatpulseEntry.total_download(@entries[:whatpulse_entries])}MB"
+          = "Uploaded: #{WhatpulseEntry.total_upload(@entries[:whatpulse_entries])}MB"
+
+    - if !@entries[:wunderlist_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.wunderlist-logo-circle
+          %span
+            Wunderlist
+        %div.service-data-content
+          - if !@entries[:wunderlist_entries].select { |e| e.kind == 'completed' }.empty?
+            Completed Tasks
+            - @entries[:wunderlist_entries].select { |e| e.kind == 'completed' }.each do |task|
+              = "#{task.title} from #{task.list}"
+              %br
+
+          - if !@entries[:wunderlist_entries].select { |e| e.kind == 'created' }.empty?
+            Created Tasks
+            - @entries[:wunderlist_entries].select { |e| e.kind == 'created' }.each do |task|
+              = "#{task.title} from #{task.list}"
+              %br
+
+    - if !@entries[:moves_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.moves-logo-circle
+          %span
+            Moves
+        %div.service-data-content
+          - @entries[:moves_entries].each do |data|
+            - if data.activity == 'total'
+              = "Total Calories Burned: #{data.calories}"
+            - else
+              = "#{data.activity.capitalize}"
+              %br/
+              %ul
+                %li
+                  = "Distance: #{data.distance}m"
+                %li
+                  = "Duration: #{data.duration / 60} minutes"
+                - if data.calories
+                  %li
+                    = "Calories Burned: #{data.calories}"
+                - if data.steps
+                  %li
+                    = "Steps: #{data.steps}"
             %br/
-            %ul
-              %li
-                = "Distance: #{data.distance}m"
-              %li
-                = "Duration: #{data.duration / 60} minutes"
-              - if data.calories
-                %li
-                  = "Calories Burned: #{data.calories}"
-              - if data.steps
-                %li
-                  = "Steps: #{data.steps}"
-          %br/
 
-  - if !@entries[:health_graph_entries].nil?
-    %div.daily-data-container
-      %div.service-data-header
-        %div.service-logo.sleepcycle-logo-circle
-        %span
-          SleepCycle
-      %div.service-data-content
-        = "Time asleep: #{@entries[:health_graph_entries].first.time_asleep / 60} hours #{@entries[:health_graph_entries].first.time_asleep % 60} minutes"
+    - if !@entries[:health_graph_entries].nil?
+      %div.daily-data-container
+        %div.service-data-header
+          %div.service-logo.sleepcycle-logo-circle
+          %span
+            SleepCycle
+        %div.service-data-content
+          = "Time asleep: #{@entries[:health_graph_entries].first.time_asleep / 60} hours #{@entries[:health_graph_entries].first.time_asleep % 60} minutes"
 
 :javascript
   var picker = new Pikaday({
