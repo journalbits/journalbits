@@ -25,6 +25,8 @@ JournalBits::Application.routes.draw do
   get 'connections' => 'authorization#index'
   get 'auth/clef/callback' => 'users#clef'
 
+  get '/users/auth/check/:provider' => 'authorization#check'
+
   get 'users/auth/whatpulse' => 'authorization#whatpulse'
   get 'users/auth/wunderlist' => 'authorization#wunderlist'
   get 'users/auth/rescuetime' => 'authorization#rescue_time'

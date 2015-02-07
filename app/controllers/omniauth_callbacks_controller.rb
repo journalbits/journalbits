@@ -1,13 +1,20 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def all
-    auth = request.env["omniauth.auth"]
+    auth = request.env['omniauth.auth']
     if current_user
       account_id = session[:account_id].nil? ? nil : session[:account_id]
       session.delete(:account_id)
       user = User.omniauth_update_or_create_service(auth, current_user, account_id)
       if user.persisted?
-        flash[:notice] = 'Account authorized'
+        provider_cookie = (auth.provider + '_oauth_popup').to_sym
+        if cookies[provider_cookie]
+          cookies[provider_cookie] = nil
+          session[(auth.provider + '_omniauth_success').to_sym] = true
+          return render 'auth_popup_closer', layout: false
+        else
+          flash[:notice] = 'Account authorized'
+        end
       else
         flash[:error] = 'An error occurred'
       end
@@ -26,8 +33,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    flash[:error] = "Account authorization failed"
-    redirect_to "/connections"
+    flash[:error] = 'Account authorization failed'
+    redirect_to '/connections'
   end
 
   alias_method :clef, :all

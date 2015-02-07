@@ -20,6 +20,17 @@ class AuthorizationController < ApplicationController
     @account = WhatpulseAccount.new
   end
 
+  def check
+    provider = params[:provider]
+    service_account = "#{provider.capitalize}Account".constantize
+
+    if service_account.where('created_at > ? AND user_id = ?', 5.minutes.ago, current_user.id).blank?
+      render json: { authed: false }
+    else
+      render json: { authed: true }
+    end
+  end
+
   def test
     # TestWorker.perform_async("chicken")
     # WunderlistWorker.perform_async(Time.now, current_user.id)
