@@ -39,5 +39,4 @@ class AuthorizationController < ApplicationController
     # MovesWorker.perform_async(Time.now - 1.day, current_user.id)
     render :nothing => true
   end
-
 end

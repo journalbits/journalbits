@@ -112,7 +112,7 @@
 
           - if @entries[:fitbit_weight_entries]
             Weight
-            = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{@entries[:fitbit_weight_entries].first.weight_units}"
+            = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{@entries[:fitbit_weight_entries].first.weight_unit}"
 
     - if !@entries[:pocket_entries].nil?
       %div.daily-data-container

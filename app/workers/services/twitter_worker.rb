@@ -48,7 +48,7 @@ class TwitterWorker
         TwitterEntry.create(
           text: tweet.text,
           kind: "tweet",
-          tweeter: tweet.user.username,
+          tweeter: tweet.user.screen_name,
           user_id: user_id,
           tweet_id: tweet.id,
           date: date.to_s[0..9],
