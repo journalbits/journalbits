@@ -14,7 +14,7 @@ end
 
 # Runs every hour at one minute past the hour
 scheduler.cron("0 * * * *") do
-  puts "This is where the normal processor goes"
+  # puts "This is where the normal processor goes"
   # SuperWorker.perform_async Time.now
   # DailySummaryWorker.perform_async
 end
@@ -29,10 +29,6 @@ scheduler.cron('25,55 * * * *') do
   # LateNightWorker.perform_async Time.now
 end
 
-scheduler.schedule_every("10m", { first: "6s" }) do
+scheduler.schedule_every("30m", { first: "6s" }) do
   SuperWorker.perform_async Time.now
-  # processor = ServiceProcessor::GlobalProcessor.new (Time.now)
-  # processor.process_all
-  # SuperWorker.perform_async Time.now
-  # NotifyReauthWorker.perform_async Time.now
 end
