@@ -30,7 +30,13 @@ class RescueTimeAccountsController < ApplicationController
       user_id: current_user.id,
       key: key
     )
-    redirect_to '/connections'
+    if cookies[:rescuetime_oauth_popup]
+      cookies[:rescuetime_oauth_popup] = nil
+      return render 'omniauth_callbacks/auth_popup_closer', layout: false
+    else
+      flash[:notice] = 'Account authorized'
+      redirect_to "/connections"
+    end
   end
 
   private

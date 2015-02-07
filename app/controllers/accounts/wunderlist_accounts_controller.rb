@@ -50,20 +50,26 @@ class WunderlistAccountsController < ApplicationController
     password = params['wunderlist_password']
 
     payload = { email: "#{email}", password: "#{password}" }.to_json
-    response = login payload
+    response = login(payload)
 
     token = JSON.parse(response.body)['token']
     if token.blank?
       flash[:error] = 'Account authorization failed'
+      redirect_to "/connections"
     else
       WunderlistAccount.create!(
         user_id: current_user.id,
         token: token,
         email: email
       )
-      flash[:notice] = 'Account authorized'
+      if cookies[:wunderlist_oauth_popup]
+        cookies[:wunderlist_oauth_popup] = nil
+        return render 'omniauth_callbacks/auth_popup_closer', layout: false
+      else
+        flash[:notice] = 'Account authorized'
+        redirect_to "/connections"
+      end
     end
-    redirect_to "/connections"
   end
 
   private

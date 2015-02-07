@@ -30,7 +30,13 @@ class WhatpulseAccountsController < ApplicationController
       user_id: current_user.id,
       username: username
     )
-    redirect_to "/connections"
+    if cookies[:whatpulse_oauth_popup]
+      cookies[:whatpulse_oauth_popup] = nil
+      return render 'omniauth_callbacks/auth_popup_closer', layout: false
+    else
+      flash[:notice] = 'Account authorized'
+      redirect_to "/connections"
+    end
   end
 
   private
