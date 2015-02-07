@@ -4,16 +4,8 @@
   = stylesheet_link_tag "connections", media: "all"
   = stylesheet_link_tag "setup_connections", media: "all"
 
-
 :javascript
-  $(document).ready(function() {
-    var pusher = new Pusher('6d5321c29d3df32c50f4');
-    var entryChannel = pusher.subscribe("private-user-" + "#{current_user.id}");
-    entryChannel.bind('new-entry', function(entry) {
-      alert(entry);
-    });
-  });
-
+  var currentUserId = "#{current_user.id}";
 
 %div.day-info-container
   = image_tag current_user.gravatar_url, class: 'user-gravatar'
