@@ -36,7 +36,6 @@ section.setup-container {
         @include span-columns(4);
       }
 
-
       div.service-connection-img {
         @include size(160px);
         background-repeat: no-repeat;
@@ -100,9 +99,7 @@ section.setup-container {
       margin: 0px 5px;
     }
   }
-
 }
-
 
 .service-connect-btn {
   padding: 1px 5px;
