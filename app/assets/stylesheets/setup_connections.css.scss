@@ -4,7 +4,6 @@
 @import "colours";
 
 section.setup-container {
-  @include outer-container;
   margin-bottom: 20px;
 
   h2.connections-intro {
@@ -15,23 +14,9 @@ section.setup-container {
   }
 
   section.setup-block {
-    text-align: center;
-    padding: 40px 0;
-
-    @include media($desktop) {
-      @include span-columns(3);
-      @include omega(4n);
-    }
-
-    @include media($tablet) {
-      @include span-columns(4);
-      @include omega(2n);
-    }
-
-    @include media($mobile) {
-      @include span-columns(4);
-      @include omega(n);
-    }
+    padding: 20px 0;
+    width: 100%;
+    @include outer-container;
 
     h3 {
       font-style: normal;
@@ -39,13 +24,51 @@ section.setup-container {
     }
 
     div.setup-image {
+      @include media($desktop) {
+        @include span-columns(3);
+      }
+
+      @include media($tablet) {
+        @include span-columns(3);
+      }
+
+      @include media($mobile) {
+        @include span-columns(4);
+      }
+
+
       div.service-connection-img {
         @include size(160px);
+        background-repeat: no-repeat;
+        background-position: center center;
         border-radius: 10px;
         margin: 14% auto 3%;
         max-width: 100%;
       }
     }
+
+    div.setup-output {
+      width: 100%;
+
+      @include media($desktop) {
+        @include span-columns(9);
+        @include omega();
+        height: 220px;
+      }
+
+      @include media($tablet) {
+        @include span-columns(5);
+        @include omega();
+        height: 270px;
+      }
+
+      @include media($mobile) {
+        @include span-columns(4);
+        @include omega();
+        height: 250px;
+      }
+    }
+
     span {
       font-style: normal;
       font-weight: 100;
@@ -91,6 +114,10 @@ section.setup-container {
   cursor: pointer;
   font-size: 16px;
   font-weight: 400;
+
+  @include media($mobile) {
+    width: 50%;
+  }
 
   &:hover {
     background-color: #fff;
