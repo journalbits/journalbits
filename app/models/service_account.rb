@@ -27,7 +27,7 @@ class ServiceAccount < ActiveRecord::Base
 
   def get_yesterdays_entries
     unless self.class.to_s == 'RescueTimeAccount'
-      get_worker(self.class).perform_async(Time.now, self.user_id)
+      get_worker(self.class).perform_async((Time.now - 1.day).at_beginning_of_day, self.user_id)
     end
   end
 end
