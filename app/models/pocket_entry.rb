@@ -4,9 +4,9 @@
 #
 #  id                :integer          not null, primary key
 #  user_id           :integer
-#  date              :string(255)
-#  url               :string(255)
-#  title             :string(255)
+#  date              :string
+#  url               :string
+#  title             :string
 #  item_id           :integer
 #  created_at        :datetime
 #  updated_at        :datetime

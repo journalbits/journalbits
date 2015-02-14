@@ -4,10 +4,10 @@
 #
 #  id                  :integer          not null, primary key
 #  user_id             :integer
-#  date                :string(255)
-#  note_id             :string(255)
-#  kind                :string(255)
-#  title               :string(255)
+#  date                :string
+#  note_id             :string
+#  kind                :string
+#  title               :string
 #  created_at          :datetime
 #  updated_at          :datetime
 #  evernote_account_id :integer

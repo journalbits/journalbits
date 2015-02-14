@@ -4,10 +4,10 @@
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  date       :string(255)
+#  date       :string
 #  created_at :datetime
 #  updated_at :datetime
-#  slug       :string(255)
+#  slug       :string
 #
 # Indexes
 #

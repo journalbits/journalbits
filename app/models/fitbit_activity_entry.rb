@@ -4,7 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  user_id           :integer
-#  date              :string(255)
+#  date              :string
 #  calories          :integer
 #  distance          :float
 #  steps             :integer

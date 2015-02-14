@@ -4,8 +4,8 @@
 #
 #  id               :integer          not null, primary key
 #  user_id          :integer
-#  date             :string(255)
-#  activity         :string(255)
+#  date             :string
+#  activity         :string
 #  duration         :integer
 #  distance         :integer
 #  steps            :integer

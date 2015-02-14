@@ -4,15 +4,15 @@
 #
 #  id                 :integer          not null, primary key
 #  text               :text
-#  media              :string(255)
-#  kind               :string(255)
-#  tweeter            :string(255)
+#  media              :string
+#  kind               :string
+#  tweeter            :string
 #  created_at         :datetime
 #  updated_at         :datetime
 #  user_id            :integer
 #  tweet_id           :integer
-#  date               :string(255)
-#  tweet_url          :string(255)
+#  date               :string
+#  tweet_url          :string
 #  twitter_account_id :integer
 #
 

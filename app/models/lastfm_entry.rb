@@ -4,11 +4,11 @@
 #
 #  id                :integer          not null, primary key
 #  user_id           :integer
-#  date              :string(255)
-#  artist            :string(255)
-#  track             :string(255)
-#  uts               :string(255)
-#  url               :string(255)
+#  date              :string
+#  artist            :string
+#  track             :string
+#  uts               :string
+#  url               :string
 #  created_at        :datetime
 #  updated_at        :datetime
 #  lastfm_account_id :integer

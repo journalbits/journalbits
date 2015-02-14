@@ -3,15 +3,15 @@
 # Table name: wunderlist_entries
 #
 #  id                    :integer          not null, primary key
-#  completed_at          :string(255)
-#  date                  :string(255)
-#  title                 :string(255)
-#  list                  :string(255)
+#  completed_at          :string
+#  date                  :string
+#  title                 :string
+#  list                  :string
 #  user_id               :integer
-#  task_id               :string(255)
+#  task_id               :string
 #  created_at            :datetime
 #  updated_at            :datetime
-#  kind                  :string(255)
+#  kind                  :string
 #  wunderlist_account_id :integer
 #
 

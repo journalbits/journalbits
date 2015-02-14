@@ -4,12 +4,12 @@
 #
 #  id                   :integer          not null, primary key
 #  user_id              :integer
-#  date                 :string(255)
-#  kind                 :string(255)
-#  thumbnail_url        :string(255)
-#  standard_url         :string(255)
-#  caption              :string(255)
-#  link_url             :string(255)
+#  date                 :string
+#  kind                 :string
+#  thumbnail_url        :string
+#  standard_url         :string
+#  caption              :string
+#  link_url             :string
 #  created_at           :datetime
 #  updated_at           :datetime
 #  instagram_account_id :integer

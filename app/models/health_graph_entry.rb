@@ -4,9 +4,9 @@
 #
 #  id                      :integer          not null, primary key
 #  user_id                 :integer
-#  date                    :string(255)
+#  date                    :string
 #  time_asleep             :integer
-#  kind                    :string(255)
+#  kind                    :string
 #  created_at              :datetime
 #  updated_at              :datetime
 #  health_graph_account_id :integer

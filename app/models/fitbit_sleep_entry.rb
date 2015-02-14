@@ -8,9 +8,9 @@
 #  minutes_to_fall_asleep :integer
 #  efficiency             :integer
 #  times_awake            :integer
-#  start_time             :string(255)
+#  start_time             :string
 #  user_id                :integer
-#  date                   :string(255)
+#  date                   :string
 #  created_at             :datetime
 #  updated_at             :datetime
 #  fitbit_account_id      :integer

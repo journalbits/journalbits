@@ -4,13 +4,13 @@
 #
 #  id                :integer          not null, primary key
 #  user_id           :integer
-#  sha               :string(255)
-#  date              :string(255)
-#  commit_message    :string(255)
-#  committer         :string(255)
+#  sha               :string
+#  date              :string
+#  commit_message    :string
+#  committer         :string
 #  created_at        :datetime
 #  updated_at        :datetime
-#  commit_url        :string(255)
+#  commit_url        :string
 #  github_account_id :integer
 #  private           :boolean
 #

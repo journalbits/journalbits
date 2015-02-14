@@ -4,11 +4,11 @@
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  key        :string(255)
+#  key        :string
 #  created_at :datetime
 #  updated_at :datetime
-#  public     :boolean          default(TRUE)
-#  activated  :boolean          default(TRUE)
+#  public     :boolean          default("true")
+#  activated  :boolean          default("true")
 #
 
 class RescueTimeAccount < ServiceAccount

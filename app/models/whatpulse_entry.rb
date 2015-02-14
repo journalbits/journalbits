@@ -4,10 +4,10 @@
 #
 #  id                   :integer          not null, primary key
 #  user_id              :integer
-#  date                 :string(255)
-#  pulse_id             :string(255)
-#  keys                 :string(255)
-#  clicks               :string(255)
+#  date                 :string
+#  pulse_id             :string
+#  keys                 :string
+#  clicks               :string
 #  download_mb          :integer
 #  upload_mb            :integer
 #  created_at           :datetime

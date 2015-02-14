@@ -3,27 +3,27 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
+#  sign_in_count          :integer          default("0"), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
 #  created_at             :datetime
 #  updated_at             :datetime
-#  provider               :string(255)
-#  username               :string(255)
-#  slug                   :string(255)
+#  provider               :string
+#  username               :string
+#  slug                   :string
 #  clef_id                :integer
-#  public                 :boolean          default(FALSE)
+#  public                 :boolean          default("false")
 #  time_zone_offset       :integer
-#  daily_email            :boolean          default(TRUE)
-#  time_zone              :string(255)
-#  name                   :string(255)
+#  daily_email            :boolean          default("true")
+#  time_zone              :string
+#  name                   :string
 #
 # Indexes
 #

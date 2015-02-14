@@ -4,11 +4,11 @@
 #
 #  id                  :integer          not null, primary key
 #  user_id             :integer
-#  date                :string(255)
-#  photo_id            :string(255)
-#  source_url          :string(255)
-#  medium_url          :string(255)
-#  link_url            :string(255)
+#  date                :string
+#  photo_id            :string
+#  source_url          :string
+#  medium_url          :string
+#  link_url            :string
 #  created_at          :datetime
 #  updated_at          :datetime
 #  facebook_account_id :integer

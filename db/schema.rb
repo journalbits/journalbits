@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 20140716214357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: true do |t|
+  create_table "admins", force: :cascade do |t|
     t.integer  "user_id"
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "days", force: true do |t|
+  create_table "days", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
 
   add_index "days", ["slug"], name: "index_days_on_slug", using: :btree
 
-  create_table "evernote_accounts", force: true do |t|
+  create_table "evernote_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.datetime "token_expires_at"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "username"
   end
 
-  create_table "evernote_entries", force: true do |t|
+  create_table "evernote_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "note_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "evernote_account_id"
   end
 
-  create_table "facebook_accounts", force: true do |t|
+  create_table "facebook_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.datetime "token_expires_at"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "name"
   end
 
-  create_table "facebook_photo_entries", force: true do |t|
+  create_table "facebook_photo_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "photo_id"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "facebook_account_id"
   end
 
-  create_table "fitbit_accounts", force: true do |t|
+  create_table "fitbit_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.string   "oauth_secret"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "name"
   end
 
-  create_table "fitbit_activity_entries", force: true do |t|
+  create_table "fitbit_activity_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.integer  "calories"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "fitbit_account_id"
   end
 
-  create_table "fitbit_sleep_entries", force: true do |t|
+  create_table "fitbit_sleep_entries", force: :cascade do |t|
     t.integer  "minutes_asleep"
     t.integer  "minutes_awake"
     t.integer  "minutes_to_fall_asleep"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "fitbit_account_id"
   end
 
-  create_table "fitbit_weight_entries", force: true do |t|
+  create_table "fitbit_weight_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.float    "weight"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "fitbit_account_id"
   end
 
-  create_table "github_accounts", force: true do |t|
+  create_table "github_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "access_token"
     t.datetime "created_at"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "username"
   end
 
-  create_table "github_entries", force: true do |t|
+  create_table "github_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "sha"
     t.string   "date"
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.boolean  "private"
   end
 
-  create_table "health_graph_accounts", force: true do |t|
+  create_table "health_graph_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "access_token"
     t.datetime "created_at"
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "username"
   end
 
-  create_table "health_graph_entries", force: true do |t|
+  create_table "health_graph_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.integer  "time_asleep"
@@ -168,7 +168,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "health_graph_account_id"
   end
 
-  create_table "instagram_accounts", force: true do |t|
+  create_table "instagram_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.string   "uid"
@@ -179,7 +179,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "username"
   end
 
-  create_table "instagram_entries", force: true do |t|
+  create_table "instagram_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "kind"
@@ -192,7 +192,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "instagram_account_id"
   end
 
-  create_table "instapaper_accounts", force: true do |t|
+  create_table "instapaper_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.string   "oauth_secret"
@@ -203,7 +203,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "name"
   end
 
-  create_table "instapaper_entries", force: true do |t|
+  create_table "instapaper_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "bookmark_id"
@@ -214,7 +214,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "instapaper_account_id"
   end
 
-  create_table "lastfm_accounts", force: true do |t|
+  create_table "lastfm_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "username"
     t.datetime "created_at"
@@ -223,7 +223,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.boolean  "activated",  default: true
   end
 
-  create_table "lastfm_entries", force: true do |t|
+  create_table "lastfm_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "artist"
@@ -235,7 +235,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "lastfm_account_id"
   end
 
-  create_table "moves_accounts", force: true do |t|
+  create_table "moves_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.string   "refresh_token"
@@ -246,7 +246,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "platform"
   end
 
-  create_table "moves_entries", force: true do |t|
+  create_table "moves_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "activity"
@@ -259,7 +259,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "moves_account_id"
   end
 
-  create_table "oauth_access_grants", force: true do |t|
+  create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", null: false
     t.integer  "application_id",    null: false
     t.string   "token",             null: false
@@ -272,7 +272,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
 
   add_index "oauth_access_grants", ["token"], name: "index_oauth_access_grants_on_token", unique: true, using: :btree
 
-  create_table "oauth_access_tokens", force: true do |t|
+  create_table "oauth_access_tokens", force: :cascade do |t|
     t.integer  "resource_owner_id"
     t.integer  "application_id"
     t.string   "token",             null: false
@@ -287,7 +287,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
   add_index "oauth_access_tokens", ["resource_owner_id"], name: "index_oauth_access_tokens_on_resource_owner_id", using: :btree
   add_index "oauth_access_tokens", ["token"], name: "index_oauth_access_tokens_on_token", unique: true, using: :btree
 
-  create_table "oauth_applications", force: true do |t|
+  create_table "oauth_applications", force: :cascade do |t|
     t.string   "name",         null: false
     t.string   "uid",          null: false
     t.string   "secret",       null: false
@@ -301,7 +301,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
   add_index "oauth_applications", ["owner_id", "owner_type"], name: "index_oauth_applications_on_owner_id_and_owner_type", using: :btree
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
 
-  create_table "pocket_accounts", force: true do |t|
+  create_table "pocket_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "oauth_token"
     t.datetime "created_at"
@@ -311,7 +311,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "username"
   end
 
-  create_table "pocket_entries", force: true do |t|
+  create_table "pocket_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "url"
@@ -322,7 +322,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "pocket_account_id"
   end
 
-  create_table "rescue_time_accounts", force: true do |t|
+  create_table "rescue_time_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "key"
     t.datetime "created_at"
@@ -331,7 +331,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.boolean  "activated",  default: true
   end
 
-  create_table "rescue_time_entries", force: true do |t|
+  create_table "rescue_time_entries", force: :cascade do |t|
     t.string  "activity_1"
     t.integer "time_spent_1"
     t.string  "activity_2"
@@ -348,7 +348,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer "rescue_time_account_id"
   end
 
-  create_table "twitter_accounts", force: true do |t|
+  create_table "twitter_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "uid"
     t.string   "username"
@@ -360,7 +360,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.boolean  "activated",    default: true
   end
 
-  create_table "twitter_auth_accounts", force: true do |t|
+  create_table "twitter_auth_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "uid"
     t.string   "username"
@@ -370,7 +370,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.datetime "updated_at"
   end
 
-  create_table "twitter_entries", force: true do |t|
+  create_table "twitter_entries", force: :cascade do |t|
     t.text     "text"
     t.string   "media"
     t.string   "kind"
@@ -384,7 +384,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "twitter_account_id"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                            default: "",    null: false
     t.string   "encrypted_password",               default: "",    null: false
     t.string   "reset_password_token"
@@ -412,7 +412,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
-  create_table "whatpulse_accounts", force: true do |t|
+  create_table "whatpulse_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "username"
     t.datetime "created_at"
@@ -421,7 +421,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.boolean  "activated",  default: true
   end
 
-  create_table "whatpulse_entries", force: true do |t|
+  create_table "whatpulse_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "date"
     t.string   "pulse_id"
@@ -434,7 +434,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.integer  "whatpulse_account_id"
   end
 
-  create_table "wunderlist_accounts", force: true do |t|
+  create_table "wunderlist_accounts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "token"
     t.datetime "created_at"
@@ -444,7 +444,7 @@ ActiveRecord::Schema.define(version: 20140716214357) do
     t.string   "email"
   end
 
-  create_table "wunderlist_entries", force: true do |t|
+  create_table "wunderlist_entries", force: :cascade do |t|
     t.string   "completed_at"
     t.string   "date"
     t.string   "title"

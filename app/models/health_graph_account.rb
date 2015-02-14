@@ -4,12 +4,12 @@
 #
 #  id           :integer          not null, primary key
 #  user_id      :integer
-#  access_token :string(255)
+#  access_token :string
 #  created_at   :datetime
 #  updated_at   :datetime
-#  public       :boolean          default(TRUE)
-#  activated    :boolean          default(TRUE)
-#  username     :string(255)
+#  public       :boolean          default("true")
+#  activated    :boolean          default("true")
+#  username     :string
 #
 
 class HealthGraphAccount < ServiceAccount

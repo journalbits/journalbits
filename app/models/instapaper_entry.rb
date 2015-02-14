@@ -4,10 +4,10 @@
 #
 #  id                    :integer          not null, primary key
 #  user_id               :integer
-#  date                  :string(255)
-#  bookmark_id           :string(255)
-#  url                   :string(255)
-#  title                 :string(255)
+#  date                  :string
+#  bookmark_id           :string
+#  url                   :string
+#  title                 :string
 #  created_at            :datetime
 #  updated_at            :datetime
 #  instapaper_account_id :integer

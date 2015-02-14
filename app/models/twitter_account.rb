@@ -4,14 +4,14 @@
 #
 #  id           :integer          not null, primary key
 #  user_id      :integer
-#  uid          :string(255)
-#  username     :string(255)
-#  oauth_token  :string(255)
-#  oauth_secret :string(255)
+#  uid          :string
+#  username     :string
+#  oauth_token  :string
+#  oauth_secret :string
 #  created_at   :datetime
 #  updated_at   :datetime
-#  public       :boolean          default(TRUE)
-#  activated    :boolean          default(TRUE)
+#  public       :boolean          default("true")
+#  activated    :boolean          default("true")
 #
 
 class TwitterAccount < ServiceAccount
