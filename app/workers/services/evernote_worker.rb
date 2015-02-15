@@ -10,8 +10,8 @@ class EvernoteWorker
       updated_notes = user_notes_updated_on date, client
       created_notes = user_notes_created_on date, client
       updated_notes = updated_notes - created_notes
-      save_notes_created_on date, created_notes, user_id, account_id
-      save_notes_updated_on date, updated_notes, user_id, account_id
+      save_notes_created_on date, created_notes, user_id, account.id
+      save_notes_updated_on date, updated_notes, user_id, account.id
     end
   end
 

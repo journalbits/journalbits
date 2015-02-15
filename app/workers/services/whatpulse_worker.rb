@@ -8,7 +8,7 @@ class WhatpulseWorker
     accounts = WhatpulseAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       username = account.username
-      save_pulses_on date, username, user_id
+      save_pulses_on date, username, user_id, account
     end
   end
 
@@ -19,7 +19,7 @@ class WhatpulseWorker
     daily_data.select { |pulse_id, pulse_hash| pulse_hash['Timedate'][0..9] == date.to_s[0..9] }
   end
 
-  def save_pulses_on date, username, user_id
+  def save_pulses_on date, username, user_id, account
     pulses = user_pulses_on date, username
     pulses.each_pair do |pulse_id, pulse_hash|
       unless WhatpulseEntry.exists?(user_id: user_id, pulse_id: pulse_id)
@@ -30,7 +30,8 @@ class WhatpulseWorker
           keys: pulse_hash['Keys'],
           clicks: pulse_hash['Clicks'],
           download_mb: pulse_hash['DownloadMB'],
-          upload_mb: pulse_hash['UploadMB']
+          upload_mb: pulse_hash['UploadMB'],
+          whatpulse_account_id: account.id
         )
       end
     end

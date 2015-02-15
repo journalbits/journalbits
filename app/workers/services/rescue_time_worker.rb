@@ -8,12 +8,13 @@ class RescueTimeWorker
     accounts = RescueTimeAccount.where(user_id: user_id, activated: true)
     accounts.each do |account|
       key = account.key
-      save_data_on date, key, user_id
+      save_data_on date, key, user_id, account
     end
   end
 
-  def save_data_on date, key, user_id
+  def save_data_on date, key, user_id, account
     data_to_save = data_for_db date, key, user_id
+    data_to_save[:rescue_time_account_id] = account.id
     unless RescueTimeEntry.exists?(date: date.to_s[0..9], user_id: user_id)
       RescueTimeEntry.create(data_to_save)
     end

@@ -7,7 +7,7 @@ class FacebookWorker
     accounts = user.facebook_accounts.select { |a| a.activated }
     accounts.each do |account|
       client = create_client_for account
-      save_photos_on date, client, user_id, account_id
+      save_photos_on date, client, user_id, account.id
     end
   end
 
@@ -26,7 +26,7 @@ class FacebookWorker
           source_url: photo['source'],
           link_url: photo['link'],
           medium_url: photo['images'][photo['images'].count / 2]['source'],
-          facebook_account_id: account_id  
+          facebook_account_id: account_id
         )
       end
     end

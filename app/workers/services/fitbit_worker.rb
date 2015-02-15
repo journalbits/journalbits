@@ -69,7 +69,7 @@ class FitbitWorker
 
   def save_activity_entries_on date, client, user_id, account_id
     activity_data = user_activity_on date, client
-    unless FitbitActivityEntry.exists?(date: date.to_s[0..9], user_id: user_id) || activity_data[:steps] == 0
+    unless FitbitActivityEntry.exists?(date: date.to_s[0..9], user_id: user_id)
       FitbitActivityEntry.create(
         calories: activity_data[:calories],
         distance: activity_data[:distance],
