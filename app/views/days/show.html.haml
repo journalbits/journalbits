@@ -53,7 +53,7 @@
         %div.service-data-content
           - @entries[:facebook_photo_entries].each do |photo|
             = link_to photo.link_url, class: "fb_photo_link" do
-              = image_tag photo.medium_url, class: "fb_photo"
+              %div.fb_photo{ style: "background-image: url(#{photo.link_url});" }
             %br
 
     - if !@entries[:lastfm_entries].nil?
@@ -86,8 +86,10 @@
           %span
             Fitbit
         %div.service-data-content
-          - if @entries[:fitbit_sleep_entries]
-            Sleep
+          - if !@entries[:fitbit_sleep_entries].blank?
+            %div
+              %b
+                Sleep
             = "Minutes asleep: #{@entries[:fitbit_sleep_entries].first.minutes_asleep}"
             %br
             = "Minutes awake: #{@entries[:fitbit_sleep_entries].first.minutes_awake}"
@@ -100,8 +102,10 @@
             %br
             = "Sleep start: #{@entries[:fitbit_sleep_entries].first.start_time}"
 
-          - if @entries[:fitbit_activity_entries]
-            Activity
+          - if !@entries[:fitbit_activity_entries].blank?
+            %div
+              %b
+                Activity
             = "Steps: #{@entries[:fitbit_activity_entries].first.steps}"
             %br
             = "Distance: #{@entries[:fitbit_activity_entries].first.distance}"
@@ -110,9 +114,11 @@
             %br
             = "Active Minutes: #{@entries[:fitbit_activity_entries].first.active_minutes}"
 
-          - if @entries[:fitbit_weight_entries]
-            Weight
-            = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{@entries[:fitbit_weight_entries].first.weight_unit}"
+          - if !@entries[:fitbit_weight_entries].blank?
+            %div
+              %b
+                Weight
+            = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{get_appropriate_weight_units(@entries[:fitbit_weight_entries].first.weight_unit)}"
 
     - if !@entries[:pocket_entries].nil?
       %div.daily-data-container
@@ -173,30 +179,31 @@
           %span
             Rescue Time
         %div.service-data-content
-          = "Productivity Score: #{@entries[:rescue_time_entries].first.productivity}"
-          %br
-          Top 5 Activities
-          %br
-          = @entries[:rescue_time_entries].first.activity_1
-          = @entries[:rescue_time_entries].first.time_spent_1 / 60
-          minutes
-          %br
-          = @entries[:rescue_time_entries].first.activity_2
-          = @entries[:rescue_time_entries].first.time_spent_2 / 60
-          minutes
-          %br
-          = @entries[:rescue_time_entries].first.activity_3
-          = @entries[:rescue_time_entries].first.time_spent_3 / 60
-          minutes
-          %br
-          = @entries[:rescue_time_entries].first.activity_4
-          = @entries[:rescue_time_entries].first.time_spent_4 / 60
-          minutes
-          %br
-          = @entries[:rescue_time_entries].first.activity_5
-          = @entries[:rescue_time_entries].first.time_spent_5 / 60
-          minutes
-          %br
+          - if !@entries[:rescue_time_entries].blank?
+            = "Productivity Score: #{@entries[:rescue_time_entries].first.productivity}"
+            %br
+            Top 5 Activities
+            %br
+            = @entries[:rescue_time_entries].first.activity_1
+            = @entries[:rescue_time_entries].first.time_spent_1 / 60
+            minutes
+            %br
+            = @entries[:rescue_time_entries].first.activity_2
+            = @entries[:rescue_time_entries].first.time_spent_2 / 60
+            minutes
+            %br
+            = @entries[:rescue_time_entries].first.activity_3
+            = @entries[:rescue_time_entries].first.time_spent_3 / 60
+            minutes
+            %br
+            = @entries[:rescue_time_entries].first.activity_4
+            = @entries[:rescue_time_entries].first.time_spent_4 / 60
+            minutes
+            %br
+            = @entries[:rescue_time_entries].first.activity_5
+            = @entries[:rescue_time_entries].first.time_spent_5 / 60
+            minutes
+            %br
 
     - if !@entries[:whatpulse_entries].nil?
       %div.daily-data-container

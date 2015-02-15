@@ -100,3 +100,18 @@
   text-align: center;
   margin-left: 20px;
 }
+
+.service-data-content {
+  .fb_photo {
+
+  }
+
+  .fb_photo_link {
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    @include size(200px);
+  }
+}

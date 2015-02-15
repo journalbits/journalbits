@@ -37,7 +37,7 @@ class FitbitWorker
 
   def user_weight client
     user_info = client.user_info
-    { weight: user_info['weight'], weight_unit: user_info['weightUnit'] }
+    { weight: user_info['user']['weight'], weight_unit: user_info['user']['weightUnit'] }
   end
 
   def user_activity_on date, client
