@@ -26,6 +26,9 @@ JournalBits::Application.configure do
   # Show sprockets production errors in development
   config.assets.raise_production_errors = true
 
+  # after_rollback/after_commit callbacks will propagate normally like in other Active Record callbacks
+  config.active_record.raise_in_transactional_callbacks = true
+
   config.action_mailer.default_url_options = { :host => 'localhost' }
 
   config.action_mailer.delivery_method = :smtp
