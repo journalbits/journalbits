@@ -7,6 +7,8 @@ class UserMailer < ActionMailer::Base
   end
 
   def notify_reauth acc, service, expires_at
+    @acc = acc
+    @provider_name = @acc.class.to_s[0..-8].downcase
     @user = User.find(acc.user_id)
     @time = day_week_or_month? expires_at
     @service = acc.class == EvernoteAccount ? "#{service} (#{acc.username})"

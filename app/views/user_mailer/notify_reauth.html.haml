@@ -8,8 +8,9 @@
     %p
       Your #{@service} account needs to be re-authorized within the next #{@time} to make sure that we don't miss out on collecting information for you.
     %p
-
-      To do this just login to your account, navigate to your connections, and then re-authorize your #{@service} account there.
+      = link_to 'Reauthorize your account', "#{root_url}users/reauth/#{@provider_name}?" + { id: @acc.id }.to_param, method: :post
+    %p
+      Should that not work you can try logging in to your account, navigate to your connections and then re-authorize your #{@service} account there.
     %p
       If for some reason it doesn't work then reply to this email and let me know.
     %p
