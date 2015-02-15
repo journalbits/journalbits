@@ -287,6 +287,9 @@ GEM
     omniauth-twitter (1.1.0)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
+    omniauth-wunderlist (0.0.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-xauth (0.0.2)
       oauth
       omniauth (~> 1.0)
@@ -501,6 +504,7 @@ DEPENDENCIES
   omniauth-rdio
   omniauth-runkeeper
   omniauth-twitter
+  omniauth-wunderlist
   pg
   pocket-ruby!
   pusher

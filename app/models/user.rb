@@ -197,6 +197,7 @@ class User < ActiveRecord::Base
       when 'rdio' then return process_for_rdio auth, current_user, account_id
       when 'runkeeper' then return process_for_health_graph auth, current_user, account_id
       when 'twitter' then return process_for_twitter auth, current_user, account_id
+      when 'wunderlist' then return process_for_wunderlist auth, current_user, account_id
     end
   end
 
@@ -476,6 +477,30 @@ class User < ActiveRecord::Base
       account.update(
         oauth_token: auth.credentials.token,
         oauth_secret: auth.credentials.secret
+      )
+    end
+  end
+
+  def self.process_for_wunderlist auth, current_user, account_id
+    user = current_user
+    if !account_id.nil?
+      update_wunderlist_account auth, user.id, account_id
+    else
+      WunderlistAccount.create!(
+        user_id: user.id,
+        uid: auth.uid,
+        email: auth.info.email,
+        access_token: auth.credentials.token
+      )
+    end
+    user
+  end
+
+  def self.update_wunderlist_account auth, user_id, account_id
+    account = WunderlistAccount.find(account_id)
+    if account.user_id == user_id
+      account.update(
+        access_token: auth.credentials.token
       )
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716214357) do
+ActiveRecord::Schema.define(version: 20150215114547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -436,12 +436,13 @@ ActiveRecord::Schema.define(version: 20140716214357) do
 
   create_table "wunderlist_accounts", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "token"
+    t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "public",     default: true
-    t.boolean  "activated",  default: true
+    t.boolean  "public",       default: true
+    t.boolean  "activated",    default: true
     t.string   "email"
+    t.string   "uid"
   end
 
   create_table "wunderlist_entries", force: :cascade do |t|

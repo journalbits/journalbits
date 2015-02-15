@@ -50,4 +50,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :rdio, :all
   alias_method :runkeeper, :all
   alias_method :twitter, :all
+  alias_method :wunderlist, :all
 end

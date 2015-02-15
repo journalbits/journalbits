@@ -245,6 +245,7 @@ Devise.setup do |config|
   config.omniauth :rdio, ENV['RDIO_APP_KEY'], ENV['RDIO_APP_SECRET']
   config.omniauth :runkeeper, ENV['HEALTH_GRAPH_CLIENT_ID'], ENV['HEALTH_GRAPH_CLIENT_SECRET']
   config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
+  config.omniauth :wunderlist, ENV['WUNDERLIST_CLIENT_ID'], ENV['WUNDERLIST_CLIENT_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

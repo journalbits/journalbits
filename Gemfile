@@ -64,6 +64,7 @@ gem 'omniauth-pocket'
 gem 'omniauth-rdio'
 gem 'omniauth-runkeeper'
 gem 'omniauth-twitter'
+gem 'omniauth-wunderlist'
 
 # For API integration
 gem 'fitgem'

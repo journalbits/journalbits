@@ -2,14 +2,15 @@
 #
 # Table name: wunderlist_accounts
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer
-#  token      :string
-#  created_at :datetime
-#  updated_at :datetime
-#  public     :boolean          default("true")
-#  activated  :boolean          default("true")
-#  email      :string
+#  id           :integer          not null, primary key
+#  user_id      :integer
+#  access_token :string
+#  created_at   :datetime
+#  updated_at   :datetime
+#  public       :boolean          default("true")
+#  activated    :boolean          default("true")
+#  email        :string
+#  uid          :string
 #
 
 class WunderlistAccount < ServiceAccount
