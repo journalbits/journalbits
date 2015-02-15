@@ -147,7 +147,7 @@ class User < ActiveRecord::Base
       TwitterAccount.where(user_id: self.id),
       WhatpulseAccount.where(user_id: self.id),
       WunderlistAccount.where(user_id: self.id)
-      ].flatten(1)
+    ].flatten(1)
   end
 
   def entries_for date = (Time.now - 1.day).to_s[0..9], only_public = false
