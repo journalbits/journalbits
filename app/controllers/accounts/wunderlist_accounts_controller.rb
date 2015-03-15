@@ -26,11 +26,11 @@ class WunderlistAccountsController < ApplicationController
 
   def reauth
     session[:account_id] = params[:id]
-    redirect_to '/users/auth/wunderlis'
+    redirect_to '/users/auth/wunderlist'
   end
 
   def create
-    redirect_to '/users/auth/wunderlis'
+    redirect_to '/users/auth/wunderlist'
   end
 
   private

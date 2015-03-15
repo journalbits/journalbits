@@ -34,6 +34,6 @@
 
     %div.account-management-buttons
       %div
-        = link_to 'Reauthorize Account', '/users/reauth/wunderlist?' + { account_id: account.id }.to_param, method: :post, class: 'btn'
+        = link_to 'Reauthorize Account', '/users/reauth/wunderlist?' + { id: account.id }.to_param, method: :post, class: 'btn'
       %div
         = link_to 'Delete Account', user_wunderlist_account_path(@user, account), confirm: 'Are you really, completely sure?', method: :delete, class: 'btn'
