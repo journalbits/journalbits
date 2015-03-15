@@ -13,7 +13,7 @@ class SuperWorker
     # FacebookWorker.perform_async(date, user_id)
     # FitbitWorker.perform_async(date, user_id)
     # GithubWorker.perform_async(date, user_id)
-    # HealthGraphWorker.perform_async(date, user_id)
+    # # HealthGraphWorker.perform_async(date, user_id)
     # InstagramWorker.perform_async(date, user_id)
     # InstapaperWorker.perform_async(date, user_id)
     # LastfmWorker.perform_async(date, user_id)
@@ -22,5 +22,10 @@ class SuperWorker
     # TwitterWorker.perform_async(date, user_id)
     # WhatpulseWorker.perform_async(date, user_id)
     # WunderlistWorker.perform_async(date, user_id)
+
+
+    WunderlistWorker.perform_async(date, user_id)
+
+    # RescueTimeWorker.perform_async(date, user_id)
   end
 end

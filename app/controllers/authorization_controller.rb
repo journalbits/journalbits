@@ -32,6 +32,9 @@ class AuthorizationController < ApplicationController
   end
 
   def test
+    SuperWorker.perform_async(Time.now)
+
+    # NotifyReauthWorker.perform_async(Time.now)
     # TestWorker.perform_async("chicken")
     # WunderlistWorker.perform_async(Time.now, current_user.id)
     # GithubWorker.perform_async(Time.now, current_user.id)

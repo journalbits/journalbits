@@ -46,8 +46,6 @@ class User < ActiveRecord::Base
 
   before_validation :generate_slug
 
-  # before_filter :check_user, only: [:new]
-
   has_many :evernote_accounts
   has_many :facebook_accounts
   has_many :fitbit_accounts
@@ -62,7 +60,6 @@ class User < ActiveRecord::Base
   has_many :twitter_accounts
   has_many :whatpulse_accounts
   has_many :wunderlist_accounts
-
 
   has_many :evernote_entries
   has_many :facebook_photo_entries
@@ -548,14 +545,5 @@ class User < ActiveRecord::Base
   def admin?
     !Admin.where(user_id: self.id).first.blank?
   end
-
-  # protected
-
-  # def check_user
-  #   if session[:user]
-  #     @user = User.find(session[:user])
-  #     redirect_to user_path(@user) if @user
-  #   end
-  # end
 
 end
