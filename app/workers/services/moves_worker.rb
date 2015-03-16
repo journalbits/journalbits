@@ -34,18 +34,21 @@ class MovesWorker
       )
     end
     activities = summary['summary']
-    activities.each do |activity|
-      unless MovesEntry.exists?(user_id: user_id, date: date.to_s[0..9], activity: activity['activity'])
-        MovesEntry.create(
-          user_id: user_id,
-          date: date.to_s[0..9],
-          activity: activity['activity'],
-          duration: activity['duration'],
-          distance: activity['distance'],
-          steps: activity['steps'],
-          calories: activity['calories'],
-          moves_account_id: account_id
-        )
+
+    if !activities.nil?
+      activities.each do |activity|
+        unless MovesEntry.exists?(user_id: user_id, date: date.to_s[0..9], activity: activity['activity'])
+          MovesEntry.create(
+            user_id: user_id,
+            date: date.to_s[0..9],
+            activity: activity['activity'],
+            duration: activity['duration'],
+            distance: activity['distance'],
+            steps: activity['steps'],
+            calories: activity['calories'],
+            moves_account_id: account_id
+          )
+        end
       end
     end
   end

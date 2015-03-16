@@ -64,7 +64,10 @@
             LastFM
         %div.service-data-content
           - @entries[:lastfm_entries].each do |song|
-            = link_to "#{song.artist} - #{song.track}", song.url
+            = link_to song.url do
+              %b
+                = "#{song.artist}"
+              = " - #{song.track}"
             %br
 
     - if !@entries[:instagram_entries].nil?
@@ -88,8 +91,7 @@
         %div.service-data-content
           - if !@entries[:fitbit_sleep_entries].blank?
             %div
-              %b
-                Sleep
+              %b Sleep
             = "Minutes asleep: #{@entries[:fitbit_sleep_entries].first.minutes_asleep}"
             %br
             = "Minutes awake: #{@entries[:fitbit_sleep_entries].first.minutes_awake}"
@@ -104,8 +106,7 @@
 
           - if !@entries[:fitbit_activity_entries].blank?
             %div
-              %b
-                Activity
+              %b Activity
             = "Steps: #{@entries[:fitbit_activity_entries].first.steps}"
             %br
             = "Distance: #{@entries[:fitbit_activity_entries].first.distance}"
@@ -116,8 +117,7 @@
 
           - if !@entries[:fitbit_weight_entries].blank?
             %div
-              %b
-                Weight
+              %b Weight
             = "Weight: #{@entries[:fitbit_weight_entries].first.weight}#{get_appropriate_weight_units(@entries[:fitbit_weight_entries].first.weight_unit)}"
 
     - if !@entries[:pocket_entries].nil?
@@ -161,13 +161,15 @@
             Evernote
         %div.service-data-content
           - if !@entries[:evernote_entries].select { |e| e.kind == 'created' }.empty?
-            Created
+            %b Created
+            %br
             - @entries[:evernote_entries].select { |e| e.kind == 'created' }.each do |note|
               = note.title
               %br
 
           - if !@entries[:evernote_entries].select { |e| e.kind == 'updated' }.empty?
-            Updated
+            %b Updated
+            %br
             - @entries[:evernote_entries].select { |e| e.kind == 'updated' }.each do |note|
               = note.title
               %br
@@ -180,27 +182,31 @@
             Rescue Time
         %div.service-data-content
           - if !@entries[:rescue_time_entries].blank?
-            = "Productivity Score: #{@entries[:rescue_time_entries].first.productivity}"
+            %b Productivity Score:
+            = "#{@entries[:rescue_time_entries].first.productivity}"
             %br
-            Top 5 Activities
-            %br
-            = @entries[:rescue_time_entries].first.activity_1
+            %b
+              = @entries[:rescue_time_entries].first.activity_1
             = @entries[:rescue_time_entries].first.time_spent_1 / 60
             minutes
             %br
-            = @entries[:rescue_time_entries].first.activity_2
+            %b
+              = @entries[:rescue_time_entries].first.activity_2
             = @entries[:rescue_time_entries].first.time_spent_2 / 60
             minutes
             %br
-            = @entries[:rescue_time_entries].first.activity_3
+            %b
+              = @entries[:rescue_time_entries].first.activity_3
             = @entries[:rescue_time_entries].first.time_spent_3 / 60
             minutes
             %br
-            = @entries[:rescue_time_entries].first.activity_4
+            %b
+              = @entries[:rescue_time_entries].first.activity_4
             = @entries[:rescue_time_entries].first.time_spent_4 / 60
             minutes
             %br
-            = @entries[:rescue_time_entries].first.activity_5
+            %b
+              = @entries[:rescue_time_entries].first.activity_5
             = @entries[:rescue_time_entries].first.time_spent_5 / 60
             minutes
             %br
@@ -212,10 +218,18 @@
           %span
             WhatPulse
         %div.service-data-content
-          = "Keystrokes: #{WhatpulseEntry.total_keys(@entries[:whatpulse_entries])}"
-          = "Clicks: #{WhatpulseEntry.total_clicks(@entries[:whatpulse_entries])}"
-          = "Downloaded: #{WhatpulseEntry.total_download(@entries[:whatpulse_entries])}MB"
-          = "Uploaded: #{WhatpulseEntry.total_upload(@entries[:whatpulse_entries])}MB"
+          - if !@entries[:whatpulse_entries].blank?
+            %b Keystrokes:
+            = "#{WhatpulseEntry.total_keys(@entries[:whatpulse_entries])}"
+            %br
+            %b Clicks:
+            = "#{WhatpulseEntry.total_clicks(@entries[:whatpulse_entries])}"
+            %br
+            %b Downloaded:
+            = "#{WhatpulseEntry.total_download(@entries[:whatpulse_entries])}MB"
+            %br
+            %b Uploaded:
+            = "#{WhatpulseEntry.total_upload(@entries[:whatpulse_entries])}MB"
 
     - if !@entries[:wunderlist_entries].nil?
       %div.daily-data-container
@@ -225,13 +239,15 @@
             Wunderlist
         %div.service-data-content
           - if !@entries[:wunderlist_entries].select { |e| e.kind == 'completed' }.empty?
-            Completed Tasks
+            %b Completed Tasks
+            %br
             - @entries[:wunderlist_entries].select { |e| e.kind == 'completed' }.each do |task|
               = "#{task.title} from #{task.list}"
               %br
 
           - if !@entries[:wunderlist_entries].select { |e| e.kind == 'created' }.empty?
-            Created Tasks
+            %b Created Tasks
+            %br
             - @entries[:wunderlist_entries].select { |e| e.kind == 'created' }.each do |task|
               = "#{task.title} from #{task.list}"
               %br
@@ -245,10 +261,12 @@
         %div.service-data-content
           - @entries[:moves_entries].each do |data|
             - if data.activity == 'total'
-              = "Total Calories Burned: #{data.calories}"
+              %b Total Calories Burned:
+              = "#{data.calories}"
             - else
-              = "#{data.activity.capitalize}"
-              %br/
+              %b
+                = "#{data.activity.capitalize}"
+              %br
               %ul
                 %li
                   = "Distance: #{data.distance}m"
@@ -269,7 +287,8 @@
           %span
             SleepCycle
         %div.service-data-content
-          = "Time asleep: #{@entries[:health_graph_entries].first.time_asleep / 60} hours #{@entries[:health_graph_entries].first.time_asleep % 60} minutes"
+          %b Time asleep:
+          = "#{@entries[:health_graph_entries].first.time_asleep / 60} hours #{@entries[:health_graph_entries].first.time_asleep % 60} minutes"
 
 :javascript
   var picker = new Pikaday({
