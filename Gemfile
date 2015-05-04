@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.0'
+gem 'rails'
 
 # To make sure readline is available
 gem 'rb-readline'
@@ -11,10 +11,10 @@ gem 'rb-readline'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.1'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
@@ -27,9 +27,6 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
 
 # To make sprockets work
 gem 'sprockets'
@@ -69,12 +66,12 @@ gem 'omniauth-wunderlist'
 # For API integration
 gem 'fitgem'
 gem 'twitter'
-gem 'octokit', '~> 2.0'
-gem 'koala', '~> 1.8.0rc1'
+gem 'octokit'
+gem 'koala'
 gem 'evernote_oauth'
 gem 'instapaper'
 gem 'moves'
-gem 'health_graph'
+# gem 'health_graph'
 gem 'pocket-ruby', git: 'https://github.com/launsh/pocket-ruby.git'
 
 # For user profiles and profile images
@@ -102,7 +99,7 @@ gem 'newrelic_rpm'
 
 # For running jobs in the background and viewing them running
 gem 'sidekiq'
-gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'sinatra', '>= 1.3.0', require: nil
 gem 'devise-async'
 
 # Web server
@@ -112,7 +109,7 @@ gem 'unicorn'
 gem 'foreman'
 
 # For storing environment variables
-gem 'figaro', '~> 1.0.0'
+gem 'figaro'
 
 # For testing for security vulnerabilities
 gem 'brakeman'
@@ -122,12 +119,12 @@ gem 'rollbar'
 
 
 group :test do
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'cucumber-rails', :require => false
+  gem 'rspec-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'webmock'
   gem 'vcr'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
 end
 
 group :doc do
