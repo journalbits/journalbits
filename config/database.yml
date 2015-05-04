@@ -54,10 +54,8 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: journalbits_production
+  url: <%= ENV['DATABASE_URL'] %>
   pool: 25
-  username:
-  password:
 
 cucumber:
   <<: *test
