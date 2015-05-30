@@ -71,7 +71,7 @@ gem 'koala'
 gem 'evernote_oauth'
 gem 'instapaper'
 gem 'moves'
-# gem 'health_graph'
+gem 'health_graph', git: 'https://github.com/journalbits/health_graph.git'
 gem 'pocket-ruby', git: 'https://github.com/launsh/pocket-ruby.git'
 
 # For user profiles and profile images

@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/journalbits/health_graph.git
+  revision: 23ef77e47976fb88478c01c6ea3871e8f1b81e60
+  specs:
+    health_graph (0.6.0)
+      faraday (>= 0.7.4)
+      faraday_middleware (>= 0.7.8)
+      hashie (>= 1.2)
+      oauth2 (>= 0.5.2)
+      webmock (>= 1.7.6)
+
+GIT
   remote: https://github.com/launsh/pocket-ruby.git
   revision: a92d00e8d498ae1ba985514e51dd5176604496d3
   specs:
@@ -452,6 +463,7 @@ DEPENDENCIES
   foreman
   gravtastic
   haml-rails
+  health_graph!
   html2haml
   httparty
   instapaper
